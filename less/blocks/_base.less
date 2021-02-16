@@ -1,0 +1,326 @@
+:root {
+  --bl: #000;
+  --brand-blue: rgb(0, 77, 136);
+  --main-blue: #006cba;
+  --underline: #4897e2;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+body.noscroll {
+  position: fixed;
+}
+a,
+a:hover {
+  text-decoration: none;
+  display: inline-block;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+p::selection,
+li::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+span::selection {
+  background: #79bdfc;
+}
+//Логотип шапки
+.logo {
+  display: inline-block;
+  font-size: 38px;
+  font-family: "LiteraturnayaC", sans-serif;
+  color: var(--brand-blue);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -5.35px;
+  transition: transform 0.3s;
+  //Для большого смартфона
+  @media (min-width: 400px) {
+    font-size: 42px;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    font-size: 48px;
+  }
+  //Для большого планшета
+  @media (min-width: 1024px) {
+    font-size: 60px;
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+  a {
+    color: var(--brand-blue);
+    transition: color 0.3s ease-in;
+    &:hover {
+      color: var(--main-blue);
+    }
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+svg {
+  max-width: 100%;
+}
+button,
+input,
+textarea {
+  outline: none;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  -moz-apperance: none;
+  -webkit-appearance: none;
+}
+button {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+/*--Контейнер--*/
+.container {
+  width: 100%;
+  max-width: 320px;
+  padding: 0 15px;
+  margin: 0 auto;
+  //Для большого смартфона
+  @media (min-width: 360px) {
+    max-width: 360px;
+  }
+  //Для большого смартфона
+  @media (min-width: 400px) {
+    max-width: 400px;
+  }
+  //Для большого смартфона
+  @media (min-width: 420px) {
+    padding: 0 20px;
+    max-width: 420px;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    max-width: 768px;
+    padding: 0 30px;
+  }
+  //Для планшета
+  @media (min-width: 769px) {
+    max-width: 1140px;
+    padding: 0 30px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    padding: 0;
+  }
+}
+.section-title {
+  display: inline-block;
+  font-size: 96px;
+  font-family: "LiteraturnayaC", serif;
+  color: var(--main-blue);
+  font-style: italic;
+  line-height: 1.2;
+  letter-spacing: -5px;
+  text-align: center;
+  letter-spacing: -8.7px;
+}
+.section-title.section-title--white {
+  color: #fff;
+}
+.title-4 {
+  margin-bottom: 30px;
+  display: inline-block;
+  font-size: 36px;
+  font-family: "Mplus 1p";
+  font-weight: 500;
+  color: #000;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+.title-4.title-4--white {
+  color: #fff;
+  border-bottom: 3px solid #fff;
+}
+.bottom-line {
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 25px;
+    left: 5px;
+    right: -5px;
+    height: 10px;
+    background-color: var(--underline);
+    z-index: -1;
+    transition: 0.3s;
+  }
+}
+.btn {
+  display: inline-block;
+  height: 60px;
+  padding-left: 37px;
+  padding-right: 37px;
+  background-color: var(--main-blue);
+  border-radius: 30px;
+  font-family: "Mplus 1p", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 60px;
+  text-align: center;
+  z-index: 1;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover,
+  &:active {
+    background-color: var(--underline);
+    transform: scale(1.03);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+.btn.btn--transp {
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: transparent;
+  border: 4px solid var(--main-blue);
+  color: var(--main-blue);
+  line-height: 52px;
+  transition: 0.3s;
+  &:hover,
+  &:active {
+    border-color: var(--underline);
+    color: var(--underline);
+    transform: scale(1.03);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+//---Универсальные социальные иконки
+.social-icons__title {
+  font-size: 42px;
+  font-family: "Mplus 1p", sans-serif;
+  color: var(--brand-blue);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
+.social-icons__title.social-icons__title--white {
+  color: #fff;
+}
+.social-icons__row {
+  display: flex;
+}
+.social-icons__item {
+  margin-right: 30px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+.social-icons__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+  &:hover {
+    display: flex;
+    transform: scale(1.25);
+    border-radius: 50%;
+    box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+.social-icons__link > svg {
+  color: #fff;
+  width: 36px;
+  height: 36px;
+}
+.insta {
+  background-color: #d6249f;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  box-shadow: 0px 0px 10px #fff;
+  transition: 0.3s ease-in;
+}
+.social-icons__insta {
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.15) rotate(360deg);
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+  }
+}
+.whatsapp {
+  background-color: #43d854;
+  box-shadow: 0px 0px 10px #fff;
+  transition: 0.3s ease-in;
+}
+.social-icons__whatsapp {
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.25) rotate(-360deg);
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+  }
+}
+.tele {
+  background-color: #039be5;
+  box-shadow: 0px 0px 10px #fff;
+  transition: 0.3s ease-in;
+}
+.social-icons__tele {
+  transition: all 0.1s linear 0.2s;
+  &:hover {
+    transform: scale(1.25) translate(27%, -40%);
+    filter: drop-shadow(0 2px 2px #1c2c3f);
+    z-index: 2;
+  }
+}
+.vk {
+  background-color: #4d76a1;
+  box-shadow: 0px 0px 10px #fff;
+  transition: 0.3s ease-in;
+}
+.social-icons__vk {
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.25);
+    filter: drop-shadow(0 3px 2px rgba(34, 40, 65, 0.7));
+  }
+}
+//---/Универсальные социальные иконки
