@@ -1,14 +1,14 @@
 @font-face {
-  font-family: "LiteraturnayaC";
-  src: local("LiteraturnayaC"), local("LiteraturnayaC"),
+  font-family: 'LiteraturnayaC';
+  src: local("LiteraturnayaC"), local("LiteraturnayaC-regular"),
     url("LTR46.woff2") format("woff2"), url("LTR46.woff") format("woff"),
     url("LTR46.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
-  font-family: "LiteraturnayaC";
-  src: local("LiteraturnayaC"), local("LiteraturnayaC"),
+  font-family: 'LiteraturnayaC';
+  src: local("LiteraturnayaC Bold"), local("LiteraturnayaC-bold"),
     url("LTR66.woff2") format("woff2"), url("LTR66.woff") format("woff"),
     url("LTR66.ttf") format("truetype");
   font-weight: 700;
