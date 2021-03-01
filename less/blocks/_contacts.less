@@ -55,6 +55,11 @@
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    flex-wrap: nowrap;
   }
   &::before {
     //Для десктопа
@@ -73,7 +78,7 @@
   }
 }
 .contacts-col {
-  margin-bottom: 42px;
+  margin-bottom: 15px;
   width: 100%;
   z-index: 1;
   //Для планшета
@@ -82,20 +87,19 @@
     width: 49%;
   }
   p {
-    font-family: "Mplus 1p";
-    font-size: 16px;
-    line-height: 1.625;
+    font-family: "LiteraturnayaC", serif;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.6;
     letter-spacing: -0.1px;
     //Для планшета
     @media (min-width: 768px) {
-      font-size: 18px;
-      line-height: 1.556;
       letter-spacing: 0;
+      font-size: 22px;
     }
     //Для десктопа
     @media (min-width: 1200px) {
-      font-size: 20px;
-      line-height: 1.6;
     }
   }
 }
@@ -112,6 +116,10 @@
 }
 .contacts-list {
   margin-bottom: 24px;
+  //Для планшета
+  @media (min-width: 768px) {
+    margin-bottom: 60px;
+  }
   //Для десктопа
   @media (min-width: 1200px) {
     margin-bottom: 30px;
@@ -139,6 +147,7 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 1.2;
+  color: var(--brand-blue);
   //Для планшета
   @media (min-width: 768px) {
     width: 60%;
@@ -164,6 +173,8 @@
     }
   }
   p {
+    font-family: "Mplus 1p";
+    font-style: normal;
     font-size: 18px;
     font-weight: 500;
     color: #96969d;
@@ -190,7 +201,15 @@
   }
 }
 .map-holder {
-  height: 420px;
+  height: 360px;
+  //Для планшета
+  @media (min-width: 768px) {
+    display: none;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    display: block;
+  }
 }
 /*---Форма обратной связи---*/
 .contacts-form-col {
@@ -217,11 +236,13 @@
   z-index: 1;
   //Для планшета
   @media (min-width: 768px) {
+    margin-bottom: 30px;
     padding: 60px 25px 40px;
     height: unset;
   }
   //Для десктопа
   @media (min-width: 1200px) {
+    margin-bottom: 0;
     padding: 80px 58px 41px;
     height: 100%;
   }
@@ -251,6 +272,7 @@
   position: absolute;
   top: 2px;
   color: #bcbcbc;
+  font-family: "Mplus 1p", sans-serif;
   font-size: 20px;
   font-weight: 700;
   pointer-events: none;
@@ -277,7 +299,9 @@ span.required {
     color: inherit;
   }
 }
-.name-row, .email-row, .phone-row{
+.name-row,
+.email-row,
+.phone-row {
   margin-bottom: 41px;
   //Для планшета
   @media (min-width: 768px) {
@@ -323,7 +347,9 @@ span.required {
   }
 }
 .form-textarea {
-  height: 117px;
+  height: 150px;
+  font-size: 18px;
+  font-weight: 500;
   resize: none;
   &:focus {
     border-color: #ea736d;
@@ -407,3 +433,18 @@ label.error {
   }
 }
 /*---/Форма обратной связи---*/
+.map-holder-tab {
+  display: none;
+  //Для планшета
+  @media (min-width: 768px) {
+    display: block;
+    width: 100%;
+    height: 400px;
+    z-index: 2;
+    box-shadow: 0 0 30px 5px #c2dbeb;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
