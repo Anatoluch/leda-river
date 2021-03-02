@@ -84,22 +84,35 @@
   //Для планшета
   @media (min-width: 768px) {
     margin-bottom: 0;
+    width: 50%;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
     width: 49%;
   }
   p {
-    font-family: "LiteraturnayaC", serif;
+    font-family: serif;
     font-style: italic;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
-    line-height: 1.6;
+    line-height: 1.5;
     letter-spacing: -0.1px;
     //Для планшета
     @media (min-width: 768px) {
+      font-size: 23px;
+    }
+    //Для планшета Ipad Pro
+    @media (min-width: 1024px) {
       letter-spacing: 0;
       font-size: 22px;
     }
     //Для десктопа
     @media (min-width: 1200px) {
+      font-size: 25px;
+    }
+    //Для десктопа
+    @media (min-width: 1600px) {
+      font-size: 26px;
     }
   }
 }

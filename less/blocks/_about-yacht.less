@@ -5,21 +5,37 @@
   background-color: var(--main-blue);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) inset,
     0 10px 40px rgba(15, 61, 84, 0.5);
-
   overflow: hidden;
 }
 .yacht-title {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   text-align: center;
+  //Для планшета
+  @media (min-width: 768px) {
+    margin-bottom: 15px;
+  }
 }
 .yacht__content {
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   position: relative;
+  //Для планшета
+  @media (min-width: 768px) {
+    justify-content: space-between;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+  }
 }
 .yacht__desc {
-  width: 53%;
+  width: 100%;
+  //Для планшета
+  @media (min-width: 768px) {
+    width: 53%;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+  }
 }
 
 .yacht__desc-list {
@@ -30,13 +46,40 @@
 }
 .yacht__desc-item {
   margin-left: 31px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   position: relative;
-  font-size: 24px;
-  font-family: "Mplus 1p";
+  font-size: 16px;
+  font-family: sans-serif;
   font-weight: 400;
   color: rgb(255, 255, 255);
-  line-height: 1;
+  line-height: 1.2;
+  //Для большого смартфона
+  @media (min-width: 360px) {
+  }
+  //Для большого смартфона
+  @media (min-width: 400px) {
+    font-size: 17px;
+  }
+  //Для большого смартфона
+  @media (min-width: 420px) {
+    font-size: 18px;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  //Для большого планшета
+  @media (min-width: 1024px) {
+    font-family: "Mplus 1p";
+    font-size: 22px;
+    line-height: 1;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    font-size: 18px;
+  }
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -44,17 +87,45 @@
     content: url("../img/icons/list-marker.png");
     position: absolute;
     left: -31px;
-    top: 4px;
+    top: -4px;
+    //Для большого смартфона
+    @media (min-width: 360px) {
+    }
+    //Для большого смартфона
+    @media (min-width: 400px) {
+    }
+    //Для большого смартфона
+    @media (min-width: 420px) {
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+    }
+    //Для большого планшета
+    @media (min-width: 1024px) {
+      top: 0;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      top: -4px;
+    }
   }
   span {
     font-weight: 700;
   }
 }
 .yacht__img {
-  position: relative;
-  width: 50%;
-  z-index: 2;
-  padding-top: 2px;
+  display: none;
+  //Для планшета
+  @media (min-width: 768px) {
+    display: block;
+    position: relative;
+    width: 50%;
+    z-index: 2;
+    padding-top: 2px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+  }
   &::before {
     content: "";
     display: block;
@@ -73,8 +144,29 @@
     );
   }
   img {
-    margin-top: -12px;
-    margin-left: -58px;
-    transform: scale(1.31);
+    //Для планшета
+    @media (min-width: 768px) {
+      margin-top: 147px;
+      margin-left: -55px;
+      transform: scale(2);
+    }
+    //Для планшета
+    @media (min-width: 960px) {
+      margin-top: 55px;
+      margin-left: -100px;
+      transform: scale(1.6);
+    }
+    //Для планшета
+    @media (min-width: 1024px) {
+      margin-top: 7px;
+      margin-left: -60px;
+      transform: scale(1.5);
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      margin-top: -12px;
+      margin-left: -58px;
+      transform: scale(1.31);
+    }
   }
 }

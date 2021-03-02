@@ -62,12 +62,12 @@
 .header-nav__link {
   position: relative;
   color: var(--brand-blue);
-  font-family: "LiteraturnayaC", serif;
+  font-family: serif;
   font-style: italic;
   font-weight: 400;
   font-size: 34px;
   line-height: 1.2;
-  letter-spacing: -3.75px;
+  letter-spacing: -1px;
   &::after {
     content: "";
     position: absolute;
@@ -199,33 +199,95 @@
 //---/Социальные иконки хедера
 .header-content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column-reverse;
   position: relative;
+  //Для планшета
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+  }
 }
 .header-content__desc {
-  margin: 32px 0 78px 14px;
-  padding: 44px 8px 0 12px;
-  max-width: 47.4%;
-  border-radius: 100px 10px 100px 10px;
-  background-color: #fff;
-  box-shadow: 0px 15px 38.25px 6.75px rgb(119, 162, 219);
+  width: 100%;
+  //Для планшета
+  @media (min-width: 768px) {
+    padding: 10px 0 0;
+  }
+  //Для планшета
+  @media (min-width: 960px) {
+    padding: 30px 0 0;
+  }
+
+  //Для десктопа
+  @media (min-width: 1200px) {
+    margin: 32px 0 78px 14px;
+    padding: 30px 8px 0 12px;
+    width: 47.4%;
+    border-radius: 100px 10px 100px 10px;
+    background-color: #fff;
+    box-shadow: 0px 15px 38.25px 6.75px rgb(119, 162, 219);
+  }
   p {
-    margin-bottom: 13px;
-    font-size: 28.9px;
-    font-family: "LiteraturnayaC", sans-serif;
-    font-style: italic;
+    margin-bottom: 5px;
+    font-size: 17px;
+    font-family: sans-serif;
     color: rgb(7, 7, 7);
     font-weight: 400;
-    line-height: 1.23;
-    letter-spacing: -2.88px;
+    line-height: 1.5;
+    text-indent: 10px;
+    //Для планшета
+    @media (min-width: 820px) {
+      font-size: 18px;
+    }
+    //Для планшета
+    @media (min-width: 890px) {
+      font-size: 20px;
+    }
+    //Для планшета
+    @media (min-width: 960px) {
+      font-size: 20px;
+      font-style: italic;
+    }
+    //Для планшета
+    @media (min-width: 1024px) {
+      font-size: 22px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      font-size: 25px;
+      font-family: serif;
+      font-style: italic;
+      color: rgb(7, 7, 7);
+      font-weight: 400;
+      line-height: 1.5;
+      text-indent: unset;
+    }
     &:last-of-type {
-      margin-bottom: 8px;
+      margin-bottom: 15px;
+      //Для планшета
+      @media (min-width: 768px) {
+        margin-bottom: 10px;
+      }
+      //Для планшета
+      @media (min-width: 1024px) {
+        margin-bottom: 20px;
+      }
+      //Для десктопа
+      @media (min-width: 1200px) {
+        margin-bottom: 10px;
+      }
     }
     span {
       font-weight: 700;
     }
     &:first-of-type {
-      text-indent: 13px;
+      //Для дусктопа
+      @media (min-width: 1200px) {
+        text-indent: 13px;
+      }
       span {
         color: var(--brand-blue);
       }
@@ -233,33 +295,65 @@
   }
 }
 .header-btn-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //Для планшета
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    display: block;
+  }
   a {
-    margin-right: 26px;
+    //Для десктопа
+    @media (min-width: 1200px) {
+      margin-right: 26px;
+    }
     &:last-of-type {
-      margin-right: 0;
+      //Для десктопа
+      @media (min-width: 1200px) {
+        margin-right: 0;
+      }
     }
   }
 }
 .header-content__img {
   position: relative;
-  width: 50%;
+  width: 100%;
   z-index: 2;
+  //Для планшета
+  @media (min-width: 768px) {
+    max-width: 50%;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+  }
   &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: -10%;
-    right: -24%;
-    z-index: -1;
-    background-image: linear-gradient(
-      to top,
-      rgba(205, 228, 255, 0) 0%,
-      rgba(172, 211, 255, 0.3) 15%,
-      rgba(172, 211, 255, 0.25) 60%,
-      rgba(244, 248, 249, 0) 100%
-    );
+    //Для планшета
+    @media (min-width: 768px) {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: -10%;
+      right: -9%;
+      z-index: -1;
+      background-image: linear-gradient(
+        to top,
+        rgba(205, 228, 255, 0) 0%,
+        rgba(172, 211, 255, 0.3) 15%,
+        rgba(172, 211, 255, 0.25) 60%,
+        rgba(244, 248, 249, 0) 100%
+      );
+    }
+    //Для планшета
+    @media (min-width: 960px) {
+      right: -24%;
+    }
   }
   img {
     margin-top: -10px;
@@ -269,6 +363,21 @@
   margin: 0 auto;
   max-width: 1600px;
   z-index: -1;
-  margin-top: -100px;
+  margin-top: 4px;
   position: relative;
+  //Для планшета
+  @media (min-width: 768px) {
+    margin-top: -70px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    margin-top: -100px;
+  }
+  img {
+    transform: scale(1.23);
+    //Для планшета
+    @media (min-width: 768px) {
+      transform: scale(1);
+    }
+  }
 }
