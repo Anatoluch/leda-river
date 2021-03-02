@@ -1,6 +1,15 @@
 .window-bg-img {
   margin: 0 auto;
-  height: 60vh;
+  display: none;
+  //Для планшета
+  @media (min-width: 768px) {
+    display: block;
+    height: 50vh;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    height: 60vh;
+  }
   img {
     position: fixed;
     z-index: -9;
