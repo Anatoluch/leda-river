@@ -187,7 +187,7 @@ button {
 }
 .section-title {
   display: inline-block;
-  font-size: 44px;
+  font-size: 42px;
   font-family: serif;
   color: var(--main-blue);
   font-style: italic;
@@ -196,17 +196,17 @@ button {
 }
 @media (min-width: 360px) {
   .section-title {
-    font-size: 48px;
+    font-size: 45px;
   }
 }
 @media (min-width: 400px) {
   .section-title {
-    font-size: 54px;
+    font-size: 52px;
   }
 }
 @media (min-width: 420px) {
   .section-title {
-    font-size: 60px;
+    font-size: 56px;
   }
 }
 @media (min-width: 768px) {
