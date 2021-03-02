@@ -1061,6 +1061,27 @@ button {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
 }
+.gallery-section__content img {
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-box-shadow: 0 3px 3px rgba(18, 30, 51, 0.6);
+     -moz-box-shadow: 0 3px 3px rgba(18, 30, 51, 0.6);
+          box-shadow: 0 3px 3px rgba(18, 30, 51, 0.6);
+}
+.gallery-section__content img:hover {
+  -webkit-transform: scale(1.03);
+     -moz-transform: scale(1.03);
+      -ms-transform: scale(1.03);
+       -o-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-filter: saturate(1.1);
+          filter: saturate(1.1);
+  -webkit-box-shadow: 0 7px 10px rgba(18, 30, 51, 0.5);
+     -moz-box-shadow: 0 7px 10px rgba(18, 30, 51, 0.5);
+          box-shadow: 0 7px 10px rgba(18, 30, 51, 0.5);
+}
 @media (min-width: 768px) {
   .gallery-section__content {
     max-width: 768px;

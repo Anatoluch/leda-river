@@ -28,6 +28,15 @@
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  img {
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 3px 3px rgba(18, 30, 51, 0.6);
+    &:hover {
+      transform: scale(1.03);
+      filter: saturate(1.1);
+      box-shadow: 0 7px 10px rgba(18, 30, 51, 0.5);
+    }
+  }
   //Для большого смартфона
   @media (min-width: 360px) {
   }
