@@ -1390,6 +1390,7 @@ button {
       -ms-transform: translateX(0);
        -o-transform: translateX(0);
           transform: translateX(0);
+  overflow-y: auto;
 }
 .mob-nav {
   margin-bottom: 45px;
