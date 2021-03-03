@@ -1,0 +1,151 @@
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding-top: 19px;
+  padding-left: 30px;
+  max-width: 320px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 75%,
+    rgba(153, 199, 235, 1) 100%
+  );
+  z-index: 8;
+  transform: translateX(100%);
+  transition: 0.2s;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 7;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-image: url(../img/wind-rose.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position-x: center;
+    background-position-y: bottom;
+  }
+  @media (min-width: 960px) {
+    max-width: 390px;
+  }
+  @media (min-width: 1200px) {
+    display: none;
+  }
+  .logo-mob {
+    margin-bottom: 29px;
+    position: relative;
+    display: inline-block;
+    font-size: 38px;
+    font-family: serif;
+    font-style: italic;
+    color: var(--brand-blue);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -4px;
+    transition: transform 0.3s;
+    z-index: 9;
+    //Для большого смартфона
+    @media (min-width: 400px) {
+      font-size: 42px;
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+      font-size: 48px;
+    }
+    a {
+      color: var(--brand-blue);
+      &:hover {
+        color: var(--main-blue);
+      }
+    }
+  }
+}
+.mobile-menu.active {
+  display: block;
+  transition: 0.3s ease-in-out 0.3s;
+  transform: translateX(0);
+}
+.mob-nav {
+  margin-bottom: 45px;
+  position: relative;
+  z-index: 9;
+}
+.mob-nav-item {
+  margin-bottom: 29px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: underline;
+  line-height: 1.1;
+  position: relative;
+  z-index: 9;
+}
+.mob-nav-link {
+  color: rgb(7, 7, 7);
+  border-bottom: 3px solid var(--underline);
+  font-family: sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 0.8;
+  position: relative;
+  z-index: 9;
+  &:active {
+    color: var(--red);
+    border-color: rgba(0, 0, 0, 0);
+  }
+}
+.mob-menu-ic {
+  margin-right: 20px;
+  position: relative;
+  z-index: 9;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.social-ic-row.social-ic-row--mob {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 9;
+}
+.mob-contact-link {
+  text-align: center;
+  position: relative;
+  z-index: 9;
+  a {
+    position: relative;
+    z-index: 10;
+    margin-right: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--brand-blue);
+    text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
+  }
+}
+.text-link--mob {
+  border-color: var(--blue);
+}
+.social-icons__row.social-icons__row--left {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 9;
+  @media (min-width: 960px) {
+    justify-content: center;
+  }
+  li {
+    margin-right: 20px;
+    position: relative;
+    z-index: 9;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

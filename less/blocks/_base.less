@@ -23,6 +23,38 @@ body {
 body.noscroll {
   position: fixed;
 }
+/*--Затемняющий слой вокруг плашки мобильного меню--*/
+#overlay {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 6;
+  transform: translateX(-100%);
+  transition: 0.3s ease-in 0.15s;
+  background: rgb(0, 108, 186);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 108, 186, 0.6) 0%,
+    rgba(0, 84, 145, 0.8) 35%,
+    rgba(0, 75, 130, 0.92) 50%,
+    rgba(0, 50, 88, 1) 100%
+  );
+  backdrop-filter: blur(3px);
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
+#overlay.active {
+  transition: 0.5s;
+  display: block;
+  transform: translateX(0);
+}
+/*--/Затемняющий слой вокруг плашки мобильного меню--*/
 a,
 a:hover {
   text-decoration: none;
@@ -468,3 +500,15 @@ button {
   justify-content: center;
 }
 //---/Универсальные социальные иконки
+.text-link {
+  border-bottom: 1px solid var(--brand-blue);
+  line-height: 1.2;
+  &:hover {
+    color: rgb(241, 124, 28);
+    border-bottom: 1px solid rgb(241, 124, 28);
+  }
+  &:active {
+    color: rgb(241, 124, 28);
+    border-bottom: 1px solid rgb(241, 124, 28);
+  }
+}
