@@ -1,0 +1,137 @@
+.footer {
+  margin: 0 auto;
+  position: relative;
+  padding: 15px 0 15px;
+  background-color: var(--brand-blue);
+  //Для десктопа
+  @media (min-width: 1200px) {
+    padding: 15px 0 15px;
+  }
+}
+.footer__row {
+  margin-bottom: 5px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  //Для планшета
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    align-items: unset;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+}
+.logo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  //Для планшета
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    margin-bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+.footer__nav,
+.footer__info {
+  display: none;
+  //Для десктопа
+  @media (min-width: 1200px) {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.footer__title {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  line-height: 1;
+}
+.footer__nav-list {
+  display: flex;
+  flex-direction: row;
+}
+.footer__nav-item {
+  margin-right: 15px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+  a {
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(139, 191, 226);
+    line-height: 1;
+    &:hover,
+    &:active {
+      color: #fff;
+    }
+  }
+}
+.logo-col > ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  //Для планшета
+  @media (min-width: 768px) {
+    display: flex;
+    width: unset;
+    justify-content: space-between;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+  a {
+    width: 50px;
+    height: 50px;
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+.copyrights {
+  p {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: sans-serif;
+    //Для большого смартфона
+    @media (min-width: 360px) {
+      font-size: 11px;
+    }
+    //Для большого смартфона
+    @media (min-width: 400px) {
+      font-size: 12px;
+    }
+    //Для большого смартфона
+    @media (min-width: 420px) {
+      font-size: 13px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      font-size: 12px;
+    }
+  }
+}
