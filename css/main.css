@@ -281,7 +281,7 @@ button {
 .title-4 {
   margin-bottom: 30px;
   font-size: 21px;
-  font-family: "Mplus 1p";
+  font-family: "M PLUS 1p", sans-serif;
   font-weight: 500;
   color: #000;
   line-height: 1.2;
@@ -387,7 +387,7 @@ button {
   -webkit-border-radius: 24px;
      -moz-border-radius: 24px;
           border-radius: 24px;
-  font-family: "Mplus 1p", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: #fff;
@@ -483,7 +483,7 @@ button {
 }
 .social-icons__title {
   font-size: 42px;
-  font-family: "Mplus 1p", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
   color: var(--brand-blue);
   font-weight: 700;
   line-height: 1.2;
@@ -1781,7 +1781,7 @@ button {
 }
 @media (min-width: 1024px) {
   .yacht__desc-item {
-    font-family: "Mplus 1p";
+    font-family: "M PLUS 1p", sans-serif;
     font-size: 22px;
     line-height: 1;
   }
@@ -1983,7 +1983,7 @@ button {
   }
 }
 .gallery-section__content {
-  margin: 0 auto;
+  margin: 0 auto 25px;
   padding: 0 15px;
   position: relative;
   max-width: 740px;
@@ -2072,6 +2072,57 @@ button {
 }
 .gallery-section__content img {
   margin: 0 auto 15px;
+}
+.photo {
+  display: inline-block !important;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+.hide-photo {
+  display: none;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+@media (min-width: 1200px) {
+  .hide-photo {
+    display: inline-block;
+  }
+}
+.gallery-link {
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .gallery-link {
+    display: none;
+  }
+}
+.gallery-link a {
+  position: relative;
+  z-index: 10;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  color: var(--brand-blue);
+  text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
+}
+.show-all {
+  max-height: 100%;
+}
+.link-1 {
+  display: inline-block;
+}
+.link-1-hide {
+  display: none !important;
+}
+.link-2 {
+  display: none !important;
+}
+.link-2-show {
+  display: inline-block !important;
 }
 .price-section {
   margin: 0 auto;
@@ -2167,7 +2218,7 @@ button {
     display: block;
     font-size: 22px;
     margin-bottom: 22px;
-    font-family: "Mplus 1p";
+    font-family: "M PLUS 1p", sans-serif;
   }
 }
 @media (min-width: 1024px) {
@@ -2207,7 +2258,7 @@ button {
 }
 @media (min-width: 1024px) {
   .price-section__item {
-    font-family: "Mplus 1p";
+    font-family: "M PLUS 1p", sans-serif;
   }
 }
 .price-section__item:last-of-type {
@@ -2263,7 +2314,7 @@ button {
     display: block;
     font-size: 22px;
     margin-bottom: 22px;
-    font-family: "Mplus 1p";
+    font-family: "M PLUS 1p", sans-serif;
   }
 }
 @media (min-width: 1024px) {
@@ -2309,7 +2360,7 @@ span.red {
 }
 @media (min-width: 768px) {
   .price-section__text p {
-    font-family: "Mplus 1p";
+    font-family: "M PLUS 1p", sans-serif;
   }
 }
 .price-section__text p:first-of-type {
@@ -2591,7 +2642,7 @@ span.red {
 .contacts-item-def {
   margin-bottom: 5px;
   width: 100%;
-  font-family: "Mplus 1p";
+  font-family: "M PLUS 1p", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.2;
@@ -2611,7 +2662,7 @@ span.red {
 .contacts-item-desc {
   width: 100%;
   text-align: left;
-  font-family: "Mplus 1p";
+  font-family: "M PLUS 1p", sans-serif;
 }
 .contacts-item-desc a:not(.gray-link) {
   font-size: 18px;
@@ -2625,7 +2676,7 @@ span.red {
   }
 }
 .contacts-item-desc p {
-  font-family: "Mplus 1p";
+  font-family: "M PLUS 1p", sans-serif;
   font-style: normal;
   font-size: 18px;
   font-weight: 500;
@@ -2759,7 +2810,7 @@ span.red {
   position: absolute;
   top: 2px;
   color: #bcbcbc;
-  font-family: "Mplus 1p", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
   font-size: 20px;
   font-weight: 700;
   pointer-events: none;
