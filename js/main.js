@@ -1,4 +1,16 @@
 $(document).ready(function () {
+   // Подключение точек пагинации справа page-nav
+$('#page-nav').onePageNav({
+   currentClass: 'active-nav',
+   changeHash: false,
+   scrollSpeed: 750,
+   scrollThreshold: 0.5,
+   filter: '',
+   easing: 'swing',
+   begin: function () {},
+   end: function () {},
+   scrollChange: function ($currentListItem) {}
+});
 //"Гамбургер-меню"
 const toggleMenu = document.querySelector('.toggle-menu');//Иконка меню "Гамбургер"
 const mobMenu = document.querySelector('.mobile-menu');// Плашка под мобильное меню
@@ -41,4 +53,21 @@ if(galleryLink){
       link2.classList.toggle('link-2-show');
    })
    }
+   /* Прокручивает страницу вверх при нажатии на кнопку */
+$(window).scroll(function() {
+   var height = $(window).scrollTop();
+   if($(this).width() < 1200){
+      if( $(this).scrollTop() > 350 ){
+          $('#back2Top').fadeIn();
+      }
+      else{
+          $('#back2Top').fadeOut();
+      }
+  }
+});
+   $("#back2Top").click(function(event) {
+       event.preventDefault();
+       $("html, body").animate({ scrollTop: 0 }, "slow");
+       return false;
+   });
    });

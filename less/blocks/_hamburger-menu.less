@@ -33,9 +33,6 @@
   }
 }
 .toggle-menu.active {
-  //   position: fixed; //костыль для устранения конфликта для html и body с overflow-x: hidden; и bodyEl position: fixed;
-  //   right: 18px; //костыль для устранения конфликта для html и body с overflow-x: hidden; и bodyEl position: fixed;
-  //   top: 20px; //костыль для устранения конфликта для html и body с overflow-x: hidden; и bodyEl position: fixed;
   z-index: 9;
   span {
     transform: rotate(360deg) scale(1.2);
@@ -44,10 +41,8 @@
       transform: rotate(45deg);
       box-shadow: 1px 4px 3px rgba(21, 33, 58, 0.6);
       top: 0;
-      // top: -13px;
     }
     &::after {
-      // bottom: -13px;
       bottom: 0;
       box-shadow: -1px 4px 3px rgba(21, 33, 58, 0.6);
       transform: rotate(-45deg);

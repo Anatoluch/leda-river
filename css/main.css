@@ -25,6 +25,48 @@ body {
 body.noscroll {
   position: fixed;
 }
+/*---Стили для боковой навигации по разделам страницы*/
+/*--Планка навигации--*/
+#page-nav {
+  display: none;
+}
+@media (min-width: 1200px) {
+  #page-nav {
+    display: block;
+    position: fixed;
+    right: 2px;
+    top: 45%;
+    z-index: 100;
+  }
+}
+/*--/Планка навигации--*/
+/*--Ссылки (точки) на разделы--*/
+#page-nav li {
+  width: 15px;
+  height: 15px;
+  background-color: var(--main-blue);
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  border: 2px solid #fff;
+  margin-bottom: 8px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+#page-nav li:hover {
+  border-color: #f17c1c;
+}
+#page-nav li a {
+  display: block;
+  height: 100%;
+}
+#page-nav li.active-nav {
+  background-color: #f17c1c;
+}
+/*--/Ссылки (точки) на разделы--*/
+/*---/Стили для боковой навигации по разделам страницы*/
 /*--Затемняющий слой вокруг плашки мобильного меню--*/
 #overlay {
   position: fixed;
@@ -382,11 +424,11 @@ button {
   display: inline-block;
   margin-bottom: 15px;
   height: 48px;
-  width: 75%;
+  width: 90%;
   background-color: var(--main-blue);
-  -webkit-border-radius: 24px;
-     -moz-border-radius: 24px;
-          border-radius: 24px;
+  -webkit-border-radius: 30px;
+     -moz-border-radius: 30px;
+          border-radius: 30px;
   font-family: "M PLUS 1p", sans-serif;
   font-size: 24px;
   font-weight: 700;
@@ -699,6 +741,39 @@ button {
   color: #f17c1c;
   border-bottom: 1px solid #f17c1c;
 }
+/*Кнопка наверх*/
+#back2Top {
+  width: 45px;
+  line-height: 45px;
+  overflow: hidden;
+  z-index: 999;
+  display: none;
+  cursor: pointer;
+  -webkit-transform: rotate(270deg);
+     -moz-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+       -o-transform: rotate(270deg);
+          transform: rotate(270deg);
+  position: fixed;
+  bottom: 45px;
+  right: 5px;
+  color: #f17c1c;
+  -webkit-filter: drop-shadow(-4px 4px 3px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(-4px 4px 3px rgba(0, 0, 0, 0.6));
+  text-align: center;
+  font-size: 45px;
+  text-decoration: none;
+}
+#back2Top:hover {
+  color: var(--underline);
+  -webkit-filter: drop-shadow(0 0 3px #ffffff);
+          filter: drop-shadow(0 0 3px #ffffff);
+}
+#back2Top:active {
+  color: var(--underline);
+  -webkit-filter: drop-shadow(0 0 3px #ffffff);
+          filter: drop-shadow(0 0 3px #ffffff);
+}
 .header {
   margin: 0 auto;
   max-width: 100%;
@@ -797,7 +872,7 @@ button {
   content: "";
   position: absolute;
   width: 0;
-  bottom: 9px;
+  bottom: 7px;
   left: 0;
   height: 2px;
   background-color: var(--underline);
@@ -1775,7 +1850,6 @@ button {
 @media (min-width: 768px) {
   .yacht__desc-item {
     margin-bottom: 15px;
-    font-size: 18px;
     line-height: 1.2;
   }
 }
@@ -2208,7 +2282,7 @@ button {
   margin-bottom: 30px;
   font-size: 22px;
   font-family: sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   color: #000;
   line-height: 1.2;
   text-align: center;
@@ -2217,6 +2291,7 @@ button {
   .price-section__rent h4 {
     display: block;
     font-size: 22px;
+    font-weight: 500;
     margin-bottom: 22px;
     font-family: "M PLUS 1p", sans-serif;
   }
@@ -2233,7 +2308,7 @@ button {
   }
 }
 .price-section__list {
-  margin-bottom: 30px;
+  margin-bottom: 45px;
 }
 @media (min-width: 768px) {
   .price-section__list {
@@ -2304,7 +2379,7 @@ button {
   margin-bottom: 30px;
   font-size: 22px;
   font-family: sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   color: #000;
   line-height: 1.2;
   text-align: center;
@@ -2315,6 +2390,7 @@ button {
     font-size: 22px;
     margin-bottom: 22px;
     font-family: "M PLUS 1p", sans-serif;
+    font-weight: 500;
   }
 }
 @media (min-width: 1024px) {
@@ -2327,6 +2403,9 @@ button {
   .price-section__additional h4 {
     font-size: 36px;
   }
+}
+.price-section__additional ul {
+  margin-bottom: 15px;
 }
 .price-section__additional p {
   font-family: "Verdana", sans-serif;
@@ -3033,11 +3112,6 @@ label.error {
   position: relative;
   padding: 15px 0 15px;
   background-color: var(--brand-blue);
-}
-@media (min-width: 1200px) {
-  .footer {
-    padding: 15px 0 15px;
-  }
 }
 .footer__row {
   margin-bottom: 5px;
