@@ -21,7 +21,7 @@
 }
 .gallery-section__title-small {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   position: relative;
 }
 .gallery-section__title-3 {
@@ -47,7 +47,6 @@
   }
   //Для планшета
   @media (min-width: 768px) {
-    margin-bottom: 30px;
     font-size: 52px;
   }
   //Для большого планшета
@@ -61,7 +60,7 @@
   }
 }
 .gallery-section__content {
-  margin: 0 auto 25px;
+  margin: 0 auto 30px;
   padding: 0 15px;
   position: relative;
   max-width: 740px;
@@ -84,7 +83,7 @@
     max-width: 768px;
     padding: 0 10px;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
   }
   //Для большого планшета
@@ -101,12 +100,28 @@
   @media (min-width: 1600px) {
     max-width: 1600px;
   }
+  //Для десктопа с большим монитором
+  @media (min-width: 1950px) {
+    max-width: 1950px;
+  }
   a,
   img {
     z-index: 1;
   }
   img {
-    margin: 0 auto 15px;
+    margin: 0 0 15px;
+    //Для планшета
+    @media (min-width: 768px) {
+      margin: 0 7px 15px;
+    }
+    //Для большого планшета
+    @media (min-width: 1024px) {
+      margin: 0 12px 15px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      margin: 0 15px 15px;
+    }
   }
 }
 .photo {
@@ -123,6 +138,7 @@
 }
 .gallery-link {
   text-align: center;
+  margin-bottom: 30px;
   //Для десктопа
   @media (min-width: 1200px) {
     display: none;
