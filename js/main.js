@@ -65,6 +65,26 @@ $(window).scroll(function() {
       }
   }
 });
+      //Скрипт для fake-placeholder'а формы обратной связи
+      const formItems = document.querySelectorAll('.form-input');
+      for(let item of formItems){
+         const thisParent = item.closest('.form-item-row');
+         const thisPlaceholder = thisParent.querySelector('.fake-placeholder');
+         //Текстовое поле (input) в фокусе
+         item.addEventListener('focus', function(){
+            thisPlaceholder.classList.add('active-field');
+         });
+         //Текстовое поле теряет фокус
+         item.addEventListener('blur', function(){
+            if(item.value.length > 0){
+               thisPlaceholder.classList.add('active-field');
+            }
+            else{
+               thisPlaceholder.classList.remove('active-field');
+            }
+         })
+      }
+    //Кнопка "Наверх"  
    $("#back2Top").click(function(event) {
        event.preventDefault();
        $("html, body").animate({ scrollTop: 0 }, "slow");

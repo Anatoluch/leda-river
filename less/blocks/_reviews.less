@@ -1,6 +1,7 @@
 .reviews {
   margin: 0 auto;
-  padding: 15px 0 30px;
+  padding: 45px 0 45px;
+  height: 100vh;
   position: relative;
   box-shadow: 0 10px 25px rgba(4, 19, 46, 0.65) inset,
     0 -10px 25px rgba(4, 19, 46, 0.65) inset;
@@ -19,6 +20,15 @@
     rgba(72, 151, 226, 0.7) 100%
   );
   background-color: rgb(3, 20, 36);
+  //Для планшета
+  @media (min-width: 768px) {
+    padding: 30px 0 30px;
+    height: unset;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    padding: 15px 0 30px;
+  }
 }
 .reviews__title {
   margin-bottom: 45px;
@@ -26,6 +36,33 @@
   //Для планшета
   @media (min-width: 768px) {
     margin-bottom: 60px;
+  }
+  h2 {
+    font-size: 38px;
+    //Для большого смартфона
+    @media (min-width: 360px) {
+      font-size: 40px;
+    }
+    //Для большого смартфона
+    @media (min-width: 400px) {
+      font-size: 46px;
+    }
+    //Для большого смартфона
+    @media (min-width: 420px) {
+      font-size: 52px;
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+      font-size: 90px;
+    }
+    //Для большого планшета
+    @media (min-width: 1024px) {
+      font-size: 100px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      font-size: 120px;
+    }
   }
 }
 .reviews__clients {
@@ -94,10 +131,10 @@
 }
 .reviews__clients-user-photo {
   margin-bottom: 20px;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   overflow: hidden;
-  border-radius: 50px;
+  border-radius: 45px;
   img {
     width: 100%;
     height: 100%;

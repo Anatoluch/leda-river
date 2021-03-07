@@ -280,7 +280,7 @@
 .fake-placeholder {
   position: absolute;
   top: 2px;
-  color: #bcbcbc;
+  color: #bebebe;
   font-family: "M PLUS 1p", sans-serif;
   font-size: 20px;
   font-weight: 700;
@@ -303,7 +303,7 @@ span.required {
 .fake-placeholder.active-field {
   top: -24px;
   font-size: 16px;
-  color: #ed9626;
+  color: var(--underline);
   span.required {
     color: inherit;
   }
@@ -339,20 +339,20 @@ span.required {
   width: 100%;
   padding: 5px 0;
   border: none;
-  border-radius: 1px;
-  border-bottom: 2px solid #eaeaea;
+  // border-radius: 1px;
+  border-bottom: 2px solid #bebebe;
   color: #000;
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   outline: none;
-  caret-color: #ea736d;
+  caret-color: var(--underline);
   //Для десктопа
   @media (min-width: 1200px) {
     padding: 5px 5px;
   }
   &:focus {
-    border-color: #ea736d;
+    border-color: var(--underline);
   }
 }
 .form-textarea {
@@ -361,7 +361,7 @@ span.required {
   font-weight: 500;
   resize: none;
   &:focus {
-    border-color: #ea736d;
+    border-color: var(--underline);
   }
 }
 input[type="submit"] {

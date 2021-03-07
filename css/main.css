@@ -2227,7 +2227,8 @@ button {
 }
 .reviews {
   margin: 0 auto;
-  padding: 15px 0 30px;
+  padding: 45px 0 45px;
+  height: 100vh;
   position: relative;
   -webkit-box-shadow: 0 10px 25px rgba(4, 19, 46, 0.65) inset, 0 -10px 25px rgba(4, 19, 46, 0.65) inset;
      -moz-box-shadow: 0 10px 25px rgba(4, 19, 46, 0.65) inset, 0 -10px 25px rgba(4, 19, 46, 0.65) inset;
@@ -2238,6 +2239,17 @@ button {
   background: radial-gradient(circle, rgba(0, 77, 136, 0.7) 0%, rgba(0, 77, 136, 0.7) 25%, rgba(0, 92, 162, 0.7) 35%, rgba(0, 77, 136, 0.7) 45%, rgba(0, 77, 136, 0.7) 55%, rgba(33, 101, 164, 0.7) 62%, rgba(0, 77, 136, 0.7) 65%, rgba(0, 77, 136, 0.7) 72%, rgba(29, 109, 185, 0.7) 87%, rgba(0, 77, 136, 0.7) 92%, rgba(72, 151, 226, 0.7) 100%);
   background-color: #031424;
 }
+@media (min-width: 768px) {
+  .reviews {
+    padding: 30px 0 30px;
+    height: unset;
+  }
+}
+@media (min-width: 1200px) {
+  .reviews {
+    padding: 15px 0 30px;
+  }
+}
 .reviews__title {
   margin-bottom: 45px;
   text-align: center;
@@ -2245,6 +2257,39 @@ button {
 @media (min-width: 768px) {
   .reviews__title {
     margin-bottom: 60px;
+  }
+}
+.reviews__title h2 {
+  font-size: 38px;
+}
+@media (min-width: 360px) {
+  .reviews__title h2 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 400px) {
+  .reviews__title h2 {
+    font-size: 46px;
+  }
+}
+@media (min-width: 420px) {
+  .reviews__title h2 {
+    font-size: 52px;
+  }
+}
+@media (min-width: 768px) {
+  .reviews__title h2 {
+    font-size: 90px;
+  }
+}
+@media (min-width: 1024px) {
+  .reviews__title h2 {
+    font-size: 100px;
+  }
+}
+@media (min-width: 1200px) {
+  .reviews__title h2 {
+    font-size: 120px;
   }
 }
 .reviews__clients {
@@ -2355,12 +2400,12 @@ button {
 }
 .reviews__clients-user-photo {
   margin-bottom: 20px;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   overflow: hidden;
-  -webkit-border-radius: 50px;
-     -moz-border-radius: 50px;
-          border-radius: 50px;
+  -webkit-border-radius: 45px;
+     -moz-border-radius: 45px;
+          border-radius: 45px;
 }
 .reviews__clients-user-photo img {
   width: 100%;
@@ -3216,7 +3261,7 @@ span.red {
 .fake-placeholder {
   position: absolute;
   top: 2px;
-  color: #bcbcbc;
+  color: #bebebe;
   font-family: "M PLUS 1p", sans-serif;
   font-size: 20px;
   font-weight: 700;
@@ -3243,7 +3288,7 @@ span.required {
 .fake-placeholder.active-field {
   top: -24px;
   font-size: 16px;
-  color: #ed9626;
+  color: var(--underline);
 }
 .fake-placeholder.active-field span.required {
   color: inherit;
@@ -3287,16 +3332,13 @@ span.required {
   width: 100%;
   padding: 5px 0;
   border: none;
-  -webkit-border-radius: 1px;
-     -moz-border-radius: 1px;
-          border-radius: 1px;
-  border-bottom: 2px solid #eaeaea;
+  border-bottom: 2px solid #bebebe;
   color: #000;
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   outline: none;
-  caret-color: #ea736d;
+  caret-color: var(--underline);
 }
 @media (min-width: 1200px) {
   .form-input {
@@ -3304,7 +3346,7 @@ span.required {
   }
 }
 .form-input:focus {
-  border-color: #ea736d;
+  border-color: var(--underline);
 }
 .form-textarea {
   height: 150px;
@@ -3313,7 +3355,7 @@ span.required {
   resize: none;
 }
 .form-textarea:focus {
-  border-color: #ea736d;
+  border-color: var(--underline);
 }
 input[type="submit"] {
   width: 100%;
