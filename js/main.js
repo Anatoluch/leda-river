@@ -77,6 +77,9 @@ $(window).scroll(function() {
       navSpeed: 800,
       dots: false,
       navText: ['', ''],
-      loop: true
+      loop: true,
+      autoplay:true,
+      autoplayTimeout:12000,
+      autoplayHoverPause:true
    });
    });
