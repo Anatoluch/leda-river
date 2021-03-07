@@ -52,7 +52,7 @@ if(galleryLink){
       link1.classList.toggle('link-1-hide');
       link2.classList.toggle('link-2-show');
    })
-   }
+   };
    /* Прокручивает страницу вверх при нажатии на кнопку */
 $(window).scroll(function() {
    var height = $(window).scrollTop();
@@ -83,7 +83,65 @@ $(window).scroll(function() {
                thisPlaceholder.classList.remove('active-field');
             }
          })
+      };
+   //Валидация формы обратной связи
+   $('.contact-form').validate({
+   rules: {
+      userName: {
+         required:true
+      },
+      email: {
+         required:true,
+         email:true
+      },
+      subject: {
+         required: false
+      },
+      message: {
+         required: true
       }
+   },
+   messages: {
+      userName: {
+         required: 'А как к Вам обращаться?!'
+      },
+      email: {
+         required: 'Обязательно укажите Ваш email!',
+         email: 'Введен некорректный адрес электронной почты!'
+      },
+      subject: {
+         required: 'Тема сообщения не указана!'
+      },
+      message: {
+         required: 'А где, собственно, текст Вашего сообщения?!'
+      }
+   },
+   submitHandler: function (form) {
+      ajaxFormSubmit();
+   }
+});
+   //Отправка данных формы обратной связи
+   	// Функция AJAX запрса на сервер
+
+      function ajaxFormSubmit() {
+
+         let string = $(".contact-form").serialize(); // Сохраняем данные введенные в форму в строку.
+   
+         //Формируем ajax запрос
+         $.ajax({
+            type: "POST", // Тип запроса - POST
+            url: "php/mail.php", // Куда отправляем запрос
+            data: string, // Какие даные отправляем, в данном случае отправляем переменную string
+   
+            // Функция если все прошло успешно
+            success: function (html) {
+               $(".contact-form").slideUp(800);
+               $('#answer').html(html);
+            }
+         });
+         // Чтобы по Submit больше ничего не выполнялось - делаем возврат false чтобы прервать цепочку срабатывания остальных функций
+         return false;
+      };
     //Кнопка "Наверх"  
    $("#back2Top").click(function(event) {
        event.preventDefault();
