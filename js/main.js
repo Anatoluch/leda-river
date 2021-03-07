@@ -70,4 +70,13 @@ $(window).scroll(function() {
        $("html, body").animate({ scrollTop: 0 }, "slow");
        return false;
    });
+   //Плагин owlCarusel
+   $(".owl-carousel").owlCarousel({
+      items: 1,
+      nav: true,
+      navSpeed: 800,
+      dots: false,
+      navText: ['', ''],
+      loop: true
+   });
    });
