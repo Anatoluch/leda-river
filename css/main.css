@@ -181,11 +181,11 @@ span::selection {
   }
 }
 .logo:hover {
-  -webkit-transform: scale(1.05);
-     -moz-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-       -o-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.05) !important;
+     -moz-transform: scale(1.05) !important;
+      -ms-transform: scale(1.05) !important;
+       -o-transform: scale(1.05) !important;
+          transform: scale(1.05) !important;
 }
 .logo a {
   color: var(--brand-blue);
