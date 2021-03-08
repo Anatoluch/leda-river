@@ -7,7 +7,7 @@ $c = true;
 
 // Save Basic Form parametrs
 $project_name = "Leda~River - сообщение с сайта!";
-$admin_email = "gotohunt@bk.ru";
+$admin_email = "leda-river@mail.ru";
 $email_from = "info@leda-river.ru";
 
 // Serialize form fields - that filled-in by User

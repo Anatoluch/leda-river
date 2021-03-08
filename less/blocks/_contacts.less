@@ -214,7 +214,7 @@
   }
 }
 .map-holder {
-  height: 360px;
+  height: 400px;
   //Для планшета
   @media (min-width: 768px) {
     display: none;
@@ -243,7 +243,7 @@
 .contact-form {
   width: 100%;
   height: 100%;
-  padding: 60px 15px 41px;
+  padding: 40px 10px 40px;
   box-shadow: 0 28px 100px #c2dbeb;
   background-color: #fff;
   z-index: 1;
@@ -333,11 +333,23 @@ span.required {
   }
 }
 .textarea-row {
-  margin-bottom: 14px;
+  margin-bottom: 15px;
+  //Для большого смартфона
+  @media (min-width: 360px) {
+    margin-bottom: 20px;
+  }
   //Для десктопа
   @media (min-width: 1200px) {
     margin-bottom: 40px;
   }
+}
+.checkbox-row {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .form-input {
   width: 100%;
@@ -368,6 +380,65 @@ span.required {
     border-color: var(--underline);
   }
 }
+.form-checkbox {
+  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+  //Для смартфона от 360px
+  @media (min-width: 360px) {
+    margin-right: 12px;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    margin-right: 15px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    width: 18px;
+    height: 18px;
+  }
+  //Для десктопа
+  @media (min-width: 1600px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+.agreement-text {
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: gray;
+  letter-spacing: -0.6px;
+  a {
+    color: gray;
+    text-decoration: underline;
+  }
+  //Для смартфона от 360px
+  @media (min-width: 360px) {
+    letter-spacing: -0.4px;
+    font-size: 13px;
+  }
+  //Для смартфона от 400px
+  @media (min-width: 400px) {
+    font-size: 15px;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    font-size: 12px;
+  }
+  //Для планшета Ipad Pro
+  @media (min-width: 1024px) {
+    font-size: 16px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    font-size: 17px;
+  }
+  //Для десктопа
+  @media (min-width: 1600px) {
+    font-size: 20px;
+  }
+}
 input[type="submit"] {
   width: 100%;
   height: 60px;
@@ -390,7 +461,7 @@ input[type="submit"] {
   }
 }
 label.error {
-  font-size: 12px;
+  font-size: 13px;
   color: #ff0000;
   font-family: sans-serif;
   font-weight: 500;
@@ -413,6 +484,42 @@ label.error {
   //Для планшета Ipad Pro
   @media (min-width: 1024px) {
     font-size: 16px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    font-size: 17px;
+  }
+  //Для десктопа
+  @media (min-width: 1600px) {
+    font-size: 20px;
+  }
+}
+#checkbox-error {
+  position: absolute;
+  top: 22px;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  text-align: center;
+  //Для смартфона от 360px
+  @media (min-width: 360px) {
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  //Для смартфона от 400px
+  @media (min-width: 400px) {
+    font-size: 14px;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    font-size: 12px;
+  }
+  //Для планшета Ipad Pro
+  @media (min-width: 1024px) {
+    font-size: 16px;
+    text-align: unset;
   }
   //Для десктопа
   @media (min-width: 1200px) {

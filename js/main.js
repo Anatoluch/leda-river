@@ -88,16 +88,19 @@ $(window).scroll(function() {
    $('.contact-form').validate({
    rules: {
       userName: {
-         required:true
+         required: true
       },
       email: {
-         required:true,
-         email:true
+         required: true,
+         email: true
       },
       subject: {
          required: false
       },
       message: {
+         required: true
+      },
+      checkbox: {
          required: true
       }
    },
@@ -114,6 +117,9 @@ $(window).scroll(function() {
       },
       message: {
          required: 'А где, собственно, текст Вашего сообщения?!'
+      },
+      checkbox: {
+         required: 'Чтобы отправить сообщение, нужно принять политику конфиденциальности!'
       }
    },
    submitHandler: function (form) {
