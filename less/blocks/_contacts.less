@@ -268,6 +268,10 @@
     padding: 80px 58px 41px;
     height: 100%;
   }
+    //Для десктопа
+    @media (min-width: 1600px) {
+      padding: 55px 58px 40px;
+    }
 }
 .form-item-row {
   position: relative;
@@ -277,10 +281,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  //Для планшета
-  @media (min-width: 768px) {
-    align-items: flex-start;
-  }
   .g-recaptcha {
     margin-bottom: 20px;
     transform: scale(0.8);
@@ -445,7 +445,7 @@ span.required {
   }
   //Для десктопа
   @media (min-width: 1600px) {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 input[type="submit"] {
