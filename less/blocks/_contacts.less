@@ -11,6 +11,7 @@
   @media (min-width: 1200px) {
     padding: 75px 0 75px;
   }
+
   .contacts-header {
     margin-bottom: 44px;
     position: relative;
@@ -213,8 +214,16 @@
     color: var(--red);
   }
 }
-.map-holder {
+.map-holder-mobile {
+  height: 300px;
+  //Для планшета
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+.map-holder-desctop {
   height: 400px;
+  display: none;
   //Для планшета
   @media (min-width: 768px) {
     display: none;
