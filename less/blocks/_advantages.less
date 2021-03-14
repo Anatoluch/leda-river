@@ -1,162 +1,154 @@
 .advantages-section {
-  margin: 0 auto;
-  padding: 30px 0 75px;
-  position: relative;
-  //Для планшета
-  @media (min-width: 768px) {
-    padding: 30px 0 120px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    padding: 0 0 75px;
-  }
-  &::before {
-    content: "";
-    position: absolute;
+    margin: 0 auto;
+    padding: 30px 0 75px;
+    position: relative;
     background-color: #fff;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    z-index: -1;
-  }
+    //Для планшета
+    @media (min-width: 768px) {
+        padding: 30px 0 120px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+        padding: 0 0 75px;
+    }
 }
 .advantages-section__title {
-  text-align: center;
-  margin-bottom: 30px;
-  z-index: 1;
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 1;
 }
 .section-title-3 {
-  display: inline-block;
-  font-size: 33px;
-  font-family: serif;
-  color: var(--main-blue);
-  font-style: italic;
-  line-height: 1.2;
-  text-align: center;
-  //Для большого смартфона
-  @media (min-width: 360px) {
-    font-size: 38px;
-  }
-  //Для большого смартфона
-  @media (min-width: 400px) {
-    font-size: 40px;
-  }
-  //Для большого смартфона
-  @media (min-width: 420px) {
-    font-size: 44px;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    margin-bottom: 30px;
-    font-size: 52px;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    font-size: 64px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    font-size: 74px;
+    display: inline-block;
+    font-size: 33px;
+    font-family: serif;
+    color: var(--main-blue);
+    font-style: italic;
     line-height: 1.2;
-  }
+    text-align: center;
+    //Для большого смартфона
+    @media (min-width: 360px) {
+        font-size: 38px;
+    }
+    //Для большого смартфона
+    @media (min-width: 400px) {
+        font-size: 40px;
+    }
+    //Для большого смартфона
+    @media (min-width: 420px) {
+        font-size: 44px;
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+        margin-bottom: 30px;
+        font-size: 52px;
+    }
+    //Для большого планшета
+    @media (min-width: 1024px) {
+        font-size: 64px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+        font-size: 74px;
+        line-height: 1.2;
+    }
 }
 .advantages-section__benefits {
-  margin: 0 auto;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
-  //Для планшета
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    max-width: 910px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    max-width: 1600px;
-    flex-wrap: nowrap;
-  }
+    margin: 0 auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    //Для планшета
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    //Для большого планшета
+    @media (min-width: 1024px) {
+        max-width: 910px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+        max-width: 1600px;
+        flex-wrap: nowrap;
+    }
 }
 .benefit {
-  padding: 0 15px;
-  margin-bottom: 30px;
-  width: 100%;
-  text-align: center;
-  z-index: 1;
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    width: 50%;
-    &:last-of-type,
-    &:nth-of-type(3) {
-      margin-bottom: 0;
-    }
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    margin-bottom: 0;
-    padding: 0 5px;
-    width: 25%;
-  }
-  //Для десктопа
-  @media (min-width: 1366px) {
     padding: 0 15px;
-  }
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+        width: 50%;
+        &:last-of-type,
+        &:nth-of-type(3) {
+            margin-bottom: 0;
+        }
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+        margin-bottom: 0;
+        padding: 0 5px;
+        width: 25%;
+    }
+    //Для десктопа
+    @media (min-width: 1366px) {
+        padding: 0 15px;
+    }
 }
 .benefit__img {
-  margin: 0 auto 15px;
-  svg {
-    width: 50px;
-    height: 50px;
-    color: var(--brand-blue);
-  }
+    margin: 0 auto 15px;
+    svg {
+        width: 50px;
+        height: 50px;
+        color: var(--brand-blue);
+    }
 }
 .benefit-heading {
-  margin-bottom: 12px;
-  font-size: 20px;
-  font-family: sans-serif;
-  font-weight: 700;
-  color: var(--brand-blue);
-  line-height: 1.2;
-  z-index: 1;
-  //Для планшета
-  @media (min-width: 768px) {
-    font-size: 23px;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    font-size: 28px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
+    margin-bottom: 12px;
     font-size: 20px;
-    letter-spacing: -0.5px;
-  }
-  //Для десктопа
-  @media (min-width: 1366px) {
-    letter-spacing: unset;
-  }
+    font-family: sans-serif;
+    font-weight: 700;
+    color: var(--brand-blue);
+    line-height: 1.2;
+    z-index: 1;
+    //Для планшета
+    @media (min-width: 768px) {
+        font-size: 23px;
+    }
+    //Для большого планшета
+    @media (min-width: 1024px) {
+        font-size: 28px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+        font-size: 20px;
+        letter-spacing: -0.5px;
+    }
+    //Для десктопа
+    @media (min-width: 1366px) {
+        letter-spacing: unset;
+    }
 }
 .benefit__text {
-  font-family: sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5;
-  //Для планшета
-  @media (min-width: 768px) {
-    font-size: 20px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
+    font-family: sans-serif;
     font-size: 18px;
-  }
+    font-weight: 400;
+    line-height: 1.5;
+    //Для планшета
+    @media (min-width: 768px) {
+        font-size: 20px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+        font-size: 18px;
+    }
 }
