@@ -69,6 +69,12 @@
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  a {
+    &:focus {
+      outline: none;
+      transform: scale(1.02);
+    }
+  }
   img {
     transition: 0.3s ease-in-out;
     box-shadow: 0 3px 3px rgba(18, 30, 51, 0.6);

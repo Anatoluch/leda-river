@@ -1,0 +1,33 @@
+User-Agent: Yandex
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /js/
+Disallow: /less/
+Disallow: /libs/
+Disallow: /php/
+Disallow: /index.html
+Allow: /img/
+Allow: /video/
+Host: https://leda-river.ru
+Crawl-Delay: 10
+Disallow: /*?
+
+User-Agent: *
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /js/
+Disallow: /less/
+Disallow: /libs/
+Disallow: /php/
+Disallow: /index.html
+Allow: /img/
+Allow: /video/
+Host: https://leda-river.ru
+Crawl-Delay: 10
+Disallow: /*?
+
+Sitemap: https://leda-river.ru/sitemap.xml

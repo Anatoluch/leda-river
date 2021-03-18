@@ -152,11 +152,21 @@
     border-radius: 50%;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
   }
+  &:focus {
+    outline: none;
+    filter: drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.3))
+      drop-shadow(2px 2px 8px rgba(0, 0, 255, 0.7))
+      drop-shadow(-2px -2px 8px rgba(131, 170, 241, 0.7));
+  }
 }
 .header-social__icon > svg {
   color: #fff;
   width: 20px;
   height: 20px;
+}
+.icon-item .vib-head {
+  width: 19px;
+  height: 19px;
 }
 /*--Универсальные круглые иконки контактов--*/
 .insta-h-a {
@@ -215,6 +225,18 @@
     transform: scale(1.25);
   }
 }
+.vib-h-a {
+  background-color: var(--brand-blue);
+  &:hover {
+    background-color: #665cac;
+  }
+}
+.vib-head {
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.15);
+  }
+}
 //---/Социальные иконки хедера
 .header-content {
   display: flex;
@@ -231,6 +253,14 @@
   //Для планшета
   @media (min-width: 768px) {
     padding: 10px 10px 0;
+    border-radius: 0 0 70px 25px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
   //Для планшета
   @media (min-width: 960px) {
@@ -239,12 +269,10 @@
 
   //Для десктопа
   @media (min-width: 1200px) {
-    margin: 0px 0px 15px 14px;
-    padding: 30px 12px 15px 12px;
-    width: 47.4%;
-    border-radius: 0px 0px 50px 100px;
-    background-color: #fff;
-    box-shadow: 0px 38px 40px #77a2db;
+    // margin: 0px 0px 0px 14px;
+    padding: 30px 12px 40px 12px;
+    width: 48%;
+    filter: drop-shadow(-30px 50px 20px rgba(119, 162, 219, 0.3));
   }
   p {
     margin-bottom: 5px;
@@ -293,7 +321,7 @@
       }
       //Для десктопа
       @media (min-width: 1200px) {
-        margin-bottom: 35px;
+        margin-bottom: 40px;
       }
     }
     span {
@@ -356,6 +384,7 @@
       bottom: -10%;
       right: -9%;
       z-index: -1;
+      border-radius: 25px;
       background-image: linear-gradient(
         to top,
         rgba(205, 228, 255, 0) 0%,
@@ -363,6 +392,8 @@
         rgba(172, 211, 255, 0.25) 60%,
         rgba(244, 248, 249, 0) 100%
       );
+      filter: drop-shadow(0px 0px 5px rgba(139, 165, 172, 0.35));
+      backdrop-filter: blur(2px) grayscale(0.1);
     }
     //Для планшета
     @media (min-width: 960px) {
@@ -388,7 +419,7 @@
   }
   //Для десктопа
   @media (min-width: 1200px) {
-    margin-top: -100px;
+    margin-top: -120px;
   }
   img {
     transform: scale(1.23);

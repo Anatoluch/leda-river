@@ -53,6 +53,11 @@ body.noscroll {
 #page-nav li a {
   display: block;
   height: 100%;
+  &:focus {
+    outline: none;
+    filter: drop-shadow(0px 0px 3px #fff)
+      drop-shadow(0px 0px 5px rgb(241, 124, 28));
+  }
 }
 #page-nav li.active-nav {
   background-color: rgb(241, 124, 28);
@@ -151,6 +156,13 @@ span::selection {
     transition: color 0.3s ease-in;
     &:hover {
       color: var(--main-blue);
+    }
+    &:focus {
+      outline: none;
+      filter: drop-shadow(0px 0px 2px #ffffff)
+        drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+        drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+        drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
     }
   }
 }
@@ -421,6 +433,13 @@ button {
     transform: scale(1.03);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
   }
+  &:focus {
+    outline: none;
+    filter: drop-shadow(0px 0px 2px #ffffff)
+      drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+      drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+      drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+  }
 }
 .btn.btn--transp {
   padding-left: 20px;
@@ -468,6 +487,13 @@ button {
     transform: scale(1.03);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
   }
+  &:focus {
+    outline: none;
+    filter: drop-shadow(0px 0px 2px #ffffff)
+      drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+      drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+      drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+  }
 }
 //---Универсальные социальные иконки
 .social-icons__title {
@@ -514,11 +540,22 @@ button {
     border-radius: 50%;
     box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.5);
   }
+  &:focus {
+    outline: none;
+    filter: drop-shadow(0px 0px 2px #ffffff)
+      drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.35))
+      drop-shadow(2px 2px 6px rgba(80, 80, 253, 0.6))
+      drop-shadow(-2px -2px 6px rgba(100, 167, 255, 0.6));
+  }
 }
 .social-icons__link > svg {
   color: #fff;
   width: 36px;
   height: 36px;
+}
+svg.social-icons__vib {
+  width: 34px;
+  height: 34px;
 }
 .insta {
   background-color: #d6249f;
@@ -563,6 +600,18 @@ button {
     transform: scale(1.25) translate(27%, -40%);
     filter: drop-shadow(0 2px 2px #1c2c3f);
     z-index: 2;
+  }
+}
+.vib {
+  background-color: #665cac;
+  box-shadow: 0px 0px 10px #fff;
+  transition: 0.3s ease-in;
+}
+.social-icons__vib {
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.1) rotate(360deg);
+    filter: drop-shadow(0 2px 2px rgba(18, 14, 37, 0.7));
   }
 }
 .vk {
