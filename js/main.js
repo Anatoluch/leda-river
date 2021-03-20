@@ -166,4 +166,8 @@ $(window).scroll(function() {
       autoplayTimeout:12000,
       autoplayHoverPause:true
    });
+   //Защита номера телефона от спама
+   $('#nashphone1').click(function() {
+      $('#nashphone1').html('<a href="tel:+79181639644">+7(918) 163 96 44</a>');
+      });
    });
