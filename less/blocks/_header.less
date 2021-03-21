@@ -66,7 +66,7 @@
   }
 }
 .header-nav__item {
-  margin-right: 20px;
+  margin-right: 24px;
   &:last-child {
     margin-right: 0;
   }
@@ -77,22 +77,30 @@
   font-family: serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 25px;
   line-height: 1.2;
   letter-spacing: -1px;
   //Для десктопа
   @media (min-width: 1366px) {
+    font-size: 32px;
+  }
+  //Для десктопа
+  @media (min-width: 1600px) {
     font-size: 34px;
   }
   //Для десктопа
   @media (min-width: 1920px) {
     font-size: 36px;
   }
+  //Для десктопа
+  @media (min-width: 2500px) {
+    font-size: 38px;
+  }
   &::after {
     content: "";
     position: absolute;
     width: 0;
-    bottom: 7px;
+    bottom: 5px;
     left: 0;
     height: 2px;
     background-color: var(--underline);
@@ -114,16 +122,17 @@
   }
 }
 //Активная ссылка
-// .header-nav__link.header-nav__link--active::after {
-//   content: "";
-//   position: absolute;
-//   width: 105%;
-//   bottom: 9px;
-//   left: 0;
-//   height: 2px;
-//   background-color: var(--underline);
-//   z-index: -1;
-// }
+.header-nav__link.header-nav__link--active::after {
+  content: "";
+  position: absolute;
+  width: 102%;
+  bottom: 5px;
+  left: 0;
+  height: 2px;
+  background-color: var(--underline);
+  z-index: -1;
+  pointer-events: none;
+}
 //---Социальные иконки хедера
 .header-social__row {
   display: none;

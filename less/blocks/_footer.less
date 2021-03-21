@@ -77,11 +77,13 @@
     margin-right: 0;
   }
   a {
+    position: relative;
     font-family: sans-serif;
     font-size: 18px;
     font-weight: 300;
     color: rgb(139, 191, 226);
     line-height: 1;
+    z-index: 1;
     &:hover,
     &:active {
       color: #fff;
@@ -94,6 +96,21 @@
         drop-shadow(-2px -2px 5px rgba(131, 170, 241, 0.4));
     }
   }
+}
+.footer__nav-link.footer__nav-link--active {
+  color: #fff;
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 102%;
+  //   height: 1px;
+  //   color: #fff;
+  //   background-color: #fff;
+  //   z-index: -1;
+  //   pointer-events: none;
+  // }
 }
 .footer__info {
   a {
