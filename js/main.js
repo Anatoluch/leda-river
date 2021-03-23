@@ -56,7 +56,7 @@ if(galleryLink){
    /* Прокручивает страницу вверх при нажатии на кнопку */
 $(window).scroll(function() {
    var height = $(window).scrollTop();
-   if($(this).width() < 1200){
+   if($(this).width() > 280){
       if( $(this).scrollTop() > 350 ){
           $('#back2Top').fadeIn();
       }
