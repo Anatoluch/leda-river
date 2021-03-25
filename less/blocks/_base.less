@@ -8,13 +8,11 @@
   box-sizing: border-box;
 }
 html {
-  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 body {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
   font-weight: 400;
   font-size: 16px;
   background-color: #fff;
@@ -645,8 +643,8 @@ svg.social-icons__vib {
 }
 /*Кнопка наверх*/
 #back2Top {
-  width: 45px;
-  line-height: 45px;
+  width: 48px;
+  line-height: 48px;
   overflow: hidden;
   z-index: 999;
   display: none;
@@ -658,7 +656,7 @@ svg.social-icons__vib {
   color: rgb(241, 124, 28);
   filter: drop-shadow(-4px 4px 3px rgba(0, 0, 0, 0.6));
   text-align: center;
-  font-size: 45px;
+  font-size: 48px;
   text-decoration: none;
   &:hover {
     color: var(--underline);
@@ -667,5 +665,53 @@ svg.social-icons__vib {
   &:active {
     color: var(--underline);
     filter: drop-shadow(0 0 3px #fff);
+  }
+  &:focus {
+    outline: none;
+    filter: drop-shadow(0px 0px 2px #ffffff)
+      drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+      drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+      drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+  }
+}
+.gradient-quote {
+  margin: 0 auto 20px;
+  padding: 12px 5px 2px;
+  background-color: #7eb4e6;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(233, 242, 255, 0.5) 5%,
+    rgba(221, 235, 255, 1) 10%,
+    rgba(198, 218, 245, 1) 50%,
+    rgba(221, 235, 255, 1) 90%,
+    rgba(233, 242, 255, 0.5) 95%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: drop-shadow(0 3px 5px rgba(24, 55, 83, 0.45));
+  //Для планшета
+  @media (min-width: 768px) {
+    padding: 15px 15px 5px;
+  }
+  //Для большого планшета
+  @media (min-width: 1024px) {
+    padding: 20px 15px 5px;
+  }
+  p {
+    font-family: sans-serif;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    //Для планшета
+    @media (min-width: 768px) {
+      font-size: 18px !important;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      font-size: 22px !important;
+    }
+  }
+  span {
+    color: var(--brand-blue);
+    font-weight: 700;
   }
 }
