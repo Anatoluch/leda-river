@@ -22,28 +22,6 @@
     padding: 8px 0 0;
   }
 }
-.container.container--enlarge {
-  max-width: 100%;
-  padding-left: 18px;
-  padding-right: 18px;
-  //Для планшета
-  @media (min-width: 768px) {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    padding-left: 15px;
-    padding-right: 15px;
-    max-width: 1430px;
-  }
-  //Для десктопа
-  @media (min-width: 1600px) {
-    padding-left: 15px;
-    padding-right: 15px;
-    max-width: 1600px;
-  }
-}
 .header-nav {
   display: flex;
   justify-content: space-between;
@@ -55,6 +33,81 @@
   //Для планшета
   @media (min-width: 960px) {
     margin-bottom: 0;
+  }
+}
+#nav-wrapper {
+  display: none;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header-nav-fixed {
+  padding: 0 15px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 4;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+  //Для смартфона
+  @media (min-width: 480px) {
+    padding: 0 20px;
+  }
+  //Для планшета
+  @media (min-width: 960px) {
+    padding: 0 30px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    display: none;
+  }
+  .logo-fixed {
+    display: inline-block;
+    position: relative;
+    z-index: 5;
+    font-size: 30px;
+    font-family: serif;
+    font-style: italic;
+    color: var(--brand-blue);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -3.2px;
+    transition: transform 0.3s;
+    //Для большого смартфона
+    @media (min-width: 400px) {
+      font-size: 32px;
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+      font-size: 36px;
+    }
+    //Для большого планшета
+    @media (min-width: 1024px) {
+      font-size: 38px;
+    }
+    &:hover {
+      transform: scale(1.03) !important;
+    }
+    a {
+      color: var(--brand-blue);
+      transition: color 0.3s ease-in;
+      &:hover {
+        color: var(--main-blue);
+      }
+      &:focus {
+        outline: none;
+        filter: drop-shadow(0px 0px 2px #ffffff)
+          drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+          drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+          drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+      }
+    }
   }
 }
 .header-nav__list {

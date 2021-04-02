@@ -1,0 +1,87 @@
+.media-page {
+  margin: 0 auto;
+  position: relative;
+  padding: 15px 0 60px;
+  min-height: calc(~"100vh - 257px");
+  background-color: #f4f8f9;
+  //Для планшета
+  @media (min-width: 768px) {
+    padding: 20px 0 85px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    padding: 30px 0 75px;
+  }
+
+  .media-page__title {
+    margin-bottom: 30px;
+    position: relative;
+    left: 3px;
+    text-align: center;
+    //Для планшета
+    @media (min-width: 768px) {
+      margin-bottom: 36px;
+      position: relative;
+      left: 20px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      margin-bottom: 45px;
+      position: static;
+    }
+    &::after {
+      bottom: 2px;
+      left: -3px;
+      right: -3px;
+      height: 12px;
+      //Для планшета
+      @media (min-width: 768px) {
+        bottom: 5px;
+      }
+      //Для десктопа
+      @media (min-width: 1200px) {
+        bottom: 6px;
+      }
+    }
+  }
+}
+.media-page__intro {
+  margin: 0 auto 45px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(221, 235, 255, 1) 25%,
+    rgba(221, 235, 255, 1) 50%,
+    rgba(221, 235, 255, 1) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: drop-shadow(0 3px 5px rgba(24, 55, 83, 0.45));
+  p {
+    font-family: serif;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.1px;
+    text-indent: 15px;
+    text-align: center;
+    //Для планшета
+    @media (min-width: 768px) {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+    //Для планшета Ipad Pro
+    @media (min-width: 1024px) {
+      letter-spacing: 0;
+      font-size: 22px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      font-size: 26px;
+    }
+    //Для десктопа
+    @media (min-width: 1600px) {
+      font-size: 28px;
+    }
+  }
+}

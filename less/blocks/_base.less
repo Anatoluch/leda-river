@@ -220,22 +220,57 @@ button {
     padding: 0 30px;
   }
   //Для планшета
-  @media (min-width: 769px) {
+  @media (min-width: 840px) {
+    max-width: 840px;
+    padding: 0 30px;
+  }
+  //Для большого планшета
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
     max-width: 1140px;
+    padding: 0;
+  }
+}
+.container.container--enlarge {
+  width: 100%;
+  padding: 0 15px;
+  max-width: 320px;
+  //Для смартфона
+  @media (min-width: 330px) {
+    max-width: 330px;
+  }
+  //Для смартфона
+  @media (min-width: 340px) {
+    max-width: 340px;
+  }
+  //Для большого смартфона
+  @media (min-width: 360px) {
+    max-width: 100%;
+  }
+  //Для большого смартфона
+  @media (min-width: 420px) {
+    // max-width: 100%;
+    padding: 0 20px;
+  }
+  //Для большого смартфона
+  @media (min-width: 428px) {
+    padding: 0 30px;
+    // max-width: 100%;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
     padding: 0 30px;
   }
   //Для десктопа
   @media (min-width: 1200px) {
-    padding: 0;
+    padding: 0 15px;
+    max-width: 1430px;
   }
-}
-.container.container--1600 {
   //Для десктопа
   @media (min-width: 1600px) {
-    max-width: 1540px;
-  }
-  //Для десктопа
-  @media (min-width: 1920px) {
     max-width: 1600px;
   }
 }
@@ -639,6 +674,13 @@ svg.social-icons__vib {
   &:active {
     color: rgb(241, 124, 28);
     border-bottom: 1px solid rgb(241, 124, 28);
+  }
+  &:focus {
+    outline: none;
+    filter: drop-shadow(0px 0px 1px #ffffff)
+      drop-shadow(0px 0px 8px rgba(255, 0, 255, 0.15))
+      drop-shadow(2px 2px 5px rgba(0, 0, 255, 0.4))
+      drop-shadow(-2px -2px 5px rgba(131, 170, 241, 0.4));
   }
 }
 /*Кнопка наверх*/

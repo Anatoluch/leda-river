@@ -13,6 +13,7 @@ $('#page-nav').onePageNav({
 });
 //"Гамбургер-меню"
 const toggleMenu = document.querySelector('.toggle-menu');//Иконка меню "Гамбургер"
+const toggleMenuFixed = document.querySelector('.toggle-menu-fixed');//Иконка меню "Гамбургер"(фиксированное меню)
 const mobMenu = document.querySelector('.mobile-menu');// Плашка под мобильное меню
 const overlay = document.querySelector('#overlay');// overlay
 const bodyEl = document.body;
@@ -20,6 +21,13 @@ const bodyEl = document.body;
 //Сценарий события клик по "гамбургеру" (появление/исчезание моб. меню, оверлея)
 toggleMenu.addEventListener('click', function(){
    this.classList.toggle('active');
+   mobMenu.classList.toggle('active');
+   overlay.classList.toggle('active');
+   bodyEl.classList.toggle('noscroll');
+});
+toggleMenuFixed.addEventListener('click', function(){
+   this.classList.toggle('active');
+   toggleMenu.classList.toggle('active');
    mobMenu.classList.toggle('active');
    overlay.classList.toggle('active');
    bodyEl.classList.toggle('noscroll');
@@ -39,10 +47,10 @@ overlay.addEventListener('click', function(){
    bodyEl.classList.remove('noscroll');
 });
 // Скрыть часть фото на мобильных устройствах \
-const galleryLink = document.querySelector('.gallery-link');//Ссылка показать/скрыть
-const photo = document.querySelectorAll('.hide-photo');//фотокарточка
-const link1 = document.querySelector('.link-1');// ссылка "показать все"
-const link2 = document.querySelector('.link-2');// ссылка "скрыть"
+   const galleryLink = document.querySelector('.gallery-link');//Ссылка показать/скрыть
+   const photo = document.querySelectorAll('.hide-photo');//фотокарточка
+   const link1 = document.querySelector('.link-1');// ссылка "показать все"
+   const link2 = document.querySelector('.link-2');// ссылка "скрыть"
 
 if(galleryLink){
    galleryLink.addEventListener('click', function(){
@@ -53,11 +61,26 @@ if(galleryLink){
       link2.classList.toggle('link-2-show');
    })
    };
-   /* Прокручивает страницу вверх при нажатии на кнопку */
+   // Скрыть часть фото для мобильных устройств (Галерея в статье)
+   const artGalleryLink = document.querySelector('.article-gallery-link');//Ссылка показать/скрыть
+   const artPhoto = document.querySelectorAll('.hide-article-photo');//фотокарточка
+   const showLink = document.querySelector('.show-link');// ссылка "показать все"
+   const hideLink = document.querySelector('.hide-link');// ссылка "скрыть"
+
+if(artGalleryLink){
+   artGalleryLink.addEventListener('click', function(){
+      for(var i = 0; i < artPhoto.length; i++) {
+         artPhoto[i].classList.toggle('article__photo');
+      }
+      showLink.classList.toggle('show-link-hide');
+      hideLink.classList.toggle('hide-link-show');
+   })
+   };
+   /* Показ кнопки "наверх" */
 $(window).scroll(function() {
    var height = $(window).scrollTop();
    if($(this).width() > 280){
-      if( $(this).scrollTop() > 350 ){
+      if( $(this).scrollTop() > 300 ){
           $('#back2Top').fadeIn();
       }
       else{
@@ -150,11 +173,39 @@ $(window).scroll(function() {
       };
     //Кнопка "Наверх"  
    $("#back2Top").click(function(event) {
-       event.preventDefault();
-       $("html, body").animate({ scrollTop: 0 }, "slow");
-       return false;
+      event.preventDefault();
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
    });
-   //Плагин owlCarusel
+   //Защита номера телефона от спама
+   $('#phone').click(function() {
+      $('#phone').html('<a href="tel:+79181639644">+7(918) 163 96 44</a>');
+      });
+   //Замена картинки карты на интерактивную версию (для мобильных и ПК)
+   const mapChange = document.querySelector('.map-overlay'); // Оболочка
+   const fakeMap = document.querySelector('.fake-map'); // Изображение с картой
+   const mapHolderMob = document.querySelector('.map-holder-mob'); // Блок со встроенной картой для мобил
+   const mapHolderPc = document.querySelector('.map-holder-pc'); // Блок со встроенной картой для ПК
+
+   //Сценарий события клик по оболочке (замена изображения на интерактив)
+   mapChange.addEventListener('click', function(){
+      fakeMap.classList.add('hide');
+      mapHolderMob.classList.add('show-mob');
+      mapHolderPc.classList.add('show-pc');
+   });
+
+      //Замена картинки карты на интерактивную версию (для планшета)
+      const mapChangeTab = document.querySelector('.map-overlay-tab'); // Оболочка
+      const fakeMapTab = document.querySelector('.fake-map-tab'); // Изображение с картой
+      const mapHolderTab = document.querySelector('.map-holder-tab'); // Блок со встроенной картой
+
+   
+      //Сценарий события клик по оболочке (замена изображения на интерактив)
+      mapChangeTab.addEventListener('click', function(){
+         fakeMapTab.classList.add('hide');
+         mapHolderTab.classList.add('show-tab');
+      });
+   //Плагин owlCarusel (Отзывы)
    $(".owl-carousel").owlCarousel({
       items: 1,
       nav: true,
@@ -166,8 +217,4 @@ $(window).scroll(function() {
       autoplayTimeout:12000,
       autoplayHoverPause:true
    });
-   //Защита номера телефона от спама
-   $('#nashphone1').click(function() {
-      $('#nashphone1').html('<a href="tel:+79181639644">+7(918) 163 96 44</a>');
-      });
-   });
+   })

@@ -10,11 +10,10 @@
    <link rel="stylesheet" href="./fonts/mplus1p/mplus1p.css">
    <link rel="stylesheet" href="./fonts/ltr46/ltr46.css">
    <link rel="stylesheet" type="text/css" href="./libs/fancybox/jquery.fancybox.min.css">
-   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
    <link rel="stylesheet" href="libs/owlcarousel2/assets/owl.carousel.min.css">
-   <script src="https://www.google.com/recaptcha/api.js"></script>
-   <link rel="stylesheet" href="./css/main.css">
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon"/>
+   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
    <!---Верхнее меню для мобилок--->
@@ -28,7 +27,7 @@
             <a class="mob-nav-link" href="#about">О катере</a>
          </li>
          <li class="mob-nav-item">
-            <a class="mob-nav-link" href="#media">Фото и видео</a>
+            <a class="mob-nav-link" href="media.html">Фото и видео</a>
          </li>
          <li class="mob-nav-item">
             <a class="mob-nav-link" href="#reviews">Отзывы</a>
@@ -37,7 +36,7 @@
             <a class="mob-nav-link" href="#price">Расценки</a>
          </li>
          <li class="mob-nav-item">
-            <a class="mob-nav-link" href="#contacts">Контакты</a>
+            <a class="mob-nav-link" href="contacts.html">Контакты</a>
          </li>
          <li class="mob-nav-item">
             <a class="mob-nav-link" href="blog.html">Блог</a>
@@ -118,7 +117,7 @@
                   <a href="#about" class="header-nav__link">О катере</a>
                </li>
                <li class="header-nav__item">
-                  <a href="#media" class="header-nav__link">Фото и видео</a>
+                  <a href="media.html" class="header-nav__link">Фото и видео</a>
                </li>
                <li class="header-nav__item">
                   <a href="#reviews" class="header-nav__link">Отзывы</a>
@@ -127,7 +126,7 @@
                   <a href="#price" class="header-nav__link">Расценки</a>
                </li>
                <li class="header-nav__item">
-                  <a href="#contacts" class="header-nav__link">Контакты</a>
+                  <a href="contacts.html" class="header-nav__link">Контакты</a>
                </li>
                <li class="header-nav__item">
                   <a href="blog.html" class="header-nav__link">Блог</a>
@@ -167,6 +166,18 @@
             <div class="toggle-menu" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="3000"><span></span></div>
             <!--/Меню "Гамбургер" для планшета и мобилок-->
          </div>
+         <!--прилипающее меню для мобильных и планшетов-->
+         <div id="nav-wrapper">
+            <div class="header-nav-fixed">
+               <div class="logo-fixed">
+                  <a href="index.html">Leda~River</a>
+               </div>
+               <!--Меню "Гамбургер" для планшета и мобилок-->
+               <div class="toggle-menu-fixed"><span></span></div>
+               <!--/Меню "Гамбургер" для планшета и мобилок-->
+            </div>
+         </div>
+         <!--/прилипающее меню для мобильных и планшетов-->
       </div>
       <div class="container">
          <div class="header-content">
@@ -177,17 +188,17 @@
                <p>Окунитесь в кристально-чистые воды открытого Чёрного моря у грота <span>Дианы</span>, рядом со знаменитым пляжем <span>Баунти</span>, неторопливо наслаждаясь каждым мгновением в спокойной и непринужденой обстановке, вдали от шума и суеты.</p>
                <div class="header-btn-row">
                   <a class="btn" href="#about">О катере</a>
-                  <a class="btn btn--transp" href="#contacts">Контакты</a>
+                  <a class="btn btn--transp" href="contacts.html">Контакты</a>
                </div>
             </div>
             <div class="header-content__img">
-               <img src="./img/header-img.png" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/header-img.png" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </div>
          </div>
       </div>
       <!--Фоновая картинка шапки-->
-      <div class="header-bg-row" data-aos="zoom-out"  data-aos-delay="50" data-aos-duration="800">
-         <img src="./img/header-bg.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+      <div class="header-bg-row" data-aos-delay="50" data-aos-duration="800">
+         <img src="./img/header-bg.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
       </div>
       <!--Фоновая картинка шапки-->
    </header>
@@ -200,7 +211,7 @@
                <h3 class="section-title-3">4 причины отдохнуть с нами:</h3>
             </div>
          </div>
-            <div class="advantages-section__benefits" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1200">
+            <div class="advantages-section__benefits" data-aos="fade-up" data-aos-duration="1000">
                <div class="benefit">
                   <div class="benefit__img">
                      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cocktail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M296 464h-56V338.78l168.74-168.73c15.52-15.52 4.53-42.05-17.42-42.05H24.68c-21.95 0-32.94 26.53-17.42 42.05L176 338.78V464h-56c-22.09 0-40 17.91-40 40 0 4.42 3.58 8 8 8h240c4.42 0 8-3.58 8-8 0-22.09-17.91-40-40-40zM432 0c-62.61 0-115.35 40.2-135.18 96h52.54c16.65-28.55 47.27-48 82.64-48 52.93 0 96 43.06 96 96s-43.07 96-96 96c-14.04 0-27.29-3.2-39.32-8.64l-35.26 35.26C379.23 279.92 404.59 288 432 288c79.53 0 144-64.47 144-144S511.53 0 432 0z"></path></svg>
@@ -255,7 +266,7 @@
                <h2 class="section-title section-title--white">О катере</h2>
             </div>
             <div class="yacht__content">
-               <div class="yacht__desc" data-aos="zoom-out" data-aos-delay="50" data-aos-duration="1500">
+               <div class="yacht__desc">
                   <h4 class="title-4 title-4--white">Оборудование и комфорт:</h4>
                   <ul class="yacht__desc-list">
                      <li class="yacht__desc-item">флайбридж для загара и прыжков в воду;</li>
@@ -308,8 +319,8 @@
                   </ul>
                   <!--/Универсальные социальные иконки-->
                </div>
-               <div class="yacht__img" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1500">
-                  <img src="./img/yacht-img.png" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <div class="yacht__img">
+                  <img src="./img/yacht-img.png" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
                </div>
             </div>
          </div>
@@ -326,129 +337,84 @@
             <div class="gallery-section__title">
                <h2 class="section-title bottom-line">Фото&nbsp;и&nbsp;видео</h2>
             </div>
-            <div class="gallery-section__title-small" data-aos="zoom-in-up" data-aos-delay="50" data-aos-duration="1500">
+            <div class="gallery-section__title-small">
                <h3 id="photos" class="gallery-section__title-3">Фото</h3>
             </div>
          </div>
-         <div class="gallery-section__content" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000">
+         <div class="gallery-section__content">
             <a class="photo" data-fancybox="gallery" href="./img/photo/full-size/photo-1.webp">
-               <img src="./img/photo/thumb/photo-01-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-01-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
             <a class="photo" data-fancybox="gallery" href="./img/photo/full-size/photo-2.webp">
-               <img src="./img/photo/thumb/photo-02-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-02-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
             <a class="photo" data-fancybox="gallery" href="./img/photo/full-size/photo-3.webp">
-               <img src="./img/photo/thumb/photo-03-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-03-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
             <a class="photo" data-fancybox="gallery" href="./img/photo/full-size/photo-4.webp">
-               <img src="./img/photo/thumb/photo-04-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-04-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
             <a class="photo" data-fancybox="gallery" href="./img/photo/full-size/photo-5.webp">
-               <img src="./img/photo/thumb/photo-05-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-05-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
             <a id="focus" class="photo" data-fancybox="gallery" href="./img/photo/full-size/photo-6.webp">
-               <img src="./img/photo/thumb/photo-06-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-06-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
             <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-7.webp">
-               <img src="./img/photo/thumb/photo-07-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-07-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
             <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-8.webp">
-               <img src="./img/photo/thumb/photo-08-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-08-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
             <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-9.webp">
-               <img src="./img/photo/thumb/photo-09-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-09-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
             <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-10.webp">
-               <img src="./img/photo/thumb/photo-10-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-10-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
             <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-11.webp">
-               <img src="./img/photo/thumb/photo-11-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-11-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
             <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-12.webp">
-               <img src="./img/photo/thumb/photo-12-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-13.webp">
-               <img src="./img/photo/thumb/photo-13-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-14.webp">
-               <img src="./img/photo/thumb/photo-14-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-15.webp">
-               <img src="./img/photo/thumb/photo-15-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-16.webp">
-               <img src="./img/photo/thumb/photo-16-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-17.webp">
-               <img src="./img/photo/thumb/photo-17-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-18.webp">
-               <img src="./img/photo/thumb/photo-18-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-19.webp">
-               <img src="./img/photo/thumb/photo-19-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-20.webp">
-               <img src="./img/photo/thumb/photo-20-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-21.webp">
-               <img src="./img/photo/thumb/photo-21-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-22.webp">
-               <img src="./img/photo/thumb/photo-22-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-23.webp">
-               <img src="./img/photo/thumb/photo-23-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-24.webp">
-               <img src="./img/photo/thumb/photo-24-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-25.webp">
-               <img src="./img/photo/thumb/photo-25-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-26.webp">
-               <img src="./img/photo/thumb/photo-26-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-27.webp">
-               <img src="./img/photo/thumb/photo-27-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
-            </a>
-            <a class="hide-photo" data-fancybox="gallery" href="./img/photo/full-size/photo-28.webp">
-               <img src="./img/photo/thumb/photo-28-th.jpg" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
+               <img src="./img/photo/thumb/photo-12-th.webp" alt="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве" title="Катер Leda~River (Леда-Ривер) - морские прогулки в Балаклаве">
             </a>
          </div>
          <div class="container">
             <div class="gallery-link">
-               <a class="text-link link-1" href="#!">Смотреть все фото</a>
+               <a class="text-link link-1" href="#!">Ещё фото</a>
                <a class="text-link link-2" href="#focus">Свернуть</a>
             </div>
-            <div class="gallery-section__title-small" data-aos="zoom-in-up" data-aos-delay="50" data-aos-duration="1500">
+            <div class="media-page-link">
+               <a class="text-link" href="media.html">Смотреть все фото</a>
+            </div>
+            <div class="gallery-section__title-small">
                <h3 class="gallery-section__title-3">Видео</h3>
             </div>
          </div>
-         <div class="gallery-section__content" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+         <div class="gallery-section__content">
             <a class="video" data-fancybox="gallery" href="https://youtu.be/R3IXqknzwE0">
-               <img src="./video/thumb/video-1-th.jpg" alt="#">
+               <img src="./video/thumb/video-1-th.webp" alt="#">
             </a>
             <a class="video" data-fancybox="gallery" href="./video/clips/video-2.mp4">
-               <img src="./video/thumb/video-2-th.jpg" alt="#">
+               <img src="./video/thumb/video-2-th.webp" alt="#">
             </a>
             <a class="video" data-fancybox="gallery" href="./video/clips/video-3.mp4">
-               <img src="./video/thumb/video-3-th.jpg" alt="#">
+               <img src="./video/thumb/video-3-th.webp" alt="#">
             </a>
             <a class="video" data-fancybox="gallery" href="./video/clips/video-4.mp4">
-               <img src="./video/thumb/video-4-th.jpg" alt="#">
+               <img src="./video/thumb/video-4-th.webp" alt="#">
             </a>
             <a class="video" data-fancybox="gallery" href="./video/clips/video-5.mp4">
-               <img src="./video/thumb/video-5-th.jpg" alt="#">
+               <img src="./video/thumb/video-5-th.webp" alt="#">
             </a>
             <a class="video" data-fancybox="gallery" href="./video/clips/video-1.MP4">
-               <img src="./video/thumb/video-6-th.jpg" alt="#">
+               <img src="./video/thumb/video-6-th.webp" alt="#">
             </a>
          </div>
       </section>
       <!--/Раздел "Фото и видео"-->
       <!--Раздел "Отзывы"-->
-      <section id="reviews" class="reviews" data-aos="flip-left" data-aos-delay="50" data-aos-duration="1000">
+      <section id="reviews" class="reviews">
          <div class="container">
             <div class="reviews__title">
                <h2 class="section-title section-title--white">Отзывы о нас</h2>
@@ -516,7 +482,7 @@
             <div class="price-section__title">
                <h2 class="section-title bottom-line">Расценки</h2>
             </div>   
-            <div class="price-section__content" data-aos="flip-down" data-aos-delay="50" data-aos-duration="1000">
+            <div class="price-section__content">
                <div class="price-section__rent">
                   <h4 class="title-4">Стоимость аренды катера:</h4>
                   <ul class="price-section__list">
@@ -552,7 +518,7 @@
       <!--Раздел "Контакты"-->
       <section id="contacts" class="contacts">
          <!--Контейнер-->
-         <div class="container container--1600">
+         <div class="container container--enlarge">
             <!--Заголовок раздела "Контакты"-->
             <div class="contacts-header">
                <h2 class="section-title bottom-line">Контакты</h2>
@@ -561,7 +527,7 @@
             <!--Основной контент, обвертка колонки с контактами и формы обратной связи-->
             <div class="contacts-row">
                <!--Левая колонка с контактами-->
-               <div class="contacts-col" data-aos-delay="300" data-aos="zoom-in-right">
+               <div class="contacts-col">
                   <div class="contacts-desc">
                      <p>Желаете отлично провести время на комфортабельном катере, любуясь очаровательными пейзажами побережья Крыма? Обращайтесь! Мы всегда Вам рады!</p>
                   </div>
@@ -577,7 +543,9 @@
                      <li class="contacts-list-item">
                         <div class="contacts-item-def">Телефон</div>
                         <div class="contacts-item-desc">
-                           <div id="nashphone1"><img class="phone-img" src="./img/phone-img.jpg" title = "Наш телефон - кликните, чтобы позвонить или скопировать" alt="Наш телефон - кликните, чтобы позвонить или скопировать"></div>
+                           <div id="phone">
+                              <img class="phone-img" src="./img/phone-img.webp" title = "Наш телефон - кликните 2 раза, чтобы позвонить или скопировать" alt="Наш телефон - кликните, чтобы позвонить или скопировать">
+                           </div>
                         </div>
                      </li>
                      <li class="contacts-list-item">
@@ -616,16 +584,23 @@
                      </li> -->
                   </ul>
                   <!--/Универсальные социальные иконки-->
-                  <!--Карта для мобайла-->
-                  <div class="map-holder-mobile">
-                     <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab7023bec0abbc8f0ef064cc141623631c6d0ac22c1fe38fbf7793f95a6cf9c8a&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe>
+                  <!--Карта-->
+                  <div class="map-overlay">
+                     <div class="fake-map">
+                        <img src="./img/fake-map.webp" alt="Карта стоянки нашего катера">
+                     </div>
+                     <!--Карта для мобилки-->
+                     <div class="map-holder-mob">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab7023bec0abbc8f0ef064cc141623631c6d0ac22c1fe38fbf7793f95a6cf9c8a&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+                     </div>
+                     <!--/Карта для мобилки-->
+                     <!--Карта для десктопа-->
+                     <div class="map-holder-pc">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab7023bec0abbc8f0ef064cc141623631c6d0ac22c1fe38fbf7793f95a6cf9c8a&amp;width=100%25&amp;height=420&amp;lang=ru_RU&amp;scroll=true"></script>
+                     </div>
+                     <!--/Карта для десктопа-->
                   </div>
-                  <!--/Карта для десктопа-->
-                  <!--Карта для десктопа-->
-                  <div class="map-holder-desctop">
-                     <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab7023bec0abbc8f0ef064cc141623631c6d0ac22c1fe38fbf7793f95a6cf9c8a&amp;source=constructor" width="100%" height="420" frameborder="0"></iframe>
-                  </div>
-                  <!--/Карта для десктопа-->
+                  <!--/Карта-->
                </div>
                <!--/Левая колонка с контактами-->
                <!--Форма обратной связи (справа)-->
@@ -663,11 +638,16 @@
                   <div id="answer"></div>
                </div>
                <!--/Форма обратной связи (справа)-->
-               <!--Карта для планшетной версии-->
-               <div class="map-holder-tab">
-                  <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab7023bec0abbc8f0ef064cc141623631c6d0ac22c1fe38fbf7793f95a6cf9c8a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+               <!--Карта для Планшета-->
+               <div class="map-overlay-tab">
+                  <div class="fake-map-tab">
+                     <img src="./img/fake-map.webp" alt="Карта стоянки нашего катера">
+                  </div>
+                  <div class="map-holder-tab">
+                     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab7023bec0abbc8f0ef064cc141623631c6d0ac22c1fe38fbf7793f95a6cf9c8a&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                  </div>
                </div>
-               <!--/Карта для планшетной версии-->
+               <!--/Карта для планшета-->
             </div>
             <!--/Основной контент, обвертка колонки с контактами и формы обратной связи-->
          </div>
@@ -678,7 +658,7 @@
    <a id="back2Top" title="Наверх" href="#">&#10148;</a>
    <!--Подвал сайта-->
    <footer class="footer">
-      <div class="container container--1600">
+      <div class="container container--enlarge">
          <div class="footer__row">
             <div class="logo-col">
                <div class="logo logo--white">
@@ -720,7 +700,7 @@
                      <a href="#about">О катере</a>
                   </li>
                   <li class="footer__nav-item">
-                     <a href="#media">Фото и видео</a>
+                     <a href="media.html">Фото и видео</a>
                   </li>
                   <li class="footer__nav-item">
                      <a href="#reviews">Отзывы</a>
@@ -729,7 +709,7 @@
                      <a href="#price">Расценки</a>
                   </li>
                   <li class="footer__nav-item">
-                     <a href="#contacts">Контакты</a>
+                     <a href="contacts.html">Контакты</a>
                   </li>
                   <li class="footer__nav-item">
                      <a href="blog.html">Блог</a>
@@ -757,6 +737,7 @@
       </div>
    </footer>
    <!--/Подвал сайта-->
+   <script src="https://www.google.com/recaptcha/api.js"></script>
    <script src="libs/jquery/jquery-3.5.1.min.js"></script>
    <script src="libs/fancybox/jquery.fancybox.min.js"></script>
    <script src="libs/jquery.validate/jquery.validate.js"></script>
@@ -767,7 +748,7 @@
    </script>
    <script src="libs/owlcarousel2/owl.carousel.min.js"></script>
    <!-- Yandex.Metrika counter -->
-   <script>
+   <script type="text/javascript" >
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -775,12 +756,12 @@
       ym(73967863, "init", {
          clickmap:true,
          trackLinks:true,
-         accurateTrackBounce:true,
-         webvisor:true
+         accurateTrackBounce:true
       });
    </script>
-   <noscript><div><img src="https://mc.yandex.ru/watch/73967863" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+   <noscript><div><img src="https://mc.yandex.ru/watch/73967863" style="position:absolute; left:-9999px;" alt="#" /></div></noscript>
    <!-- /Yandex.Metrika counter -->
    <script src="js/main.js"></script>
+   <script src="js/fixed-menu.js"></script>
 </body>
 </html>

@@ -60,7 +60,7 @@
   }
 }
 .gallery-section__content {
-  margin: 0 auto 30px;
+  margin: 0 auto 20px;
   padding: 0 15px;
   position: relative;
   max-width: 740px;
@@ -143,15 +143,17 @@
   }
 }
 .gallery-link {
-  text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   //Для десктопа
   @media (min-width: 1200px) {
     display: none;
   }
   a {
     position: relative;
-    z-index: 10;
+    z-index: 3;
     font-family: sans-serif;
     font-weight: 500;
     font-size: 28px;
@@ -173,4 +175,17 @@
 }
 .link-2-show {
   display: inline-block !important;
+}
+.media-page-link {
+  margin-bottom: 30px;
+  text-align: center;
+  a {
+    position: relative;
+    z-index: 3;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--brand-blue);
+    text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
+  }
 }

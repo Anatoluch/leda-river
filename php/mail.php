@@ -88,7 +88,7 @@ if (!$_POST["g-recaptcha-response"]) {
         // Иначе выводим логин и Email
         echo "<div class='contact-form__success'>
 		<h2>Ваше сообщение отправлено!<br>
-		Я свяжусь с&nbsp;Вами в&nbsp;ближайшее время!
+		Мы свяжимся с&nbsp;Вами в&nbsp;ближайшее время!
 		</h2>
 	  </div> ";
     }
@@ -102,11 +102,11 @@ send_user_data_in_txt_file ($message);
 
 // header('location: ../thankyou.php');
 // Я закомментил вывод сообщения об отправке, чтобы избежать дублей с капчей!!!
-echo "<div class='contact-form__success'>
-		<h2>Ваше сообщение отправлено!<br>
-		Мы свяжимся с&nbsp;Вами в&nbsp;ближайшее время!
-		</h2>
-	  </div> ";
+// echo "<div class='contact-form__success'>
+// 		<h2>Ваше сообщение отправлено!<br>
+// 		Мы свяжимся с&nbsp;Вами в&nbsp;ближайшее время!
+// 		</h2>
+// 	  </div> ";
 
 ?>
 
