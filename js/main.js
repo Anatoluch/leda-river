@@ -81,10 +81,10 @@ $(window).scroll(function() {
    var height = $(window).scrollTop();
    if($(this).width() > 280){
       if( $(this).scrollTop() > 300 ){
-          $('#back2Top').fadeIn();
+         $('#back2Top').fadeIn();
       }
       else{
-          $('#back2Top').fadeOut();
+         $('#back2Top').fadeOut();
       }
   }
 });
@@ -188,12 +188,13 @@ $(window).scroll(function() {
    const mapHolderPc = document.querySelector('.map-holder-pc'); // Блок со встроенной картой для ПК
 
    //Сценарий события клик по оболочке (замена изображения на интерактив)
-   mapChange.addEventListener('click', function(){
-      fakeMap.classList.add('hide');
-      mapHolderMob.classList.add('show-mob');
-      mapHolderPc.classList.add('show-pc');
-   });
-
+   if (mapChange) {
+      mapChange.addEventListener('click', function(){
+         fakeMap.classList.add('hide');
+         mapHolderMob.classList.add('show-mob');
+         mapHolderPc.classList.add('show-pc');
+      });
+   };
       //Замена картинки карты на интерактивную версию (для планшета)
       const mapChangeTab = document.querySelector('.map-overlay-tab'); // Оболочка
       const fakeMapTab = document.querySelector('.fake-map-tab'); // Изображение с картой
@@ -201,10 +202,12 @@ $(window).scroll(function() {
 
    
       //Сценарий события клик по оболочке (замена изображения на интерактив)
-      mapChangeTab.addEventListener('click', function(){
-         fakeMapTab.classList.add('hide');
-         mapHolderTab.classList.add('show-tab');
-      });
+      if(mapChangeTab) {
+         mapChangeTab.addEventListener('click', function(){
+            fakeMapTab.classList.add('hide');
+            mapHolderTab.classList.add('show-tab');
+         });
+      };
    //Плагин owlCarusel (Отзывы)
    $(".owl-carousel").owlCarousel({
       items: 1,

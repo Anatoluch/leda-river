@@ -511,10 +511,10 @@ span.required {
   }
   //Для планшета
   @media (min-width: 768px) {
-    margin-right: 15px;
   }
   //Для десктопа
   @media (min-width: 1200px) {
+    margin-right: 15px;
     width: 18px;
     height: 18px;
   }
@@ -525,14 +525,26 @@ span.required {
   }
 }
 .agreement-text {
-  font-family: sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 400;
   color: gray;
   letter-spacing: -0.6px;
   a {
     color: gray;
     text-decoration: underline;
+    transition: 0.3s;
+    &:hover {
+      color: var(--underline);
+    }
+    &:focus {
+      outline: none;
+      color: var(--brand-blue);
+      filter: drop-shadow(0px 0px 1px #ffffff)
+        drop-shadow(0px 0px 8px rgba(255, 0, 255, 0.15))
+        drop-shadow(2px 2px 5px rgba(0, 0, 255, 0.4))
+        drop-shadow(-2px -2px 5px rgba(131, 170, 241, 0.4));
+    }
   }
   //Для смартфона от 360px
   @media (min-width: 360px) {
@@ -542,10 +554,12 @@ span.required {
   //Для смартфона от 400px
   @media (min-width: 400px) {
     font-size: 15px;
+    font-weight: 500;
   }
   //Для планшета
   @media (min-width: 768px) {
     font-size: 12px;
+    font-weight: 700;
   }
   //Для планшета Ipad Pro
   @media (min-width: 1024px) {
@@ -557,7 +571,7 @@ span.required {
   }
   //Для десктопа
   @media (min-width: 1600px) {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 input[type="submit"] {

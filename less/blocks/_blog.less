@@ -87,7 +87,6 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.1px;
-    text-indent: 15px;
     text-align: center;
     //Для планшета
     @media (min-width: 768px) {
@@ -127,6 +126,7 @@
 }
 .article__title-row-mob {
   margin-bottom: 15px;
+  padding: 0 5px;
   text-align: center;
   //Для планшета
   @media (min-width: 768px) {
@@ -177,12 +177,16 @@
   }
 }
 .article__title-heading-prev {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   font-family: "M PLUS 1p", sans-serif;
   color: var(--brand-blue);
   line-height: 1.2;
   transition: 0.3s;
+  //Для большого смартфона
+  @media (min-width: 400px) {
+    font-size: 24px;
+  }
   &:hover {
     color: var(--main-blue);
     transform: scale(1.03);

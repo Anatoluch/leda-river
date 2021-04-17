@@ -79,11 +79,15 @@
   }
 }
 .article__title-heading {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   font-family: "M PLUS 1p", sans-serif;
   color: var(--brand-blue);
   line-height: 1.2;
+  //Для большого смартфона
+  @media (min-width: 400px) {
+    font-size: 24px;
+  }
   //Для планшета
   @media (min-width: 768px) {
     font-size: 26px;
@@ -109,18 +113,32 @@
   }
 }
 //--Замена изображений по медиазапросам (Превью статей)--
-//Статья "Топовые места с чистой водой"
+//Статья 1 "Топовые места с чистой водой"
 .art-prev-img-1 {
   //Для планшета
   @media (min-width: 429px) {
-    content: url("../img/articles/top-clear-water/big/tropical-water-big.webp");
+    content: url("../img/articles/top-clear-water/big/tropical-water-big.jpg");
   }
 }
-//Статья "Пляж Баунти"
+//Статья 2 "Пляж Баунти"
 .art-prev-img-2 {
   //Для планшета
   @media (min-width: 429px) {
-    content: url("../img/articles/top-clear-water/big/bounty-big.webp");
+    content: url("../img/articles/top-clear-water/big/bounty-big.jpg");
+  }
+}
+//Статья 3 "Грот Дианы"
+.art-prev-img-3 {
+  //Для планшета
+  @media (min-width: 429px) {
+    content: url("../img/articles/top-clear-water/big/grot-dianu-big.jpg");
+  }
+}
+//Статья 4 "Мыс Айя"
+.art-prev-img-4 {
+  //Для планшета
+  @media (min-width: 429px) {
+    content: url("../img/articles/top-clear-water/big/mus-aya-big.jpg");
   }
 }
 //--/Замена изображений по медиазапросам (Превью статей)--
@@ -164,6 +182,7 @@
     @media (min-width: 768px) {
       font-size: 18px;
       font-weight: 400;
+      text-indent: 12px;
     }
     //Для десктопа
     @media (min-width: 1200px) {
@@ -173,6 +192,14 @@
   span {
     color: var(--brand-blue);
     font-weight: 700;
+    a {
+      display: inline;
+      color: inherit;
+      transition: 0.3s;
+      &:hover {
+        color: var(--underline);
+      }
+    }
   }
 }
 .article__share-row {
@@ -248,19 +275,19 @@
 .art-img-1-1 {
   //Для планшета
   @media (min-width: 429px) {
-    content: url("../img/articles/top-clear-water/big/bounty-big.webp");
+    content: url("../img/articles/top-clear-water/big/bounty-big.jpg");
   }
 }
 .art-img-1-2 {
   //Для планшета
   @media (min-width: 429px) {
-    content: url("../img/articles/top-clear-water/big/grot-dianu-big.webp");
+    content: url("../img/articles/top-clear-water/big/grot-dianu-big.jpg");
   }
 }
 .art-img-1-3 {
   //Для планшета
   @media (min-width: 429px) {
-    content: url("../img/articles/top-clear-water/big/mus-aya-big.webp");
+    content: url("../img/articles/top-clear-water/big/mus-aya-big.jpg");
   }
 }
 //Сатья "Пляж Баунти"
@@ -273,25 +300,25 @@
 .art-img-2-1 {
   //Для планшета
   @media (min-width: 429px) {
-    content: url("../img/articles/bounty-beach/gallery/bounty-03.webp");
+    content: url("../img/articles/bounty-beach/bounty-03.jpg");
   }
 }
 .art-img-2-2 {
   //Для планшета
   @media (min-width: 429px) {
-    content: url("../img/articles/bounty-beach/gallery/bounty-06.webp");
+    content: url("../img/articles/bounty-beach/bounty-06.jpg");
   }
 }
 .art-img-2-3 {
   //Для планшета
   @media (min-width: 429px) {
-    content: url("../img/articles/bounty-beach/gallery/bounty-07.webp");
+    content: url("../img/articles/bounty-beach/bounty-07.jpg");
   }
 }
 .art-img-2-4 {
   //Для планшета
   @media (min-width: 429px) {
-    content: url("../img/articles/bounty-beach/gallery/bounty-08.webp");
+    content: url("../img/articles/bounty-beach/bounty-08.jpg");
   }
 }
 //--/Замена изображений в статьях по медиазапросам--

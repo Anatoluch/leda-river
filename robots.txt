@@ -7,7 +7,6 @@ Disallow: /js/
 Disallow: /less/
 Disallow: /libs/
 Disallow: /php/
-Disallow: /index.html
 Allow: /img/
 Allow: /video/
 Host: https://leda-river.ru
@@ -23,7 +22,6 @@ Disallow: /js/
 Disallow: /less/
 Disallow: /libs/
 Disallow: /php/
-Disallow: /index.html
 Allow: /img/
 Allow: /video/
 Host: https://leda-river.ru

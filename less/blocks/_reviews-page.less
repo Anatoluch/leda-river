@@ -1,0 +1,533 @@
+.reviews-page {
+  margin: 0 auto;
+  position: relative;
+  padding: 15px 0 60px;
+  min-height: calc(~"100vh - 257px");
+  background-color: #f4f8f9;
+  //Для планшета
+  @media (min-width: 768px) {
+    padding: 20px 0 85px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    padding: 30px 0 75px;
+  }
+
+  .reviews-page__header {
+    margin-bottom: 30px;
+    position: relative;
+    left: 3px;
+    text-align: center;
+    //Для планшета
+    @media (min-width: 768px) {
+      margin-bottom: 36px;
+      position: relative;
+      left: 20px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      margin-bottom: 45px;
+      position: static;
+    }
+    &::after {
+      bottom: 2px;
+      left: -3px;
+      right: -3px;
+      height: 12px;
+      //Для планшета
+      @media (min-width: 768px) {
+        bottom: 5px;
+      }
+      //Для десктопа
+      @media (min-width: 1200px) {
+        bottom: 6px;
+      }
+    }
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+}
+.reviews-page__reviews {
+  margin: 0 auto 45px;
+  padding: 30px 0 30px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 10px 25px rgba(4, 19, 46, 0.65) inset,
+    0 -10px 25px rgba(4, 19, 46, 0.65) inset;
+  background: radial-gradient(
+    circle,
+    rgba(0, 77, 136, 0.7) 0%,
+    rgba(0, 77, 136, 0.7) 25%,
+    rgba(0, 92, 162, 0.7) 35%,
+    rgba(0, 77, 136, 0.7) 45%,
+    rgba(0, 77, 136, 0.7) 55%,
+    rgba(33, 101, 164, 0.7) 62%,
+    rgba(0, 77, 136, 0.7) 65%,
+    rgba(0, 77, 136, 0.7) 72%,
+    rgba(29, 109, 185, 0.7) 87%,
+    rgba(0, 77, 136, 0.7) 92%,
+    rgba(72, 151, 226, 0.7) 100%
+  );
+  background-color: rgb(3, 20, 36);
+  //Для планшета
+  @media (min-width: 768px) {
+    margin: 0 auto 60px;
+    padding: 40px 0 40px;
+    height: unset;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    margin: 0 auto 75px;
+    padding: 50px 0 50px;
+  }
+}
+.reviews-page__clients {
+  max-width: 820px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.reviews-page__clients-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 520px;
+  //Для планшета
+  @media (min-width: 768px) {
+    max-width: 470px;
+  }
+  //Для планшета
+  @media (min-width: 960px) {
+    max-width: 560px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    max-width: 800px;
+  }
+}
+.reviews-page__clients-text {
+  margin-bottom: 15px;
+  padding: 0 5px;
+  color: #fff;
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  p {
+    margin-bottom: 15px;
+  }
+  //Для большого смартфона
+  @media (min-width: 360px) {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    margin-bottom: 25px;
+  }
+  //Для большого планшета
+  @media (min-width: 1024px) {
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    margin-bottom: 45px;
+    padding: 0 10px;
+    font-size: 22px;
+  }
+}
+.reviews-page__clients-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //Для десктопа
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
+}
+.reviews-page__clients-user-photo {
+  margin-bottom: 20px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 45px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    margin-bottom: 0;
+    margin-right: 40px;
+  }
+}
+.reviews-page__clients-user-name {
+  margin-bottom: 40px;
+  color: #fff;
+  font-size: 30px;
+  font-family: serif;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.2;
+  //Для планшета
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
+  //Для большого планшета
+  @media (min-width: 1024px) {
+    font-size: 32px;
+  }
+}
+.reviews-page__clients-carousel.owl-carousel .owl-nav button.owl-prev {
+  width: 48px;
+  height: 48px;
+  background-image: url("../img/carousel/arrow-left.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  border-radius: 50%;
+  transition: all 0.1s ease;
+  &:hover {
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0 0 7px #fff;
+  }
+  &:focus {
+    outline: none;
+  }
+  span {
+    display: none;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    position: absolute;
+    margin-left: 0;
+    top: 50%;
+    bottom: auto;
+    left: 0;
+    transform: unset;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    top: 50%;
+    left: -40px;
+    transform: translatex(-100%);
+  }
+}
+.reviews-page__clients-carousel.owl-carousel .owl-nav button.owl-next {
+  width: 48px;
+  height: 48px;
+  background-image: url("../img/carousel/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  border-radius: 50%;
+  transition: all 0.1s ease;
+  &:hover {
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0 0 7px #fff;
+  }
+  &:focus {
+    outline: none;
+  }
+  span {
+    display: none;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    position: absolute;
+    margin-left: 0;
+    top: 50%;
+    left: auto;
+    right: 0;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    top: 50%;
+    right: -40px;
+    transform: translatex(100%);
+  }
+}
+.owl-nav {
+  display: flex;
+  justify-content: space-around;
+  //Для планшета
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+.reviews-page__ps {
+  position: relative;
+  text-align: center;
+  p {
+    color: #fff;
+    font-size: 20px;
+    font-family: serif;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.2;
+    //Для планшета
+    @media (min-width: 768px) {
+      font-size: 26px;
+    }
+  }
+  a {
+    color: rgb(241, 124, 28);
+    border-bottom: 1px solid rgb(241, 124, 28);
+    line-height: 1.2;
+    transition: 0.3s;
+    &:hover {
+      color: #fff;
+      border-color: #fff;
+      transform: scale(1.03);
+    }
+    &:focus {
+      outline: none;
+      filter: drop-shadow(0 0 3px #fff);
+    }
+  }
+}
+//Форма добавления отзыва
+.reviews-page__form-col {
+  margin: 0 auto;
+  width: 100%;
+  min-height: calc(~"100vh - 257px");
+  z-index: 1;
+  //Для планшета
+  @media (min-width: 768px) {
+    width: 75%;
+    max-width: 560px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    width: 70%;
+    max-width: 640px;
+  }
+  //Для десктопа
+  @media (min-width: 1600px) {
+    width: 70%;
+    max-width: 690px;
+  }
+}
+.form-intro {
+  text-align: center;
+  margin: 0 auto 30px;
+  p {
+    font-family: "M PLUS 1p", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.1px;
+    //Для большого смартфона
+    @media (min-width: 360px) {
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+    //Для большого смартфона
+    @media (min-width: 400px) {
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+    //Для планшета Ipad Pro
+    @media (min-width: 1024px) {
+      letter-spacing: 0;
+      font-size: 22px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      font-size: 25px;
+    }
+    //Для десктопа
+    @media (min-width: 1600px) {
+      font-size: 26px;
+      font-weight: 500;
+    }
+  }
+}
+.reviews-page__form {
+  width: 100%;
+  height: 100%;
+  padding: 40px 10px 40px;
+  box-shadow: 0 28px 100px #c2dbeb;
+  background-color: #fff;
+  z-index: 1;
+  //Для планшета
+  @media (min-width: 768px) {
+    padding: 30px 25px 20px;
+    height: unset;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    padding: 45px 58px 40px;
+    height: 100%;
+  }
+  //Для десктопа
+  @media (min-width: 1600px) {
+    padding: 55px 58px 40px;
+  }
+}
+//Загрузка аватарки
+.file-row {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //Для планшета
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  //Для десктопа
+  @media (min-width: 1600px) {
+    justify-content: space-between;
+  }
+  p {
+    margin-bottom: 15px;
+    color: #bebebe;
+    font-family: "M PLUS 1p", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    //Для большого планшета
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+}
+//--Счетчик оставшихся символов для ввода--
+.counter {
+  color: #bebebe;
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  //Для большого планшета
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+//--/Счетчик оставшихся символов для ввода--
+.review-avatar {
+  display: none;
+}
+.upload-label {
+  display: inline-block;
+  height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 25px;
+  line-height: 50px;
+  cursor: pointer;
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  transition: 0.3s;
+  color: #fff;
+  background: rgb(0, 77, 136);
+  background: radial-gradient(
+    circle,
+    rgba(0, 77, 136, 1) 0%,
+    rgba(0, 108, 186, 1) 90%,
+    rgba(72, 151, 226, 1) 100%
+  );
+  &:hover,
+  &:active {
+    filter: brightness(1.5);
+    transform: scale(1.03);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+  &:focus {
+    outline: none;
+    filter: drop-shadow(0px 0px 2px #ffffff)
+      drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+      drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+      drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+  }
+}
+//Загрузка аватарки
+.review-checkbox-row {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.review-form-checkbox {
+  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+  //Для смартфона от 360px
+  @media (min-width: 360px) {
+    margin-right: 12px;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    margin-right: 15px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    width: 18px;
+    height: 18px;
+  }
+  //Для десктопа
+  @media (min-width: 1600px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+#reviewsCheckbox-error {
+  position: absolute;
+  top: 22px;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  text-align: center;
+  //Для смартфона от 360px
+  @media (min-width: 360px) {
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  //Для смартфона от 400px
+  @media (min-width: 400px) {
+    font-size: 14px;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    font-size: 12px;
+  }
+  //Для планшета Ipad Pro
+  @media (min-width: 1024px) {
+    font-size: 16px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    font-size: 17px;
+  }
+  //Для десктопа
+  @media (min-width: 1600px) {
+    top: 28px;
+    font-size: 20px;
+  }
+}
+.reviews-page__form-success {
+  font-family: sans-serif;
+  font-size: 17px;
+  color: #ff0000;
+  text-align: center;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
