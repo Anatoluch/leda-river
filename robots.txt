@@ -24,7 +24,6 @@ Disallow: /libs/
 Disallow: /php/
 Allow: /img/
 Allow: /video/
-Host: https://leda-river.ru
 Crawl-Delay: 10
 Disallow: /*?
 

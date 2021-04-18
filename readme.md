@@ -7,7 +7,7 @@
 Многостраничный сайт для прогулочного катера Leda~River.
 
 - Срок выполнения: 18 дней
-- Количество страниц: 9
+- Количество страниц: 10
 - Демо онлайн: [leda-river.ru](https://leda-river.ru)
 - Код на Github: [github.com/Anatoluch/leda-river-yacht](https://github.com/Anatoluch/leda-river-yacht)
 
