@@ -113,6 +113,40 @@ h6,
 p {
   margin: 0;
 }
+.main-title {
+  margin-bottom: 10px;
+  font-family: serif;
+  font-style: italic;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--main-blue);
+  //Для большого смартфона
+  @media (min-width: 360px) {
+    font-size: 28px;
+  }
+  //Для большого смартфона
+  @media (min-width: 400px) {
+    font-size: 30px;
+  }
+  //Для большого смартфона
+  @media (min-width: 420px) {
+    font-size: 32px;
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    font-size: 30px;
+  }
+  //Для большого планшета
+  @media (min-width: 1024px) {
+    font-size: 38px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    font-size: 42px;
+  }
+}
 p::selection,
 li::selection,
 h1::selection,
@@ -362,8 +396,8 @@ button {
     display: block;
     position: absolute;
     bottom: 10px;
-    left: 0px;
-    right: -5px;
+    left: -4px;
+    right: -4px;
     height: 6px;
     background-color: var(--underline);
     filter: opacity(0.5);
@@ -371,32 +405,30 @@ button {
     transition: 0.3s;
     //Для большого смартфона
     @media (min-width: 360px) {
-      left: 1px;
+      left: -4px;
       right: -4px;
-      bottom: 11px;
-      height: 8px;
+      bottom: 10px;
+      height: 6px;
     }
     //Для большого смартфона
     @media (min-width: 400px) {
       bottom: 12px;
-      height: 10px;
+      height: 8px;
     }
     //Для планшета
     @media (min-width: 768px) {
-      left: 0px;
-      right: -5px;
-      bottom: 20px;
+      bottom: 22px;
     }
     //Для большого планшета
     @media (min-width: 1024px) {
-      bottom: 23px;
+      height: 12px;
+      bottom: 24px;
     }
     //Для десктопа
     @media (min-width: 1200px) {
       bottom: 28px;
       left: -5px;
       right: -5px;
-      height: 12px;
     }
   }
 }
@@ -697,13 +729,14 @@ svg.social-icons__vib {
   cursor: pointer;
   transform: rotate(270deg);
   position: fixed;
-  bottom: 45px;
+  bottom: 30px;
   right: 0;
   color: rgb(241, 124, 28);
   filter: drop-shadow(-4px 4px 3px rgba(0, 0, 0, 0.6));
   text-align: center;
   font-size: 48px;
   text-decoration: none;
+  opacity: 0.7;
   &:hover {
     color: var(--underline);
     filter: drop-shadow(0 0 3px #fff);

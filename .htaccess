@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+#Борьба с дублями
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+</IfModule>

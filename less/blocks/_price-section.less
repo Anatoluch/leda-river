@@ -53,8 +53,8 @@
   }
   h4 {
     margin-bottom: 30px;
-    font-size: 22px;
-    font-family: sans-serif;
+    font-size: 20px;
+    font-family: "M PLUS 1p", sans-serif;
     font-weight: 700;
     color: #000;
     line-height: 1.2;
@@ -77,31 +77,68 @@
       font-size: 36px;
     }
   }
-}
-.price-section__list {
-  margin-bottom: 45px;
-  //Для планшета
-  @media (min-width: 768px) {
-    margin-bottom: 15px;
+  p {
+    margin-bottom: 30px;
+    font-family: "Verdana", sans-serif;
+    font-size: 12px;
+    color: #000;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.2;
+    z-index: 2;
+    text-align: center;
+    //Для большого смартфона
+    @media (min-width: 420px) {
+      font-size: 12px;
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+      text-align: unset;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      font-size: 14px;
+    }
+    span {
+      font-weight: 700;
+      border-bottom: 1px solid #000;
+    }
   }
 }
+.price-section__list {
+  margin-bottom: 15px;
+}
 .price-section__item {
-  margin-left: 31px;
+  margin-left: 20px;
   margin-bottom: 15px;
   position: relative;
-  font-size: 16px;
+  font-size: 15px;
   font-family: sans-serif;
   font-weight: 400;
   color: #000;
   line-height: 1.2;
+  //Для большого смартфона
+  @media (min-width: 360px) {
+    font-size: 16px;
+  }
+  //Для большого смартфона
+  @media (min-width: 400px) {
+    font-size: 18px;
+  }
   //Для планшета
   @media (min-width: 768px) {
-    font-size: 20px;
+    margin-left: 31px;
     line-height: 1;
   }
   //Для большого планшета
   @media (min-width: 1024px) {
     font-family: "M PLUS 1p", sans-serif;
+    font-size: 22px;
+  }
+  //Для большого десктопа
+  @media (min-width: 1200px) {
+    font-size: 24px;
   }
   &:last-of-type {
     margin-bottom: 0;
@@ -124,6 +161,10 @@
     //Для планшета
     @media (min-width: 768px) {
       font-size: 28px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      font-size: 30px;
     }
   }
   p {
@@ -168,13 +209,28 @@
     margin-bottom: 15px;
   }
   p {
+    margin-bottom: 10px;
     font-family: "Verdana", sans-serif;
-    font-size: 12px;
+    font-size: 10px;
     color: #000;
     font-weight: 400;
     color: rgb(0, 0, 0);
-    line-height: 1;
+    line-height: 1.2;
     z-index: 2;
+    text-align: center;
+    //Для большого смартфона
+    @media (min-width: 420px) {
+      font-size: 12px;
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+      text-align: unset;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      font-size: 14px;
+    }
   }
 }
 span.red {
