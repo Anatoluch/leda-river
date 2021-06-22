@@ -1,191 +1,187 @@
 .gallery-section {
-  margin: 0 auto;
-  padding: 72px 0 30px;
-  position: relative;
-  max-width: 100%;
-  z-index: 1;
-  &::before {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    z-index: 0;
-  }
+	margin: 0 auto;
+	padding: 72px 0 30px;
+	position: relative;
+	max-width: 100%;
+	z-index: 1;
+	&::before {
+		content: "";
+		position: absolute;
+		background-color: #fff;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		z-index: 0;
+	}
 }
 .gallery-section__title {
-  text-align: center;
-  margin-bottom: 60px;
-  position: relative;
+	text-align: center;
+	margin-bottom: 60px;
+	position: relative;
 }
 .gallery-section__title-small {
-  text-align: center;
-  margin-bottom: 30px;
-  position: relative;
+	text-align: center;
+	margin-bottom: 30px;
+	position: relative;
 }
 .gallery-section__title-3 {
-  position: relative;
-  display: inline-block;
-  font-size: 36px;
-  font-family: serif;
-  color: var(--main-blue);
-  font-style: italic;
-  line-height: 1.2;
-  text-align: center;
-  //Для большого смартфона
-  @media (min-width: 360px) {
-    font-size: 40px;
-  }
-  //Для большого смартфона
-  @media (min-width: 400px) {
-    font-size: 44px;
-  }
-  //Для большого смартфона
-  @media (min-width: 420px) {
-    font-size: 48px;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    font-size: 52px;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    font-size: 70px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    font-size: 74px;
-    line-height: 1.2;
-  }
+	position: relative;
+	display: inline-block;
+	font-size: 36px;
+	font-family: serif;
+	color: var(--main-blue);
+	font-style: italic;
+	line-height: 1.2;
+	text-align: center;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 40px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 44px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		font-size: 48px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 52px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-size: 70px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 74px;
+		line-height: 1.2;
+	}
 }
 .gallery-section__content {
-  margin: 0 auto 20px;
-  padding: 0 15px;
-  position: relative;
-  max-width: 740px;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  a {
-    &:focus {
-      outline: none;
-      transform: scale(1.02);
-    }
-  }
-  img {
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 3px 3px rgba(18, 30, 51, 0.6);
-    &:hover {
-      transform: scale(1.03);
-      filter: saturate(1.1);
-      box-shadow: 0 7px 10px rgba(18, 30, 51, 0.5);
-    }
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    max-width: 768px;
-    padding: 0 10px;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    max-width: 830px;
-    padding: 0 30px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    padding: 0;
-    max-width: 1170px;
-  }
-  //Для десктопа с большим монитором
-  @media (min-width: 1600px) {
-    max-width: 1600px;
-  }
-  //Для десктопа с большим монитором
-  @media (min-width: 1950px) {
-    max-width: 1950px;
-  }
-  a,
-  img {
-    z-index: 1;
-  }
-  img {
-    margin: 0 0 15px;
-    //Для планшета
-    @media (min-width: 768px) {
-      margin: 0 7px 15px;
-    }
-    //Для большого планшета
-    @media (min-width: 1024px) {
-      margin: 0 12px 15px;
-    }
-    //Для десктопа
-    @media (min-width: 1200px) {
-      margin: 0 15px 15px;
-    }
-  }
+	margin: 0 auto 20px;
+	padding: 0 15px;
+	position: relative;
+	max-width: 740px;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+	a {
+		&:focus {
+			outline: none;
+			transform: scale(1.02);
+		}
+	}
+	img {
+		transition: 0.3s ease-in-out;
+		box-shadow: 0 3px 3px rgba(18, 30, 51, 0.6);
+		&:hover {
+			transform: scale(1.03);
+			filter: saturate(1.1);
+			box-shadow: 0 7px 10px rgba(18, 30, 51, 0.5);
+		}
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		max-width: 768px;
+		padding: 0 10px;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		max-width: 830px;
+		padding: 0 30px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		padding: 0;
+		max-width: 1170px;
+	}
+	//Для десктопа с большим монитором
+	@media (min-width: 1600px) {
+		max-width: 1600px;
+	}
+	a,
+	img {
+		z-index: 1;
+	}
+	img {
+		margin: 0 0 15px;
+		//Для планшета
+		@media (min-width: 768px) {
+			margin: 0 7px 15px;
+		}
+		//Для большого планшета
+		@media (min-width: 1024px) {
+			margin: 0 12px 15px;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			margin: 0 15px 15px;
+		}
+	}
 }
 .photo {
-  display: inline-block !important;
-  transition: 0.5s;
+	display: inline-block !important;
+	transition: 0.5s;
 }
 .hide-photo {
-  display: none;
-  transition: 0.5s;
-  //Для десктопа с большим монитором
-  @media (min-width: 1200px) {
-    display: inline-block;
-  }
+	display: none;
+	transition: 0.5s;
+	//Для десктопа с большим монитором
+	@media (min-width: 1200px) {
+		display: inline-block;
+	}
 }
 .gallery-link {
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  //Для десктопа
-  @media (min-width: 1200px) {
-    display: none;
-  }
-  a {
-    position: relative;
-    z-index: 3;
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: 28px;
-    color: var(--brand-blue);
-    text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
-  }
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: none;
+	}
+	a {
+		position: relative;
+		z-index: 3;
+		font-family: sans-serif;
+		font-weight: 500;
+		font-size: 28px;
+		color: var(--brand-blue);
+		text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
+	}
 }
 .show-all {
-  max-height: 100%;
+	max-height: 100%;
 }
 .link-1 {
-  display: inline-block;
+	display: inline-block;
 }
 .link-1-hide {
-  display: none !important;
+	display: none !important;
 }
 .link-2 {
-  display: none !important;
+	display: none !important;
 }
 .link-2-show {
-  display: inline-block !important;
+	display: inline-block !important;
 }
 .media-page-link {
-  margin-bottom: 30px;
-  text-align: center;
-  a {
-    position: relative;
-    z-index: 3;
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: 28px;
-    color: var(--brand-blue);
-    text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
-  }
+	margin-bottom: 30px;
+	text-align: center;
+	a {
+		position: relative;
+		z-index: 3;
+		font-family: sans-serif;
+		font-weight: 500;
+		font-size: 28px;
+		color: var(--brand-blue);
+		text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
+	}
 }

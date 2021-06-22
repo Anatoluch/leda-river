@@ -1,6 +1,41 @@
-<IfModule mod_rewrite.c>
-#Борьба с дублями
+
+RewriteEngine On
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$ https://leda-river.ru/$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)index\.html($|\ |\?)
+RewriteRule ^index\.html$ https://leda-river.ru/ [R=301,L]
+
+##Удаление лишних слешей
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} ^(.+)/$
 RewriteRule ^(.+)/$ /$1 [R=301,L]
-</IfModule>
+RewriteCond %{THE_REQUEST} //
+RewriteCond %{QUERY_STRING} !http(s|)://
+RewriteRule .* /$0 [R=301,L]
+
+
+
+## Begin - Rewrite rules to block out some common exploits.
+# If you experience problems on your site then comment out the operations listed 
+# below by adding a # to the beginning of the line.
+# This attempts to block the most common type of exploit `attempts` on Joomla!
+#
+# Block any script trying to base64_encode data within the URL.
+RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
+# Block any script that includes a <script> tag in URL.
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+# Block any script trying to set a PHP GLOBALS variable via URL.
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+# Block any script trying to modify a _REQUEST variable via URL.
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+# Return 403 Forbidden header and show the content of the root home page
+RewriteRule .* index.php [F]
+#
+## End - Rewrite rules to block out some common exploits.
+
+## RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+## RewriteRule ^index\.html$ https://leda-river.ru/ [R=301,L]

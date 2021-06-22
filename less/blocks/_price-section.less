@@ -36,14 +36,162 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: 10px;
   z-index: 2;
   //Для планшета
   @media (min-width: 768px) {
+    margin-bottom: 30px;
     flex-direction: row;
     justify-content: space-between;
   }
 }
+
+//----------Спойлер для условий бронирования----------
+.reserve {
+  padding: 5px 5px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px 5px rgb(119, 162, 219);
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  //Для большого смартфона
+  @media (min-width: 360px) {
+    padding: 5px 10px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    padding: 5px 10px 10px;
+    border-radius: 25px;
+  }
+  h4 {
+    margin-bottom: 20px;
+    display: block;
+    font-size: 18px;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    color: var(--brand-blue);
+    line-height: 1.2;
+    text-align: center;
+    //Для большого смартфона
+    @media (min-width: 375px) {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+    //Для большого планшета
+    @media (min-width: 1024px) {
+      font-size: 30px;
+    }
+  }
+  p {
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+      font-size: 16px;
+    }
+    span {
+      color: var(--brand-blue);
+      font-weight: 700;
+      font-size: 14px;
+      //Для планшета
+      @media (min-width: 768px) {
+        font-size: 16px;
+      }
+    }
+    span.underline {
+      font-weight: 700;
+      border-bottom: 1px solid #000;
+      color: #000;
+      font-size: 14px;
+      //Для планшета
+      @media (min-width: 768px) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+/* Убираем стандартный маркер Chrome */
+details summary::-webkit-details-marker {
+  display: none;
+}
+/* Убираем стандартный маркер Firefox */
+details > summary {
+  margin: 0 auto;
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  &:focus {
+    outline: none;
+    filter: drop-shadow(0px 0px 2px #ffffff)
+      drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.3))
+      drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.4))
+      drop-shadow(-2px -2px 5px rgba(131, 170, 241, 0.4));
+  }
+  //Для планшета
+  @media (min-width: 768px) {
+    max-width: 360px;
+  }
+  //Для большого планшета
+  @media (min-width: 1024px) {
+    max-width: 540px;
+  }
+  //Для десктопа
+  @media (min-width: 1200px) {
+    max-width: 600px;
+  }
+  &::before {
+    content: "\25BC";
+    position: absolute;
+    font-size: 20px;
+    transform: translateX(-50%);
+    top: 22px;
+    left: 50%;
+    color: var(--brand-blue);
+    //Для большого смартфона
+    @media (min-width: 360px) {
+      top: 25px;
+    }
+    //Для большого смартфона
+    @media (min-width: 375px) {
+      top: 27px;
+    }
+    //Для планшета
+    @media (min-width: 768px) {
+      font-size: 18px;
+      top: 30px;
+    }
+    //Для большого планшета
+    @media (min-width: 1024px) {
+      font-size: 20px;
+      top: 40px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      font-size: 22px;
+      top: 38px;
+    }
+  }
+  h4 {
+    transition: 0.5s;
+    &:hover {
+      color: #ff0000;
+    }
+  }
+}
+details[open] summary:before {
+  content: "";
+}
+//----------/Спойлер для условий бронирования----------
 .price-section__rent {
   width: 100%;
   z-index: 2;
@@ -65,7 +213,6 @@
       font-size: 22px;
       font-weight: 500;
       margin-bottom: 22px;
-      font-family: "M PLUS 1p", sans-serif;
     }
     //Для большого планшета
     @media (min-width: 1024px) {
@@ -84,7 +231,7 @@
     color: #000;
     font-weight: 400;
     color: #000000;
-    line-height: 1.2;
+    line-height: 1.35;
     z-index: 2;
     text-align: center;
     //Для большого смартфона
@@ -110,10 +257,10 @@
   margin-bottom: 15px;
 }
 .price-section__item {
-  margin-left: 20px;
+  margin-left: 31px;
   margin-bottom: 15px;
   position: relative;
-  font-size: 15px;
+  font-size: 14px;
   font-family: sans-serif;
   font-weight: 400;
   color: #000;
@@ -128,7 +275,6 @@
   }
   //Для планшета
   @media (min-width: 768px) {
-    margin-left: 31px;
     line-height: 1;
   }
   //Для большого планшета
@@ -181,8 +327,8 @@
   }
   h4 {
     margin-bottom: 30px;
-    font-size: 22px;
-    font-family: sans-serif;
+    font-size: 20px;
+    font-family: "M PLUS 1p", sans-serif;
     font-weight: 700;
     color: #000;
     line-height: 1.2;
@@ -192,7 +338,6 @@
       display: block;
       font-size: 22px;
       margin-bottom: 22px;
-      font-family: "M PLUS 1p", sans-serif;
       font-weight: 500;
     }
     //Для большого планшета
@@ -256,24 +401,25 @@ span.red {
       font-family: "M PLUS 1p", sans-serif;
     }
     &:first-of-type {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       font-size: 20px;
       font-weight: 700;
       color: var(--brand-blue);
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0px 0px 30px 5px rgb(119, 162, 219);
+      // background-color: #fff;
+      // border-radius: 10px;
+      // box-shadow: 0px 0px 30px 5px rgb(119, 162, 219);
       //Для планшета
       @media (min-width: 768px) {
+        margin-bottom: 15px;
         font-size: 25px;
       }
       //Для большого планшета
       @media (min-width: 1024px) {
-        font-size: 28px;
+        font-size: 30px;
       }
     }
     &:nth-of-type(2) {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
     &:last-of-type {
       font-family: "Verdana", sans-serif;

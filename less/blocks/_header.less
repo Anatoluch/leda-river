@@ -1,493 +1,587 @@
 .header {
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 21px 0 10px;
-  position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    z-index: -5;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    padding: 21px 0 10px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    margin: 0 auto;
-    padding: 8px 0 0;
-  }
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 21px 0 10px;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		background-color: #fff;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		z-index: -5;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		padding: 21px 0 10px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		margin: 0 auto;
+		padding: 8px 0 0;
+	}
 }
 .header-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  //Для смартфона
-  @media (min-width: 480px) {
-    margin-bottom: 10px;
-  }
-  //Для планшета
-  @media (min-width: 960px) {
-    margin-bottom: 0;
-  }
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	//Для смартфона
+	@media (min-width: 480px) {
+		margin-bottom: 10px;
+	}
+	//Для планшета
+	@media (min-width: 960px) {
+		margin-bottom: 0;
+	}
 }
+//----- Фиксированное (скролл) меню для планшетов и мобилок -----
 #nav-wrapper {
-  display: none;
-  position: fixed;
-  z-index: 4;
-  top: 0;
-  left: 0;
-  width: 100%;
+	display: none;
+	position: fixed;
+	z-index: 4;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 .header-nav-fixed {
-  padding: 0 15px;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 4;
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(3px);
-  //Для смартфона
-  @media (min-width: 480px) {
-    padding: 0 20px;
-  }
-  //Для планшета
-  @media (min-width: 960px) {
-    padding: 0 30px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    display: none;
-  }
-  .logo-fixed {
-    display: inline-block;
-    position: relative;
-    z-index: 5;
-    font-size: 30px;
-    font-family: serif;
-    font-style: italic;
-    color: var(--brand-blue);
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -3.2px;
-    transition: transform 0.3s;
-    //Для большого смартфона
-    @media (min-width: 400px) {
-      font-size: 32px;
-    }
-    //Для планшета
-    @media (min-width: 768px) {
-      font-size: 36px;
-    }
-    //Для большого планшета
-    @media (min-width: 1024px) {
-      font-size: 38px;
-    }
-    &:hover {
-      transform: scale(1.03) !important;
-    }
-    a {
-      color: var(--brand-blue);
-      transition: color 0.3s ease-in;
-      &:hover {
-        color: var(--main-blue);
-      }
-      &:focus {
-        outline: none;
-        filter: drop-shadow(0px 0px 2px #ffffff)
-          drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
-          drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
-          drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
-      }
-    }
-  }
+	padding: 0 15px;
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 4;
+	background-color: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(7px);
+	//Для смартфона
+	@media (min-width: 480px) {
+		padding: 0 20px;
+	}
+	//Для планшета
+	@media (min-width: 960px) {
+		padding: 0 30px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: none;
+	}
+	.logo-fixed {
+		display: inline-block;
+		position: relative;
+		z-index: 5;
+		font-size: 30px;
+		font-family: serif;
+		font-style: italic;
+		color: var(--brand-blue);
+		font-weight: 700;
+		line-height: 1;
+		letter-spacing: -3.2px;
+		transition: transform 0.3s;
+		//Для большого смартфона
+		@media (min-width: 400px) {
+			font-size: 32px;
+		}
+		//Для планшета
+		@media (min-width: 768px) {
+			font-size: 36px;
+		}
+		//Для большого планшета
+		@media (min-width: 1024px) {
+			font-size: 38px;
+		}
+		&:hover {
+			transform: scale(1.03) !important;
+		}
+		a {
+			color: var(--brand-blue);
+			transition: color 0.3s ease-in;
+			&:hover {
+				color: var(--main-blue);
+			}
+			&:focus {
+				outline: none;
+				filter: drop-shadow(0px 0px 2px #ffffff)
+					drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+					drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+					drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+			}
+		}
+	}
 }
+//----- /Фиксированное (скролл) меню для планшетов и мобилок -----
 .header-nav__list {
-  display: none;
-  //Для десктопа
-  @media (min-width: 1200px) {
-    display: flex;
-    align-items: center;
-  }
+	display: none;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: flex;
+		align-items: center;
+	}
 }
 .header-nav__item {
-  margin-right: 24px;
-  &:last-child {
-    margin-right: 0;
-  }
+	margin-right: 24px;
+	&:last-child {
+		margin-right: 0;
+	}
 }
 .header-nav__link {
-  position: relative;
-  color: var(--brand-blue);
-  font-family: serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 1.2;
-  letter-spacing: -1px;
-  //Для десктопа
-  @media (min-width: 1366px) {
-    font-size: 32px;
-  }
-  //Для десктопа
-  @media (min-width: 1600px) {
-    font-size: 34px;
-  }
-  //Для десктопа
-  @media (min-width: 1920px) {
-    font-size: 36px;
-  }
-  //Для десктопа
-  @media (min-width: 2500px) {
-    font-size: 38px;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    bottom: 5px;
-    left: 0;
-    height: 2px;
-    background-color: var(--underline);
-    transition: 0.3s ease-in;
-    z-index: -1;
-  }
-  &:hover::after,
-  &:focus::after {
-    width: 102%;
-  }
-  &:focus {
-    outline: none;
-    border-top: 1px dotted var(--underline);
-  }
-  &:active {
-    outline: none;
-    padding: 0;
-    border: none;
-  }
+	position: relative;
+	color: var(--brand-blue);
+	font-family: serif;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 25px;
+	line-height: 1.2;
+	letter-spacing: -1px;
+	//Для десктопа
+	@media (min-width: 1366px) {
+		font-size: 32px;
+	}
+	//Для десктопа
+	@media (min-width: 1600px) {
+		font-size: 34px;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		font-size: 36px;
+	}
+	//Для десктопа
+	@media (min-width: 2500px) {
+		font-size: 38px;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		width: 0;
+		bottom: 5px;
+		left: 0;
+		height: 2px;
+		background-color: var(--underline);
+		transition: 0.3s ease-in;
+		z-index: -1;
+	}
+	&:hover::after,
+	&:focus::after {
+		width: 102%;
+	}
+	&:focus {
+		outline: none;
+		border-top: 1px dotted var(--underline);
+	}
+	&:active {
+		outline: none;
+		padding: 0;
+		border: none;
+	}
 }
 //Активная ссылка
 .header-nav__link.header-nav__link--active::after {
-  content: "";
-  position: absolute;
-  width: 102%;
-  bottom: 5px;
-  left: 0;
-  height: 2px;
-  background-color: var(--underline);
-  z-index: -1;
-  pointer-events: none;
+	content: "";
+	position: absolute;
+	width: 102%;
+	bottom: 5px;
+	left: 0;
+	height: 2px;
+	background-color: var(--underline);
+	z-index: -1;
+	pointer-events: none;
 }
 //---Социальные иконки хедера
 .header-social__row {
-  display: none;
-  //Для десктопа
-  @media (min-width: 1200px) {
-    display: flex;
-  }
+	display: none;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: flex;
+		z-index: 8;
+	}
 }
 .icon-item {
-  margin-right: 10px;
-  &:last-child {
-    margin-right: 0;
-  }
+	margin-right: 10px;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+.header-links__row {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }
 .header-social__icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
-  &:hover {
-    display: flex;
-    transform: scale(1.1);
-    border-radius: 50%;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
-  }
-  &:focus {
-    outline: none;
-    filter: drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.3))
-      drop-shadow(2px 2px 8px rgba(0, 0, 255, 0.7))
-      drop-shadow(-2px -2px 8px rgba(131, 170, 241, 0.7));
-  }
+	margin-bottom: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+	&:hover {
+		display: flex;
+		transform: scale(1.1);
+		border-radius: 50%;
+		box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+	}
+	&:focus {
+		outline: none;
+		filter: drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.3))
+			drop-shadow(2px 2px 8px rgba(0, 0, 255, 0.7))
+			drop-shadow(-2px -2px 8px rgba(131, 170, 241, 0.7));
+	}
 }
 .header-social__icon > svg {
-  color: #fff;
-  width: 20px;
-  height: 20px;
+	color: #fff;
+	width: 20px;
+	height: 20px;
 }
 .icon-item .vib-head {
-  width: 19px;
-  height: 19px;
+	width: 19px;
+	height: 19px;
 }
 /*--Универсальные круглые иконки контактов--*/
 .insta-h-a {
-  background-color: var(--brand-blue);
-  &:hover {
-    background-color: #d6249f;
-    background: radial-gradient(
-      circle at 30% 107%,
-      #fdf497 0%,
-      #fdf497 5%,
-      #fd5949 45%,
-      #d6249f 60%,
-      #285aeb 90%
-    );
-  }
+	background-color: var(--brand-blue);
+	&:hover {
+		background-color: #d6249f;
+		background: radial-gradient(
+			circle at 30% 107%,
+			#fdf497 0%,
+			#fdf497 5%,
+			#fd5949 45%,
+			#d6249f 60%,
+			#285aeb 90%
+		);
+	}
 }
 .insta-head {
-  transition: 0.3s;
-  &:hover {
-    transform: scale(1.4) rotate(360deg);
-  }
+	transition: 0.3s;
+	&:hover {
+		transform: scale(1.4) rotate(360deg);
+	}
 }
 .tele-h-a {
-  background-color: var(--brand-blue);
-  &:hover {
-    background-color: #039be5;
-  }
+	background-color: var(--brand-blue);
+	&:hover {
+		background-color: #039be5;
+	}
 }
 .tele-head {
-  transition: 0.3s;
-  &:hover {
-    transform: scale(1.2);
-  }
+	transition: 0.3s;
+	&:hover {
+		transform: scale(1.2);
+	}
 }
 .vk-h-a {
-  background-color: var(--brand-blue);
-  &:hover {
-    background-color: #4d76a1;
-  }
+	background-color: var(--brand-blue);
+	&:hover {
+		background-color: #4d76a1;
+	}
 }
 .vk-head {
-  transition: 0.3s;
-  &:hover {
-    transform: scale(1.25);
-  }
+	transition: 0.3s;
+	&:hover {
+		transform: scale(1.25);
+	}
 }
 .whatsapp-h-a {
-  background-color: var(--brand-blue);
-  &:hover {
-    background-color: #43d854;
-  }
+	background-color: var(--brand-blue);
+	&:hover {
+		background-color: #43d854;
+	}
 }
 .whatsapp-head {
-  transition: 0.3s;
-  &:hover {
-    transform: scale(1.25);
-  }
+	transition: 0.3s;
+	&:hover {
+		transform: scale(1.25);
+	}
 }
 .vib-h-a {
-  background-color: var(--brand-blue);
-  &:hover {
-    background-color: #665cac;
-  }
+	background-color: var(--brand-blue);
+	&:hover {
+		background-color: #665cac;
+	}
 }
 .vib-head {
-  transition: 0.3s;
-  &:hover {
-    transform: scale(1.15);
-  }
+	transition: 0.3s;
+	&:hover {
+		transform: scale(1.15);
+	}
 }
 //---/Социальные иконки хедера
+.phone-top {
+	display: none;
+	a {
+		font-size: 20px;
+		font-weight: 500;
+		font-family: "M PLUS 1p", sans-serif;
+		color: var(--main-blue);
+		line-height: 1;
+		transition: 0.5s;
+		&:hover {
+			color: red;
+		}
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		z-index: 8;
+		cursor: pointer;
+		display: block;
+	}
+}
+.phone-top.phone-top--scroll {
+	//Для десктопа
+	@media (min-width: 1200px) {
+		position: absolute;
+		padding: 0px 15px 3px 15px;
+		top: 48px;
+		right: 0px;
+		z-index: 7;
+		border-radius: 0px 0px 25px 25px;
+		background-color: rgba(255, 255, 255, 0.75);
+		backdrop-filter: blur(7px);
+	}
+}
+.phone-top-mob {
+	position: relative;
+	z-index: 8;
+	cursor: pointer;
+	a {
+		font-size: 20px;
+		font-weight: 500;
+		font-family: "M PLUS 1p", sans-serif;
+		color: var(--main-blue);
+		line-height: 1;
+		transition: 0.5s;
+		&:hover {
+			color: red;
+		}
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: none;
+	}
+}
 .header-content {
-  display: flex;
-  flex-direction: column-reverse;
-  position: relative;
-  //Для планшета
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	//Для планшета
+	@media (min-width: 768px) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
 }
 .header-content__desc {
-  width: 100%;
-  //Для планшета
-  @media (min-width: 768px) {
-    padding: 10px 10px 0;
-    border-radius: 0 0 70px 25px;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 1) 75%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
-  //Для планшета
-  @media (min-width: 960px) {
-    padding: 30px 10px 0px 0px;
-  }
+	width: 100%;
+	//Для планшета
+	@media (min-width: 768px) {
+		padding: 10px 10px 0;
+		border-radius: 0 0 70px 25px;
+		background: rgb(255, 255, 255);
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 1) 75%,
+			rgba(255, 255, 255, 0) 100%
+		);
+	}
+	//Для планшета
+	@media (min-width: 960px) {
+		padding: 30px 10px 0px 0px;
+	}
 
-  //Для десктопа
-  @media (min-width: 1200px) {
-    // margin: 0px 0px 0px 14px;
-    padding: 30px 12px 40px 12px;
-    width: 48%;
-    filter: drop-shadow(-30px 50px 20px rgba(119, 162, 219, 0.3));
-  }
-  p {
-    margin-bottom: 5px;
-    font-size: 17px;
-    font-family: sans-serif;
-    color: rgb(7, 7, 7);
-    font-weight: 400;
-    line-height: 1.5;
-    text-indent: 10px;
-    //Для планшета
-    @media (min-width: 820px) {
-      font-size: 18px;
-    }
-    //Для планшета
-    @media (min-width: 890px) {
-      font-size: 20px;
-    }
-    //Для планшета
-    @media (min-width: 960px) {
-      font-size: 20px;
-      font-style: italic;
-    }
-    //Для планшета
-    @media (min-width: 1024px) {
-      font-size: 22px;
-    }
-    //Для десктопа
-    @media (min-width: 1200px) {
-      font-size: 27px;
-      font-family: serif;
-      font-style: italic;
-      color: #070707;
-      font-weight: 400;
-      line-height: 1.5;
-      text-indent: 15px;
-    }
-    &:last-of-type {
-      margin-bottom: 15px;
-      //Для планшета
-      @media (min-width: 768px) {
-        margin-bottom: 25px;
-      }
-      //Для планшета
-      @media (min-width: 1024px) {
-        margin-bottom: 35px;
-      }
-      //Для десктопа
-      @media (min-width: 1200px) {
-        margin-bottom: 40px;
-      }
-    }
-    span {
-      font-weight: 700;
-    }
-    &:first-of-type {
-      span {
-        color: var(--brand-blue);
-      }
-    }
-  }
+	//Для десктопа
+	@media (min-width: 1200px) {
+		// margin: 0px 0px 0px 14px;
+		padding: 30px 12px 40px 12px;
+		width: 48%;
+		filter: drop-shadow(-30px 50px 20px rgba(119, 162, 219, 0.3));
+	}
+	p {
+		margin-bottom: 5px;
+		font-size: 17px;
+		font-family: sans-serif;
+		color: rgb(7, 7, 7);
+		font-weight: 400;
+		line-height: 1.5;
+		text-indent: 10px;
+		//Для планшета
+		@media (min-width: 820px) {
+			font-size: 18px;
+		}
+		//Для планшета
+		@media (min-width: 890px) {
+			font-size: 20px;
+		}
+		//Для планшета
+		@media (min-width: 960px) {
+			font-size: 20px;
+			font-style: italic;
+		}
+		//Для планшета
+		@media (min-width: 1024px) {
+			font-size: 22px;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			font-size: 27px;
+			font-family: serif;
+			font-style: italic;
+			color: #070707;
+			font-weight: 400;
+			line-height: 1.5;
+			text-indent: 15px;
+		}
+		&:last-of-type {
+			margin-bottom: 15px;
+			//Для планшета
+			@media (min-width: 768px) {
+				margin-bottom: 25px;
+			}
+			//Для планшета
+			@media (min-width: 1024px) {
+				margin-bottom: 35px;
+			}
+			//Для десктопа
+			@media (min-width: 1200px) {
+				margin-bottom: 40px;
+			}
+		}
+		span {
+			font-weight: 700;
+		}
+		&:first-of-type {
+			span {
+				color: var(--brand-blue);
+			}
+		}
+	}
 }
 .header-btn-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  //Для планшета
-  @media (min-width: 768px) {
-    padding-left: 5px;
-    padding-right: 5px;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    padding-left: 15px;
-    padding-right: 10px;
-  }
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	//Для планшета
+	@media (min-width: 768px) {
+		padding-left: 5px;
+		padding-right: 5px;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		padding-left: 15px;
+		padding-right: 10px;
+	}
 }
 .header-content__img {
-  position: relative;
-  width: 100%;
-  z-index: 2;
-  padding-top: 20px;
-  padding-bottom: 40px;
-  transform: scale(1.2);
-  //Для мобильных
-  @media (min-width: 360px) {
-    padding-top: 25px;
-  }
-  //Для мобильных
-  @media (min-width: 420px) {
-    padding-top: 30px;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    max-width: 50%;
-    padding-top: 0;
-    padding-bottom: 0;
-    transform: scale(1);
-  }
-  &::before {
-    //Для планшета
-    @media (min-width: 768px) {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      bottom: -10%;
-      right: -9%;
-      z-index: -1;
-      border-radius: 25px;
-      background-image: linear-gradient(
-        to top,
-        rgba(205, 228, 255, 0) 0%,
-        rgba(172, 211, 255, 0.3) 15%,
-        rgba(172, 211, 255, 0.25) 60%,
-        rgba(244, 248, 249, 0) 100%
-      );
-      filter: drop-shadow(0px 0px 5px rgba(139, 165, 172, 0.35));
-      backdrop-filter: blur(2px) grayscale(0.1);
-    }
-    //Для планшета
-    @media (min-width: 960px) {
-      right: -24%;
-    }
-  }
-  img {
-    //Для планшета
-    @media (min-width: 768px) {
-      margin-top: -10px;
-    }
-  }
+	position: relative;
+	width: 100%;
+	z-index: 2;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	transform: scale(1.2);
+	//Для мобильных
+	@media (min-width: 360px) {
+		padding-top: 25px;
+	}
+	//Для мобильных
+	@media (min-width: 420px) {
+		padding-top: 30px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		max-width: 50%;
+		padding-top: 0;
+		padding-bottom: 0;
+		transform: scale(1);
+	}
+	&::before {
+		//Для планшета
+		@media (min-width: 768px) {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			bottom: -10%;
+			right: -9%;
+			z-index: -1;
+			border-radius: 25px;
+			background-image: linear-gradient(
+				to top,
+				rgba(205, 228, 255, 0) 0%,
+				rgba(172, 211, 255, 0.3) 15%,
+				rgba(172, 211, 255, 0.25) 60%,
+				rgba(244, 248, 249, 0) 100%
+			);
+			filter: drop-shadow(0px 0px 5px rgba(139, 165, 172, 0.35));
+			backdrop-filter: blur(2px) grayscale(0.1);
+		}
+		//Для планшета
+		@media (min-width: 960px) {
+			right: -24%;
+		}
+	}
+	img {
+		//Для планшета
+		@media (min-width: 768px) {
+			margin-top: -10px;
+		}
+	}
 }
 .header-bg-row {
-  margin: 0 auto;
-  max-width: 1600px;
-  z-index: -1;
-  margin-top: 4px;
-  position: relative;
-  //Для планшета
-  @media (min-width: 768px) {
-    margin-top: -70px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    margin-top: -120px;
-  }
-  img {
-    transform: scale(1.23);
-    //Для планшета
-    @media (min-width: 768px) {
-      transform: scale(1);
-    }
-  }
+	margin: 0 auto;
+	max-width: 1600px;
+	z-index: -1;
+	margin-top: 4px;
+	position: relative;
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-top: -70px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		margin-top: -120px;
+	}
+	img {
+		transform: scale(1.23);
+		//Для планшета
+		@media (min-width: 768px) {
+			transform: scale(1);
+		}
+	}
 }
+//----- Фиксированное (скролл) меню для ПК -----
+#nav-wrapper-pc {
+	//Для ПК
+	@media (min-width: 1200px) {
+		display: none;
+		position: fixed;
+		z-index: 6;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+}
+.header-nav-fixed-pc {
+	display: none;
+	//Для ПК
+	@media (min-width: 1200px) {
+		padding: 8px 15px 0;
+		position: fixed;
+		top: 0;
+		left: 50%;
+		width: 100%;
+		max-width: 1600px;
+		background: rgba(255, 255, 255, 0.75);
+		backdrop-filter: blur(7px);
+		z-index: 7;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transform: translateX(-50%);
+	}
+}
+//----- /Фиксированное (скролл) меню для ПК -----

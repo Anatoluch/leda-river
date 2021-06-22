@@ -79,11 +79,15 @@
   }
 }
 .article__title-heading {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 700;
   font-family: "M PLUS 1p", sans-serif;
   color: var(--brand-blue);
   line-height: 1.2;
+  //Для большого смартфона
+  @media (min-width: 340px) {
+    font-size: 22px;
+  }
   //Для большого смартфона
   @media (min-width: 400px) {
     font-size: 24px;
@@ -139,6 +143,13 @@
   //Для планшета
   @media (min-width: 429px) {
     content: url("../img/articles/top-clear-water/big/mus-aya-big.jpg");
+  }
+}
+//Статья 5 "Таинственная Балаклава"
+.art-prev-img-5 {
+  //Для планшета
+  @media (min-width: 429px) {
+    content: url("../img/articles/balaklava/balaklava-bay-02.jpg");
   }
 }
 //--/Замена изображений по медиазапросам (Превью статей)--
@@ -199,6 +210,28 @@
       &:hover {
         color: var(--underline);
       }
+    }
+  }
+}
+.article__ordered-list {
+  padding: 0 0 0 30px;
+  a {
+    display: block;
+  }
+  li {
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: var(--brand-blue);
+    //Для планшета
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
+    //Для десктопа
+    @media (min-width: 1200px) {
+      font-size: 20px;
     }
   }
 }
@@ -294,7 +327,7 @@
 .art-img-2-0 {
   //Для планшета
   @media (min-width: 429px) {
-    content: url("../img/articles/bounty-beach/bounty-beach.webp");
+    content: url("../img/articles/bounty-beach/bounty-beach.jpg");
   }
 }
 .art-img-2-1 {
@@ -319,6 +352,31 @@
   //Для планшета
   @media (min-width: 429px) {
     content: url("../img/articles/bounty-beach/bounty-08.jpg");
+  }
+}
+//Сатья "Таинственная Балаклава"
+.art-img-5-1 {
+  //Для планшета
+  @media (min-width: 429px) {
+    content: url("../img/articles/balaklava/balaklava-nazukina.jpg");
+  }
+}
+.art-img-5-2 {
+  //Для планшета
+  @media (min-width: 429px) {
+    content: url("../img/articles/balaklava/balaklava-chembalo.jpg");
+  }
+}
+.art-img-5-3-1 {
+  //Для планшета
+  @media (min-width: 429px) {
+    content: url("../img/articles/balaklava/balaklava-muzey-01.jpg");
+  }
+}
+.art-img-5-3-2 {
+  //Для планшета
+  @media (min-width: 429px) {
+    content: url("../img/articles/balaklava/balaklava-muzey-02.jpg");
   }
 }
 //--/Замена изображений в статьях по медиазапросам--

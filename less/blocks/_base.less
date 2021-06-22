@@ -1,108 +1,108 @@
 :root {
-  --bl: #000;
-  --brand-blue: rgb(0, 77, 136);
-  --main-blue: #006cba;
-  --underline: #4897e2;
+	--bl: #000;
+	--brand-blue: rgb(0, 77, 136);
+	--main-blue: #006cba;
+	--underline: #4897e2;
 }
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 html {
-  overflow-x: hidden;
+	overflow-x: hidden;
 }
 body {
-  margin: 0;
-  padding: 0;
-  font-weight: 400;
-  font-size: 16px;
-  background-color: #fff;
-  overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+	font-size: 16px;
+	background-color: #fff;
+	overflow-x: hidden;
 }
 body.noscroll {
-  position: fixed;
+	position: fixed;
 }
 /*---Стили для боковой навигации по разделам страницы*/
 /*--Планка навигации--*/
 #page-nav {
-  display: none;
-  //Для десктопа
-  @media (min-width: 1200px) {
-    display: block;
-    position: fixed;
-    right: 2px;
-    top: 45%;
-    z-index: 100;
-  }
+	display: none;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: block;
+		position: fixed;
+		right: 2px;
+		top: 45%;
+		z-index: 100;
+	}
 }
 /*--/Планка навигации--*/
 /*--Ссылки (точки) на разделы--*/
 #page-nav li {
-  width: 15px;
-  height: 15px;
-  background-color: var(--main-blue);
-  border-radius: 50%;
-  border: 2px solid #fff;
-  margin-bottom: 8px;
-  transition: 0.3s;
-  &:hover {
-    border-color: rgb(241, 124, 28);
-  }
+	width: 15px;
+	height: 15px;
+	background-color: var(--main-blue);
+	border-radius: 50%;
+	border: 2px solid #fff;
+	margin-bottom: 8px;
+	transition: 0.3s;
+	&:hover {
+		border-color: rgb(241, 124, 28);
+	}
 }
 #page-nav li a {
-  display: block;
-  height: 100%;
-  &:focus {
-    outline: none;
-    filter: drop-shadow(0px 0px 3px #fff)
-      drop-shadow(0px 0px 5px rgb(241, 124, 28));
-  }
+	display: block;
+	height: 100%;
+	&:focus {
+		outline: none;
+		filter: drop-shadow(0px 0px 3px #fff)
+			drop-shadow(0px 0px 5px rgb(241, 124, 28));
+	}
 }
 #page-nav li.active-nav {
-  background-color: rgb(241, 124, 28);
+	background-color: rgb(241, 124, 28);
 }
 /*--/Ссылки (точки) на разделы--*/
 /*---/Стили для боковой навигации по разделам страницы*/
 /*--Затемняющий слой вокруг плашки мобильного меню--*/
 #overlay {
-  position: fixed;
-  padding: 0;
-  margin: 0;
-  font-size: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 6;
-  transform: translateX(-100%);
-  transition: 0.3s ease-in 0.15s;
-  background: rgb(0, 108, 186);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 108, 186, 0.6) 0%,
-    rgba(0, 84, 145, 0.8) 35%,
-    rgba(0, 75, 130, 0.92) 50%,
-    rgba(0, 50, 88, 1) 100%
-  );
-  backdrop-filter: blur(3px);
-  @media (min-width: 1200px) {
-    display: none;
-  }
+	position: fixed;
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	z-index: 6;
+	transform: translateX(-100%);
+	transition: 0.3s ease-in 0.15s;
+	background: rgb(0, 108, 186);
+	background: linear-gradient(
+		90deg,
+		rgba(0, 108, 186, 0.6) 0%,
+		rgba(0, 84, 145, 0.8) 35%,
+		rgba(0, 75, 130, 0.92) 50%,
+		rgba(0, 50, 88, 1) 100%
+	);
+	backdrop-filter: blur(3px);
+	@media (min-width: 1200px) {
+		display: none;
+	}
 }
 #overlay.active {
-  transition: 0.5s;
-  display: block;
-  transform: translateX(0);
+	transition: 0.5s;
+	display: block;
+	transform: translateX(0);
 }
 /*--/Затемняющий слой вокруг плашки мобильного меню--*/
 a,
 a:hover {
-  text-decoration: none;
-  display: inline-block;
+	text-decoration: none;
+	display: inline-block;
 }
 ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
 h1,
 h2,
@@ -111,41 +111,41 @@ h4,
 h5,
 h6,
 p {
-  margin: 0;
+	margin: 0;
 }
 .main-title {
-  margin-bottom: 10px;
-  font-family: serif;
-  font-style: italic;
-  text-align: center;
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--main-blue);
-  //Для большого смартфона
-  @media (min-width: 360px) {
-    font-size: 28px;
-  }
-  //Для большого смартфона
-  @media (min-width: 400px) {
-    font-size: 30px;
-  }
-  //Для большого смартфона
-  @media (min-width: 420px) {
-    font-size: 32px;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    font-size: 30px;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    font-size: 38px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    font-size: 42px;
-  }
+	margin-bottom: 10px;
+	font-family: serif;
+	font-style: italic;
+	text-align: center;
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 1.3;
+	color: var(--main-blue);
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 28px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 30px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		font-size: 32px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 30px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-size: 38px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 42px;
+	}
 }
 p::selection,
 li::selection,
@@ -153,644 +153,650 @@ h1::selection,
 h2::selection,
 h3::selection,
 span::selection {
-  background: #79bdfc;
+	background: #79bdfc;
 }
 //Логотип шапки
 .logo {
-  display: inline-block;
-  position: relative;
-  z-index: 3;
-  font-size: 45px;
-  font-family: serif;
-  font-style: italic;
-  color: var(--brand-blue);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -4px;
-  transition: transform 0.3s;
-  //Для большого смартфона
-  @media (min-width: 400px) {
-    font-size: 46px;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    font-size: 48px;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    font-size: 60px;
-  }
-  &:hover {
-    transform: scale(1.05) !important;
-  }
-  a {
-    color: var(--brand-blue);
-    transition: color 0.3s ease-in;
-    &:hover {
-      color: var(--main-blue);
-    }
-    &:focus {
-      outline: none;
-      filter: drop-shadow(0px 0px 2px #ffffff)
-        drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
-        drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
-        drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
-    }
-  }
+	display: inline-block;
+	position: relative;
+	z-index: 3;
+	font-size: 45px;
+	font-family: serif;
+	font-style: italic;
+	color: var(--brand-blue);
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: -4px;
+	transition: transform 0.3s;
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 46px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 48px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-size: 60px;
+	}
+	&:hover {
+		transform: scale(1.05) !important;
+	}
+	a {
+		color: var(--brand-blue);
+		transition: color 0.3s ease-in;
+		&:hover {
+			color: var(--main-blue);
+		}
+		&:focus {
+			outline: none;
+			filter: drop-shadow(0px 0px 2px #ffffff)
+				drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+				drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+				drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+		}
+	}
 }
+//-----Лого фиксированного меню для ПК
+//Логотип шапки
+.logo.logo--fixed-pc {
+  font-size: 40px;
+}
+//-----/Лого фиксированного меню для ПК
 .logo.logo--white {
-  a {
-    color: #fff;
-    text-shadow: 0px 0px 2px #002846, 0px 0px 4px var(--brand-blue);
-  }
+	a {
+		color: #fff;
+		text-shadow: 0px 0px 2px #002846, 0px 0px 4px var(--brand-blue);
+	}
 }
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+	max-width: 100%;
+	height: auto;
+	display: block;
 }
 svg {
-  max-width: 100%;
+	max-width: 100%;
 }
 button,
 input,
 textarea {
-  outline: none;
+	outline: none;
 }
 input[type="radio"] {
-  appearance: none;
-  -moz-apperance: none;
-  -webkit-appearance: none;
+	appearance: none;
+	-moz-apperance: none;
+	-webkit-appearance: none;
 }
 button {
-  display: inline-block;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  background-color: transparent;
+	display: inline-block;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	background-color: transparent;
 }
 /*--Контейнер--*/
 .container {
-  width: 100%;
-  max-width: 320px;
-  padding: 0 15px;
-  margin: 0 auto;
-  //Для большого смартфона
-  @media (min-width: 360px) {
-    max-width: 360px;
-  }
-  //Для большого смартфона
-  @media (min-width: 400px) {
-    max-width: 400px;
-  }
-  //Для большого смартфона
-  @media (min-width: 420px) {
-    padding: 0 20px;
-    max-width: 420px;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    max-width: 768px;
-    padding: 0 30px;
-  }
-  //Для планшета
-  @media (min-width: 840px) {
-    max-width: 840px;
-    padding: 0 30px;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    max-width: 1024px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    max-width: 1140px;
-    padding: 0;
-  }
+	width: 100%;
+	max-width: 320px;
+	padding: 0 15px;
+	margin: 0 auto;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		max-width: 360px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		max-width: 400px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		padding: 0 20px;
+		max-width: 420px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		max-width: 768px;
+		padding: 0 30px;
+	}
+	//Для планшета
+	@media (min-width: 840px) {
+		max-width: 840px;
+		padding: 0 30px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		max-width: 1024px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		max-width: 1140px;
+		padding: 0;
+	}
 }
 .container.container--enlarge {
-  width: 100%;
-  padding: 0 15px;
-  max-width: 320px;
-  //Для смартфона
-  @media (min-width: 330px) {
-    max-width: 330px;
-  }
-  //Для смартфона
-  @media (min-width: 340px) {
-    max-width: 340px;
-  }
-  //Для большого смартфона
-  @media (min-width: 360px) {
-    max-width: 100%;
-  }
-  //Для большого смартфона
-  @media (min-width: 420px) {
-    // max-width: 100%;
-    padding: 0 20px;
-  }
-  //Для большого смартфона
-  @media (min-width: 428px) {
-    padding: 0 30px;
-    // max-width: 100%;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    padding: 0 30px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    padding: 0 15px;
-    max-width: 1430px;
-  }
-  //Для десктопа
-  @media (min-width: 1600px) {
-    max-width: 1600px;
-  }
+	width: 100%;
+	padding: 0 15px;
+	max-width: 320px;
+	//Для смартфона
+	@media (min-width: 330px) {
+		max-width: 330px;
+	}
+	//Для смартфона
+	@media (min-width: 340px) {
+		max-width: 340px;
+	}
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		max-width: 100%;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		// max-width: 100%;
+		padding: 0 20px;
+	}
+	//Для большого смартфона
+	@media (min-width: 428px) {
+		padding: 0 30px;
+		// max-width: 100%;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		padding: 0 30px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		padding: 0 15px;
+		max-width: 1430px;
+	}
+	//Для десктопа
+	@media (min-width: 1600px) {
+		max-width: 1600px;
+	}
 }
 .section-title {
-  display: inline-block;
-  font-size: 40px;
-  font-family: serif;
-  color: var(--main-blue);
-  font-style: italic;
-  line-height: 1.2;
-  text-align: center;
-  //Для большого смартфона
-  @media (min-width: 360px) {
-    font-size: 42px;
-  }
-  //Для большого смартфона
-  @media (min-width: 370px) {
-    font-size: 45px;
-  }
-  //Для большого смартфона
-  @media (min-width: 400px) {
-    font-size: 52px;
-  }
-  //Для большого смартфона
-  @media (min-width: 420px) {
-    font-size: 56px;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    font-size: 90px;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    font-size: 100px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    font-size: 120px;
-  }
+	display: inline-block;
+	font-size: 40px;
+	font-family: serif;
+	color: var(--main-blue);
+	font-style: italic;
+	line-height: 1.2;
+	text-align: center;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 42px;
+	}
+	//Для большого смартфона
+	@media (min-width: 370px) {
+		font-size: 45px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 52px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		font-size: 56px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 90px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-size: 100px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 120px;
+	}
 }
 .section-title.section-title--white {
-  color: #fff;
+	color: #fff;
 }
 .title-4 {
-  margin-bottom: 30px;
-  font-size: 21px;
-  font-family: "M PLUS 1p", sans-serif;
-  font-weight: 500;
-  color: #000;
-  line-height: 1.2;
-  text-align: center;
-  //Для большого смартфона
-  @media (min-width: 360px) {
-    font-size: 24px;
-  }
-  //Для большого смартфона
-  @media (min-width: 400px) {
-    font-size: 27px;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    display: inline-block;
-    margin-bottom: 30px;
-    font-size: 25px;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
-    text-align: unset;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    font-size: 32px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    font-size: 36px;
-  }
+	margin-bottom: 30px;
+	font-size: 21px;
+	font-family: "M PLUS 1p", sans-serif;
+	font-weight: 500;
+	color: #000;
+	line-height: 1.2;
+	text-align: center;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 24px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 27px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		display: inline-block;
+		margin-bottom: 30px;
+		font-size: 25px;
+		line-height: 1.2;
+		letter-spacing: 0.5px;
+		text-align: unset;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-size: 32px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 36px;
+	}
 }
 .title-4.title-4--white {
-  color: #fff;
-  border-bottom: 3px solid #fff;
-  position: relative;
-  z-index: 3;
+	color: #fff;
+	border-bottom: 3px solid #fff;
+	position: relative;
+	z-index: 3;
 }
 .bottom-line {
-  position: relative;
-  z-index: 1;
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 10px;
-    left: -4px;
-    right: -4px;
-    height: 6px;
-    background-color: var(--underline);
-    filter: opacity(0.5);
-    z-index: -1;
-    transition: 0.3s;
-    //Для большого смартфона
-    @media (min-width: 360px) {
-      left: -4px;
-      right: -4px;
-      bottom: 10px;
-      height: 6px;
-    }
-    //Для большого смартфона
-    @media (min-width: 400px) {
-      bottom: 12px;
-      height: 8px;
-    }
-    //Для планшета
-    @media (min-width: 768px) {
-      bottom: 22px;
-    }
-    //Для большого планшета
-    @media (min-width: 1024px) {
-      height: 12px;
-      bottom: 24px;
-    }
-    //Для десктопа
-    @media (min-width: 1200px) {
-      bottom: 28px;
-      left: -5px;
-      right: -5px;
-    }
-  }
+	position: relative;
+	z-index: 1;
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 10px;
+		left: -4px;
+		right: -4px;
+		height: 6px;
+		background-color: var(--underline);
+		filter: opacity(0.5);
+		z-index: -1;
+		transition: 0.3s;
+		//Для большого смартфона
+		@media (min-width: 360px) {
+			left: -4px;
+			right: -4px;
+			bottom: 10px;
+			height: 6px;
+		}
+		//Для большого смартфона
+		@media (min-width: 400px) {
+			bottom: 12px;
+			height: 8px;
+		}
+		//Для планшета
+		@media (min-width: 768px) {
+			bottom: 22px;
+		}
+		//Для большого планшета
+		@media (min-width: 1024px) {
+			height: 12px;
+			bottom: 24px;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			bottom: 28px;
+			left: -5px;
+			right: -5px;
+		}
+	}
 }
 .btn {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding-left: 24px;
-  padding-right: 24px;
-  height: 70px;
-  width: 90%;
-  background-color: var(--main-blue);
-  border-radius: 35px;
-  font-family: "M PLUS 1p", sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: #fff;
-  line-height: 70px;
-  text-align: center;
-  z-index: 1;
-  //Для планшета
-  @media (min-width: 768px) {
-    margin-bottom: 0;
-    width: unset;
-    padding-left: 24px;
-    padding-right: 24px;
-    height: 48px;
-    border-radius: 24px;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 48px;
-  }
-  //Для планшета
-  @media (min-width: 960px) {
-    height: 64px;
-    padding-left: 35px;
-    padding-right: 35px;
-    border-radius: 32px;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 64px;
-  }
-  //Для планшета
-  @media (min-width: 1024px) {
-    height: 70px;
-    padding-left: 38px;
-    padding-right: 38px;
-    border-radius: 35px;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 70px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    height: 70px;
-    padding-left: 44px;
-    padding-right: 44px;
-    border-radius: 35px;
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 70px;
-  }
-  //Для десктопа
-  @media (min-width: 1600px) {
-    font-weight: 500;
-  }
-  cursor: pointer;
-  transition: 0.3s;
-  &:hover,
-  &:active {
-    background-color: var(--underline);
-    transform: scale(1.03);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
-  }
-  &:focus {
-    outline: none;
-    filter: drop-shadow(0px 0px 2px #ffffff)
-      drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
-      drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
-      drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
-  }
+	display: inline-block;
+	margin-bottom: 20px;
+	padding-left: 24px;
+	padding-right: 24px;
+	height: 70px;
+	width: 90%;
+	background-color: var(--main-blue);
+	border-radius: 35px;
+	font-family: "M PLUS 1p", sans-serif;
+	font-size: 28px;
+	font-weight: 400;
+	color: #fff;
+	line-height: 70px;
+	text-align: center;
+	z-index: 1;
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 0;
+		width: unset;
+		padding-left: 24px;
+		padding-right: 24px;
+		height: 48px;
+		border-radius: 24px;
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 48px;
+	}
+	//Для планшета
+	@media (min-width: 960px) {
+		height: 64px;
+		padding-left: 35px;
+		padding-right: 35px;
+		border-radius: 32px;
+		font-size: 30px;
+		font-weight: 400;
+		line-height: 64px;
+	}
+	//Для планшета
+	@media (min-width: 1024px) {
+		height: 70px;
+		padding-left: 38px;
+		padding-right: 38px;
+		border-radius: 35px;
+		font-size: 30px;
+		font-weight: 400;
+		line-height: 70px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		height: 70px;
+		padding-left: 44px;
+		padding-right: 44px;
+		border-radius: 35px;
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 70px;
+	}
+	//Для десктопа
+	@media (min-width: 1600px) {
+		font-weight: 500;
+	}
+	cursor: pointer;
+	transition: 0.3s;
+	&:hover,
+	&:active {
+		background-color: var(--underline);
+		transform: scale(1.03);
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+	}
+	&:focus {
+		outline: none;
+		filter: drop-shadow(0px 0px 2px #ffffff)
+			drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+			drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+			drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+	}
 }
 .btn.btn--transp {
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: #fff;
-  border: 4px solid var(--main-blue);
-  color: var(--main-blue);
-  line-height: 62px;
-  transition: 0.3s;
-  //Для планшета
-  @media (min-width: 768px) {
-    line-height: 40px;
-  }
-  //Для планшета
-  @media (min-width: 960px) {
-    height: 64px;
-    padding-left: 31px;
-    padding-right: 31px;
-    border-radius: 32px;
-    font-size: 30px;
-    line-height: 56px;
-  }
-  //Для планшета
-  @media (min-width: 1024px) {
-    height: 70px;
-    padding-left: 34px;
-    padding-right: 34px;
-    border-radius: 35px;
-    font-size: 30px;
-    line-height: 62px;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    height: 70px;
-    padding-left: 40px;
-    padding-right: 40px;
-    border-radius: 35px;
-    font-size: 32px;
-    line-height: 62px;
-  }
-  &:hover,
-  &:active {
-    border-color: var(--underline);
-    color: var(--underline);
-    transform: scale(1.03);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
-  }
-  &:focus {
-    outline: none;
-    filter: drop-shadow(0px 0px 2px #ffffff)
-      drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
-      drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
-      drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
-  }
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #fff;
+	border: 4px solid var(--main-blue);
+	color: var(--main-blue);
+	line-height: 62px;
+	transition: 0.3s;
+	//Для планшета
+	@media (min-width: 768px) {
+		line-height: 40px;
+	}
+	//Для планшета
+	@media (min-width: 960px) {
+		height: 64px;
+		padding-left: 31px;
+		padding-right: 31px;
+		border-radius: 32px;
+		font-size: 30px;
+		line-height: 56px;
+	}
+	//Для планшета
+	@media (min-width: 1024px) {
+		height: 70px;
+		padding-left: 34px;
+		padding-right: 34px;
+		border-radius: 35px;
+		font-size: 30px;
+		line-height: 62px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		height: 70px;
+		padding-left: 40px;
+		padding-right: 40px;
+		border-radius: 35px;
+		font-size: 32px;
+		line-height: 62px;
+	}
+	&:hover,
+	&:active {
+		border-color: var(--underline);
+		color: var(--underline);
+		transform: scale(1.03);
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+	}
+	&:focus {
+		outline: none;
+		filter: drop-shadow(0px 0px 2px #ffffff)
+			drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+			drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+			drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+	}
 }
 //---Универсальные социальные иконки
 .social-icons__title {
-  font-size: 42px;
-  font-family: "M PLUS 1p", sans-serif;
-  color: var(--brand-blue);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 22px;
-  text-align: center;
-  //Для планшета
-  @media (min-width: 768px) {
-    text-align: unset;
-  }
+	font-size: 42px;
+	font-family: "M PLUS 1p", sans-serif;
+	color: var(--brand-blue);
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: 22px;
+	text-align: center;
+	//Для планшета
+	@media (min-width: 768px) {
+		text-align: unset;
+	}
 }
 .social-icons__title.social-icons__title--white {
-  color: #fff;
+	color: #fff;
 }
 .social-icons__row {
-  display: flex;
-  justify-content: space-around;
-  //Для планшета
-  @media (min-width: 768px) {
-    justify-content: flex-start;
-  }
+	display: flex;
+	justify-content: space-around;
+	//Для планшета
+	@media (min-width: 768px) {
+		justify-content: flex-start;
+	}
 }
 .social-icons__item {
-  margin-right: 30px;
-  &:last-of-type {
-    margin-right: 0;
-  }
+	margin-right: 30px;
+	&:last-of-type {
+		margin-right: 0;
+	}
 }
 .social-icons__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
-  &:hover {
-    display: flex;
-    transform: scale(1.25);
-    border-radius: 50%;
-    box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.5);
-  }
-  &:focus {
-    outline: none;
-    filter: drop-shadow(0px 0px 2px #ffffff)
-      drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.35))
-      drop-shadow(2px 2px 6px rgba(80, 80, 253, 0.6))
-      drop-shadow(-2px -2px 6px rgba(100, 167, 255, 0.6));
-  }
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+	&:hover {
+		display: flex;
+		transform: scale(1.25);
+		border-radius: 50%;
+		box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.5);
+	}
+	&:focus {
+		outline: none;
+		filter: drop-shadow(0px 0px 2px #ffffff)
+			drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.35))
+			drop-shadow(2px 2px 6px rgba(80, 80, 253, 0.6))
+			drop-shadow(-2px -2px 6px rgba(100, 167, 255, 0.6));
+	}
 }
 .social-icons__link > svg {
-  color: #fff;
-  width: 36px;
-  height: 36px;
+	color: #fff;
+	width: 36px;
+	height: 36px;
 }
 svg.social-icons__vib {
-  width: 34px;
-  height: 34px;
+	width: 34px;
+	height: 34px;
 }
 .insta {
-  background-color: #d6249f;
-  background: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
-  box-shadow: 0px 0px 10px #fff;
-  transition: 0.3s ease-in;
+	background-color: #d6249f;
+	background: radial-gradient(
+		circle at 30% 107%,
+		#fdf497 0%,
+		#fdf497 5%,
+		#fd5949 45%,
+		#d6249f 60%,
+		#285aeb 90%
+	);
+	box-shadow: 0px 0px 10px #fff;
+	transition: 0.3s ease-in;
 }
 .social-icons__insta {
-  transition: 0.3s;
-  &:hover {
-    transform: scale(1.15) rotate(360deg);
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
-  }
+	transition: 0.3s;
+	&:hover {
+		transform: scale(1.15) rotate(360deg);
+		filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+	}
 }
 .whatsapp {
-  background-color: #43d854;
-  box-shadow: 0px 0px 10px #fff;
-  transition: 0.3s ease-in;
+	background-color: #43d854;
+	box-shadow: 0px 0px 10px #fff;
+	transition: 0.3s ease-in;
 }
 .social-icons__whatsapp {
-  transition: 0.3s;
-  &:hover {
-    transform: scale(1.25) rotate(-360deg);
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
-  }
+	transition: 0.3s;
+	&:hover {
+		transform: scale(1.25) rotate(-360deg);
+		filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+	}
 }
 .tele {
-  background-color: #039be5;
-  box-shadow: 0px 0px 10px #fff;
-  transition: 0.3s ease-in;
+	background-color: #039be5;
+	box-shadow: 0px 0px 10px #fff;
+	transition: 0.3s ease-in;
 }
 .social-icons__tele {
-  transition: all 0.1s linear 0.2s;
-  &:hover {
-    transform: scale(1.25) translate(27%, -40%);
-    filter: drop-shadow(0 2px 2px #1c2c3f);
-    z-index: 2;
-  }
+	transition: all 0.1s linear 0.2s;
+	&:hover {
+		transform: scale(1.25) translate(27%, -40%);
+		filter: drop-shadow(0 2px 2px #1c2c3f);
+		z-index: 2;
+	}
 }
 .vib {
-  background-color: #665cac;
-  box-shadow: 0px 0px 10px #fff;
-  transition: 0.3s ease-in;
+	background-color: #665cac;
+	box-shadow: 0px 0px 10px #fff;
+	transition: 0.3s ease-in;
 }
 .social-icons__vib {
-  transition: 0.3s;
-  &:hover {
-    transform: scale(1.1) rotate(360deg);
-    filter: drop-shadow(0 2px 2px rgba(18, 14, 37, 0.7));
-  }
+	transition: 0.3s;
+	&:hover {
+		transform: scale(1.1) rotate(360deg);
+		filter: drop-shadow(0 2px 2px rgba(18, 14, 37, 0.7));
+	}
 }
 .vk {
-  background-color: #4d76a1;
-  box-shadow: 0px 0px 10px #fff;
-  transition: 0.3s ease-in;
+	background-color: #4d76a1;
+	box-shadow: 0px 0px 10px #fff;
+	transition: 0.3s ease-in;
 }
 .social-icons__vk {
-  transition: 0.3s;
-  &:hover {
-    transform: scale(1.25);
-    filter: drop-shadow(0 3px 2px rgba(34, 40, 65, 0.7));
-  }
+	transition: 0.3s;
+	&:hover {
+		transform: scale(1.25);
+		filter: drop-shadow(0 3px 2px rgba(34, 40, 65, 0.7));
+	}
 }
 .social-icons__row.social-icons__row--center {
-  margin-bottom: 30px;
-  justify-content: center;
+	margin-bottom: 30px;
+	justify-content: center;
 }
 //---/Универсальные социальные иконки
 .text-link {
-  border-bottom: 1px solid var(--brand-blue);
-  line-height: 1.2;
-  &:hover {
-    color: rgb(241, 124, 28);
-    border-bottom: 1px solid rgb(241, 124, 28);
-  }
-  &:active {
-    color: rgb(241, 124, 28);
-    border-bottom: 1px solid rgb(241, 124, 28);
-  }
-  &:focus {
-    outline: none;
-    filter: drop-shadow(0px 0px 1px #ffffff)
-      drop-shadow(0px 0px 8px rgba(255, 0, 255, 0.15))
-      drop-shadow(2px 2px 5px rgba(0, 0, 255, 0.4))
-      drop-shadow(-2px -2px 5px rgba(131, 170, 241, 0.4));
-  }
+	border-bottom: 1px solid var(--brand-blue);
+	line-height: 1.2;
+	&:hover {
+		color: rgb(241, 124, 28);
+		border-bottom: 1px solid rgb(241, 124, 28);
+	}
+	&:active {
+		color: rgb(241, 124, 28);
+		border-bottom: 1px solid rgb(241, 124, 28);
+	}
+	&:focus {
+		outline: none;
+		filter: drop-shadow(0px 0px 1px #ffffff)
+			drop-shadow(0px 0px 8px rgba(255, 0, 255, 0.15))
+			drop-shadow(2px 2px 5px rgba(0, 0, 255, 0.4))
+			drop-shadow(-2px -2px 5px rgba(131, 170, 241, 0.4));
+	}
 }
 /*Кнопка наверх*/
 #back2Top {
-  width: 48px;
-  line-height: 48px;
-  overflow: hidden;
-  z-index: 999;
-  display: none;
-  cursor: pointer;
-  transform: rotate(270deg);
-  position: fixed;
-  bottom: 30px;
-  right: 0;
-  color: rgb(241, 124, 28);
-  filter: drop-shadow(-4px 4px 3px rgba(0, 0, 0, 0.6));
-  text-align: center;
-  font-size: 48px;
-  text-decoration: none;
-  opacity: 0.7;
-  &:hover {
-    color: var(--underline);
-    filter: drop-shadow(0 0 3px #fff);
-  }
-  &:active {
-    color: var(--underline);
-    filter: drop-shadow(0 0 3px #fff);
-  }
-  &:focus {
-    outline: none;
-    filter: drop-shadow(0px 0px 2px #ffffff)
-      drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
-      drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
-      drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
-  }
+	width: 48px;
+	line-height: 48px;
+	overflow: hidden;
+	z-index: 999;
+	display: none;
+	cursor: pointer;
+	transform: rotate(270deg);
+	position: fixed;
+	bottom: 30px;
+	right: 0;
+	color: rgb(241, 124, 28);
+	filter: drop-shadow(-4px 4px 3px rgba(0, 0, 0, 0.6));
+	text-align: center;
+	font-size: 48px;
+	text-decoration: none;
+	opacity: 0.7;
+	&:hover {
+		color: var(--underline);
+		filter: drop-shadow(0 0 3px #fff);
+	}
+	&:active {
+		color: var(--underline);
+		filter: drop-shadow(0 0 3px #fff);
+	}
+	&:focus {
+		outline: none;
+		filter: drop-shadow(0px 0px 2px #ffffff)
+			drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+			drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+			drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+	}
 }
 .gradient-quote {
-  margin: 0 auto 20px;
-  padding: 12px 5px 2px;
-  background-color: #7eb4e6;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(233, 242, 255, 0.5) 5%,
-    rgba(221, 235, 255, 1) 10%,
-    rgba(198, 218, 245, 1) 50%,
-    rgba(221, 235, 255, 1) 90%,
-    rgba(233, 242, 255, 0.5) 95%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  filter: drop-shadow(0 3px 5px rgba(24, 55, 83, 0.45));
-  //Для планшета
-  @media (min-width: 768px) {
-    padding: 15px 15px 5px;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    padding: 20px 15px 5px;
-  }
-  p {
-    font-family: sans-serif;
-    font-size: 16px !important;
-    font-weight: 400 !important;
-    //Для планшета
-    @media (min-width: 768px) {
-      font-size: 18px !important;
-    }
-    //Для десктопа
-    @media (min-width: 1200px) {
-      font-size: 22px !important;
-    }
-  }
-  span {
-    color: var(--brand-blue);
-    font-weight: 700;
-  }
+	margin: 0 auto 20px;
+	padding: 12px 5px 2px;
+	background-color: #7eb4e6;
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(233, 242, 255, 0.5) 5%,
+		rgba(221, 235, 255, 1) 10%,
+		rgba(198, 218, 245, 1) 50%,
+		rgba(221, 235, 255, 1) 90%,
+		rgba(233, 242, 255, 0.5) 95%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	filter: drop-shadow(0 3px 5px rgba(24, 55, 83, 0.45));
+	//Для планшета
+	@media (min-width: 768px) {
+		padding: 15px 15px 5px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		padding: 20px 15px 5px;
+	}
+	p {
+		font-family: sans-serif;
+		font-size: 16px !important;
+		font-weight: 400 !important;
+		//Для планшета
+		@media (min-width: 768px) {
+			font-size: 18px !important;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			font-size: 22px !important;
+		}
+	}
+	span {
+		color: var(--brand-blue);
+		font-weight: 700;
+	}
 }
