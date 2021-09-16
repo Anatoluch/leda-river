@@ -1,89 +1,109 @@
 .toggle-menu {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  z-index: 9;
-  cursor: pointer;
-  span {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 5px;
-    background-color: var(--brand-blue);
-    transition: 0.3s ease-in-out 0.4s;
-    &::before,
-    &:after {
-      content: "";
-      width: 100%;
-      height: 5px;
-      background-color: var(--brand-blue);
-      position: absolute;
-      transition: 0.3s ease-in-out 0.4s;
-    }
-    &::before {
-      top: -10px;
-    }
-    &::after {
-      bottom: -10px;
-    }
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    display: none;
-  }
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	z-index: 9;
+	cursor: pointer;
+	position: absolute;
+	right: 15px;
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		right: 20px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		right: 30px;
+	}
+	span {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		height: 5px;
+		background-color: var(--brand-blue);
+		transition: 0.3s ease-in-out 0.4s;
+		&::before,
+		&:after {
+			content: "";
+			width: 100%;
+			height: 5px;
+			background-color: var(--brand-blue);
+			position: absolute;
+			transition: 0.3s ease-in-out 0.4s;
+		}
+		&::before {
+			top: -10px;
+		}
+		&::after {
+			bottom: -10px;
+		}
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: none;
+	}
 }
 //----- Фиксированное (скролл) меню для планшетов и мобилок -----
 .toggle-menu-fixed {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  z-index: 9;
-  cursor: pointer;
-  span {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 4px;
-    background-color: var(--brand-blue);
-    transition: 0.3s ease-in-out 0.4s;
-    &::before,
-    &:after {
-      content: "";
-      width: 100%;
-      height: 4px;
-      background-color: var(--brand-blue);
-      position: absolute;
-      transition: 0.3s ease-in-out 0.4s;
-    }
-    &::before {
-      top: -7px;
-    }
-    &::after {
-      bottom: -7px;
-    }
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    display: none;
-  }
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	z-index: 9;
+	cursor: pointer;
+	span {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		height: 4px;
+		background-color: var(--brand-blue);
+		transition: 0.3s ease-in-out 0.4s;
+		&::before,
+		&:after {
+			content: "";
+			width: 100%;
+			height: 4px;
+			background-color: var(--brand-blue);
+			position: absolute;
+			transition: 0.3s ease-in-out 0.4s;
+		}
+		&::before {
+			top: -7px;
+		}
+		&::after {
+			bottom: -7px;
+		}
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: none;
+	}
 }
 //----- /Фиксированное (скролл) меню для планшетов и мобилок -----
 .toggle-menu.active {
-  z-index: 9;
-  span {
-    transform: rotate(360deg) scale(1.2);
-    background-color: transparent;
-    &::before {
-      transform: rotate(45deg);
-      box-shadow: 1px 4px 3px rgba(21, 33, 58, 0.6);
-      top: 0;
-    }
-    &::after {
-      bottom: 0;
-      box-shadow: -1px 4px 3px rgba(21, 33, 58, 0.6);
-      transform: rotate(-45deg);
-    }
-  }
+	z-index: 9;
+	position: absolute;
+	right: 15px;
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		right: 20px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		right: 30px;
+	}
+	span {
+		transform: rotate(360deg) scale(1.2);
+		background-color: transparent;
+		&::before {
+			transform: rotate(45deg);
+			box-shadow: 1px 4px 3px rgba(21, 33, 58, 0.6);
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+			box-shadow: -1px 4px 3px rgba(21, 33, 58, 0.6);
+			transform: rotate(-45deg);
+		}
+	}
 }

@@ -100,13 +100,17 @@
 	z-index: 9;
 }
 .mob-nav-item {
-	margin-bottom: 23px;
+	margin-bottom: 20px;
 	font-size: 20px;
 	font-weight: 700;
 	text-decoration: underline;
 	line-height: 1.1;
 	position: relative;
 	z-index: 9;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		margin-bottom: 25px;
+	}
 }
 .mob-nav-link {
 	color: rgb(7, 7, 7);
@@ -157,17 +161,23 @@
 		font-size: 28px;
 		color: var(--brand-blue);
 		text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
+		@media (min-width: 960px) {
+			margin-right: 0;
+		}
 	}
 }
 .text-link--mob {
 	border-color: var(--blue);
 }
 .social-icons__row.social-icons__row--left {
-	margin-bottom: 15px;
 	display: flex;
 	justify-content: flex-start;
 	position: relative;
 	z-index: 9;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		margin-bottom: 15px;
+	}
 	@media (min-width: 960px) {
 		justify-content: center;
 	}

@@ -3,6 +3,8 @@
 	max-width: 100%;
 	padding: 21px 0 10px;
 	position: relative;
+	background: #fff;
+	// z-index: 0;
 	&::before {
 		content: "";
 		position: absolute;
@@ -10,7 +12,11 @@
 		width: 100%;
 		height: 100%;
 		top: 0;
-		z-index: -5;
+		z-index: -1;
+		//Для десктопа
+		@media (min-width: 1200px) {
+			display: none;
+		}
 	}
 	//Для планшета
 	@media (min-width: 768px) {
@@ -18,14 +24,17 @@
 	}
 	//Для десктопа
 	@media (min-width: 1200px) {
+		background: unset;
+		z-index: unset;
 		margin: 0 auto;
-		padding: 8px 0 0;
+		padding: unset;
 	}
 }
 .header-nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
 	//Для смартфона
 	@media (min-width: 480px) {
 		margin-bottom: 10px;
@@ -34,6 +43,28 @@
 	@media (min-width: 960px) {
 		margin-bottom: 0;
 	}
+	//Для планшета
+	@media (min-width: 1200px) {
+		position: relative;
+		z-index: 1;
+		padding: 5px 0 2px;
+		margin-bottom: 15px;
+		&::before {
+			content: "";
+			position: absolute;
+			background: rgba(255, 255, 255, 0.75);
+			backdrop-filter: blur(7px);
+			width: 100vw;
+			height: 100%;
+			top: 0;
+			left: 50%;
+			z-index: 0;
+			transform: translateX(-50%);
+		}
+	}
+}
+.header-nav.header-nav--main-page {
+	margin-bottom: 0;
 }
 //----- Фиксированное (скролл) меню для планшетов и мобилок -----
 #nav-wrapper {
@@ -61,7 +92,7 @@
 		padding: 0 20px;
 	}
 	//Для планшета
-	@media (min-width: 960px) {
+	@media (min-width: 768px) {
 		padding: 0 30px;
 	}
 	//Для десктопа
@@ -121,41 +152,62 @@
 	}
 }
 .header-nav__item {
-	margin-right: 24px;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		margin-right: 16px;
+	}
+	//Для десктопа
+	@media (min-width: 1280px) {
+		margin-right: 20px;
+	}
+	//Для десктопа
+	@media (min-width: 1366px) {
+		margin-right: 25px;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		margin-right: 30px;
+	}
 	&:last-child {
 		margin-right: 0;
 	}
 }
 .header-nav__link {
 	position: relative;
-	color: var(--brand-blue);
-	font-family: serif;
-	font-style: italic;
+	color: var(--main-blue);
+	font-family: sans-serif;
+	// font-style: italic;
 	font-weight: 400;
-	font-size: 25px;
+	font-size: 22px;
 	line-height: 1.2;
-	letter-spacing: -1px;
+	transition: 0.3s;
+	// letter-spacing: -1px;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 21px;
+		letter-spacing: -0.2px;
+	}
+	//Для десктопа
+	@media (min-width: 1280px) {
+		font-size: 22px;
+		letter-spacing: unset;
+	}
 	//Для десктопа
 	@media (min-width: 1366px) {
-		font-size: 32px;
+		font-size: 23px;
 	}
 	//Для десктопа
 	@media (min-width: 1600px) {
-		font-size: 34px;
+		font-size: 30px;
 	}
-	//Для десктопа
-	@media (min-width: 1920px) {
-		font-size: 36px;
-	}
-	//Для десктопа
-	@media (min-width: 2500px) {
-		font-size: 38px;
+	&:hover {
+		color: var(--brand-blue);
 	}
 	&::after {
 		content: "";
 		position: absolute;
 		width: 0;
-		bottom: 5px;
+		bottom: 4px;
 		left: 0;
 		height: 2px;
 		background-color: var(--underline);
@@ -177,17 +229,25 @@
 	}
 }
 //Активная ссылка
-.header-nav__link.header-nav__link--active::after {
-	content: "";
-	position: absolute;
-	width: 102%;
-	bottom: 5px;
-	left: 0;
-	height: 2px;
-	background-color: var(--underline);
-	z-index: -1;
-	pointer-events: none;
+.header-nav__link.header-nav__link--active {
+	color: var(--brand-blue);
+	transition: 0.3s;
+	&:hover {
+		color: var(--main-blue);
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		width: 102%;
+		bottom: 4px;
+		left: 0;
+		height: 2px;
+		background-color: var(--underline);
+		z-index: -1;
+		pointer-events: none;
+	}
 }
+
 //---Социальные иконки хедера
 .header-social__row {
 	display: none;
@@ -332,11 +392,11 @@
 .phone-top.phone-top--scroll {
 	//Для десктопа
 	@media (min-width: 1200px) {
-		position: absolute;
+		display: inline-block;
+		max-width: fit-content;
+		align-self: flex-end;
 		padding: 0px 15px 3px 15px;
-		top: 48px;
-		right: 0px;
-		z-index: 7;
+		z-index: 5;
 		border-radius: 0px 0px 25px 25px;
 		background-color: rgba(255, 255, 255, 0.75);
 		backdrop-filter: blur(7px);
@@ -359,6 +419,47 @@
 	}
 	//Для десктопа
 	@media (min-width: 1200px) {
+		display: none;
+	}
+}
+.static-header {
+	width: 100%;
+	max-width: 320px;
+	padding: 0 15px;
+	margin: 0 auto;
+	background: #fff;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		max-width: 360px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		max-width: 400px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		padding: 0 20px;
+		max-width: 420px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		max-width: 768px;
+		padding: 0 30px;
+	}
+	//Для планшета
+	@media (min-width: 840px) {
+		max-width: 840px;
+		padding: 0 30px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		max-width: 1024px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		background: unset;
+		max-width: 1140px;
+		padding: 0;
 		display: none;
 	}
 }
@@ -399,7 +500,6 @@
 		filter: drop-shadow(-30px 50px 20px rgba(119, 162, 219, 0.3));
 	}
 	p {
-		margin-bottom: 5px;
 		font-size: 17px;
 		font-family: sans-serif;
 		color: rgb(7, 7, 7);
@@ -407,34 +507,40 @@
 		line-height: 1.5;
 		text-indent: 10px;
 		//Для планшета
-		@media (min-width: 820px) {
-			font-size: 18px;
+		@media (min-width: 768px) {
+			font-size: 16px;
+			line-height: 1.35;
 		}
 		//Для планшета
 		@media (min-width: 890px) {
-			font-size: 20px;
-		}
-		//Для планшета
-		@media (min-width: 960px) {
-			font-size: 20px;
-			font-style: italic;
+			font-size: 17px;
 		}
 		//Для планшета
 		@media (min-width: 1024px) {
-			font-size: 22px;
+			font-size: 21px;
+			font-style: italic;
 		}
 		//Для десктопа
 		@media (min-width: 1200px) {
-			font-size: 27px;
+			font-size: 26px;
 			font-family: serif;
-			font-style: italic;
 			color: #070707;
 			font-weight: 400;
-			line-height: 1.5;
 			text-indent: 15px;
+		}
+		&:nth-last-of-type(2) {
+			margin-bottom: 5px;
+			//Для планшета
+			@media (min-width: 768px) {
+				margin-bottom: 0;
+			}
 		}
 		&:last-of-type {
 			margin-bottom: 15px;
+			font-weight: 700;
+			text-align: center;
+			color: var(--brand-blue);
+
 			//Для планшета
 			@media (min-width: 768px) {
 				margin-bottom: 25px;
@@ -534,7 +640,7 @@
 .header-bg-row {
 	margin: 0 auto;
 	max-width: 1600px;
-	z-index: -1;
+	z-index: 0;
 	margin-top: 4px;
 	position: relative;
 	//Для планшета
@@ -544,6 +650,7 @@
 	//Для десктопа
 	@media (min-width: 1200px) {
 		margin-top: -120px;
+		z-index: 1;
 	}
 	img {
 		transform: scale(1.23);
@@ -551,6 +658,23 @@
 		@media (min-width: 768px) {
 			transform: scale(1);
 		}
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		background: rgb(255, 255, 255);
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(255, 255, 255, 1) 10%,
+			rgba(255, 255, 255, 1) 100%
+		);
+		width: 100vw;
+		height: 100%;
+		top: 0;
+		left: 50%;
+		z-index: 0;
+		transform: translateX(-50%);
 	}
 }
 //----- Фиксированное (скролл) меню для ПК -----
@@ -565,23 +689,502 @@
 		width: 100%;
 	}
 }
+.header-nav__overlay {
+	display: flex;
+	position: fixed;
+	flex-direction: column;
+	width: 100%;
+	max-width: 1600px;
+	top: 0;
+	left: 50%;
+	height: auto;
+	transform: translateX(-50%);
+}
 .header-nav-fixed-pc {
 	display: none;
 	//Для ПК
 	@media (min-width: 1200px) {
 		padding: 8px 15px 0;
-		position: fixed;
-		top: 0;
-		left: 50%;
-		width: 100%;
-		max-width: 1600px;
-		background: rgba(255, 255, 255, 0.75);
-		backdrop-filter: blur(7px);
 		z-index: 7;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		transform: translateX(-50%);
+		backdrop-filter: blur(7px);
+		&::before {
+			content: "";
+			position: absolute;
+			background: rgba(255, 255, 255, 0.75);
+			width: 100vw;
+			height: 100%;
+			top: 0;
+			left: 50%;
+			z-index: 0;
+			transform: translateX(-50%);
+		}
 	}
 }
 //----- /Фиксированное (скролл) меню для ПК -----
+// --- Шапка с видеофоном ---
+.dynamic-header {
+	display: none;
+	position: absolute;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: block;
+		position: relative;
+		z-index: 1;
+		margin: 0 auto 105px;
+	}
+}
+.video-bg {
+	display: none;
+	position: absolute;
+	width: 0;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: block;
+		width: 100%;
+		height: 90vh;
+		position: relative;
+	}
+	//Для десктопа
+	@media (min-width: 1366px) {
+		height: 90vh;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		height: 95vh;
+	}
+	&::after {
+		display: none;
+		pointer-events: none;
+		//Для десктопа
+		@media (min-width: 1200px) {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			filter: saturate(1.2);
+			background: rgb(255, 255, 255);
+			background: linear-gradient(
+				180deg,
+				rgba(255, 255, 255, 1) 0%,
+				rgba(15, 94, 114, 0.2) 5%,
+				rgba(15, 94, 114, 0.2) 90%,
+				rgba(255, 255, 255, 1) 98%,
+				rgba(255, 255, 255, 1) 100%
+			);
+			backdrop-filter: blur(1px);
+			z-index: 2;
+		}
+	}
+}
+.video-bg__container {
+	width: 100%;
+	max-width: 320px;
+	@media (min-width: 330px) {
+		max-width: 330px;
+	}
+	//Для смартфона
+	@media (min-width: 340px) {
+		max-width: 340px;
+	}
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		max-width: 360px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		max-width: 400px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		max-width: 420px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: block;
+		position: relative;
+		z-index: 3;
+		max-width: 1600px;
+		height: 100%;
+		margin: 0 auto;
+	}
+}
+.vide-bg__content {
+	display: none;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+.video-bg__title-row {
+	display: none;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: block;
+		padding-top: 1vh;
+	}
+}
+.video-bg__title {
+	color: #fff;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 1) 50%,
+		rgba(162, 165, 255, 1) 100%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-family: serif;
+	font-style: italic;
+	text-align: center;
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 1.5;
+	filter: drop-shadow(0 0 2px rgba(0, 35, 99, 0.85))
+		drop-shadow(2px 2px 3px rgba(6, 21, 61, 0.75))
+		drop-shadow(-2px -2px 3px rgba(0, 36, 90, 0.6));
+	//Для десктопа
+	@media (min-width: 1366px) {
+		font-size: 60px;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		font-size: 70px;
+	}
+}
+.video-bg__overlay {
+	display: none;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: flex;
+		padding: 0 30px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		max-width: 1600px;
+		background: rgb(255, 255, 255);
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.3) 0%,
+			rgba(255, 255, 255, 0.4) 10%,
+			rgba(255, 255, 255, 0.75) 60%,
+			rgba(255, 255, 255, 0.9) 70%,
+			rgba(255, 255, 255, 1) 100%
+		);
+		backdrop-filter: blur(5px);
+	}
+	//Для десктопа
+	@media (min-width: 1601px) {
+		border-radius: 25px 25px;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		border-radius: 25px 25px;
+	}
+	p {
+		//Для десктопа
+		@media (min-width: 1200px) {
+			color: rgb(7, 7, 7);
+			font-weight: 400;
+			line-height: 1.5;
+			font-size: 18px;
+			font-family: sans-serif;
+			color: #070707;
+			font-weight: 400;
+			text-align: center;
+			letter-spacing: -0.5px;
+			//Для десктопа
+			@media (min-width: 1366px) {
+				font-size: 18px;
+				letter-spacing: unset;
+			}
+			//Для десктопа
+			@media (min-width: 1920px) {
+				font-size: 20px;
+			}
+			&:last-of-type {
+				margin-bottom: -15px;
+				font-size: 20px;
+				//Для десктопа
+				@media (min-width: 1920px) {
+					margin-bottom: 0;
+					font-size: 24px;
+				}
+			}
+		}
+		//Для десктопа
+		@media (min-width: 1920px) {
+			font-size: 24px;
+		}
+		//Для десктопа
+		@media (min-width: 2560px) {
+			font-size: 27px;
+		}
+		span {
+			font-weight: 700;
+		}
+		&:first-of-type {
+			span {
+				color: var(--brand-blue);
+			}
+		}
+	}
+	a {
+		&:focus {
+			outline: none;
+			filter: drop-shadow(0px 0px 3px rgba(255, 0, 255, 0.4))
+				drop-shadow(1px 1px 4px rgba(0, 0, 255, 0.6))
+				drop-shadow(-1px -1px 3px rgba(131, 170, 241, 0.6));
+		}
+	}
+}
+.arrow-down {
+	display: none;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		z-index: 4;
+		cursor: pointer;
+		width: 54px;
+		height: 54px;
+		top: 2px;
+		&:focus {
+			outline: none;
+		}
+		//Для десктопа
+		@media (min-width: 1600px) {
+			width: 60px;
+			height: 60px;
+		}
+		//Для десктопа
+		@media (min-width: 1920px) {
+			width: 62px;
+			height: 62px;
+		}
+	}
+	svg {
+		width: 100%;
+		height: 100%;
+		transition: 0.5s;
+		filter: drop-shadow(0 2px 2px rgba(0, 77, 136, 0.55));
+		stroke: var(--brand-blue);
+		stroke-width: 2;
+		&:hover {
+			width: 50px;
+			height: 50px;
+			stroke: red !important;
+			stroke-width: 1;
+			filter: drop-shadow(0 1px 1px rgba(0, 77, 136, 0.75));
+		}
+	}
+}
+// --- /Шапка с видеофоном ---
+// --- Паралакс шапка ---
+.paralaxe-header {
+	display: none;
+	margin: 0 auto;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		height: 92vh;
+		display: block;
+		position: relative;
+		z-index: 0;
+		margin: 0 auto 105px;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		height: 95vh;
+		display: block;
+		position: relative;
+		z-index: 0;
+		margin: 0 auto 105px;
+	}
+}
+.paralaxe-header__container {
+	width: 100%;
+	max-width: 320px;
+	@media (min-width: 330px) {
+		max-width: 330px;
+	}
+	//Для смартфона
+	@media (min-width: 340px) {
+		max-width: 340px;
+	}
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		max-width: 360px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		max-width: 400px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		max-width: 420px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: block;
+		position: relative;
+		z-index: 3;
+		max-width: 1600px;
+		height: 100%;
+		margin: 0 auto;
+	}
+}
+.paralaxe-header__content {
+	display: none;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+.paralaxe-header__title-row {
+	display: none;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: block;
+		padding-top: 1vh;
+	}
+}
+.paralaxe-header__title {
+	color: #fff;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 1) 50%,
+		rgba(162, 165, 255, 1) 100%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-family: serif;
+	font-style: italic;
+	text-align: center;
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 1.5;
+	filter: drop-shadow(0 0 2px rgba(0, 35, 99, 0.85))
+		drop-shadow(2px 2px 3px rgba(6, 21, 61, 0.75))
+		drop-shadow(-2px -2px 3px rgba(0, 36, 90, 0.6));
+	&::selection {
+		background: rgba(22, 111, 245, 0.1);
+	}
+	//Для десктопа
+	@media (min-width: 1366px) {
+		font-size: 60px;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		font-size: 70px;
+	}
+	//Для десктопа
+	@media (min-width: 2560px) {
+		font-size: 78px;
+	}
+}
+.paralaxe-header__overlay {
+	display: none;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: flex;
+		padding: 0 30px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		max-width: 1600px;
+		background: rgb(255, 255, 255);
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.3) 0%,
+			rgba(255, 255, 255, 0.4) 10%,
+			rgba(255, 255, 255, 0.75) 60%,
+			rgba(255, 255, 255, 0.9) 70%,
+			rgba(255, 255, 255, 1) 100%
+		);
+		backdrop-filter: blur(5px);
+	}
+	//Для десктопа
+	@media (min-width: 1601px) {
+		border-radius: 25px 25px;
+	}
+	//Для десктопа
+	@media (min-width: 2560px) {
+		padding: 0 15px;
+	}
+	p {
+		//Для десктопа
+		@media (min-width: 1200px) {
+			color: rgb(7, 7, 7);
+			font-weight: 400;
+			line-height: 1.5;
+			font-size: 18px;
+			font-family: sans-serif;
+			color: #070707;
+			font-weight: 400;
+			text-align: center;
+			letter-spacing: -0.5px;
+			//Для десктопа
+			@media (min-width: 1366px) {
+				font-size: 18px;
+				letter-spacing: unset;
+			}
+			//Для десктопа
+			@media (min-width: 1920px) {
+				font-size: 24px;
+				letter-spacing: -0.5px;
+			}
+		}
+		//Для десктопа
+		@media (min-width: 2560px) {
+			font-size: 25px;
+		}
+		&:last-of-type {
+			margin-bottom: -15px;
+			font-size: 19px;
+			//Для десктопа
+			@media (min-width: 1920px) {
+				margin-bottom: 0;
+				font-size: 25px;
+			}
+			//Для десктопа
+			@media (min-width: 2560px) {
+				font-size: 26px;
+			}
+		}
+		span {
+			font-weight: 700;
+		}
+		&:first-of-type {
+			span {
+				color: var(--brand-blue);
+			}
+		}
+	}
+	a {
+		&:focus {
+			outline: none;
+			filter: drop-shadow(0px 0px 3px rgba(255, 0, 255, 0.4))
+				drop-shadow(1px 1px 4px rgba(0, 0, 255, 0.6))
+				drop-shadow(-1px -1px 3px rgba(131, 170, 241, 0.6));
+		}
+	}
+}
+// --- /Паралакс шапка ---

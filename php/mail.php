@@ -53,8 +53,8 @@ $headers = "MIME-Version: 1.0" . PHP_EOL .
 if (!$_POST["g-recaptcha-response"]) {
     // Если данных нет, то программа останавливается и выводит ошибку
 	 exit("<div class='contact-form__success'>
-	 <h2>Произошла ошибка, капча не пройдена!<br>Обновите страницу и попробуйте снова!
-	 </h2>
+	 <h2>Произошла ошибка, капча не пройдена!<br>Обновите страницу и попробуйте снова!</h2>
+	 <button class='btn btn--reset' onclick='window.location.reload(true)'>Обновить</button>
 	</div>");
 } else { // Иначе создаём запрос для проверки капчи
     // URL куда отправлять запрос для проверки

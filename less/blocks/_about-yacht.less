@@ -1,147 +1,193 @@
 .yacht {
-  margin: 0 auto;
-  margin-top: -18px;
-  padding: 43px 0 25px;
-  background-color: var(--main-blue);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) inset,
-    0 10px 40px rgba(15, 61, 84, 0.5);
-  overflow: hidden;
+	margin: 0 auto;
+	margin-top: -18px;
+	padding: 43px 0 25px;
+	position: relative;
+	background-color: var(--main-blue);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) inset,
+		0 10px 40px rgba(15, 61, 84, 0.5);
+	overflow: hidden;
+	//Для планшета
+	@media (min-width: 768px) {
+		box-shadow: none;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		padding: 45px 0 65px;
+	}
+	//Для десктопа
+	@media (min-width: 3840px) {
+		padding: 100px 0 125px;
+	}
 }
 .yacht-title {
-  margin-bottom: 30px;
-  text-align: center;
-  //Для планшета
-  @media (min-width: 768px) {
-    margin-bottom: 15px;
-  }
+	margin-bottom: 30px;
+	text-align: center;
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 15px;
+	}
 }
 .yacht__content {
-  margin: 0 auto;
-  display: flex;
-  position: relative;
-  //Для планшета
-  @media (min-width: 768px) {
-    justify-content: space-between;
-  }
+	margin: 0 auto;
+	display: flex;
+	position: relative;
+	//Для планшета
+	@media (min-width: 768px) {
+		justify-content: space-between;
+	}
 }
 .yacht__desc {
-  width: 100%;
-  //Для планшета
-  @media (min-width: 768px) {
-    width: 53%;
-  }
+	width: 100%;
+	//Для планшета
+	@media (min-width: 768px) {
+		width: 59%;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		width: 52%;
+	}
+	//Для десктопа
+	@media (min-width: 1600px) {
+		width: 50%;
+	}
 }
 
 .yacht__desc-list {
-  margin-bottom: 44px;
-  &:nth-of-type(2) {
-    margin-bottom: 24px;
-  }
+	margin-bottom: 44px;
+	&:nth-of-type(2) {
+		margin-bottom: 24px;
+	}
 }
 .yacht__desc-item {
-  margin-left: 31px;
-  margin-bottom: 20px;
-  position: relative;
-  font-size: 16px;
-  font-family: sans-serif;
-  font-weight: 400;
-  color: rgb(255, 255, 255);
-  line-height: 1.2;
-  //Для большого смартфона
-  @media (min-width: 400px) {
-    font-size: 17px;
-  }
-  //Для большого смартфона
-  @media (min-width: 420px) {
-    font-size: 18px;
-  }
-  //Для планшета
-  @media (min-width: 768px) {
-    margin-bottom: 15px;
-    line-height: 1.2;
-  }
-  //Для большого планшета
-  @media (min-width: 1024px) {
-    font-family: "M PLUS 1p", sans-serif;
-    font-size: 22px;
-    line-height: 1;
-  }
-  //Для десктопа
-  @media (min-width: 1200px) {
-    font-size: 18px;
-  }
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-  &::before {
-    content: url("../img/icons/list-marker.png");
-    position: absolute;
-    left: -31px;
-    top: -4px;
-    //Для большого планшета
-    @media (min-width: 1024px) {
-      top: 0;
-    }
-    //Для десктопа
-    @media (min-width: 1200px) {
-      top: -4px;
-    }
-  }
-  span {
-    font-weight: 700;
-  }
+	margin-left: 31px;
+	margin-bottom: 20px;
+	position: relative;
+	font-size: 16px;
+	font-family: sans-serif;
+	font-weight: 400;
+	color: rgb(255, 255, 255);
+	line-height: 1.2;
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 17px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		font-size: 18px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 15px;
+		line-height: 1.2;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-family: "M PLUS 1p", sans-serif;
+		font-size: 22px;
+		line-height: 1;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 18px;
+	}
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	&::before {
+		content: url("../img/icons/list-marker.png");
+		position: absolute;
+		left: -31px;
+		top: -4px;
+		//Для большого планшета
+		@media (min-width: 1024px) {
+			top: 0;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			top: -4px;
+		}
+	}
+	span {
+		font-weight: 700;
+	}
 }
 .yacht__img {
-  display: none;
-  //Для планшета
-  @media (min-width: 768px) {
-    display: block;
-    position: relative;
-    width: 50%;
-    z-index: 2;
-    padding-top: 2px;
-  }
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: -25%;
-    right: -24%;
-    z-index: -1;
-    background-image: linear-gradient(
-      to top,
-      rgba(205, 228, 255, 0) 0%,
-      rgba(172, 211, 255, 0.3) 15%,
-      rgba(172, 211, 255, 0.25) 75%,
-      rgba(244, 248, 249, 0) 100%
-    );
-  }
-  img {
-    //Для планшета
-    @media (min-width: 768px) {
-      margin-top: 147px;
-      margin-left: -55px;
-      transform: scale(2);
-    }
-    //Для планшета
-    @media (min-width: 960px) {
-      margin-top: 55px;
-      margin-left: -100px;
-      transform: scale(1.6);
-    }
-    //Для планшета
-    @media (min-width: 1024px) {
-      margin-top: 7px;
-      margin-left: -60px;
-      transform: scale(1.5);
-    }
-    //Для десктопа
-    @media (min-width: 1200px) {
-      margin-top: -12px;
-      margin-left: -58px;
-      transform: scale(1.31);
-    }
-  }
+	display: none;
+	//Для планшета
+	@media (min-width: 768px) {
+		display: block;
+		position: relative;
+		width: 41%;
+		z-index: 3;
+		padding-top: 2px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		width: 48%;
+	}
+	//Для десктопа
+	@media (min-width: 1600px) {
+		width: 50%;
+	}
+	img {
+		position: absolute;
+		//Для планшета
+		@media (min-width: 768px) {
+			margin-top: 178px;
+			margin-left: 16px;
+			transform: scale(1.9);
+		}
+		//Для планшета
+		@media (min-width: 960px) {
+			margin-top: 176px;
+			margin-left: 15px;
+			transform: scale(2.2);
+		}
+		//Для планшета
+		@media (min-width: 1024px) {
+			margin-top: 150px;
+			margin-left: -5px;
+			transform: scale(1.9);
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			margin-top: 55px;
+			margin-left: 0;
+			transform: scale(1.5);
+		}
+		//Для десктопа
+		@media (min-width: 1366px) {
+			margin-left: 30px;
+			transform: scale(1.6);
+		}
+		//Для десктопа
+		@media (min-width: 1600px) {
+			margin-top: 30px;
+			margin-left: 75px;
+			transform: scale(1.65);
+		}
+		//Для десктопа
+		@media (min-width: 1920px) {
+			margin-top: 35px;
+			margin-left: 100px;
+			transform: scale(1.7);
+		}
+	}
+}
+.layered-img {
+	position: relative;
+	z-index: 3;
+}
+.leda {
+	position: relative;
+	z-index: 3;
+}
+.sea {
+	position: relative;
+	z-index: 2;
+}
+.sky {
+	position: relative;
+	z-index: 1;
 }

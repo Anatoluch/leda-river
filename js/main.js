@@ -11,6 +11,14 @@ $(document).ready(function () {
 		end: function () {},
 		scrollChange: function ($currentListItem) {},
 	});
+
+	//Видеофон
+	// $(window).on("load", function () {
+	// 	$(".video-bg").vide("./video/leda-river-cover", {
+	// 		bgColor: "#5F9EA0",
+	// 	});
+	// });
+
 	//"Гамбургер-меню"
 	const toggleMenu = document.querySelector(".toggle-menu"); //Иконка меню "Гамбургер"
 	const toggleMenuFixed = document.querySelector(".toggle-menu-fixed"); //Иконка меню "Гамбургер"(фиксированное меню)
@@ -67,6 +75,62 @@ $(document).ready(function () {
 			link2.classList.toggle("link-2-show");
 		});
 	}
+
+	// Смена статичного фона при скролле
+	$(window).scroll(function () {
+		let bgHead = $("#bg-img-head");
+		let bg1 = $("#bg-img-1");
+		let bg2 = $("#bg-img-2");
+		if ($(this).width() > 1024 && $(this).width() < 2500) {
+			if ($(this).scrollTop() >= 0 && $(this).scrollTop() < 1850) {
+				bgHead.fadeIn(1);
+				bg1.fadeOut(1);
+				bg2.fadeOut(1);
+			} else if ($(this).scrollTop() > 1850 && $(this).scrollTop() < 4400) {
+				bg1.fadeIn(1);
+				bg2.fadeOut(1);
+				bgHead.fadeOut(1);
+			} else if ($(this).scrollTop() > 4400) {
+				bg1.fadeOut(1);
+				bg2.fadeIn(1);
+			}
+		} else if ($(this).width() >= 2501 && $(this).width() < 3200) {
+			if ($(this).scrollTop() >= 0 && $(this).scrollTop() < 1850) {
+				bgHead.fadeIn(1);
+				bg1.fadeOut(1);
+				bg2.fadeOut(1);
+			} else if ($(this).scrollTop() > 1850 && $(this).scrollTop() < 5400) {
+				bg1.fadeIn(1);
+				bg2.fadeOut(1);
+				bgHead.fadeOut(1);
+			} else if ($(this).scrollTop() > 5400) {
+				bg1.fadeOut(1);
+				bg2.fadeIn(1);
+			}
+		} else if ($(this).width() >= 3200) {
+			if ($(this).scrollTop() >= 0 && $(this).scrollTop() < 2335) {
+				bgHead.fadeIn(1);
+				bg1.fadeOut(1);
+				bg2.fadeOut(1);
+			} else if ($(this).scrollTop() > 2335 && $(this).scrollTop() < 6880) {
+				bg1.fadeIn(1);
+				bg2.fadeOut(1);
+				bgHead.fadeOut(1);
+			} else if ($(this).scrollTop() > 6880) {
+				bg1.fadeOut(1);
+				bg2.fadeIn(1);
+			}
+		} else if ($(this).width() <= 1024) {
+			if ($(this).scrollTop() >= 0 && $(this).scrollTop() < 1500) {
+				bgHead.fadeOut(1);
+				bg1.fadeOut(1);
+				bg2.fadeOut(1);
+			} else {
+				bgHead.fadeIn(1);
+			}
+		}
+	});
+
 	// Скрыть часть фото для мобильных устройств (Галерея в статье)
 	const artGalleryLink = document.querySelector(".article-gallery-link"); //Ссылка показать/скрыть
 	const artPhoto = document.querySelectorAll(".hide-article-photo"); //фотокарточка
@@ -84,7 +148,6 @@ $(document).ready(function () {
 	}
 	/* Показ кнопки "наверх" */
 	$(window).scroll(function () {
-		var height = $(window).scrollTop();
 		if ($(this).width() > 280) {
 			if ($(this).scrollTop() > 300) {
 				$("#back2Top").fadeIn();
@@ -229,12 +292,41 @@ $(document).ready(function () {
 	$(".owl-carousel").owlCarousel({
 		items: 1,
 		nav: true,
-		navSpeed: 800,
+		navSpeed: 500,
 		dots: false,
 		navText: ["", ""],
 		loop: true,
 		autoplay: true,
-		autoplayTimeout: 12000,
+		autoplayTimeout: 7000,
 		autoplayHoverPause: true,
 	});
+	// Параллакс картинки и подложки
+	let prxScene = document.querySelector(".yacht__content"); // сцена
+	let prxItem = document.querySelectorAll(".leda"); // блок с картинкой
+	let prxItemBg = document.querySelectorAll(".sea"); // море
+	let prxItemSky = document.querySelectorAll(".sky"); // небо
+	prxScene.addEventListener("mousemove", function (e) {
+		let x = e.clientX / window.innerWidth;
+		let y = e.clientY / window.innerHeight;
+		for (let item of prxItem) {
+			item.style.transform = "translate(-" + x * 22 + "px, -" + y * 15 + "px)";
+		}
+		for (let item of prxItemBg) {
+			item.style.transform = "translate(-" + x * 25 + "px, -" + y * 20 + "px)";
+		}
+		for (let item of prxItemSky) {
+			item.style.transform = "translate(-" + x * 0 + "px, -" + y * 20 + "px)";
+		}
+	});
+	//Модалка с акцией
+	// window.onkeyup = modal; // нажатие Esc, см. условие "e.keyCode==27"
+	// document.getElementById("popup").onclick = modal;
+
+	// function modal(e) {
+	// 	if (e.target.nodeName != "DIV" || e.keyCode == 27) {
+	// 		// через && перечисляются теги, клинкув на которые окно не будет закрыто; сюда же можно включить тег A или IFRAME
+	// 		document.getElementById("popup").style.display = "none";
+	// 		localStorage.setItem("popup1", "none");
+	// 	}
+	// }
 });

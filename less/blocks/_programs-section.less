@@ -1,0 +1,671 @@
+.programs {
+	margin: 0 auto;
+	padding: 30px 0 75px;
+	position: relative;
+	background-color: #f4f8f9;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		padding: 60px 0 75px;
+	}
+}
+.programs__title {
+	text-align: center;
+	margin-bottom: 30px;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 45px;
+	}
+}
+.programs__title-3 {
+	margin-bottom: 15px;
+	display: inline-block;
+	font-size: 24px;
+	font-family: sans-serif;
+	color: var(--main-blue);
+	line-height: 1.5;
+	text-align: center;
+	letter-spacing: -0.3px;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 26px;
+	}
+	//Для большого смартфона
+	@media (min-width: 375px) {
+		letter-spacing: unset;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 28px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		font-size: 30px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 15px;
+		font-family: serif;
+		font-style: italic;
+		font-size: 38px;
+		line-height: 1.2;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-size: 52px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 62px;
+		line-height: 1.2;
+	}
+}
+.programs__title-4 {
+	display: inline-block;
+	font-size: 20px;
+	font-family: serif;
+	color: var(--brand-blue);
+	font-style: italic;
+	line-height: 1.5;
+	text-align: center;
+	letter-spacing: -0.3px;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 22px;
+	}
+	//Для большого смартфона
+	@media (min-width: 375px) {
+		letter-spacing: unset;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 25px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 22px;
+		line-height: 1.2;
+		font-family: sans-serif;
+		font-style: normal;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-size: 30px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 32px;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		font-size: 36px;
+	}
+}
+.programs__row {
+	box-shadow: 0 10px 30px 3px rgba(119, 162, 219, 0.6);
+	max-width: 800px;
+	margin: 0 auto;
+	background-color: #fff;
+	//Для десктопа
+	@media (min-width: 1366px) {
+		max-width: 860px;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		max-width: 1024px;
+	}
+}
+.programs__program-card {
+	padding: 10px 0 30px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		padding: 15px 0 30px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		padding: 20px 0;
+	}
+}
+.programs__program-card-title {
+	text-align: center;
+	margin-bottom: 5px;
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		margin-bottom: 10px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 15px;
+	}
+}
+.program-card-title-4 {
+	font-size: 18px;
+	font-weight: 700;
+	font-family: "M PLUS 1p", sans-serif;
+	color: var(--brand-blue);
+	line-height: 1.2;
+	//Для большого смартфона
+	@media (min-width: 340px) {
+		font-size: 20px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 24px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 30px;
+	}
+	//Для планшета
+	@media (min-width: 1024px) {
+		font-size: 30px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 32px;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		font-size: 36px;
+	}
+}
+.programs__program-card-content-img {
+	margin-bottom: 5px;
+	overflow: hidden;
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		margin-bottom: 10px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 15px;
+	}
+	img {
+		object-fit: cover;
+		height: 140px;
+		//Для большого смартфона
+		@media (min-width: 360px) {
+			height: 150px;
+		}
+		//Для большого смартфона
+		@media (min-width: 400px) {
+			height: 160px;
+		}
+		//Для планшета
+		@media (min-width: 768px) {
+			height: 250px;
+		}
+		//Для большого планшета
+		@media (min-width: 1024px) {
+			height: 320px;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			height: 280px;
+		}
+		//Для большого десктопа
+		@media (min-width: 1600px) {
+			height: 320px;
+		}
+	}
+}
+.programs__program-card-content-text {
+	padding: 0 5px;
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		padding: 0 10px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		padding: 0 15px;
+	}
+	p {
+		margin-bottom: 15px;
+		font-family: sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.35;
+		text-align: center;
+		//Для большого смартфона
+		@media (min-width: 360px) {
+			font-size: 15px;
+		}
+		//Для большого смартфона
+		@media (min-width: 400px) {
+			font-size: 16px;
+		}
+		//Для планшета
+		@media (min-width: 768px) {
+			font-size: 20px;
+			line-height: 1.5;
+		}
+		//Для планшета
+		@media (min-width: 1024px) {
+			font-size: 22px;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			font-size: 18px;
+			letter-spacing: -0.5px;
+		}
+		//Для десктопа
+		@media (min-width: 1366px) {
+			font-size: 20px;
+			letter-spacing: -0.3px;
+		}
+		//Для десктопа
+		@media (min-width: 1920px) {
+			font-size: 24px;
+			letter-spacing: unset;
+		}
+	}
+}
+.programs__program-card-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		padding: 0 15px;
+	}
+}
+.text-block {
+	margin-bottom: 20px;
+	width: 100%;
+	display: flex;
+	flex-direction: column; // когда появиться кнопка - column
+	//Для планшета
+	@media (min-width: 768px) {
+		align-items: center;
+	}
+}
+.text-block__content {
+	display: flex;
+	flex-direction: row;
+	padding: 0 5px 0 5px;
+	//Для планшета
+	@media (min-width: 768px) {
+		padding: 0;
+	}
+	p {
+		margin-bottom: 0 !important;
+		font-family: "M PLUS 1p", sans-serif;
+		font-size: 16px;
+		line-height: 1.5;
+		font-weight: 400;
+		//Для большого смартфона
+		@media (min-width: 360px) {
+			font-size: 18px;
+		}
+		//Для планшета
+		@media (min-width: 768px) {
+			font-size: 24px;
+		}
+		//Для планшета
+		@media (min-width: 1024px) {
+			font-size: 26px;
+		}
+		//Для десктопа
+		@media (min-width: 1366px) {
+			font-size: 24px;
+		}
+		//Для десктопа
+		@media (min-width: 1920px) {
+			font-size: 28px;
+		}
+		span {
+			font-weight: 700;
+			color: var(--brand-blue);
+		}
+		&:first-of-type {
+			margin-right: 5px;
+		}
+	}
+}
+.programs__carousel.owl-carousel .owl-nav button.owl-prev {
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	content: "";
+	position: absolute;
+	left: 23%;
+	top: 88.5%;
+	transition: all 0.1s ease;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		left: 21%;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		left: 18%;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		top: 87.2%;
+		left: 10%;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		top: 50%;
+		left: -35px;
+		transform: translate(-100%, -50%);
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		top: 50%;
+		left: -100px;
+		transform: translate(-100%, -50%);
+	}
+	&:hover {
+		filter: drop-shadow(0 0 5px rgba(39, 38, 100, 0.5));
+	}
+	&:focus {
+		outline: none;
+	}
+	span {
+		display: none;
+	}
+	&::before {
+		content: "\00AB";
+		font-size: 90px;
+		color: var(--underline);
+		filter: opacity(0.7);
+		font-weight: 700;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: 0.3s;
+		//Для десктопа
+		@media (min-width: 1200px) {
+			filter: opacity(0.3);
+		}
+	}
+}
+.programs__carousel.owl-carousel .owl-nav button.owl-next {
+	width: 48px;
+	height: 48px;
+	content: "";
+	position: absolute;
+	right: 23%;
+	top: 88.5%;
+	transition: all 0.1s ease;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		right: 21%;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		right: 18%;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		top: 87.1%;
+		right: 10%;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		top: 50%;
+		right: -35px;
+		transform: translate(100%, -50%);
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		top: 50%;
+		right: -100px;
+		transform: translate(100%, -50%);
+	}
+	&:hover {
+		filter: drop-shadow(0 0 5px rgba(39, 38, 100, 0.5));
+	}
+	&:focus {
+		outline: none;
+	}
+	span {
+		display: none;
+	}
+	&::before {
+		content: "\00BB";
+		font-size: 90px;
+		color: var(--underline);
+		filter: opacity(0.7);
+		font-weight: 700;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		//Для десктопа
+		@media (min-width: 1200px) {
+			filter: opacity(0.3);
+		}
+	}
+}
+.owl-nav {
+	display: flex;
+	justify-content: space-around;
+	//Для планшета
+	@media (min-width: 768px) {
+		justify-content: center;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		display: block;
+	}
+}
+// ----- смена изображений для страниц с программами ----
+//Программа 1 "Баунти"
+.program-img-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/bounty-beach/bounty-beach.jpg");
+	}
+}
+.program-img-1-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/bounty-leda/big/leda_bounty.jpg");
+	}
+}
+//Программа 2 "Инжир"
+.program-img-2 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/injir/injir.jpg");
+	}
+}
+.program-img-2-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/injir/injir-jopa.jpg");
+	}
+}
+//Программа 3 "Мыс Айя"
+.program-img-3 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/top-clear-water/big/mus-aya-big.jpg");
+	}
+}
+.program-img-3-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/mus-aya/gallery/mus-aya-04.jpg");
+	}
+}
+//Программа 4 "Грот Дианы"
+.program-img-4 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/top-clear-water/big/grot-dianu-big.jpg");
+	}
+}
+.program-img-4-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/grot-dianu/grot_dianu.jpg");
+	}
+}
+//Программа 5 "Грот Дианы и Баунти"
+.program-img-5 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/combo_diana_bounty.jpg");
+	}
+}
+.program-img-5-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/grot-dianu/grot_dianu.jpg");
+	}
+}
+.program-img-5-2 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/bounty-beach/bounty-beach.jpg");
+	}
+}
+// ----- /смена изображений для страниц с программами ----
+.program-info {
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	font-family: "M PLUS 1p", sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	color: #808085;
+	line-height: 1.5;
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(221, 235, 255, 1) 25%,
+		rgba(221, 235, 255, 1) 50%,
+		rgba(221, 235, 255, 1) 75%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	filter: drop-shadow(0 3px 5px rgba(24, 55, 83, 0.45));
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 15px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 16px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		padding: 0 30px;
+		flex-direction: row;
+		justify-content: space-around;
+		font-size: 18px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		padding: 0 45px;
+	}
+}
+.program-order {
+	text-align: center;
+	margin-bottom: 15px;
+}
+.program-includes__list {
+	margin-bottom: 15px;
+	padding: 0 5px;
+	//Для планшета
+	@media (min-width: 768px) {
+		padding: 0 15px;
+	}
+}
+.program-includes__item {
+	margin-left: 31px;
+	margin-bottom: 15px;
+	position: relative;
+	font-size: 14px;
+	font-family: sans-serif;
+	font-weight: 400;
+	color: #000;
+	line-height: 1.2;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 16px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 18px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		line-height: 1;
+		font-size: 20px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-family: "M PLUS 1p", sans-serif;
+		font-size: 22px;
+	}
+	//Для большого десктопа
+	@media (min-width: 1200px) {
+		font-size: 24px;
+	}
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	&::before {
+		content: url("../img/icons/list-marker-blue.png");
+		position: absolute;
+		left: -30px;
+		top: 0;
+		//Для Ipad Pro
+		@media (min-width: 1024px) {
+			top: 3px;
+		}
+	}
+	span {
+		font-weight: 700;
+		color: var(--brand-blue);
+		font-size: 24px;
+		//Для планшета
+		@media (min-width: 768px) {
+			font-size: 28px;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			font-size: 30px;
+		}
+	}
+	p {
+		margin-top: 10px;
+		font-weight: 700;
+	}
+}
+.text-markup {
+	font-family: "M PLUS 1p", sans-serif;
+	font-weight: 500;
+	color: var(--underline);
+}
+#small-text {
+	padding: 0 5px;
+	font-family: "M PLUS 1p", sans-serif;
+	font-weight: 500;
+	font-size: 10px;
+	line-height: 1.2;
+	margin-bottom: 15px;
+	text-align: center;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 11px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 12px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 12px;
+	}
+}
