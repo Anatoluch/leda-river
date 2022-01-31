@@ -326,10 +326,10 @@
                   <div class="paralaxe-header__call-row">
                      <form class="call-form" method="POST" action="./php/call.php" autocomplete="off">
                         <div class="call-form__item-row">
-                           <input type="text" name="clientName" class="call-form__input" placeholder="Ваше имя" maxlength="21" required>
+                           <input type="text" name="clientName" id="nameInp" class="call-form__input" placeholder="Ваше имя (на русском)" maxlength="22" required>
                         </div>
                         <div class="call-form__item-row">
-                           <input type="tel" name="clientPhone" class="call-form__input" placeholder="Ваш телефон (без +)" maxlength="12" required>
+                           <input type="text" name="clientPhone" id="telInp" class="call-form__input" placeholder="Ваш телефон" maxlength="14" required>
                         </div>
                         <div>
                            <input type="submit" class="btn" value="Заказать">
@@ -532,8 +532,8 @@
                      <ul class="yacht__desc-list">
                         <li class="yacht__desc-item">длина яхты: <span>11,5</span> метров;</li>
                         <li class="yacht__desc-item">ширина яхты: <span>3,4</span> метра;</li>
-                        <li class="yacht__desc-item">мощность двигателя: <span>168</span> л.с.;</li>
-                        <li class="yacht__desc-item">крейсерская скорость: <span>8</span> узлов;</li>
+                        <li class="yacht__desc-item">мощность двигателя: <span>186</span> л.с.;</li>
+                        <li class="yacht__desc-item">крейсерская скорость: <span>7</span> узлов;</li>
                         <li class="yacht__desc-item">количество гостей: до <span>11</span> человек.</li>
                      </ul>
                      <h3 class="social-icons__title social-icons__title--white">Мы на связи:</h3>
@@ -821,35 +821,16 @@
                <div class="price-section__title">
                   <h2 class="section-title bottom-line">Расценки</h2>
                </div>  
-               <div class="stock-price">Севастопольцам скидка 5%!***</div>
                <div class="price-section__date">
-                  <p>с 15 по 19 сентября 2021 г.</p>
+                  <p>с 01.10.2021 по 31.03.2022</p>
                </div> 
+               <div class="stock-price stock-price--invert">Работаем только по предварительной брони!***</div>
                <div class="price-section__content">
                   <div class="price-section__rent">
                      <h4 class="title-4">Стоимость аренды катера*</h4>
                      <ul class="price-section__list">
-                        <li class="price-section__item">на <span>2</span> часа - <span>10500</span> руб.;</li>
-                        <li class="price-section__item">до <span>5</span> часов - <span>4750</span> руб./час;</li>
-                        <li class="price-section__item">от <span>6</span> часов - <span>4250</span> руб./час.</li>
-                     </ul>
-                  </div>
-                  <div class="price-section__additional">
-                     <h4 class="title-4">Дополнительные услуги</h4>
-                     <ul class="price-section__list">
-                        <li class="price-section__item">Приготовление еды - от <span>2000</span> руб.**</li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="price-section__date">
-                  <p>с 20 по 30 сентября 2021 г.</p>
-               </div>
-               <div class="stock-price stock-price--invert">Акционные цены!!!</div> 
-               <div class="price-section__content">
-                  <div class="price-section__rent">
-                     <h4 class="title-4">Стоимость аренды катера*</h4>
-                     <ul class="price-section__list">
-                        <li class="price-section__item">на <span>2</span> часа - <span>7000</span> руб.;</li>
+                        <li class="price-section__item">на <span>2</span> часа - <span>7500</span> руб.;</li>
+                        <!-- <li class="price-section__item">до <span>5</span> часов - <span>4000</span> руб./час;</li> -->
                         <li class="price-section__item">от <span>3</span> часов - <span>3000</span> руб./час.</li>
                      </ul>
                   </div>
@@ -860,10 +841,30 @@
                      </ul>
                   </div>
                </div>
+               <!-- <div class="price-section__date">
+                  <p>с 20 по 30 сентября 2021 г.</p>
+               </div> -->
+               <!-- <div class="stock-price stock-price--invert">Акционные цены!!!</div>  -->
+               <!-- <div class="price-section__content">
+                  <div class="price-section__rent">
+                     <h4 class="title-4">Стоимость аренды катера*</h4>
+                     <ul class="price-section__list">
+                        <li class="price-section__item">на <span>2</span> часа - <span>9000</span> руб.;</li>
+                        <li class="price-section__item">от <span>3</span> часов - <span>3000</span> руб./час.</li>
+                     </ul>
+                  </div>
+                  <div class="price-section__additional">
+                     <h4 class="title-4">Дополнительные услуги</h4>
+                     <ul class="price-section__list">
+                        <li class="price-section__item">Приготовление еды - от <span>2000</span> руб.**</li>
+                     </ul>
+                  </div>
+               </div> -->
                <div class="details">
                   <p>*Катер предоставляется <span>только</span> с капитаном. Варианты аренды без капитана - <span>не&nbsp;возможны!</span></p>
                   <p>**Цена указана только за услуги. Все продукты клиент предоставляет самостоятельно. Мы не несем ответственности за качество предоставленных продуктов!</p>
-                  <p>***Скидка действует для жителей города Севастополя <span>только</span> на аренду катера с <span>01.09</span> по <span>19.09</span> включительно и <span>только</span> при предварительном бронировании по телефону или через формы обратной связи на сайте <span class="details-higlight">leda-river.ru</span>. Для получения скидки, гостю необходимо предъявить капитану документ, подтверждающий севастопольскую прописку. <span class="details-higlight">Не суммируется с другими акциями и скидками</span>.</p>
+                  <p>***С <span>01.10.2021</span> по <span>30.04.2022</span> включительно.</p>
+                  <!-- <p>***Скидка действует для жителей города Севастополя <span>только</span> на аренду катера с <span>01.09</span> по <span>19.09</span> включительно и <span>только</span> при предварительном бронировании по телефону или через формы обратной связи на сайте <span class="details-higlight">leda-river.ru</span>. Для получения скидки, гостю необходимо предъявить капитану документ, подтверждающий севастопольскую прописку. <span class="details-higlight">Не суммируется с другими акциями и скидками</span>.</p> -->
                </div>
                <!--Акция-->
                <!-- <div class="promo-price__row">
@@ -932,7 +933,7 @@
                                     </div>
                                     <div class="text-block__content">
                                        <p><span>Стоимость:</span></p>
-                                       <p>от 20000 рублей</p>
+                                       <p>уточняйте</p>
                                     </div>
                                  </div>
                                  <a class="article__btn-readmore" href="./programs/bounty.html">Подробнее</a>
@@ -967,7 +968,7 @@
                                     </div>
                                     <div class="text-block__content">
                                        <p><span>Стоимость:</span></p>
-                                       <p>от 11000 рублей</p>
+                                       <p>уточняйте</p>
                                     </div>
                                  </div>
                                  <a class="article__btn-readmore" href="./programs/injir.html">Подробнее</a>
@@ -1002,7 +1003,7 @@
                                     </div>
                                     <div class="text-block__content">
                                        <p><span>Стоимость:</span></p>
-                                       <p>от 15000 рублей</p>
+                                       <p>уточняйте</p>
                                     </div>
                                  </div>
                                  <a class="article__btn-readmore" href="./programs/mus-aya.html">Подробнее</a>
@@ -1037,7 +1038,7 @@
                                     </div>
                                     <div class="text-block__content">
                                        <p><span>Стоимость:</span></p>
-                                       <p>от 20000 рублей</p>
+                                       <p>уточняйте</p>
                                     </div>
                                  </div>
                                  <a class="article__btn-readmore" href="./programs/grot-dianu.html">Подробнее</a>
@@ -1072,7 +1073,7 @@
                                     </div>
                                     <div class="text-block__content">
                                        <p><span>Стоимость:</span></p>
-                                       <p>от 25000 рублей</p>
+                                       <p>уточняйте</p>
                                     </div>
                                  </div>
                                  <a class="article__btn-readmore" href="./programs/grot-dianu-bounty.html">Подробнее</a>
@@ -1107,7 +1108,7 @@
                                     </div>
                                     <div class="text-block__content">
                                        <p><span>Стоимость:</span></p>
-                                       <p>от 20000 рублей</p>
+                                       <p>уточняйте</p>
                                     </div>
                                  </div>
                                  <a class="article__btn-readmore" href="#routes">Подробнее</a>
@@ -1142,7 +1143,7 @@
                                     </div>
                                     <div class="text-block__content">
                                        <p><span>Стоимость:</span></p>
-                                       <p>от 15000 рублей</p>
+                                       <p>уточняйте</p>
                                     </div>
                                  </div>
                                  <a class="article__btn-readmore" href="#routes">Подробнее</a>
@@ -1177,7 +1178,7 @@
                                     </div>
                                     <div class="text-block__content">
                                        <p><span>Стоимость:</span></p>
-                                       <p>от 27000 рублей</p>
+                                       <p>уточняйте</p>
                                     </div>
                                  </div>
                                  <a class="article__btn-readmore" href="#routes">Подробнее</a>
@@ -1212,7 +1213,7 @@
                                     </div>
                                     <div class="text-block__content">
                                        <p><span>Стоимость:</span></p>
-                                       <p>от 25000 рублей</p>
+                                       <p>уточняйте</p>
                                     </div>
                                  </div>
                                  <a class="article__btn-readmore" href="#routes">Подробнее</a>
@@ -1456,7 +1457,7 @@
                </div>
             </div>
             <div class="copyrights">
-               <p>Leda~River 2021. Site created by <noindex><a href="https://github.com/Anatoluch" target="_blank" rel="nofollow noopener noreferrer">Valerian</a></noindex>. All rights reserved &copy;.</p>
+               <p>Leda~River 2021-2022. Site created by <noindex><a href="https://github.com/Anatoluch" target="_blank" rel="nofollow noopener noreferrer">Valerian</a></noindex>. All rights reserved &copy;.</p>
                <div class="yandex-informer">
                   <!-- Yandex.Metrika informer -->
                   <noindex>

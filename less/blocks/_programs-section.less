@@ -142,6 +142,15 @@
 	@media (min-width: 768px) {
 		margin-bottom: 15px;
 	}
+	a {
+		&:focus {
+			outline: none;
+			filter: drop-shadow(0px 0px 2px #ffffff)
+				drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2))
+				drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6))
+				drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+		}
+	}
 }
 .program-card-title-4 {
 	font-size: 18px;

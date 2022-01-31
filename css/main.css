@@ -17,6 +17,9 @@ html {
     scroll-behavior: smooth;
   }
 }
+html.noscroll {
+  overflow: hidden;
+}
 body {
   margin: 0;
   padding: 0;
@@ -30,9 +33,6 @@ body {
   body {
     scroll-behavior: smooth;
   }
-}
-body.noscroll {
-  position: fixed;
 }
 /*---Стили для боковой навигации по разделам страницы*/
 /*--Планка навигации--*/
@@ -1481,7 +1481,7 @@ svg.social-icons__vib {
 #nav-wrapper {
   display: none;
   position: fixed;
-  z-index: 4;
+  z-index: 5;
   top: 0;
   left: 0;
   width: 100%;
@@ -3041,11 +3041,11 @@ svg.social-icons__vib {
   text-shadow: 0 0 3px #fff;
   z-index: 2;
 }
-.call-form #clientName-error {
+.call-form #nameInp-error {
   left: 4.5%;
 }
-.call-form #clientPhone-error {
-  right: 36%;
+.call-form #telInp-error {
+  right: 35%;
 }
 .call-form__item-row {
   margin-right: 15px;
@@ -3204,43 +3204,43 @@ svg.social-icons__vib {
     width: unset;
   }
 }
-.callback-form #clientName-error {
+.callback-form #nameInp-error {
   left: 0;
   top: 0;
 }
 @media (min-width: 768px) {
-  .callback-form #clientName-error {
+  .callback-form #nameInp-error {
     left: 1%;
   }
 }
 @media (min-width: 1024px) {
-  .callback-form #clientName-error {
+  .callback-form #nameInp-error {
     left: 9.5%;
   }
 }
 @media (min-width: 1200px) {
-  .callback-form #clientName-error {
+  .callback-form #nameInp-error {
     left: 12%;
   }
 }
-.callback-form #clientPhone-error {
+.callback-form #telInp-error {
   left: 0;
   top: 30.5%;
 }
 @media (min-width: 768px) {
-  .callback-form #clientPhone-error {
+  .callback-form #telInp-error {
     left: unset;
     top: 0;
     right: 35%;
   }
 }
 @media (min-width: 1024px) {
-  .callback-form #clientPhone-error {
+  .callback-form #telInp-error {
     right: 38%;
   }
 }
 @media (min-width: 1200px) {
-  .callback-form #clientPhone-error {
+  .callback-form #telInp-error {
     right: 39.5%;
   }
 }
@@ -3419,7 +3419,7 @@ svg.social-icons__vib {
 }
 .toggle-menu.active {
   z-index: 9;
-  position: absolute;
+  position: fixed;
   right: 15px;
 }
 @media (min-width: 420px) {
@@ -4150,6 +4150,11 @@ svg.social-icons__vib {
     margin-bottom: 15px;
   }
 }
+.programs__program-card-title a:focus {
+  outline: none;
+  -webkit-filter: drop-shadow(0px 0px 2px #ffffff) drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2)) drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6)) drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+          filter: drop-shadow(0px 0px 2px #ffffff) drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.2)) drop-shadow(2px 2px 6px rgba(0, 0, 255, 0.6)) drop-shadow(-2px -2px 6px rgba(131, 170, 241, 0.6));
+}
 .program-card-title-4 {
   font-size: 18px;
   font-weight: 700;
@@ -4853,6 +4858,8 @@ svg.social-icons__vib {
 .yacht-title {
   margin-bottom: 30px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .yacht-title {
@@ -4988,51 +4995,41 @@ svg.social-icons__vib {
 }
 @media (min-width: 768px) {
   .yacht__img img {
-    margin-top: 178px;
-    margin-left: 16px;
-    -webkit-transform: scale(1.9);
-       -moz-transform: scale(1.9);
-        -ms-transform: scale(1.9);
-         -o-transform: scale(1.9);
-            transform: scale(1.9);
+    margin-top: 175px;
+    margin-left: -5px;
+    -webkit-transform: scale(2);
+       -moz-transform: scale(2);
+        -ms-transform: scale(2);
+         -o-transform: scale(2);
+            transform: scale(2);
   }
 }
 @media (min-width: 960px) {
   .yacht__img img {
-    margin-top: 176px;
+    margin-top: 165px;
     margin-left: 15px;
-    -webkit-transform: scale(2.2);
-       -moz-transform: scale(2.2);
-        -ms-transform: scale(2.2);
-         -o-transform: scale(2.2);
-            transform: scale(2.2);
+    -webkit-transform: scale(2.3);
+       -moz-transform: scale(2.3);
+        -ms-transform: scale(2.3);
+         -o-transform: scale(2.3);
+            transform: scale(2.3);
   }
 }
 @media (min-width: 1024px) {
   .yacht__img img {
-    margin-top: 150px;
-    margin-left: -5px;
-    -webkit-transform: scale(1.9);
-       -moz-transform: scale(1.9);
-        -ms-transform: scale(1.9);
-         -o-transform: scale(1.9);
-            transform: scale(1.9);
+    margin-top: 140px;
+    margin-left: -16px;
+    -webkit-transform: scale(2);
+       -moz-transform: scale(2);
+        -ms-transform: scale(2);
+         -o-transform: scale(2);
+            transform: scale(2);
   }
 }
 @media (min-width: 1200px) {
   .yacht__img img {
-    margin-top: 55px;
-    margin-left: 0;
-    -webkit-transform: scale(1.5);
-       -moz-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-         -o-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-}
-@media (min-width: 1366px) {
-  .yacht__img img {
-    margin-left: 30px;
+    margin-top: 40px;
+    margin-left: 10px;
     -webkit-transform: scale(1.6);
        -moz-transform: scale(1.6);
         -ms-transform: scale(1.6);
@@ -5040,26 +5037,36 @@ svg.social-icons__vib {
             transform: scale(1.6);
   }
 }
+@media (min-width: 1366px) {
+  .yacht__img img {
+    margin-left: 70px;
+    -webkit-transform: scale(1.75);
+       -moz-transform: scale(1.75);
+        -ms-transform: scale(1.75);
+         -o-transform: scale(1.75);
+            transform: scale(1.75);
+  }
+}
 @media (min-width: 1600px) {
   .yacht__img img {
-    margin-top: 30px;
-    margin-left: 75px;
-    -webkit-transform: scale(1.65);
-       -moz-transform: scale(1.65);
-        -ms-transform: scale(1.65);
-         -o-transform: scale(1.65);
-            transform: scale(1.65);
+    margin-top: -70px;
+    margin-left: 110px;
+    -webkit-transform: scale(1.9);
+       -moz-transform: scale(1.9);
+        -ms-transform: scale(1.9);
+         -o-transform: scale(1.9);
+            transform: scale(1.9);
   }
 }
 @media (min-width: 1920px) {
   .yacht__img img {
-    margin-top: 35px;
-    margin-left: 100px;
-    -webkit-transform: scale(1.7);
-       -moz-transform: scale(1.7);
-        -ms-transform: scale(1.7);
-         -o-transform: scale(1.7);
-            transform: scale(1.7);
+    margin-top: -70px;
+    margin-left: 160px;
+    -webkit-transform: scale(2);
+       -moz-transform: scale(2);
+        -ms-transform: scale(2);
+         -o-transform: scale(2);
+            transform: scale(2);
   }
 }
 .layered-img {

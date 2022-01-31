@@ -25,7 +25,7 @@ $(document).ready(function () {
 	const mobMenu = document.querySelector(".mobile-menu"); // Плашка под мобильное меню
 	const overlay = document.querySelector("#overlay"); // overlay
 	const phoneMob = document.querySelector(".phone-top-mob");
-	const bodyEl = document.body;
+	const bodyEl = document.body.closest('html');
 
 	//Сценарий события клик по "гамбургеру" (появление/исчезание моб. меню, оверлея)
 	toggleMenu.addEventListener("click", function () {
@@ -309,13 +309,13 @@ $(document).ready(function () {
 		let x = e.clientX / window.innerWidth;
 		let y = e.clientY / window.innerHeight;
 		for (let item of prxItem) {
-			item.style.transform = "translate(-" + x * 22 + "px, -" + y * 15 + "px)";
+			item.style.transform = "translate(-" + x * 25 + "px, -" + y * 18 + "px)";
 		}
 		for (let item of prxItemBg) {
-			item.style.transform = "translate(-" + x * 25 + "px, -" + y * 20 + "px)";
+			item.style.transform = "translate(-" + x * 28 + "px, -" + y * 23 + "px)";
 		}
 		for (let item of prxItemSky) {
-			item.style.transform = "translate(-" + x * 0 + "px, -" + y * 20 + "px)";
+			item.style.transform = "translate(-" + x * 0 + "px, -" + y * 23 + "px)";
 		}
 	});
 	//Модалка с акцией

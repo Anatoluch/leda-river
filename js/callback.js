@@ -18,27 +18,47 @@ $(document).ready(function () {
 	function hideSuccess() {
 		document.querySelector(".callback-form__row").innerHTML = "";
 	}
+	// Запрет ввода других символов, кроме кириллицы
+	let nameInp = document.querySelector('#nameInp');
+
+	nameInp.addEventListener('input', cleanInpChar);
+
+	function cleanInpChar(){
+		this.value = this.value.replace(/[^ А-Яа-я-]/g, '');
+	}
+	// Запрет ввода других символов, кроме цифр
+	let telInp = document.querySelector('#telInp');
+
+	telInp.addEventListener('input', cleanInpDigit);
+
+	function cleanInpDigit(){
+		this.value = this.value.replace(/[^+0-9]/g, '');
+	}
 	//Валидация формы заказа звонка
 	$(".callback-form").validate({
 		rules: {
 			clientName: {
 				required: true,
+				minlength: 2,
+				maxlength: 21,
 			},
 			clientPhone: {
 				required: true,
-				digits: true,
-				minlength: 10,
-				maxlength: 12,
+				// digits: true,
+				minlength: 11,
+				maxlength: 13,
 			},
 		},
 		messages: {
 			clientName: {
 				required: "А как к Вам обращаться?!",
+				minlength: "Имя введено некорректно!",
+				maxlength: "Ваше имя слишком длинное!",
 			},
 			clientPhone: {
 				required: "Ваш телефон?",
-				digits: "Только цифры!",
-				minlength: "Ошибка ввода!!!",
+				// digits: "Только цифры!",
+				minlength: "Неверный номер!",
 				maxlength: "Ошибка ввода!!!",
 			},
 		},

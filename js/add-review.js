@@ -1,13 +1,4 @@
 $(document).ready(function(){
-  
-   //Прилипающее мобильное меню
-  $(window).scroll(function(){
-    if($(window).scrollTop()>75){
-      $('#nav-wrapper').fadeIn();
-    }else{
-      $('#nav-wrapper').fadeOut();
-    }
-  });
 
   //Логика кнопки "добавить аватар"
   $('.review-avatar').change(function() {
