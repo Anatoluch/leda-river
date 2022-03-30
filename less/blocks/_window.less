@@ -3,6 +3,7 @@
 	display: none;
 	overflow: hidden;
 	position: relative;
+	width: 100vw;
 	&::before {
 		display: block;
 		content: "";
@@ -18,7 +19,12 @@
 	//Для планшета
 	@media (min-width: 768px) {
 		display: block;
-		height: 0;
+		height: 35vh;
+		background-image: url("../img/body-bg-img.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
 	}
 	//Для десктопа
 	@media (min-width: 1200px) {
@@ -53,6 +59,11 @@
 	@media (min-width: 1200px) {
 		display: block;
 		height: 75vh;
+		background-image: url("../img/body-bg-img-2.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
 	}
 	//Для десктопа
 	@media (min-width: 1600px) {

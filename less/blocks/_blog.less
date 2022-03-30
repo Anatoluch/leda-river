@@ -191,6 +191,14 @@
 	@media (min-width: 400px) {
 		font-size: 24px;
 	}
+	//Для мобильных (горизонтально)
+	@media (min-width: 480px) {
+		font-size: 22px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 24px;
+	}
 	&:hover {
 		color: var(--main-blue);
 		transform: scale(1.03);
@@ -317,11 +325,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	//Для мобильных (горизонтально)
+	@media (min-width: 480px) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
 	//Для планшета
 	@media (min-width: 768px) {
-		flex-direction: row;
 		align-items: flex-end;
-		justify-content: space-between;
 	}
 }
 .article__btn-readmore {
@@ -341,9 +352,12 @@
 	z-index: 1;
 	cursor: pointer;
 	transition: 0.3s;
+	//Для мобильных (горизонтально)
+	@media (min-width: 480px) {
+		margin-bottom: 0;
+	}
 	//Для планшета
 	@media (min-width: 768px) {
-		margin-bottom: 0;
 		padding-left: 22px;
 		padding-right: 22px;
 		height: 42px;
@@ -401,7 +415,7 @@
 		}
 	}
 	li {
-		margin: 0 8px 0 0 !important;
+		margin: 0 7px 0 0 !important;
 		//Для большого смартфона
 		@media (min-width: 360px) {
 			margin: 0 10px 0 0 !important;
@@ -421,6 +435,11 @@
 			margin: 0 16px 0 0 !important;
 			transform: scale(1.25);
 		}
+		//Для мобильных (горизонтально)
+		@media (min-width: 480px) {
+			margin: 0 12px 0 0 !important;
+			transform: scale(1.1);
+		}
 		//Для планшета
 		@media (min-width: 768px) {
 			margin: 0 3px 0 0 !important;
@@ -438,5 +457,49 @@
 		&:last-of-type {
 			margin: 0 !important;
 		}
+	}
+}
+
+/*--- Картинки анонсов статей ---*/
+/*Статья 6*/
+.blog-prev-img-6 {
+	//Для планшета
+	@media (min-width: 480px) and (max-width: 767px) {
+		content: url("../img/articles/bounty-leda/big/leda_bounty.jpg");
+	}
+}
+/*Статья 5*/
+.blog-prev-img-5 {
+	//Для планшета
+	@media (min-width: 480px) and (max-width: 767px) {
+		content: url("../img/articles/balaklava/balaklava-nazukina.jpg");
+	}
+}
+/*Статья 4*/
+.blog-prev-img-4 {
+	//Для планшета
+	@media (min-width: 480px) and (max-width: 767px) {
+		content: url("../img/articles/top-clear-water/big/mus-aya-big.jpg");
+	}
+}
+/*Статья 3*/
+.blog-prev-img-3 {
+	//Для планшета
+	@media (min-width: 480px) and (max-width: 767px) {
+		content: url("../img/articles/top-clear-water/big/grot-dianu-big.jpg");
+	}
+}
+/*Статья 2*/
+.blog-prev-img-2 {
+	//Для планшета
+	@media (min-width: 480px) and (max-width: 767px) {
+		content: url("../img/articles/top-clear-water/big/bounty-big.jpg");
+	}
+}
+/*Статья 1*/
+.blog-prev-img-1 {
+	//Для планшета
+	@media (min-width: 480px) and (max-width: 767px) {
+		content: url("../img/articles/top-clear-water/big/tropical-water-big.jpg");
 	}
 }

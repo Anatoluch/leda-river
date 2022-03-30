@@ -359,10 +359,14 @@
 }
 .article__img-btn-row {
 	position: absolute;
-	top: 70%;
+	top: 67%;
 	width: 100%;
 	z-index: 1;
 	text-align: center;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		top: 70%;
+	}
 }
 .article__img-btn {
 	display: inline-block;
@@ -691,6 +695,12 @@
 	}
 }
 //Сатья "Таинственная Балаклава"
+.art-img-5-0-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/balaklava/balaklava-bay-03.jpg");
+	}
+}
 .art-img-5-1 {
 	//Для планшета
 	@media (min-width: 429px) {
@@ -703,10 +713,22 @@
 		content: url("../img/articles/balaklava/balaklava-chembalo.jpg");
 	}
 }
+.art-img-5-2-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/balaklava/balaklava-chembalo-3.jpg");
+	}
+}
 .art-img-5-3-1 {
 	//Для планшета
 	@media (min-width: 429px) {
 		content: url("../img/articles/balaklava/balaklava-muzey-01.jpg");
+	}
+}
+.art-img-5-3-1-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/balaklava/balaklava-muzey-03.jpg");
 	}
 }
 .art-img-5-3-2 {

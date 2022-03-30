@@ -6,7 +6,7 @@ $c = true;
 // For POST method only!
 
 // Save Basic Form parametrs
-$project_name = "ЗАКАЗ ОБРАТНОГО ЗВОНКА - Leda~River";
+$project_name = "ЗАЯВКА ОНЛАЙН - Leda~River";
 $admin_email = "leda-river@mail.ru";
 $email_from = "message@leda-river.ru";
 

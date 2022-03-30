@@ -125,7 +125,7 @@
 			var cssCode = "";
 			cssCode += "#pjAcceptCookieBar .pjAcceptCookieBarBtn,";
 			cssCode += "#pjAcceptCookieBar .pjAcceptCookieBarBtn:after { -webkit-transition: all .5s ease-in-out; -moz-transition: all .5s ease-in-out; -ms-transition: all .5s ease-in-out; -o-transition: all .5s ease-in-out; transition: all .5s ease-in-out; }";
-			cssCode += "#pjAcceptCookieBar { position: fixed; bottom: 0; left: 0; z-index: 9999; overflow-x: hidden; overflow-y: auto; width: 100%; max-height: 100%; padding: 10px 0; background: rgba(0, 77, 136, 0.7);  backdrop-filter: blur(3px); font-family: 'Open Sans', sans-serif; text-align: center; }";
+			cssCode += "#pjAcceptCookieBar { position: fixed; bottom: 0; left: 0; z-index: 9999; overflow-x: hidden; overflow-y: auto; width: 100%; max-height: 100%; padding: 10px 0; background: rgba(0, 77, 136, 0.7);  backdrop-filter: blur(8px); font-family: 'Open Sans', sans-serif; text-align: center; }";
 			cssCode += "#pjAcceptCookieBar * { padding: 0; margin: 0; outline: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }";
 			cssCode += "#pjAcceptCookieBar .pjAcceptCookieBarShell { width: 90%; margin: 0 auto; }";
 			cssCode += "#pjAcceptCookieBar a[href^=tel] { color: inherit; }";
@@ -134,6 +134,7 @@
 			cssCode += "#pjAcceptCookieBar p { font-size: 13px; line-height: 1.5; color: #fff; font-weight: 400; }";
 			cssCode += "#pjAcceptCookieBar .pjAcceptCookieBarActions { padding-top: 6px; }";
 			cssCode += "#pjAcceptCookieBar .pjAcceptCookieBarBtn { position: relative; display: inline-block; padding: 5px 20px; height: 30px; border: 0; border-radius: 30px; line-height: 1; background: #fff; font-family: 'M PLUS 1p', sans-serif;  font-size: 18px;  font-weight: 500; color: #004d88;}";
+			cssCode += "#pjAcceptCookieBar .pjAcceptCookieBarBtn:hover {transform: scale(1.05) translateY(-2px);filter: drop-shadow(0 3px 3px rgba(0,0,0,0.5));}";
 			cssCode += "@media only screen and (max-width: 767px) {";
 			cssCode += "#pjAcceptCookieBar { padding: 15px 0; }";
 			cssCode += "#pjAcceptCookieBar .pjAcceptCookieBarShell { width: 96%; }";

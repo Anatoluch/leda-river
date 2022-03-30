@@ -1,65 +1,449 @@
-// ---- Для хедера ----
-.paralaxe-header__call-row {
-	display: none;
-	//Для десктопа
-	@media (min-width: 1200px) {
-		margin: 0 auto;
-		padding: 15px 25px;
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 45px;
-		background: rgba(27, 75, 90, 0.25);
-		backdrop-filter: blur(4px);
-		overflow: hidden;
+// ---- Всплываюшая форма заказа катера ----
+.call-form__wrapper {
+	position: fixed;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(1, 13, 26, 0.35);
+	backdrop-filter: blur(12px);
+	z-index: 9999999999;
+	overflow-y: auto;
+	//Для планшета
+	@media (min-width: 768px) {
+		background-color: rgba(1, 13, 26, 0.45);
 	}
+}
+.paralaxe-header__call-row {
+	padding: 7px 5px 5px;
+	position: fixed;
+	top: 50%;
+	bottom: unset;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 99;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 2px solid #004d88;
+	overflow: hidden;
+	background: #006cba;
+	background: linear-gradient(150deg, #006cba 0%, #4897e2 50%, #004d88 100%);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		padding: 10px 5px 10px;
+		border-radius: 15px;
+	}
+	//Для большого смартфона
+	@media (min-width: 375px) {
+		border-radius: 20px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		padding: 5px 10px 15px;
+		border-radius: 25px;
+		border: 4px solid #004d88;
+	}
+	//Для десктопа с большим монитором
+	@media (min-width: 1600px) {
+		padding: 5px 10px 15px;
+	}
+	//Для узкого экрана <= 600px
+	@media (max-height: 600px) {
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
+		overflow-y: auto;
+		border-radius: 0;
+	}
+	@media (min-width: 1920px) {
+		margin: 0 0 0 auto;
+	}
+}
+.close-form {
+	position: absolute;
+	display: inline-block;
+	top: 5px;
+	right: 10px;
+	font-size: 32px;
+	line-height: 1;
+	font-weight: 700;
+	color: #fff;
+	cursor: pointer;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+	transition: 0.3s ease-in-out;
+	&:hover,
+	&:focus {
+		outline: none;
+		transform: translateY(-3px) scale(1.25);
+		text-shadow: 0 6px 5px rgba(0, 0, 0, 0.6);
+		color: rgb(255, 102, 0);
+	}
+}
+.call-form__title {
+	text-align: center;
+	margin: 0 0 20px;
+	font-family: "M PLUS 1p", sans-serif;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-shadow: 0 0px 3px black;
 }
 .call-form {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+
 	label.error {
 		position: absolute;
+		width: 100%;
 		top: 0;
+		text-align: center;
 		line-height: 1;
 		font-size: 20px;
-		text-shadow: 0 0 3px #fff;
 		z-index: 2;
+		letter-spacing: unset;
+		color: #fff;
+		text-shadow: 0 0 2px #ff0000, 0 0 5px #ff0000, 0 0 7px #ff5e02;
 	}
-	#nameInp-error {
-		left: 4.5%;
+	#nameInp-error,
+	#telInp-error,
+	#dateInp-error {
+		left: 0;
+		top: -22px;
 	}
-	#telInp-error {
-		right: 35%;
+	#control-question-error {
+		top: 42px;
+	}
+	input[type="submit"]:disabled {
+		cursor: not-allowed;
+		background-color: #979797;
+		color: #8f8f8f;
+		text-shadow: 0 0px 3px black;
+		&:hover,
+		&:focus {
+			transform: unset;
+			filter: unset;
+			box-shadow: unset;
+			background-color: #979797;
+			color: #8f8f8f;
+		}
 	}
 }
 .call-form__item-row {
-	margin-right: 15px;
+	margin-bottom: 25px;
+	position: relative;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		margin-bottom: 22px;
+	}
+	//Для десктопа с большим монитором
+	@media (min-width: 1600px) {
+		margin-bottom: 25px;
+	}
+	&:nth-of-type(4) {
+		margin-bottom: 5px;
+	}
 	&:last-of-type {
-		margin-right: 0;
+		margin-bottom: 10px;
+		//Для планшета
+		@media (min-width: 768px) {
+			margin-bottom: 15px;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			margin-bottom: 10px;
+		}
 	}
 }
-.call-form__input {
+.call-form__fake-placeholder {
+	display: inline-block;
+	position: absolute;
+	color: #fff;
+	top: 50%;
 	width: 100%;
-	max-width: 280px;
-	height: 60px;
-	padding: 0 30px;
+	transform: translateY(-50%);
+	z-index: 1;
+	left: 15px;
+	font-family: "M PLUS 1p", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	word-spacing: 1px;
+	pointer-events: none;
+	transition: 0.3s ease-in-out;
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 20px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 18px;
+	}
+}
+.call-form__fake-placeholder.call-form__fake-placeholder--text {
+	left: 50%;
+	top: 25px;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.call-form__fake-placeholder.active {
+	top: 7px !important;
+	font-size: 13px;
+	color: #ff7f29;
+	font-weight: 500;
+}
+// .call-form__fake-placeholder.call-form__fake-placeholder--text.active {
+// 	top: 8px;
+// 	font-size: 13px;
+// 	color: #ff7f29;
+// 	font-weight: 500;
+// }
+.call-form__input {
+	width: 300px;
+	height: 50px;
+	padding: 0 15px;
 	border: none;
-	border-radius: 30px;
+	border-radius: 15px;
 	background-color: rgba(0, 0, 0, 0.5);
 	font-family: "M PLUS 1p", sans-serif;
 	color: #fff;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 400;
+	//Для планшета
+	@media (min-width: 768px) {
+		width: 380px;
+		font-size: 20px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		width: 420px;
+		font-size: 18px;
+	}
 	&::placeholder {
 		color: #fff;
 	}
 	&:focus {
 		outline: none;
 		background-color: rgba(0, 0, 0, 0.75);
+	}
+}
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+	filter: invert(1);
+}
+.call-form__text {
+	width: 300px;
+	height: 170px;
+	padding: 10px 15px;
+	resize: none;
+	border: none;
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0.5);
+	font-family: "M PLUS 1p", sans-serif;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 400;
+	//Для планшета
+	@media (min-width: 768px) {
+		width: 380px;
+		height: 200px;
+		font-size: 20px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		width: 420px;
+		height: 170px;
+		font-size: 18px;
+	}
+	//Для десктопа с большим монитором
+	@media (min-width: 1600px) {
+		height: 200px;
+	}
+	&::placeholder {
+		color: #fff;
+	}
+	&:focus {
+		outline: none;
+		background-color: rgba(0, 0, 0, 0.75);
+	}
+	&::placeholder {
+		text-align: center;
+	}
+	&::-webkit-scrollbar {
+		width: 0;
+	}
+}
+.call-form__text-counter {
+	position: absolute;
+	bottom: 2px;
+	right: 10px;
+	font-size: 13px;
+	color: #ff7f29;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-shadow: 0px 0px 1px #ffe000, 0px 0px 4px red;
+	opacity: 0.7;
+	pointer-events: none;
+	transition: 0.3s ease-in-out;
+}
+.call-form__text-counter.transp-count {
+	opacity: 0;
+	font-size: 18px;
+	right: 0;
+}
+.bot-test {
+	width: 100%;
+	margin-bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	p {
+		margin: 0 0 5px;
+		font-family: "M PLUS 1p", sans-serif;
+		color: #fff;
+		font-size: 18px;
+		text-align: center;
+		line-height: 1;
+		font-weight: 500;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		text-shadow: 0 0px 3px black;
+		//Для десктопа с большим монитором
+		@media (min-width: 1600px) {
+			margin: 0 0 10px;
+		}
+	}
+}
+.bot-test__row {
+	width: 100%;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-around;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		margin-bottom: 5px;
+	}
+	//Для десктопа с большим монитором
+	@media (min-width: 1600px) {
+		margin-bottom: 10px;
+	}
+}
+.bot-test__label {
+	font-family: "M PLUS 1p", sans-serif;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+	line-height: 1;
+	letter-spacing: 0.5px;
+}
+.call-form__bot-inp-row {
+	position: relative;
+}
+.call-form__bot-fake-placeholder {
+	// display: inline-block;
+	// position: absolute;
+	// color: #fff;
+	// top: 50%;
+	// transform: translateY(-50%);
+	// z-index: 1;
+	// left: 15px;
+	// font-family: "M PLUS 1p", sans-serif;
+	// font-size: 18px;
+	// font-weight: 400;
+	// width: 100%;
+}
+.call-form__bot-fake-placeholder.active {
+	top: 7px !important;
+	font-size: 13px;
+	color: #ff7f29;
+	font-weight: 500;
+}
+.call-form__policy-row {
+	margin: 0 auto 10px;
+	text-align: center;
+	//Для планшета
+	@media (min-width: 768px) {
+		margin: 0 auto 15px;
+	}
+}
+.call-form input[type="checkbox"] {
+	margin: 0 0 0 5px;
+	position: relative;
+	width: 15px;
+	height: 15px;
+	top: 2px;
+}
+.call-form__policy-row input[type="checkbox"] {
+	margin: 0 0 0 3px;
+	position: relative;
+	width: 15px;
+	height: 15px;
+	top: 4px;
+	//Для десктопа
+	@media (min-width: 1200px) {
+		top: 2px;
+	}
+}
+.call-form__policy-text {
+	font-family: "M PLUS 1p", sans-serif;
+	color: #fff;
+	font-size: 13px;
+	letter-spacing: -0.4px;
+	font-weight: 500;
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 16px;
+	}
+	a {
+		color: inherit;
+		border-bottom: 1px solid #fff;
+		transition: 0.3s ease-in-out;
+		&:hover,
+		&:focus {
+			color: #ff7f29;
+			border-bottom: 1px solid transparent;
+			font-weight: 500;
+		}
+	}
+}
+.call-form__policy {
+}
+.submit-btn__wrapper {
+	margin: 0 auto 10px;
+	width: 100%;
+	//Для планшета
+	@media (min-width: 768px) {
+		width: unset;
+		margin: 0;
+	}
+}
+.btn.btn--call-form {
+	display: block;
+	margin-bottom: 0;
+	height: 50px;
+	line-height: 50px;
+	width: 100%;
+	max-width: 300px;
+	background-color: #fff;
+	font-family: "M PLUS 1p", sans-serif;
+	color: #004d88;
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	&::before {
+		content: "";
+		display: inline-block;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		display: inline-block;
 	}
 }
 .call-form__success {
@@ -72,7 +456,7 @@
 	text-align: center;
 	text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
-// ---- /Для хедера ----
+// ---- /Всплываюшая форма заказа катера ----
 // ---- Для готовых маршрутов ----
 .callback-form__row {
 	margin: -15px auto 0;
@@ -173,8 +557,16 @@
 	background-color: rgba(0, 0, 0, 0.5);
 	font-family: "M PLUS 1p", sans-serif;
 	color: #fff;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 400;
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 20px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 18px;
+	}
 	&::placeholder {
 		color: #fff;
 	}

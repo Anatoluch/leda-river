@@ -1,11 +1,11 @@
 .programs {
 	margin: 0 auto;
-	padding: 30px 0 75px;
+	padding: 30px 0 5px;
 	position: relative;
 	background-color: #f4f8f9;
 	//Для десктопа
 	@media (min-width: 1200px) {
-		padding: 60px 0 75px;
+		padding: 60px 0 45px;
 	}
 }
 .programs__title {
@@ -43,6 +43,10 @@
 	//Для большого смартфона
 	@media (min-width: 420px) {
 		font-size: 30px;
+	}
+	//Для мобильных (горизонтально)
+	@media (min-width: 480px) {
+		font-size: 26px;
 	}
 	//Для планшета
 	@media (min-width: 768px) {
@@ -83,6 +87,10 @@
 	@media (min-width: 400px) {
 		font-size: 25px;
 	}
+	//Для мобильных (горизонтально)
+	@media (min-width: 480px) {
+		font-size: 24px;
+	}
 	//Для планшета
 	@media (min-width: 768px) {
 		font-size: 22px;
@@ -104,12 +112,13 @@
 	}
 }
 .programs__row {
+	margin: 0 auto 45px;
 	box-shadow: 0 10px 30px 3px rgba(119, 162, 219, 0.6);
 	max-width: 800px;
-	margin: 0 auto;
 	background-color: #fff;
 	//Для десктопа
 	@media (min-width: 1366px) {
+		margin: 0 auto 30px;
 		max-width: 860px;
 	}
 	//Для десктопа
@@ -342,7 +351,7 @@
 	position: absolute;
 	content: "";
 	position: absolute;
-	left: 23%;
+	left: 20%;
 	top: 88.5%;
 	transition: all 0.1s ease;
 	//Для большого смартфона
@@ -401,7 +410,7 @@
 	height: 48px;
 	content: "";
 	position: absolute;
-	right: 23%;
+	right: 20%;
 	top: 88.5%;
 	transition: all 0.1s ease;
 	//Для большого смартфона
@@ -536,6 +545,57 @@
 	//Для планшета
 	@media (min-width: 429px) {
 		content: url("../img/articles/bounty-beach/bounty-beach.jpg");
+	}
+}
+//Программа 6 "Урочище Аязьма (Инжир) - мыс Айя"
+.program-img-6 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/injir-mus-aya/combo_injir_aya.jpg");
+	}
+}
+//Программа 7 "Мыс Фиолент"
+.program-img-7 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/mus-fiolent/mus_fiolent.jpg");
+	}
+}
+.program-img-7-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/mus-fiolent/mus_fiolent-2.jpg");
+	}
+}
+.program-img-7-2 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/mus-fiolent/mus_fiolent-3.jpg");
+	}
+}
+.program-img-7-3 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/mus-fiolent/Svyato-Georgievskiy-monastyr-fiolent.jpg");
+	}
+}
+//Программа 8 "Весь Фиолент"
+.program-img-8 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/ves-fiolent/fiolent.jpg");
+	}
+}
+.program-img-8-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/mus-fiolent/mus_fiolent.jpg");
+	}
+}
+.program-img-8-2 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/mus-fiolent/mus_fiolent-2.jpg");
 	}
 }
 // ----- /смена изображений для страниц с программами ----

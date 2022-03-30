@@ -9,6 +9,17 @@ RewriteRule ^(.+)/$ https://leda-river.ru/$1 [R=301,L]
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)index\.html($|\ |\?)
 RewriteRule ^index\.html$ https://leda-river.ru/ [R=301,L]
 
+#Включаем отслеживание сим-ссылок
+Options +FollowSymLinks
+#Блокируем все ссылки, содержащие <script>
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+#Блокируем все скрипты, которые пытаются изменить переменные PHP Globals:
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+#Блокируем все скрипты, которые пытаются изменить переменную _REQUEST:
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+#Перенаправляем все подобные на страницу с ошибкой 403 — запрещено
+RewriteRule ^(.*)$ index.php [F,L]
+
 ##Удаление лишних слешей
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} ^(.+)/$
@@ -17,6 +28,11 @@ RewriteCond %{THE_REQUEST} //
 RewriteCond %{QUERY_STRING} !http(s|)://
 RewriteRule .* /$0 [R=301,L]
 
+# Максимальный размер загружаемого файла
+php_value upload_max_filesize 1M
+php_value post_max_size 1M
+# Максимально разрешённое количество одновременно загружаемых файлов
+php_value max_file_uploads 1
 
 
 ## Begin - Rewrite rules to block out some common exploits.

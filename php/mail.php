@@ -49,50 +49,50 @@ $headers = "MIME-Version: 1.0" . PHP_EOL .
 'From: '.adopt($project_name).' <'.$email_from.'>' . PHP_EOL .
 'Reply-To: '.$admin_email.'' . PHP_EOL;
 //Captcha
-// Проверка того, что есть данные из капчи
-if (!$_POST["g-recaptcha-response"]) {
-    // Если данных нет, то программа останавливается и выводит ошибку
-	 exit("<div class='contact-form__success'>
-	 <h2>Произошла ошибка, капча не пройдена!<br>Обновите страницу и попробуйте снова!</h2>
-	 <button class='btn btn--reset' onclick='window.location.reload(true)'>Обновить</button>
-	</div>");
-} else { // Иначе создаём запрос для проверки капчи
-    // URL куда отправлять запрос для проверки
-    $url = "https://www.google.com/recaptcha/api/siteverify";
-    // Ключ для сервера
-    $key = "6LeXE38aAAAAACxTuy8YvGvqbfokPpj40MJq0N1n";
-    // Данные для запроса
-    $query = array(
-        "secret" => $key, // Ключ для сервера
-        "response" => $_POST["g-recaptcha-response"], // Данные от капчи
-        "remoteip" => $_SERVER['REMOTE_ADDR'] // Адрес сервера
-    );
+// // Проверка того, что есть данные из капчи
+// if (!$_POST["g-recaptcha-response"]) {
+//     // Если данных нет, то программа останавливается и выводит ошибку
+// 	 exit("<div class='contact-form__success'>
+// 	 <h2>Произошла ошибка, капча не пройдена!<br>Обновите страницу и попробуйте снова!</h2>
+// 	 <button class='btn btn--reset' onclick='window.location.reload(true)'>Обновить</button>
+// 	</div>");
+// } else { // Иначе создаём запрос для проверки капчи
+//     // URL куда отправлять запрос для проверки
+//     $url = "https://www.google.com/recaptcha/api/siteverify";
+//     // Ключ для сервера
+//     $key = "6LeXE38aAAAAACxTuy8YvGvqbfokPpj40MJq0N1n";
+//     // Данные для запроса
+//     $query = array(
+//         "secret" => $key, // Ключ для сервера
+//         "response" => $_POST["g-recaptcha-response"], // Данные от капчи
+//         "remoteip" => $_SERVER['REMOTE_ADDR'] // Адрес сервера
+//     );
  
-    // Создаём запрос для отправки
-    $ch = curl_init();
-    // Настраиваем запрос 
-    curl_setopt($ch, CURLOPT_URL, $url); 
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-    curl_setopt($ch, CURLOPT_POST, true); 
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $query); 
-    // отправляет и возвращает данные
-    $data = json_decode(curl_exec($ch), $assoc=true); 
-    // Закрытие соединения
-    curl_close($ch);
+//     // Создаём запрос для отправки
+//     $ch = curl_init();
+//     // Настраиваем запрос 
+//     curl_setopt($ch, CURLOPT_URL, $url); 
+//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+//     curl_setopt($ch, CURLOPT_POST, true); 
+//     curl_setopt($ch, CURLOPT_POSTFIELDS, $query); 
+//     // отправляет и возвращает данные
+//     $data = json_decode(curl_exec($ch), $assoc=true); 
+//     // Закрытие соединения
+//     curl_close($ch);
  
-    // Если нет success то
-    if (!$data['success']) {
-        // Останавливает программу и выводит "ВЫ РОБОТ"
-        exit("ВЫ РОБОТ");
-    } else {
-        // Иначе выводим логин и Email
-        echo "<div class='contact-form__success'>
-		<h2>Ваше сообщение отправлено!<br>
-		Мы свяжимся с&nbsp;Вами в&nbsp;ближайшее время!
-		</h2>
-	  </div> ";
-    }
-}
+//     // Если нет success то
+//     if (!$data['success']) {
+//         // Останавливает программу и выводит "ВЫ РОБОТ"
+//         exit("ВЫ РОБОТ");
+//     } else {
+//         // Иначе выводим логин и Email
+//         echo "<div class='contact-form__success'>
+// 		<h2>Ваше сообщение отправлено!<br>
+// 		Мы свяжимся с&nbsp;Вами в&nbsp;ближайшее время!
+// 		</h2>
+// 	  </div> ";
+//     }
+// }
 //Captcha
 // Sending email to admin
 mail($admin_email, $form_subject, $message, $headers);
@@ -102,11 +102,11 @@ send_user_data_in_txt_file ($message);
 
 // header('location: ../thankyou.php');
 // Я закомментил вывод сообщения об отправке, чтобы избежать дублей с капчей!!!
-// echo "<div class='contact-form__success'>
-// 		<h2>Ваше сообщение отправлено!<br>
-// 		Мы свяжимся с&nbsp;Вами в&nbsp;ближайшее время!
-// 		</h2>
-// 	  </div> ";
+echo "<div class='contact-form__success'>
+		<h2>Ваше сообщение отправлено!<br>
+		Мы рассмотрим&nbsp;его в&nbsp;ближайшее время!
+		</h2>
+	  </div> ";
 
 ?>
 

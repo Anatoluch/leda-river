@@ -297,51 +297,143 @@ details[open] summary:before {
 		font-size: 24px;
 	}
 }
+.stock-price.stock-price--blue {
+	background-color: var(--main-blue);
+	width: 100%;
+	padding: 0;
+	height: 60px;
+	letter-spacing: -0.1px;
+	line-height: 60px;
+	font-weight: 700;
+	font-size: 14px;
+	border-radius: 30px;
+	text-transform: uppercase;
+	filter: drop-shadow(0px 5px 1px rgba(0, 0, 0, 0.5));
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		height: 64px;
+		line-height: 64px;
+		font-size: 15px;
+		border-radius: 32px;
+	}
+	//Для большого смартфона
+	@media (min-width: 375px) {
+		height: 66px;
+		line-height: 66px;
+		font-size: 16px;
+		border-radius: 33px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		height: 68px;
+		line-height: 68px;
+		font-size: 17px;
+		border-radius: 34px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		height: 70px;
+		line-height: 70px;
+		font-size: 18px;
+		border-radius: 35px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		width: max-content;
+		padding: 0 35px;
+		font-size: 26px;
+		border-radius: 35px;
+		letter-spacing: unset;
+	}
+	span {
+		line-height: 1;
+		font-size: 9px;
+		letter-spacing: 0.7px;
+		text-transform: initial;
+		font-weight: 300;
+		position: absolute;
+		width: 100%;
+		top: 67%;
+		opacity: 0.7;
+		left: 50%;
+		transform: translateX(-50%);
+		//Для большого смартфона
+		@media (min-width: 360px) {
+			font-size: 10px;
+			top: 65%;
+		}
+		//Для большого смартфона
+		@media (min-width: 375px) {
+			font-size: 11px;
+			top: 65%;
+		}
+		//Для большого смартфона
+		@media (min-width: 400px) {
+			top: 66%;
+		}
+		//Для большого смартфона
+		@media (min-width: 420px) {
+			top: 68%;
+		}
+		//Для планшета
+		@media (min-width: 768px) {
+			letter-spacing: 0.5px;
+			font-weight: 300;
+			top: 80%;
+			opacity: 0.65;
+		}
+	}
+}
 .stock-price.stock-price--invert {
 	background-color: #ff0000;
 	color: #fff;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
-	animation: stock 4s linear infinite;
+	animation: stock 6s linear infinite;
 }
 @keyframes stock {
+	0% {
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
+	}
 	15% {
 		background-color: #ff0000;
+		transform: rotate(-0.3deg) translate(2px, -1px);
 		color: #fff;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 	}
 	25% {
 		background-color: #fff;
 		color: #ff0000;
-		transform: scale(1.01) rotate(-0.5deg) translateY(3px);
-		box-shadow: 7px -1px 20px rgba(0, 0, 0, 0.45);
+		transform: scale(1.01) rotate(0.15deg) translate(0, 1px);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.45);
 	}
 	30% {
-		transform: rotate(0.15deg) translate(-2px, -1px);
-		box-shadow: 15px 0 12px rgba(0, 0, 0, 0.5);
+		transform: rotate(0.1deg) translate(-1px, -1px);
+		box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
 	}
 	45% {
-		transform: rotate(-0.25deg) translate(3px, -1px);
-		box-shadow: -7px 10px 10px rgba(0, 0, 0, 0.6);
+		transform: rotate(-0.25deg) translate(1px, -1px);
+		box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
 	}
 	65% {
 		background-color: #fff;
 		color: #ff0000;
-		transform: scale(1) rotate(0.5deg) translateY(-2px);
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
+		transform: scale(1) rotate(0.15deg) translate(0, -2px);
+		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.6);
 	}
 	75% {
 		background-color: #ff0000;
 		color: #fff;
 		transform: scale(1.01);
-		box-shadow: -12px 6px 20px rgba(0, 0, 0, 0.45);
+		box-shadow: 0 4px 7px rgba(0, 0, 0, 0.45);
 	}
 	85% {
-		transform: rotate(-0.25deg) translate(4px, -2px);
-		box-shadow: 7px 0 15px rgba(0, 0, 0, 0.5);
+		transform: rotate(-0.2deg) translate(2px, -1px);
+		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
 	}
 	100% {
 		background-color: #ff0000;
 		color: #fff;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
 	}
 }
 .price-section__list {
@@ -558,6 +650,10 @@ span.red {
 		color: #ff0000;
 		font-weight: 700;
 		text-transform: uppercase;
+		//Для мобильных (горизонтально)
+		@media (min-width: 480px) {
+			font-size: 22px;
+		}
 		//Для планшета
 		@media (min-width: 768px) {
 			font-size: 30px;
