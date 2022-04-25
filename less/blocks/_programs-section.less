@@ -112,13 +112,13 @@
 	}
 }
 .programs__row {
-	margin: 0 auto 45px;
+	margin: 0 auto 20px;
 	box-shadow: 0 10px 30px 3px rgba(119, 162, 219, 0.6);
 	max-width: 800px;
 	background-color: #fff;
 	//Для десктопа
 	@media (min-width: 1366px) {
-		margin: 0 auto 30px;
+		margin: 0 auto 25px;
 		max-width: 860px;
 	}
 	//Для десктопа
@@ -502,6 +502,12 @@
 		content: url("../img/programs/injir/injir-jopa.jpg");
 	}
 }
+.program-img-2-2 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/injir/injir-jopa-02.jpg");
+	}
+}
 //Программа 3 "Мыс Айя"
 .program-img-3 {
 	//Для планшета
@@ -513,6 +519,12 @@
 	//Для планшета
 	@media (min-width: 429px) {
 		content: url("../img/articles/mus-aya/gallery/mus-aya-04.jpg");
+	}
+}
+.program-img-3-2 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/mus-aya/gallery/ushakovskaya-stena.jpg");
 	}
 }
 //Программа 4 "Грот Дианы"
@@ -736,5 +748,42 @@
 	//Для десктопа
 	@media (min-width: 1200px) {
 		font-size: 12px;
+	}
+}
+.programs__price-details {
+	margin-bottom: 30px;
+	font-family: "Verdana", sans-serif;
+	font-size: 10px;
+	color: #000;
+	font-weight: 400;
+	color: rgb(0, 0, 0);
+	line-height: 1.2;
+	z-index: 2;
+	text-align: center;
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		font-size: 12px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 14px;
+	}
+	p {
+		margin-bottom: 10px;
+		color: var(--brand-blue);
+		&:last-of-type {
+			margin-bottom: 0;
+			font-family: "Verdana", sans-serif;
+			font-size: 10px;
+			line-height: 1;
+			color: var(--main-blue);
+			//Для планшета
+			@media (min-width: 768px) {
+				font-size: 12px;
+			}
+		}
+	}
+	span {
+		font-weight: 700;
 	}
 }

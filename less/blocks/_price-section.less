@@ -337,6 +337,10 @@ details[open] summary:before {
 		font-size: 18px;
 		border-radius: 35px;
 	}
+		//Для мобильных (горизонтально)
+		@media (min-width: 560px) {
+			font-size: 20px;
+		}
 	//Для планшета
 	@media (min-width: 768px) {
 		width: max-content;
@@ -375,8 +379,15 @@ details[open] summary:before {
 		@media (min-width: 420px) {
 			top: 68%;
 		}
+		//Для мобильных (горизонтально)
+		@media (min-width: 560px) {
+			font-size: 10px;
+			top: 78%;
+			letter-spacing: unset;
+		}
 		//Для планшета
 		@media (min-width: 768px) {
+			font-size: 11px;
 			letter-spacing: 0.5px;
 			font-weight: 300;
 			top: 80%;

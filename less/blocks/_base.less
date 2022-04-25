@@ -511,7 +511,7 @@ button {
 }
 .section-title {
 	display: inline-block;
-	font-size: 40px;
+	font-size: 44px;
 	font-family: serif;
 	color: var(--main-blue);
 	font-style: italic;
@@ -519,11 +519,11 @@ button {
 	text-align: center;
 	//Для большого смартфона
 	@media (min-width: 360px) {
-		font-size: 42px;
+		font-size: 45px;
 	}
 	//Для большого смартфона
 	@media (min-width: 370px) {
-		font-size: 45px;
+		font-size: 46px;
 	}
 	//Для большого смартфона
 	@media (min-width: 400px) {
@@ -715,10 +715,8 @@ button {
 	}
 	&:hover,
 	&:active {
-		background-color: var(--underline);
-		transform: scale(1.03);
-		// box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
-		filter: drop-shadow(0px 5px 1px rgba(0, 0, 0, 0.5));
+		transform: scale(1.05);
+		filter: drop-shadow(0px 6px 1px rgba(0, 0, 0, 0.5));
 	}
 	&:focus {
 		outline: none;
@@ -744,8 +742,8 @@ button {
 	}
 	&:hover,
 	&:active {
-		transform: scale(1.03);
-		filter: drop-shadow(0px 5px 1px rgba(0, 0, 0, 0.5));
+		transform: scale(1.05);
+		filter: drop-shadow(0px 6px 1px rgba(0, 0, 0, 0.5));
 	}
 	&:focus {
 		outline: none;
@@ -760,6 +758,7 @@ button {
 	z-index: 1;
 }
 .btn.btn--main {
+	position: relative;
 	height: 80px;
 	width: unset;
 	border: 4px solid #004d88;
@@ -776,10 +775,50 @@ button {
 	font-size: 26px;
 	font-weight: 500;
 	text-transform: uppercase;
+	overflow: hidden;
 	//Для планшета
 	@media (min-width: 768px) {
 		font-size: 32px;
 		font-weight: 700;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: -20%;
+		width: 70px;
+		background: #fff;
+		background: linear-gradient(
+			90deg,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 0) 100%
+		);
+		z-index: -1;
+		height: 275px;
+		opacity: 0.75;
+		transform: translate(-50%, -50%) rotate(60deg);
+		animation: highlightBtn 3s 3s ease-in-out infinite;
+	}
+}
+@keyframes highlightBtn {
+	0% {
+		left: -30%;
+		opacity: 0;
+	}
+	5% {
+		left: -30%;
+		opacity: 0.2;
+	}
+	12% {
+		opacity: 0.5;
+	}
+	30% {
+		left: 160%;
+		opacity: 0.2;
+	}
+	100% {
+		left: 160%;
+		opacity: 0;
 	}
 }
 .btn-blog-mob {
@@ -862,8 +901,7 @@ button {
 	&:active {
 		border-color: var(--underline);
 		color: var(--underline);
-		transform: scale(1.03);
-		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+		transform: scale(1.05);
 	}
 	&:focus {
 		outline: none;
@@ -1039,9 +1077,11 @@ svg.social-icons__vib {
 	transition: 0.3s ease-in;
 }
 .social-icons__vk {
+	position: relative;
+	top: 2px;
 	transition: 0.3s;
 	&:hover {
-		transform: scale(1.25);
+		transform: scale(1.2);
 		filter: drop-shadow(0 3px 2px rgba(34, 40, 65, 0.7));
 	}
 }
@@ -1381,11 +1421,5 @@ svg.social-icons__vib {
 	}
 	100% {
 		transform: translateY(0px);
-	}
-}
-.wrap_f827 ._orientationLeft_a750 .__jivoMobileButton {
-	//Для мобильных (горизонтально)
-	@media (min-width: 375px) and (max-width: 767px) {
-		zoom: 1 !important;
 	}
 }

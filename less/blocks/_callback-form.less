@@ -6,13 +6,14 @@
 	top: 0;
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba(1, 13, 26, 0.35);
+	background-color: rgba(160, 210, 253, 0.5);
 	backdrop-filter: blur(12px);
 	z-index: 9999999999;
 	overflow-y: auto;
 	//Для планшета
 	@media (min-width: 768px) {
-		background-color: rgba(1, 13, 26, 0.45);
+		background-color: rgba(168, 215, 255, 0.4);
+		backdrop-filter: blur(10px);
 	}
 }
 .paralaxe-header__call-row {
@@ -173,10 +174,12 @@
 	font-family: "M PLUS 1p", sans-serif;
 	font-size: 16px;
 	font-weight: 400;
-	letter-spacing: 1px;
-	word-spacing: 1px;
 	pointer-events: none;
 	transition: 0.3s ease-in-out;
+	//Для большого смартфона
+	@media (min-width: 375px) {
+		word-spacing: 1px;
+	}
 	//Для планшета
 	@media (min-width: 768px) {
 		font-size: 20px;
@@ -184,6 +187,7 @@
 	//Для десктопа
 	@media (min-width: 1200px) {
 		font-size: 18px;
+		letter-spacing: 1px;
 	}
 }
 .call-form__fake-placeholder.call-form__fake-placeholder--text {

@@ -14,15 +14,23 @@ $(document).ready(function(){
 			$('.upload-label').blur();
 			$('.upload-label').removeClass("chosen");
 		}
-});
-   //Ограничение длины отзыва
-   $("textarea").keyup(function() {
-      if (this.value.length > 360)
-         this.value = this.value.substr(0, 360);
-   });
-   //Счетчик оставшихся для вода символов (отзыв)
-   let maxCount = 360;
-   let revCounterSpan = document.querySelector('#counter');
+	});
+	//Ограничение длины отзыва
+	let maxCount = 480; //Счетчик оставшихся для вода символов (отзыв)
+	let revCounterSpan = document.querySelector('#counter');
+	let counterRow = document.querySelector('.counter'); // строка счетчика оставшихся символов
+	$("textarea").keyup(function() {
+		if (this.value.length > maxCount){
+			this.value = this.value.substr(0, maxCount);
+			counterRow = "color:red; font-weight:700; font-size:16px";
+		} else if (this.value.length < maxCount && this.value.length > 420){
+			counterRow.style = "color:orange; font-weight:500; font-size:16px";
+		} else if (this.value.length == maxCount){
+			counterRow.style = "color:red; font-weight:700; font-size:16px";
+		} else if (this.value.length < maxCount) {
+			counterRow.removeAttribute("style");
+		}
+	});
 
     $("#counter").html(maxCount);
 
@@ -147,6 +155,12 @@ $(document).ready(function(){
 	});
 
 		// Очистка формы по клику на кнопку "Очистить"
+		function hideValidationErrLabels(){ // Функция сбора всех меток ваидации контактной формы с последующим их скрытием
+			let validationErrLabels = document.querySelectorAll('.reviews-page__form label.error');
+			validationErrLabels.forEach(function(item){
+				item.style = "display:none";
+			});
+		}
 		resetBtn.addEventListener('click', function(){
 			revFormPolicy.disabled = false;
 			formAllFakePlaceholders.forEach(function(item){
@@ -155,6 +169,7 @@ $(document).ready(function(){
 			botTestRow.classList.add('hidden');
 			botQuestion1Row.classList.add('hidden');
 			botQuestion2Row.classList.add('hidden');
+			counterRow.removeAttribute("style");
 			revCounterSpan.innerText = maxCount;
 			fileInp.value = ''; // очистка выбранного файла
 			$('.upload-label').text('Выбрать файл');
@@ -163,24 +178,25 @@ $(document).ready(function(){
 			revFormBlock.removeAttribute('method', 'POST'); // Удаление метода отправки данных формы
 			revFormBlock.removeAttribute('action', './php/reviews.php'); // Удаление обработчика формы
 			this.blur();
+			hideValidationErrLabels();
 		});
 
    //Валидация формы добавления отзыва
-     $('.reviews-page__form').validate({
+		$('.reviews-page__form').validate({
       rules: {
         reviewsUserName: {
             required: true
-         },
-         reviewsEmail: {
-            required: true,
-            email: true
-         },
-         reviewText: {
-            required: true
-         },
-         reviewsCheckbox: {
-            required: true
-         },
+				},
+				reviewsEmail: {
+					required: true,
+					email: true
+				},
+				reviewText: {
+					required: true
+				},
+				reviewsCheckbox: {
+					required: true
+				},
 			botQuestion1: {
 				required: true,
 				minlength: 1,
@@ -195,18 +211,18 @@ $(document).ready(function(){
       messages: {
         reviewsUserName: {
             required: 'А как к Вам обращаться?!'
-         },
-         reviewsEmail: {
-            required: 'Обязательно укажите Ваш email!',
-            email: 'Введен некорректный адрес электронной почты!'
-         },
-         review: {
-            required: 'А где, собственно, сам отзыв?!'
-         },
-         reviewsCheckbox: {
-            required: 'Чтобы добавить отзыв, нужно принять политику конфиденциальности!'
-         },
-         botQuestion1: {
+				},
+				reviewsEmail: {
+					required: 'Обязательно укажите Ваш email!',
+					email: 'Введен некорректный адрес электронной почты!'
+				},
+				review: {
+					required: 'А где, собственно, сам отзыв?!'
+				},
+				reviewsCheckbox: {
+					required: 'Чтобы добавить отзыв, нужно принять политику конфиденциальности!'
+				},
+				botQuestion1: {
 				required: "Обязательное поле!",
 				minlength: "Ошибка ввода!",
 				maxlength: "Ошибка ввода!",
@@ -235,7 +251,7 @@ $(document).ready(function(){
 			xhr.send(formData);
 			return false;
       }
-   });
+	});
 
 	function showSuccess() {
 		$("#review-answer").html(`<div class='contact-form__success'>

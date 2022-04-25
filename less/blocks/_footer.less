@@ -11,9 +11,16 @@
 	position: relative;
 	flex-direction: column;
 	align-items: center;
+	//Для мобильных (горизонтально)
+	@media (min-width: 565px) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
 	//Для планшета
 	@media (min-width: 768px) {
 		margin-bottom: 0;
+		flex-direction: column;
+		justify-content: unset;
 		align-items: unset;
 	}
 	//Для десктопа
@@ -158,11 +165,11 @@
 		font-family: sans-serif;
 		//Для большого смартфона
 		@media (min-width: 360px) {
-			font-size: 11px;
+			font-size: 12px;
 		}
 		//Для большого смартфона
 		@media (min-width: 400px) {
-			font-size: 12px;
+			font-size: 13px;
 		}
 		//Для большого смартфона
 		@media (min-width: 420px) {

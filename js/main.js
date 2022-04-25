@@ -33,20 +33,6 @@ $(document).ready(function () {
 		}, 1600);
 	}
 
-	// Отключение ссылки на иконках instagram (санкции)
-	let instaIco = document.querySelectorAll('.social-icons__link.insta');
-	let instaHead = document.querySelectorAll('.header-social__icon.insta-h-a');
-
-	instaIco.forEach(function(item){
-		item.href= "#!";
-		item.removeAttribute('target');
-		item.setAttribute('title', 'Instagram признан экстремистской организацией на территории РФ!');
-	});
-	instaHead.forEach(function(item){
-		item.href= "#!";
-		item.removeAttribute('target');
-		item.setAttribute('title', 'Instagram признан экстремистской организацией на территории РФ!');
-	});
 	// Событие "контектсное меню" запрет вызова контекстного меню
 	// document.addEventListener("contextmenu", function (e) {
 	// 	e.preventDefault();
@@ -261,14 +247,16 @@ $(document).ready(function () {
 	}
 
 	//Ограничение длины поля "Сообщение"
-	let maxCount = 360;
+	let maxCount = 480;
 	let counterSpan = document.querySelector("#form-char-counter");
 	$(".contact-form textarea").keyup(function () {
 		if (this.value.length > maxCount) {
 			this.value = this.value.substr(0, maxCount);
-			counterRow.style = "color:red; font-weight:700; font-size:14px";
+			counterRow.style = "color:red; font-weight:700; font-size:16px";
+		} else if (this.value.length < maxCount && this.value.length > 420){
+			counterRow.style = "color:orange; font-weight:700; font-size:14px";
 		} else if (this.value.length == maxCount) {
-			counterRow.style = "color:red; font-weight:700; font-size:14px";
+			counterRow.style = "color:red; font-weight:700; font-size:16px";
 		} else if (this.value.length < maxCount) {
 			counterRow.removeAttribute("style");
 		}
@@ -290,9 +278,7 @@ $(document).ready(function () {
 
 	//Проверка на роботов
 	let formBlock = document.querySelector(".contact-form"); // форма обратной связи
-	let formAllFakePlaceholders = document.querySelectorAll(
-		".contact-form .fake-placeholder"
-	); // все фейковые placeholders
+	let formAllFakePlaceholders = document.querySelectorAll(".contact-form .fake-placeholder"); // все фейковые placeholders
 	let callFormPolicy = document.querySelector(".form-checkbox"); // чекбокс политики конфиденциальности
 	let botTestRow = document.querySelector("#form-bot-row"); // ячейка с вопросами проверки на ботов
 	let botQuestion1Row = document.querySelector("#question-1-row"); // ячейка 1-го вопроса
@@ -394,6 +380,12 @@ $(document).ready(function () {
 	}
 
 	// Очистка формы по клику на кнопку "Очистить"
+	function hideValidationErrLabels(){ // Функция сбора всех меток ваидации контактной формы с последующим их скрытием
+		let validationErrLabels = document.querySelectorAll('.contact-form label.error');
+		validationErrLabels.forEach(function(item){
+			item.style = "display:none";
+		});
+	}
 	if (resetBtn) {
 		resetBtn.addEventListener("click", function () {
 			callFormPolicy.disabled = false;
@@ -403,77 +395,81 @@ $(document).ready(function () {
 			botTestRow.classList.add("hidden");
 			botQuestion1Row.classList.add("hidden");
 			botQuestion2Row.classList.add("hidden");
+			counterRow.removeAttribute("style");
 			counterSpan.innerText = maxCount;
-			formBlock.removeAttribute("method", "POST"); // Добавление метода отправки данных формы
-			formBlock.removeAttribute("action", "./php/mail.php"); // Добавление обработчика формы
+			formBlock.removeAttribute("method", "POST"); // Удаление метода отправки данных формы
+			formBlock.removeAttribute("action", "./php/mail.php"); // Удаление обработчика формы
 			this.blur();
+			hideValidationErrLabels();
 		});
 	}
 	//Валидация формы обратной связи
-	$(".contact-form").validate({
-		rules: {
-			userName: {
-				required: true,
-				minlength: 2,
+	if($(".contact-form")){
+		$(".contact-form").validate({
+			rules: {
+				userName: {
+					required: true,
+					minlength: 2,
+				},
+				email: {
+					required: true,
+					email: true,
+				},
+				subject: {
+					required: false,
+				},
+				message: {
+					required: true,
+				},
+				checkbox: {
+					required: true,
+				},
+				botQuestion1: {
+					required: true,
+					minlength: 1,
+					maxlength: 2,
+				},
+				botQuestion2: {
+					required: true,
+					minlength: 1,
+					maxlength: 6,
+				},
 			},
-			email: {
-				required: true,
-				email: true,
+			messages: {
+				userName: {
+					required: "А как к Вам обращаться?!",
+					minlength: "Ошибка ввода!",
+				},
+				email: {
+					required: "Обязательно укажите Ваш email!",
+					email: "Введен некорректный адрес электронной почты!",
+				},
+				subject: {
+					required: "Тема сообщения не указана!",
+				},
+				message: {
+					required: "А где, собственно, текст Вашего сообщения?!",
+				},
+				checkbox: {
+					required:
+						"Чтобы отправить сообщение, нужно принять политику конфиденциальности!",
+				},
+				botQuestion1: {
+					required: "Обязательное поле!",
+					minlength: "Ошибка ввода!",
+					maxlength: "Ошибка ввода!",
+				},
+				botQuestion2: {
+					required: "Обязательное поле!",
+					minlength: "Ошибка ввода!",
+					maxlength: "Ошибка ввода!",
+				},
 			},
-			subject: {
-				required: false,
+			submitHandler: function (form) {
+				ajaxFormSubmit();
 			},
-			message: {
-				required: true,
-			},
-			checkbox: {
-				required: true,
-			},
-			botQuestion1: {
-				required: true,
-				minlength: 1,
-				maxlength: 2,
-			},
-			botQuestion2: {
-				required: true,
-				minlength: 1,
-				maxlength: 6,
-			},
-		},
-		messages: {
-			userName: {
-				required: "А как к Вам обращаться?!",
-				minlength: "Ошибка ввода!",
-			},
-			email: {
-				required: "Обязательно укажите Ваш email!",
-				email: "Введен некорректный адрес электронной почты!",
-			},
-			subject: {
-				required: "Тема сообщения не указана!",
-			},
-			message: {
-				required: "А где, собственно, текст Вашего сообщения?!",
-			},
-			checkbox: {
-				required:
-					"Чтобы отправить сообщение, нужно принять политику конфиденциальности!",
-			},
-			botQuestion1: {
-				required: "Обязательное поле!",
-				minlength: "Ошибка ввода!",
-				maxlength: "Ошибка ввода!",
-			},
-			botQuestion2: {
-				required: "Обязательное поле!",
-				minlength: "Ошибка ввода!",
-				maxlength: "Ошибка ввода!",
-			},
-		},
-		submitHandler: function (form) {
-			ajaxFormSubmit();
-		},
-	});
+		});
+	}
 	//Отправка данных формы обратной связи
 	// Функция AJAX запрса на сервер
 
@@ -586,11 +582,10 @@ $(document).ready(function () {
 		function removeZoomOnLoad(){ // Функция, отвечающая за проверку и удаления атрибута 'style' при загрузке страницы
 			let jivoIco = document.querySelector('.__jivoMobileButton'); // Элемент, ответственный за zoom иконки jivo
 			if (jivoIco){
-				if (jivoIco.hasAttribute('style')){ // проверка на наличие искомого атрибута
-					jivoIco.removeAttribute('style'); // удаление атрибута
-				} 
+				jivoIco.style.zoom = "0.8";
+				jivoIco.style.opacity = "0.7";
 			}
-		};
+		}
 
 		setTimeout(removeZoomOnLoad, 900); // Вызов ф-ии с отсрокой 0,9 сек
 
@@ -598,15 +593,17 @@ $(document).ready(function () {
 			let jivoIco = document.querySelector('.__jivoMobileButton'); // Элемент, ответственный за zoom иконки jivo
 			function removeZoomOnResize(){
 				if (jivoIco){
-					if (jivoIco.hasAttribute('style')){ // проверка на наличие искомого атрибута
-						jivoIco.removeAttribute('style'); // удаление атрибута
-					} 
+					jivoIco.style.zoom = "0.8";
+					jivoIco.style.opacity = "0.7";
 				}
 			}
 			setTimeout(removeZoomOnResize, 200); // Вызов ф-ии с отсрокой 0,2 сек
 			setTimeout(removeZoomOnResize, 400); // Вызов ф-ии с отсрокой 0,4 сек (Страховка)
+			setTimeout(removeZoomOnResize, 1000); // Вызов ф-ии с отсрокой 1 сек (Страховка)
 		});
 		setTimeout(removeZoomOnLoad, 1000); // Вызов ф-ии с отсрокой 1 сек (Страховка)
-		setTimeout(removeZoomOnLoad, 1200); // Вызов ф-ии с отсрокой 1,2 сек (Страховка)
+		setTimeout(removeZoomOnLoad, 1500); // Вызов ф-ии с отсрокой 1,5 сек (Страховка)
+		setTimeout(removeZoomOnLoad, 4000); // Вызов ф-ии с отсрокой 4 сек (Страховка)
+		setTimeout(removeZoomOnLoad, 7000); // Вызов ф-ии с отсрокой 7 сек (Страховка)
 	}
 });

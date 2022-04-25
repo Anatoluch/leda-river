@@ -411,11 +411,53 @@
 		}
 	}
 }
+.form-intro__title {
+	font-family: "M PLUS 1p", sans-serif;
+	color: var(--brand-blue);
+	line-height: 1.2;
+	font-size: 18px;
+	letter-spacing: -0.2px;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 20px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		letter-spacing: unset;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 24px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-size: 28px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 22px;
+	}
+	//Для десктопа
+	@media (min-width: 1366px) {
+		font-size: 26px;
+	}
+	//Для десктопа
+	@media (min-width: 1600px) {
+		font-size: 30px;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		font-size: 32px;
+	}
+}
 .reviews-page__form {
 	width: 100%;
 	height: 100%;
 	padding: 40px 10px 20px;
-	box-shadow: 0 28px 100px #c2dbeb;
+	box-shadow: 0 28px 100px #9ec7ee;
 	background-color: #fff;
 	z-index: 1;
 	//Для мобильных (горизонтально)
@@ -529,10 +571,6 @@
 	font-size: 16px;
 	font-weight: 400;
 	text-align: center;
-	//Для большого планшета
-	@media (min-width: 768px) {
-		font-size: 18px;
-	}
 }
 //--/Счетчик оставшихся символов для ввода--
 .review-avatar {

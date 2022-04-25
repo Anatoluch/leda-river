@@ -30,6 +30,30 @@ $(document).ready(function () {
 			}
 		});
 	};
+			// Выбор даты
+			let dateInp = document.querySelector('#dateInp');
+			let dateTimeNow = new Date(); // текущие дата и время (локальный часовой пояс)
+			let dateYear, dateMonth, dateDay, dateHour, dateMinutes;
+		
+			dateYear = (dateTimeNow.getFullYear()).toString(); //метод получения текущего года
+			dateMonth = (dateTimeNow.getMonth() + 1).toString(); //метод получения текущего месяца
+			dateDay = (dateTimeNow.getDate()).toString(); //метод получения текущего дня
+			dateHour = (dateTimeNow.getHours()).toString(); //метод получения текущего часа
+			dateMinutes = (dateTimeNow.getMinutes()).toString(); //метод получения текущих минут
+		
+			if (dateMonth < 10) {
+				dateMonth = `0${dateMonth}`;
+			}
+			if (dateDay < 10){
+				dateDay = `0${dateDay}`;
+			}
+			if (dateHour < 10){
+				dateHour = `0${dateHour}`;
+			}
+			if (dateMinutes < 10){
+				dateMinutes = `0${dateMinutes}`;
+			}
+			dateInp.min = `${dateYear}-${dateMonth}-${dateDay}T${dateHour}:${dateMinutes}`; // Формирование параметра выбора минимальной даты	
 
 	// Отображение счётчика символов ввода
 	let textField = document.querySelector('#commentInp');
@@ -180,6 +204,40 @@ $(document).ready(function () {
 	function cleanInpDigit() {
 		this.value = this.value.replace(/[^+0-9]/g, "");
 	};
+		// Добавления + при фокусе на поле ввода телефона
+		telInp.addEventListener('focus', function(){
+			if(this.value.length < 1){ // если инпут пуст
+				this.value = `+${this.value}`; // то добавить +
+				if(document.querySelector('#telInp-error')){ // если появляется сообщение об ошибке
+					document.querySelector('#telInp-error').remove(); // то удаляем его
+				}
+			}
+			this.value = this.value;
+		});
+		// Поле ввода телефона теряет фокус, убираем +, если номер не вводился
+		telInp.addEventListener('blur', function(){
+			if (this.value.length <= 1){ // если ничего не введенно, кроме подставленного + 
+				this.value = ''; // то инпут пуст
+				// Fakeplaceholder возвращается в пассивное состояние
+				const thisParent = this.closest(".call-form__item-row");
+				thisParent.querySelector('.call-form__fake-placeholder').classList.remove('active');
+				document.querySelector('#telInp-error').remove(); // убираю сообщение об ошибке ввода телефона
+			} else if (this.value.length < 1){
+				if(document.querySelector('#telInp-error')){ // если появляется сообщение об ошибке
+					document.querySelector('#telInp-error').remove(); // то удаляем его
+				}
+			}
+		});
+		// Контроль за вводом в поле телефона
+		telInp.addEventListener('input', function(){
+			if (this.value[0] != "+" && this.value !=""){ // если первый введеный символ не + и поле не пустое
+				this.value = `+${this.value.replace(/[^0-9]/g, "")}`; // то первым символом становиться +
+			} else if (this.value[0] == "+"){ // если первый символ +, то
+				this.value = `+${this.value.replace(/[^0-9]/g, "")}`; //дальше можно вводить только числа
+			} else if (this.value.length < 1) { // если данных введено не было или они все стерты,
+				this.value = `+${this.value}`; // добавить в начало +
+			}
+		});
 	//Валидация формы заказа звонка
 	$(".call-form").validate({
 		rules: {
@@ -190,7 +248,7 @@ $(document).ready(function () {
 			},
 			clientPhone: {
 				required: true,
-				minlength: 11,
+				minlength: 12,
 				maxlength: 13,
 			},
 			date: {
@@ -215,8 +273,7 @@ $(document).ready(function () {
 			},
 			clientPhone: {
 				required: "Ваш телефон?",
-				// digits: "Только цифры!",
-				minlength: "Неверный номер!",
+				minlength: "Введите корректный номер!",
 				maxlength: "Ошибка ввода!!!",
 			},
 			date: {
@@ -253,7 +310,7 @@ $(document).ready(function () {
     border-radius: 0;
 		background: rgba(27, 75, 90, 0.25);
     backdrop-filter: blur(4px);
-    overflow: hidden;"><p style="text-align: center; font-family: sans-serif; color: #fff !important; font-size: 45px; font-weight: 500;">Спасибо!<br>Ваша&nbsp;заявка принята!</p>
+    overflow: hidden;"><p style="text-align: center; font-family: sans-serif; color: #fff !important; text-shadow: 0 0px 3px #000; font-size: 45px; font-weight: 500;">Спасибо!<br>Ваша&nbsp;заявка принята!</p>
 		</div>`;
 		document.querySelector(".close-form").classList.add("hidden");
 		document
