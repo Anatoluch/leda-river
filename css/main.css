@@ -1499,7 +1499,7 @@ svg.social-icons__vib {
 /*Кнопка наверх*/
 #back2Top {
   overflow: hidden;
-  z-index: 15;
+  z-index: 7;
   display: none;
   cursor: pointer;
   position: fixed;
@@ -3074,6 +3074,7 @@ svg.social-icons__vib {
     display: block;
     position: relative;
     height: 92vh;
+    max-height: 1200px;
     z-index: 0;
     background-image: url("../img/body-bg-img-head.jpg");
     background-position: center;
