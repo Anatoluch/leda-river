@@ -107,7 +107,6 @@ echo "<div class='contact-form__success'>
 		Мы рассмотрим&nbsp;его в&nbsp;ближайшее время!
 		</h2>
 	  </div> ";
-
 ?>
 
 

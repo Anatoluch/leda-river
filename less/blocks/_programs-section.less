@@ -115,7 +115,12 @@
 	margin: 0 auto 20px;
 	box-shadow: 0 10px 30px 3px rgba(119, 162, 219, 0.6);
 	max-width: 800px;
-	background-color: #fff;
+	background: rgb(224, 236, 246);
+	background: linear-gradient(
+		180deg,
+		rgba(224, 236, 246, 1) 0%,
+		rgba(181, 205, 235, 0.9) 100%
+	);
 	//Для десктопа
 	@media (min-width: 1366px) {
 		margin: 0 auto 25px;
@@ -131,6 +136,8 @@
 	background-color: #fff;
 	display: flex;
 	flex-direction: column;
+	box-shadow: 7px 0 10px rgba(26, 65, 84, 0.1),
+		-7px 0 10px rgba(26, 65, 84, 0.1);
 	//Для большого смартфона
 	@media (min-width: 400px) {
 		padding: 15px 0 30px;

@@ -85,7 +85,7 @@ $(document).ready(function(){
 			controlQuestion1.addEventListener('input', function(e){
 				let inputValue1 = parseInt(e.target.value); // запись в переменную введенного ответа на вопрос с приведением типа к числу
 				if (inputValue1 === res) {
-					submitBtn.disabled = false;
+					submitBtn.disabled = true;
 					botQuestion1Row.classList.add('hidden');
 					botQuestion2Row.classList.remove('hidden');
 					fakeBotPlaceholder1.classList.remove("active-field");
@@ -163,6 +163,7 @@ $(document).ready(function(){
 		}
 		resetBtn.addEventListener('click', function(){
 			revFormPolicy.disabled = false;
+			submitBtn.disabled = false;
 			formAllFakePlaceholders.forEach(function(item){
 				item.classList.remove("active-field");
 			});
