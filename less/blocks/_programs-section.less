@@ -10,13 +10,13 @@
 }
 .programs__title {
 	text-align: center;
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	//Для планшета
 	@media (min-width: 768px) {
-		margin-bottom: 45px;
+		margin-bottom: 30px;
 	}
 }
 .programs__title-3 {
@@ -112,39 +112,53 @@
 	}
 }
 .programs__row {
-	margin: 0 auto 20px;
-	box-shadow: 0 10px 30px 3px rgba(119, 162, 219, 0.6);
+	margin: 0 auto;
 	max-width: 800px;
-	background: rgb(224, 236, 246);
-	background: linear-gradient(
-		180deg,
-		rgba(224, 236, 246, 1) 0%,
-		rgba(181, 205, 235, 0.9) 100%
-	);
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		max-width: 830px;
+	}
 	//Для десктопа
 	@media (min-width: 1366px) {
-		margin: 0 auto 25px;
 		max-width: 860px;
 	}
 	//Для десктопа
 	@media (min-width: 1920px) {
-		max-width: 1024px;
+		max-width: 1054px;
 	}
 }
 .programs__program-card {
-	padding: 10px 0 30px;
+	margin: 15px;
+	padding: 10px 0px 48px;
+	height: 515px;
 	background-color: #fff;
 	display: flex;
 	flex-direction: column;
-	box-shadow: 7px 0 10px rgba(26, 65, 84, 0.1),
-		-7px 0 10px rgba(26, 65, 84, 0.1);
+	justify-content: space-between;
+	box-shadow: 0 0 15px 5px rgba(119, 162, 219, 0.6);
+	//Для смартфона
+	@media (min-width: 360px) {
+		height: 525px;
+	}
+	//Для смартфона
+	@media (min-width: 375px) {
+		height: 560px;
+	}
 	//Для большого смартфона
 	@media (min-width: 400px) {
-		padding: 15px 0 30px;
+		height: 610px;
 	}
 	//Для планшета
 	@media (min-width: 768px) {
 		padding: 20px 0;
+		margin: 15px 30px 20px;
+		height: 670px;
+		justify-content: unset;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		margin: 15px 15px 20px;
+		height: unset;
 	}
 }
 .programs__program-card-title {
@@ -251,7 +265,7 @@
 	}
 	p {
 		margin-bottom: 15px;
-		font-family: sans-serif;
+		font-family: "M PLUS 1p", sans-serif;
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 1.35;
@@ -261,8 +275,12 @@
 			font-size: 15px;
 		}
 		//Для большого смартфона
+		@media (min-width: 375px) {
+			font-size: 17px;
+		}
+		//Для большого смартфона
 		@media (min-width: 400px) {
-			font-size: 16px;
+			font-size: 18px;
 		}
 		//Для планшета
 		@media (min-width: 768px) {
@@ -280,12 +298,12 @@
 		}
 		//Для десктопа
 		@media (min-width: 1366px) {
-			font-size: 20px;
-			letter-spacing: -0.3px;
+			font-size: 18px;
+			letter-spacing: -0.15px;
 		}
 		//Для десктопа
 		@media (min-width: 1920px) {
-			font-size: 24px;
+			font-size: 22px;
 			letter-spacing: unset;
 		}
 	}
@@ -294,6 +312,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	.article__btn-readmore {
+		margin-bottom: 0;
+	}
 	//Для десктопа
 	@media (min-width: 1200px) {
 		padding: 0 15px;
@@ -304,10 +325,7 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column; // когда появиться кнопка - column
-	//Для планшета
-	@media (min-width: 768px) {
-		align-items: center;
-	}
+	align-items: center;
 }
 .text-block__content {
 	display: flex;
@@ -358,16 +376,16 @@
 	position: absolute;
 	content: "";
 	position: absolute;
-	left: 20%;
-	top: 88.5%;
+	left: 25%;
+	top: 95.5%;
 	transition: all 0.1s ease;
 	//Для большого смартфона
 	@media (min-width: 360px) {
-		left: 21%;
+		top: 96%;
 	}
-	//Для большого смартфона
-	@media (min-width: 400px) {
-		left: 18%;
+	//Для смартфона
+	@media (min-width: 375px) {
+		top: 96%;
 	}
 	//Для планшета
 	@media (min-width: 768px) {
@@ -402,10 +420,14 @@
 		filter: opacity(0.7);
 		font-weight: 700;
 		position: absolute;
-		top: 50%;
+		top: -50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		transition: 0.3s;
+		//Для планшета
+		@media (min-width: 768px) {
+			top: 50%;
+		}
 		//Для десктопа
 		@media (min-width: 1200px) {
 			filter: opacity(0.3);
@@ -417,16 +439,16 @@
 	height: 48px;
 	content: "";
 	position: absolute;
-	right: 20%;
-	top: 88.5%;
+	right: 25%;
+	top: 95.5%;
 	transition: all 0.1s ease;
 	//Для большого смартфона
 	@media (min-width: 360px) {
-		right: 21%;
+		top: 96%;
 	}
-	//Для большого смартфона
-	@media (min-width: 400px) {
-		right: 18%;
+	//Для смартфона
+	@media (min-width: 375px) {
+		top: 96%;
 	}
 	//Для планшета
 	@media (min-width: 768px) {
@@ -461,9 +483,13 @@
 		filter: opacity(0.7);
 		font-weight: 700;
 		position: absolute;
-		top: 50%;
+		top: -50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		//Для планшета
+		@media (min-width: 768px) {
+			top: 50%;
+		}
 		//Для десктопа
 		@media (min-width: 1200px) {
 			filter: opacity(0.3);
