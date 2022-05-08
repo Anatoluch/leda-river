@@ -184,8 +184,8 @@
 }
 .reviews-page__clients-user-photo {
 	margin-bottom: 20px;
-	width: 60px;
-	height: 60px;
+	width: 75px;
+	height: 75px;
 	overflow: hidden;
 	border-radius: 45px;
 	img {
@@ -514,7 +514,7 @@
 		//Для планшета
 		@media (min-width: 768px) {
 			margin-bottom: 0;
-			margin-right: 15px;
+			margin-right: 12px;
 			text-align: unset;
 			font-size: 18px;
 		}
@@ -525,7 +525,7 @@
 		}
 		//Для десктопа
 		@media (min-width: 1200px) {
-			margin-right: 25px;
+			margin-right: 20px;
 			font-size: 20px;
 		}
 		//Для десктопа FHD
@@ -578,6 +578,52 @@
 		}
 	}
 }
+#avatar-preview {
+	width: 75px;
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	border-radius: 45px;
+	transition: 0.5s ease-in-out;
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		position: absolute;
+		top: 30px;
+		right: 0;
+	}
+	//Для большого смартфона
+	@media (min-width: 565px) {
+		right: 10%;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		position: absolute;
+		margin: unset;
+		top: -13px;
+		right: -80px;
+		filter: drop-shadow(0px 0px 3px #fff) drop-shadow(0px 0px 2px #fff)
+			drop-shadow(0px 0px 4px #fff);
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+	}
+	//Для десктопа
+	@media (min-width: 1600px) {
+		top: -13px;
+		right: -50px;
+	}
+	//Для десктопа FHD
+	@media (min-width: 1920px) {
+		right: -56px;
+		filter: none;
+	}
+	img {
+		width: 100%;
+		height: 100%;
+		object-position: center;
+		object-fit: cover;
+	}
+}
 //--Счетчик оставшихся символов для ввода--
 .counter {
 	color: #bebebe;
@@ -592,6 +638,8 @@
 }
 .upload-label {
 	display: inline-block;
+	position: relative;
+	z-index: 1;
 	height: 50px;
 	padding-left: 20px;
 	padding-right: 20px;

@@ -119,16 +119,13 @@
 		max-width: 830px;
 	}
 	//Для десктопа
-	@media (min-width: 1366px) {
-		max-width: 860px;
-	}
-	//Для десктопа
-	@media (min-width: 1920px) {
-		max-width: 1054px;
+	@media (min-width: 1200px) {
+		max-width: 100vw;
 	}
 }
 .programs__program-card {
 	margin: 15px;
+	max-width: 800px;
 	padding: 10px 0px 48px;
 	height: 515px;
 	background-color: #fff;
@@ -159,6 +156,10 @@
 	@media (min-width: 1024px) {
 		margin: 15px 15px 20px;
 		height: unset;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		margin: 15px auto 20px;
 	}
 }
 .programs__program-card-title {
@@ -297,14 +298,9 @@
 			letter-spacing: -0.5px;
 		}
 		//Для десктопа
-		@media (min-width: 1366px) {
-			font-size: 18px;
-			letter-spacing: -0.15px;
-		}
-		//Для десктопа
 		@media (min-width: 1920px) {
 			font-size: 22px;
-			letter-spacing: unset;
+			letter-spacing: -0.2px;
 		}
 	}
 }
@@ -401,8 +397,12 @@
 	//Для десктопа
 	@media (min-width: 1200px) {
 		top: 50%;
-		left: -100px;
+		left: 10%;
 		transform: translate(-100%, -50%);
+	}
+	//Для десктопа
+	@media (min-width: 1366px) {
+		left: 15%;
 	}
 	&:hover {
 		filter: drop-shadow(0 0 5px rgba(39, 38, 100, 0.5));
@@ -430,7 +430,7 @@
 		}
 		//Для десктопа
 		@media (min-width: 1200px) {
-			filter: opacity(0.3);
+			filter: opacity(0.5);
 		}
 	}
 }
@@ -464,8 +464,12 @@
 	//Для десктопа
 	@media (min-width: 1200px) {
 		top: 50%;
-		right: -100px;
+		right: 10%;
 		transform: translate(100%, -50%);
+	}
+	//Для десктопа
+	@media (min-width: 1366px) {
+		right: 15%;
 	}
 	&:hover {
 		filter: drop-shadow(0 0 5px rgba(39, 38, 100, 0.5));
@@ -492,7 +496,7 @@
 		}
 		//Для десктопа
 		@media (min-width: 1200px) {
-			filter: opacity(0.3);
+			filter: opacity(0.5);
 		}
 	}
 }

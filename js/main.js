@@ -566,17 +566,6 @@ $(document).ready(function () {
 			}
 		});
 	}
-	//Модалка с акцией
-	// window.onkeyup = modal; // нажатие Esc, см. условие "e.keyCode==27"
-	// document.getElementById("popup").onclick = modal;
-
-	// function modal(e) {
-	// 	if (e.target.nodeName != "DIV" || e.keyCode == 27) {
-	// 		// через && перечисляются теги, клинкув на которые окно не будет закрыто; сюда же можно включить тег A или IFRAME
-	// 		document.getElementById("popup").style.display = "none";
-	// 		localStorage.setItem("popup1", "none");
-	// 	}
-	// }
 
 	// Отключение зума иконки jivo
 	if (document.documentElement.clientWidth < 1200){ // Срабатывает только для устройст с экраном менее 1200px
@@ -607,4 +596,18 @@ $(document).ready(function () {
 		setTimeout(removeZoomOnLoad, 4000); // Вызов ф-ии с отсрокой 4 сек (Страховка)
 		setTimeout(removeZoomOnLoad, 7000); // Вызов ф-ии с отсрокой 7 сек (Страховка)
 	}
+
+		//Модалка с акцией
+		window.onkeyup = modal; // нажатие Esc, см. условие "e.keyCode==27"
+		if(document.getElementById("popup")){
+			document.getElementById("popup").onclick = modal;
+		
+			function modal(e) {
+				if (e.target.nodeName != "DIV" || e.keyCode == 27) {
+					// через && перечисляются теги, клинкув на которые окно не будет закрыто; сюда же можно включить тег A или IFRAME
+					document.getElementById("popup").style.display = "none";
+					localStorage.setItem("popup1", "none");
+				}
+			}
+		}
 });

@@ -50,6 +50,7 @@ $(document).ready(function(){
       let revFormBlock = document.querySelector('.reviews-page__form'); // форма обратной связи
       let formAllFakePlaceholders = document.querySelectorAll('.reviews-page__form .fake-placeholder'); // все фейковые placeholders
       let revFormPolicy = document.querySelector('.review-form-checkbox'); // чекбокс политики конфиденциальности
+			let avatarPreview = document.querySelector('#avatar-preview'); // блок для превью аватара
       let botTestRow = document.querySelector('#review-bot-row'); // ячейка с вопросами проверки на ботов
       let botQuestion1Row = document.querySelector('#review-question-1-row'); // ячейка 1-го вопроса
       let botQuestion2Row = document.querySelector('#review-question-2-row'); // ячейка 2-го вопроса
@@ -143,6 +144,7 @@ $(document).ready(function(){
 	
 	fileInp.addEventListener('input', function(){
 		let file = document.getElementById("avatar-file").files[0];
+		let reader = new FileReader(); // объект для чтения загружаемого файла (для превью)
 		if(file.size > 1024*1024) {
 			alert("Файл слишком большой! Размер файла не должен превышать 1 МБ!\nПопробуйте выбрать другой файл.");
 			fileInp.value = ''; // очистка выбранного файла
@@ -152,6 +154,12 @@ $(document).ready(function(){
 			fileInp.value = ''; // очистка выбранного файла
 			return;
 		}
+		//Ф-ия обработки и добавления файла в превью
+		reader.onload = function(e){
+			avatarPreview.innerHTML = `<img src="${e.target.result}" alt="Аватар">`
+		}
+		reader.readAsDataURL(file);
+		avatarPreview.style = "height:75px;opacity:1;";
 	});
 
 		// Очистка формы по клику на кнопку "Очистить"
@@ -176,6 +184,8 @@ $(document).ready(function(){
 			$('.upload-label').text('Выбрать файл');
 			$('.upload-label').blur();
 			$('.upload-label').removeClass("chosen"); // Удаление класса chosen у кнопки выбора файла
+			avatarPreview.innerHTML = '' // Очистка блока превью аватара
+			avatarPreview.removeAttribute("style");
 			revFormBlock.removeAttribute('method', 'POST'); // Удаление метода отправки данных формы
 			revFormBlock.removeAttribute('action', './php/reviews.php'); // Удаление обработчика формы
 			this.blur();

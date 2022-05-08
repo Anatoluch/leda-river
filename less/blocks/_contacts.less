@@ -75,7 +75,7 @@
 	}
 }
 .contacts-col {
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 	width: 100%;
 	z-index: 1;
 	//Для планшета
@@ -383,6 +383,14 @@
 		padding-right: 0;
 	}
 }
+.contacts-form__title {
+	margin: 0 auto;
+	text-align: center;
+	//Для планшета
+	@media (min-width: 768px) {
+		display: none;
+	}
+}
 .contact-form {
 	width: 100%;
 	height: 100%;
@@ -534,11 +542,23 @@ span.required {
 }
 .contacts-form__char-counter.transp-count {
 	opacity: 0;
-	font-size: 32px;
+	font-size: 21px;
 	letter-spacing: 1px;
 	right: 0;
 	pointer-events: none;
-  user-select: none;
+	user-select: none;
+	//Для большого смартфона
+	@media (min-width: 375px) {
+		font-size: 26px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 28px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 32px;
+	}
 }
 .flex-row {
 	display: flex;
