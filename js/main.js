@@ -598,16 +598,16 @@ $(document).ready(function () {
 	}
 
 		//Модалка с акцией
-		window.onkeyup = modal; // нажатие Esc, см. условие "e.keyCode==27"
-		if(document.getElementById("popup")){
-			document.getElementById("popup").onclick = modal;
+		// window.onkeyup = modal; // нажатие Esc, см. условие "e.keyCode==27"
+		// if(document.getElementById("popup")){
+		// 	document.getElementById("popup").onclick = modal;
 		
-			function modal(e) {
-				if (e.target.nodeName != "DIV" || e.keyCode == 27) {
-					// через && перечисляются теги, клинкув на которые окно не будет закрыто; сюда же можно включить тег A или IFRAME
-					document.getElementById("popup").style.display = "none";
-					localStorage.setItem("popup1", "none");
-				}
-			}
-		}
+		// 	function modal(e) {
+		// 		if (e.target.nodeName != "DIV" || e.keyCode == 27) {
+		// 			// через && перечисляются теги, клинкув на которые окно не будет закрыто; сюда же можно включить тег A или IFRAME
+		// 			document.getElementById("popup").style.display = "none";
+		// 			localStorage.setItem("popup1", "none");
+		// 		}
+		// 	}
+		// }
 });
