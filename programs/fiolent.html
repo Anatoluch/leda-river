@@ -20,7 +20,7 @@
 	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon"/>
 	<link rel="stylesheet" href="../css/main.css">
 	<!--[if lt IE 9]> <script src="//html5shiv.
-	googlecode.com/ svn/trunk/html5.js"></script><![endif]-->
+		googlecode.com/ svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
 	<!--Проверка поддержки браузером JS-->
@@ -31,52 +31,52 @@
 	<!--/Проверка поддержки браузером JS-->
 	<!--Заказ прогулки-->
 	<div class="call-form__wrapper hidden">
-	<div class="paralaxe-header__call-row">
-		<div class="close-form">&#10006;</div>
-		<h3 class="call-form__title">Заказ катера</h3>
-		<form class="call-form" autocomplete="off">
-			<div class="call-form__item-row">
-				<span class="call-form__fake-placeholder">Ваше имя (на русском)</span>
-				<input type="text" name="clientName" id="nameInp" class="call-form__input" maxlength="22" required>
-			</div>
-			<div class="call-form__item-row">
-				<span class="call-form__fake-placeholder">Телефон (международный формат)</span>
-				<input type="text" name="clientPhone" id="telInp" class="call-form__input" maxlength="13" required>
-			</div>
-			<div class="call-form__item-row">
-				<input type="text" name="date" id="dateInp" class="call-form__input" placeholder="Дата и время выхода в море" onfocus="(this.type = 'datetime-local')" required minlength="12" maxlength="16" min="2022-05-01T09:00" max="2022-10-31T18:00">
-			</div>
-			<div class="call-form__item-row">
-				<span class="call-form__fake-placeholder call-form__fake-placeholder--text">Ваши пожелания/комментарии</span>
-				<textarea name="comment" id="commentInp" class="call-form__input call-form__text" maxlength="360"></textarea>
-				<div class="call-form__text-counter transp-count">Осталось символов: <span id="char-counter"></span></div>
-			</div>
-			<div class="call-form__policy-row">
-				<label class="call-form__policy-text">Согласие с <a href="../terms.html" target="_blank">политикой конфиденциальности</a>
-				<input type="checkbox" class="call-form__policy" name="policy_agreement">
-				</label>
-			</div>
-			<div class="bot-test hidden">
-				<p>Защита от ботов</p>
-				<div class="bot-test__row">
-				<label id="hum-checkbox" class="bot-test__label" style="display:none">Вы человек?<input type="checkbox"></label>
-				<label id="bot-checkbox" class="bot-test__label" style="display:block">Вы робот?<input type="checkbox" checked></label>
+		<div class="paralaxe-header__call-row">
+			<div class="close-form">&#10006;</div>
+			<h3 class="call-form__title">Заказ катера</h3>
+			<form class="call-form" autocomplete="off">
+				<div class="call-form__item-row">
+					<span class="call-form__fake-placeholder">Ваше имя (на русском)</span>
+					<input type="text" name="clientName" id="nameInp" class="call-form__input" maxlength="22" required>
 				</div>
 				<div class="call-form__item-row">
-				<span id='bot-placeholder' class="call-form__fake-placeholder hidden">Столица России?</span>
-				<input type="text" id='control-question' name="botQuestion" style="display:none" class="call-form__input" maxlength="6" required disabled>
+					<span class="call-form__fake-placeholder">Телефон (международный формат)</span>
+					<input type="text" name="clientPhone" id="telInp" class="call-form__input" maxlength="13" required>
 				</div>
-			</div>
-			<div class="program-select">
-				<select name="program">
-					<option value="Весь Фиолент" selected>Весь Фиолент</option>
-				</select>
-			</div>
-			<div class="submit-btn__wrapper">
-				<input type="submit" class="btn btn--call-form" value="отправить" disabled>
-			</div>
-		</form>
-	</div>
+				<div class="call-form__item-row">
+					<input type="text" name="date" id="dateInp" class="call-form__input" placeholder="Дата и время выхода в море" onfocus="(this.type = 'datetime-local')" required minlength="12" maxlength="16" min="2022-05-01T09:00" max="2022-10-31T18:00">
+				</div>
+				<div class="call-form__item-row">
+					<span class="call-form__fake-placeholder call-form__fake-placeholder--text">Ваши пожелания/комментарии</span>
+					<textarea name="comment" id="commentInp" class="call-form__input call-form__text" maxlength="360"></textarea>
+					<div class="call-form__text-counter transp-count">Осталось символов: <span id="char-counter"></span></div>
+				</div>
+				<div class="call-form__policy-row">
+					<label class="call-form__policy-text">Согласие с <a href="../terms.html" target="_blank">политикой конфиденциальности</a>
+						<input type="checkbox" class="call-form__policy" name="policy_agreement">
+					</label>
+				</div>
+				<div class="bot-test hidden">
+					<p>Защита от ботов</p>
+					<div class="bot-test__row">
+						<label id="hum-checkbox" class="bot-test__label" style="display:none">Вы человек?<input type="checkbox"></label>
+						<label id="bot-checkbox" class="bot-test__label" style="display:block">Вы робот?<input type="checkbox" checked></label>
+					</div>
+					<div class="call-form__item-row">
+						<span id='bot-placeholder' class="call-form__fake-placeholder hidden">Столица России?</span>
+						<input type="text" id='control-question' name="botQuestion" style="display:none" class="call-form__input" maxlength="6" required disabled>
+					</div>
+				</div>
+				<div class="program-select">
+					<select name="program">
+						<option value="Весь Фиолент" selected>Весь Фиолент</option>
+					</select>
+				</div>
+				<div class="submit-btn__wrapper">
+					<input type="submit" class="btn btn--call-form" value="отправить" disabled>
+				</div>
+			</form>
+		</div>
 	</div>
 	<!--/Заказ прогулки-->
 	<!---Верхнее меню для мобилок--->
@@ -136,7 +136,7 @@
 			</li>
 			<li class="social-icons__item">
 				<noindex>
-					<a class="social-icons__link tele" href="https://tlgg.ru/@ledariver" target="_blank" rel="nofollow noopener noreferrer">
+					<a class="social-icons__link tele" href="https://t.me/ledariver" target="_blank" rel="nofollow noopener noreferrer">
 						<svg class="social-icons__tele" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram-plane" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg>
 					</a>
 				</noindex>
@@ -213,7 +213,7 @@
 						</li>
 						<li class="icon-item">
 							<noindex>
-								<a href="https://tlgg.ru/@ledariver" class="header-social__icon tele-h-a" target="_blank" rel="nofollow noopener noreferrer">
+								<a href="https://t.me/ledariver" class="header-social__icon tele-h-a" target="_blank" rel="nofollow noopener noreferrer">
 									<svg class="tele-head" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram-plane" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg>
 								</a>
 							</noindex>
@@ -286,7 +286,7 @@
 								</li>
 								<li class="icon-item">
 									<noindex>
-										<a href="https://tlgg.ru/@ledariver" class="header-social__icon tele-h-a" target="_blank" rel="nofollow noopener noreferrer">
+										<a href="https://t.me/ledariver" class="header-social__icon tele-h-a" target="_blank" rel="nofollow noopener noreferrer">
 											<svg class="tele-head" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram-plane" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg>
 										</a>
 									</noindex>
@@ -337,7 +337,7 @@
 						</div>
 						<div class="program-info">
 							<p>Продолжительность: <span class="text-markup">от 6 часов</span></p>
-							<p>Стоимость: <span class="text-markup">от 21000 руб.</span></p>
+							<p>Стоимость: <span class="text-markup">от 24000 руб.</span></p>
 						</div>
 						<div class="article__img">
 							<img class="program-img-8" src="../img/programs/ves-fiolent/fiolent-small.jpg" alt="Фиолент, Севастополь" title="Фиолент, Севастополь">
@@ -347,26 +347,26 @@
 							<div class="article__title-row">
 								<h3 class="article__title-heading">Маршрут программы:</h3>
 							</div>
-              <blockquote class="gradient-quote mb-30">
+							<blockquote class="gradient-quote mb-30">
 								<p style="text-align: center;"><span>Балаклава</span> - <span>мыс Фиолент</span> - <span>грот Дианы</span> - <span>пляж &quot;Баунти&quot;</span> - <span>Балаклава</span></p>
 							</blockquote>
 							<div class="program-order mb-30">
 								<a class="btn btn--main btn-show" href="#!">Заказать катер</a>
 							</div>
-              <div class="article__title-row">
+							<div class="article__title-row">
 								<h3 class="article__title-heading">Мыс Фиолент</h3>
 							</div>
-              <div class="article__img">
-                <img class="program-img-8-1" src="../img/programs/mus-fiolent/mus_fiolent-small.jpg" alt="Мыс Фиолент, Севастополь" title="Мыс Фиолент, Севастополь">
-              </div>
+							<div class="article__img">
+								<img class="program-img-8-1" src="../img/programs/mus-fiolent/mus_fiolent-small.jpg" alt="Мыс Фиолент, Севастополь" title="Мыс Фиолент, Севастополь">
+							</div>
 							<p><span>Мыс Фиолент</span> находиться в Севастополе, на юго-западном побережье Крыма. Считается одной из красивейщих природных достопримечательностей крымского полуострова. Именно здесь берёт своё начало <span>Главная (Южная) гряда Крымских гор</span>, которая заканчивается мысом Ильи под Феодосией.</p>
 							<p>Фиолент сложен породами вулканического происхождения, остатками действия древнего вулкана, действовавшего здесь в среднеюрское время (152—163 млн лет назад). В числе вулканических пород — спилиты и кератофиры. По обе стороны от мыса в береговом обрыве видны потоки лавы и пласты туфов. Древний вулкан значительно разрушен морем, сверху его покрывают известняки, но есть вкрапления минералов (яшма, сердолик, халцедон и другие), благодаря которым получил своё название <span>Яшмовый пляж</span> восточнее мыса. На акватории мыса расположены скалы <span>Орест</span> и <span>Пилад</span>.</p>
 							<p>По преданию, именно на <span>мысе Фиолент</span> ступил на крымскую землю апостол <span>Андрей Первозванный</span>, прибывший сюда для проповеди Евангелия.</p>
 							<p>Помимо названия Фиолент, мыс был также известен под именами Партений, Феленк-Бурун, Манастыр-Бурун, мыс Святого Георгия.</p>
-              <div class="article__img">
-                <img class="program-img-8-2" src="../img/programs/mus-fiolent/mus_fiolent-2-small.jpg" alt="Мыс Фиолент, Севастополь" title="Мыс Фиолент, Севастополь">
-              </div>
-              <div class="article__title-row">
+							<div class="article__img">
+								<img class="program-img-8-2" src="../img/programs/mus-fiolent/mus_fiolent-2-small.jpg" alt="Мыс Фиолент, Севастополь" title="Мыс Фиолент, Севастополь">
+							</div>
+							<div class="article__title-row">
 								<h3 class="article__title-heading">Почему это место так популярно?</h3>
 							</div>
 							<p>Во-первых, здесь находиться очень популярный, среди севастопольцев, и необычный <span>Яшмовый пляж</span>, с невероятно чистой, и прозрачной водой. Причём настолько прозрачной, что можно без труда разглядеть морское дно, даже на большой глубине!</p>
@@ -399,25 +399,25 @@
 							</div>
 							<p><span>Пляж &quot;Баунти&quot;</span> - это очень красивое место с невероятно чистой и лазурной морской водой. Этот пляж неспроста пользуется популярностью у жителей и гостей города Севастополя!</p>
 							<p>Что касается самого пляжа, то он полностью "дикий". Да и пляжем назвать узкую каменистую полоску берега под отвесными скалами можно условно. Однако, именно, благодаря своей первозданности и первобытности, а также невероятной кристально-чистой лазурной морской водой это место притягивает отдыхающих, как магнит.</p> 
-              <blockquote class="gradient-quote">
+							<blockquote class="gradient-quote">
 								<p style="text-align: center;">Если Вы желаете провести незабываемое время в этих райских уголках - обращайтесь к нам! Мы приложим все усилия для того, чтобы Ваш отдых прошёл идеально! Наш катер <span>Leda~River</span> оборудован всем необходимым для комфортного времяпровождения, купания и загара!</p>
 							</blockquote>
-              <div class="article__title-row">
+							<div class="article__title-row">
 								<h3 class="article__title-heading">Продолжительность:</h3>
 							</div>
 							<p>минимум <span>6</span> часов. Переход из Балаклавы до <span>мыса Фиолент</span> займёт примерно <span>1</span> час, до <span>грота Дианы</span> от <span>мыса Фиолент</span> - <span>15</span> минут, а до <span>пляжа &quot;Баунти&quot;</span> еще <span>15</span> минут. Таким образом дорога в обе стороны занимает около <span>3</span> часов. На отдых и купание в море на каждом месте стоянки отводится от <span>1</span> часа*.</p>
-              <blockquote class="gradient-quote">
+							<blockquote class="gradient-quote">
 								<p style="text-align: center;">Продолжительность стоянки на каждом участке маршрута, по Вашему желанию, может быть скорректирована как в большую, так и в меньшую сторону, по согласованию с капитаном.</p>
 								<p style="text-align: center;"><span>*</span> Однако, обращаем Ваше внимание, что общая <span>продолжительность</span> программы необходимо согласовывать заранее при предварительном бронировании, либо при заказе катера с берега!</p>
 							</blockquote>
 							<p>Если Вы желаете, чтобы капитан приготовил** Вам что-нибудь на мангале, продолжительность стоянки должна быть не менее <span>1,5</span> часов!</p>
-              <blockquote class="gradient-quote">
+							<blockquote class="gradient-quote">
 								<p style="text-align: center;">Рекомендуемая продолжительность программы для комфортного отдыха: от&nbsp;<span>7</span>&nbsp;часов.</p>
 							</blockquote>
 							<div class="article__title-row">
 								<h3 class="article__title-heading">Стоимость:</h3>
 							</div>
-							<p>от <span>21000</span> руб., согласно <span><a class="article__text-link" href="../index.html#price" target="_blank">расценок</a></span> на аренду нашего катера, по состоянию на сегодняшний день. Окончательную стоимость уточняйте при заказе или предварительном бронировании.</p>
+							<p>от <span>24000</span> руб., согласно <span><a class="article__text-link" href="../index.html#price" target="_blank">расценок</a></span> на аренду нашего катера, по состоянию на сегодняшний день. Окончательную стоимость уточняйте при заказе или предварительном бронировании.</p>
 							<div class="article__title-row">
 								<h3 class="article__title-heading">Что включено в стоимость:</h3>
 							</div>
@@ -449,7 +449,7 @@
 							<!--/Карта для статьи (планшеты и десктопы)-->
 							<!--Карта для статьи (мобилки)-->
 							<div class="article__map-holder-mob">
-                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab142d7b066ef17332ca3632f71a1ce45a22a939fbca27e6e40af3e780e7d56cb&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+								<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab142d7b066ef17332ca3632f71a1ce45a22a939fbca27e6e40af3e780e7d56cb&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
 							</div>
 							<!--/Карта для статьи (мобилки)-->
 							<div class="article__title-row">
@@ -515,7 +515,7 @@
 						</li>
 						<li class="icon-item">
 							<noindex>
-								<a href="https://tlgg.ru/@ledariver" class="header-social__icon tele-h-a" target="_blank" rel="nofollow noopener noreferrer">
+								<a href="https://t.me/ledariver" class="header-social__icon tele-h-a" target="_blank" rel="nofollow noopener noreferrer">
 									<svg class="tele-head" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram-plane" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg>
 								</a>
 							</noindex>
@@ -608,3 +608,4 @@
 	<script defer src="../js/cookies.min.js"></script>
 </body>
 </html>
+	
