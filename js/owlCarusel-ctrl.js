@@ -10,7 +10,7 @@ $(document).ready(function () {
 		loop: true,
 		autoplay: true,
 		margin: 45,
-		autoplayTimeout: 8000,
+		autoplayTimeout: 7000,
 		autoplayHoverPause: true,
 	});
 });

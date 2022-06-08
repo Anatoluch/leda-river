@@ -2600,7 +2600,7 @@ svg.social-icons__vib {
         -ms-flex-item-align: end;
             align-self: flex-end;
     padding: 0px 15px 3px 15px;
-    z-index: 5;
+    z-index: 6;
     -webkit-border-radius: 0px 0px 25px 25px;
        -moz-border-radius: 0px 0px 25px 25px;
             border-radius: 0px 0px 25px 25px;
@@ -3032,6 +3032,7 @@ svg.social-icons__vib {
   .header-nav-fixed-pc {
     padding: 8px 15px 0;
     z-index: 7;
+    height: 48px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -3047,15 +3048,13 @@ svg.social-icons__vib {
        -moz-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
   }
   .header-nav-fixed-pc::before {
     content: "";
     position: absolute;
     background: rgba(255, 255, 255, 0.8);
     width: 100vw;
-    height: 100%;
+    height: 48px;
     top: 0;
     left: 50%;
     z-index: 0;
@@ -3064,6 +3063,8 @@ svg.social-icons__vib {
         -ms-transform: translateX(-50%);
          -o-transform: translateX(-50%);
             transform: translateX(-50%);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
   }
 }
 .paralaxe-header {
@@ -5212,6 +5213,73 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     height: 320px;
   }
 }
+.program-unavailable {
+  position: relative;
+}
+.program-unavailable::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-backdrop-filter: saturate(0.3);
+          backdrop-filter: saturate(0.3);
+  pointer-events: none;
+}
+.program-unavailable::after {
+  content: "Временно недоступно";
+  position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  top: 50%;
+  left: 50%;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0.8;
+  color: #b30000;
+  text-shadow: 0 0 3px #fff;
+  -webkit-transform: translate(-50%, -50%) rotate(-25deg);
+     -moz-transform: translate(-50%, -50%) rotate(-25deg);
+      -ms-transform: translate(-50%, -50%) rotate(-25deg);
+       -o-transform: translate(-50%, -50%) rotate(-25deg);
+          transform: translate(-50%, -50%) rotate(-25deg);
+  z-index: 2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+@media (min-width: 360px) {
+  .program-unavailable::after {
+    font-size: 34px;
+  }
+}
+@media (min-width: 400px) {
+  .program-unavailable::after {
+    font-size: 36px;
+  }
+}
+@media (min-width: 420px) {
+  .program-unavailable::after {
+    font-size: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .program-unavailable::after {
+    font-size: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .program-unavailable::after {
+    font-size: 54px;
+  }
+}
 .programs__program-card-content-text {
   padding: 0 5px;
 }
@@ -6792,7 +6860,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   font-family: "M PLUS 1p", sans-serif;
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.35;
   text-align: center;
 }
 @media (min-width: 360px) {
@@ -6804,6 +6872,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   .reviews__clients-text {
     font-weight: 400;
     font-size: 16px;
+    line-height: 1.5;
   }
 }
 @media (min-width: 768px) {
@@ -6852,6 +6921,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
        -moz-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    margin-bottom: 15px;
   }
 }
 .reviews__clients-user-photo {
@@ -6895,18 +6965,35 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 @media (min-width: 400px) {
   .reviews__clients-user-name {
-    margin-bottom: 40px;
     font-size: 30px;
   }
 }
 @media (min-width: 768px) {
   .reviews__clients-user-name {
-    margin-bottom: 0;
+    margin-bottom: 15px;
   }
 }
 @media (min-width: 1024px) {
   .reviews__clients-user-name {
+    margin-bottom: 0;
     font-size: 32px;
+  }
+}
+.reviews__date {
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 300;
+}
+@media (min-width: 360px) {
+  .reviews__date {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .reviews__date {
+    font-size: 18px;
   }
 }
 .reviews__clients-carousel.owl-carousel .owl-nav button.owl-prev {
@@ -7225,7 +7312,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 .reviews-page__reviews {
   margin: 0 auto 45px;
-  padding: 45px 0;
+  padding: 30px 0;
   position: relative;
   z-index: 1;
   -webkit-box-shadow: 0 15px 50px rgba(4, 13, 31, 0.65) inset, 0 -15px 50px rgba(4, 13, 31, 0.65) inset;
@@ -7253,7 +7340,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 @media (min-width: 1200px) {
   .reviews-page__reviews {
     margin: 0 auto 50px;
-    padding: 75px 0 50px;
+    padding: 60px 0 45px;
   }
 }
 .reviews-page__reviews::before {
@@ -9118,7 +9205,7 @@ details[open] summary:before {
   }
 }
 span.red {
-  color: red;
+  color: red !important;
 }
 .price-section__date {
   margin-bottom: 15px;
@@ -12818,6 +12905,10 @@ footer .insta-h-a svg {
   .article__title-heading {
     font-size: 32px;
   }
+}
+.article__title-heading.article__title-heading--red {
+  color: red;
+  text-transform: uppercase;
 }
 .article__img {
   margin-bottom: 15px;

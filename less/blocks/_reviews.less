@@ -136,7 +136,7 @@
 	font-family: "M PLUS 1p", sans-serif;
 	font-size: 15px;
 	font-weight: 400;
-	line-height: 1.5;
+	line-height: 1.35;
 	text-align: center;
 	p {
 		@media (min-width: 360px) {
@@ -147,6 +147,7 @@
 	@media (min-width: 360px) {
 		font-weight: 400;
 		font-size: 16px;
+		line-height: 1.5;
 	}
 	//Для планшета
 	@media (min-width: 768px) {
@@ -171,6 +172,7 @@
 	//Для десктопа
 	@media (min-width: 1200px) {
 		flex-direction: row;
+		margin-bottom: 15px;
 	}
 }
 .reviews__clients-user-photo {
@@ -207,16 +209,31 @@
 	}
 	//Для большого смартфона
 	@media (min-width: 400px) {
-		margin-bottom: 40px;
 		font-size: 30px;
 	}
 	//Для планшета
 	@media (min-width: 768px) {
-		margin-bottom: 0;
+		margin-bottom: 15px;
 	}
 	//Для большого планшета
 	@media (min-width: 1024px) {
+		margin-bottom: 0;
 		font-size: 32px;
+	}
+}
+.reviews__date {
+	font-family: sans-serif;
+	font-style: italic;
+	font-size: 15px;
+	color: #fff;
+	font-weight: 300;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 16px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-size: 18px;
 	}
 }
 .reviews__clients-carousel.owl-carousel .owl-nav button.owl-prev {

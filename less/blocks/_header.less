@@ -418,7 +418,7 @@
 		max-width: fit-content;
 		align-self: flex-end;
 		padding: 0px 15px 3px 15px;
-		z-index: 5;
+		z-index: 6;
 		border-radius: 0px 0px 25px 25px;
 		background-color: rgba(255, 255, 255, 0.8);
 		backdrop-filter: blur(8px);
@@ -736,20 +736,21 @@
 	@media (min-width: 1200px) {
 		padding: 8px 15px 0;
 		z-index: 7;
+		height: 48px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		backdrop-filter: blur(8px);
 		&::before {
 			content: "";
 			position: absolute;
 			background: rgba(255, 255, 255, 0.8);
 			width: 100vw;
-			height: 100%;
+			height: 48px;
 			top: 0;
 			left: 50%;
 			z-index: 0;
 			transform: translateX(-50%);
+			backdrop-filter: blur(8px);
 		}
 	}
 }
