@@ -285,16 +285,16 @@ details[open] summary:before {
 	//Для планшета
 	@media (min-width: 768px) {
 		margin: 0 auto 15px;
-		font-size: 18px;
+		font-size: 20px;
 	}
 	//Для планшета
 	@media (min-width: 1024px) {
-		font-size: 22px;
+		font-size: 24px;
 	}
 	//Для десктопа
 	@media (min-width: 1200px) {
 		max-width: 90%;
-		font-size: 24px;
+		font-size: 28px;
 	}
 }
 .stock-price.stock-price--blue {
@@ -337,10 +337,10 @@ details[open] summary:before {
 		font-size: 18px;
 		border-radius: 35px;
 	}
-		//Для мобильных (горизонтально)
-		@media (min-width: 560px) {
-			font-size: 20px;
-		}
+	//Для мобильных (горизонтально)
+	@media (min-width: 560px) {
+		font-size: 20px;
+	}
 	//Для планшета
 	@media (min-width: 768px) {
 		width: max-content;
@@ -400,6 +400,13 @@ details[open] summary:before {
 	color: #fff;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
 	animation: stock 6s linear infinite;
+	p {
+		line-height: 1.2;
+		//Для десктопа
+		@media (min-width: 1200px) {
+			line-height: unset;
+		}
+	}
 }
 @keyframes stock {
 	0% {

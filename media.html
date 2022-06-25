@@ -309,7 +309,7 @@
 	<!--/Шапка страницы-->
 	<main>
 		<!--Раздел "Фото и видео"-->
-		<section class="media-page">
+		<section class="media-page footer-down">
 		<div class="container container--enlarge">
 			<div class="media-page__title">
 			<h2 class="section-title bottom-line">Фото&nbsp;и&nbsp;видео</h2>
@@ -426,26 +426,33 @@
 			</div>
 		</div>
 		<div class="gallery-section__content">
-			<noindex>
-			<a class="video" data-fancybox="gallery" href="https://youtu.be/R3IXqknzwE0" rel="nofollow noopener noreferrer">
-				<img src="./video/thumb/video-1-th.jpg" alt="#">
+			<!-- <noindex>
+				<a class="video" data-fancybox="gallery" href="https://youtu.be/R3IXqknzwE0" rel="nofollow noopener noreferrer">
+					<img src="./video/thumb/video-1-th.jpg" alt="#">
+				</a>
+			</noindex> -->
+			<!-- Временно оставлю только формат HD (1280x720) -->
+			<a class="video video--fhd" data-fancybox="gallery" href="./video/clips/leda-river-hd.mp4">
+				<img src="./video/thumb/leda-river-th.jpg" alt="#">
 			</a>
-			</noindex>
-			<a class="video" data-fancybox="gallery" href="./video/clips/video-2.mp4">
-			<img src="./video/thumb/video-2-th.jpg" alt="#">
+			<a class="video video--hd" data-fancybox="gallery" href="./video/clips/leda-river-hd.mp4">
+				<img src="./video/thumb/leda-river-th.jpg" alt="#">
 			</a>
-			<a class="video" data-fancybox="gallery" href="./video/clips/video-3.mp4">
-			<img src="./video/thumb/video-3-th.jpg" alt="#">
-			</a>
-			<a class="video" data-fancybox="gallery" href="./video/clips/video-4.mp4">
-			<img src="./video/thumb/video-4-th.jpg" alt="#">
-			</a>
-			<a class="video" data-fancybox="gallery" href="./video/clips/video-5.mp4">
-			<img src="./video/thumb/video-5-th.jpg" alt="#">
-			</a>
-			<a class="video" data-fancybox="gallery" href="./video/clips/video-1.MP4">
-			<img src="./video/thumb/video-6-th.jpg" alt="#">
-			</a>
+			<!-- <a class="video" data-fancybox="gallery" href="./video/clips/video-2.mp4">
+				<img src="./video/thumb/video-2-th.jpg" alt="#">
+			</a> -->
+			<!-- <a class="video" data-fancybox="gallery" href="./video/clips/video-3.mp4">
+				<img src="./video/thumb/video-3-th.jpg" alt="#">
+			</a> -->
+			<!-- <a class="video" data-fancybox="gallery" href="./video/clips/video-4.mp4">
+				<img src="./video/thumb/video-4-th.jpg" alt="#">
+			</a> -->
+			<!-- <a class="video" data-fancybox="gallery" href="./video/clips/video-5.mp4">
+				<img src="./video/thumb/video-5-th.jpg" alt="#">
+			</a> -->
+			<!-- <a class="video" data-fancybox="gallery" href="./video/clips/video-1.MP4">
+				<img src="./video/thumb/video-6-th.jpg" alt="#">
+			</a> -->
 		</div>
 		<div class="main-btn__row">
 			<a class="btn btn--main btn-show" href="#!">Заказать катер</a>
@@ -572,7 +579,21 @@
 		once: true,
 		});
 	</script>
-	<script async src="//code-ya.jivosite.com/widget/e7j9mg570e"></script>
+	<!-- <script async src="//code-ya.jivosite.com/widget/e7j9mg570e"></script> -->
+		<!-- Begin Talk-Me {literal} -->
+		<script>
+			(function(){(function c(d,w,m,i) {
+					window.supportAPIMethod = m;
+					var s = d.createElement('script');
+					s.id = 'supportScript'; 
+					var id = '7106b1202eeebae665290997ee9bb9f8';
+					s.src = (!i ? 'https://lcab.talk-me.ru/support/support.js' : 'https://static.site-chat.me/support/support.int.js') + '?h=' + id;
+					s.onerror = i ? undefined : function(){c(d,w,m,true)};
+					w[m] = w[m] || function(){(w[m].q = w[m].q || []).push(arguments);};
+					(d.head || d.body).appendChild(s);
+			})(document,window,'TalkMe')})();
+		</script>
+		<!-- {/literal} End Talk-Me -->
 	<script defer src="js/main.min.js"></script>
 	<script defer src="js/call.min.js"></script>
 	<script defer src="js/fixed-menu.min.js"></script>

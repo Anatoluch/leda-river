@@ -1248,19 +1248,25 @@ svg.social-icons__vib {
 	p {
 		text-align: center;
 		color: #fff;
-		font-size: 20px;
+		font-size: 17px;
 		//Для большого смартфона
 		@media (min-width: 360px) {
-			font-size: 22px;
+			font-size: 18px;
+		}
+		//Для большого смартфона
+		@media (min-width: 375px) {
+			font-size: 20px;
 		}
 		//Для большого смартфона
 		@media (min-width: 400px) {
+			font-size: 22px;
 		}
 		//Для большого смартфона
 		@media (min-width: 420px) {
 		}
 		//Для планшета
 		@media (min-width: 768px) {
+			font-size: 26px;
 		}
 	}
 }
@@ -1278,6 +1284,9 @@ svg.social-icons__vib {
 	position: relative;
 	top: 50vh;
 	left: 50vw;
+	min-width: 320px;
+	width: 100vw;
+	max-width: 550px;
 	transform: translate(-50%, -50%);
 	filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.6));
 }
@@ -1309,7 +1318,7 @@ svg.social-icons__vib {
 #popup figcaption {
 	position: relative;
 	border-width: 0 4px 0 4px;
-	font-size: 99%;
+	font-size: 97%;
 	font-family: verdana;
 	font-weight: bold;
 	text-align: center;
@@ -1319,23 +1328,19 @@ svg.social-icons__vib {
 	cursor: pointer;
 	//Для большого смартфона
 	@media (min-width: 330px) {
-		font-size: 102%;
-	}
-	//Для большого смартфона
-	@media (min-width: 340px) {
-		font-size: 105%;
+		font-size: 100%;
 	}
 	//Для большого смартфона
 	@media (min-width: 360px) {
-		font-size: 110%;
+		font-size: 108%;
 	}
 	//Для большого смартфона
 	@media (min-width: 375px) {
-		font-size: 115%;
+		font-size: 112%;
 	}
 	//Для большого смартфона
 	@media (min-width: 400px) {
-		font-size: 125%;
+		font-size: 120%;
 	}
 	//Для планшета
 	@media (min-width: 768px) {
@@ -1425,3 +1430,44 @@ svg.social-icons__vib {
 		transform: translateY(0px);
 	}
 }
+// Прилипание футера к низу экрана при остутствии контента или его незначительном кол-ве
+.footer-down {
+	min-height: calc(~"100vh - 311px");
+	//Для смартфона
+	@media (min-width: 360px) {
+		min-height: calc(~"100vh - 307px");
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		min-height: calc(~"100vh - 311px");
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		min-height: calc(~"100vh - 257px");
+	}
+	//Для планшета
+	@media (min-width: 960px) {
+		min-height: calc(~"100vh - 247px");
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		min-height: calc(~"100vh - 264px");
+	}
+	//Для десктопа SD
+	@media (min-width: 1200px) {
+		min-height: calc(~"100vh - 252px");
+	}
+	//Для десктопа HD
+	@media (min-width: 1280px) {
+		min-height: calc(~"100vh - 257px");
+	}
+	//Для ноута 15.6" и FHD
+	@media (min-width: 1366px) {
+		min-height: calc(~"100vh - 261px");
+	}
+}
+/*----- Тень для кнопки чата-----*/
+#supportTrigger {
+	filter: drop-shadow(0 2px 3px rgba(1, 13, 27, 0.6));
+}
+/*----- /Тень для кнопки чата-----*/

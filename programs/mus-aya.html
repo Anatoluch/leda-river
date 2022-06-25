@@ -317,7 +317,7 @@
 	</header>
 	<!--/Шапка страницы-->
 	<main>
-		<section class="article-section">
+		<section class="article-section footer-down">
 			<div class="blog-container">
 				<div class="blog-nav">
 					<a href="../index.html#routes" title="Вернуться назад?">
@@ -449,6 +449,9 @@
 							</ul>
 							<p id="small-text">**Цена указана только за услуги. Угли и розжиг для мангала в стоимость включены. Все продукты клиент предоставляет самостоятельно. Мы не несем ответственности за качество предоставленных продуктов!</p>
 							<div class="article__title-row">
+								<blockquote class="gradient-quote">
+									<p style="text-align: center;">Нужен катер, для морской прогулки из Балаклавы на мыс Айя? <span><a class="article__text-link" href="#call-anchor">Обращайтесь&nbsp;к&nbsp;нам!</a></span></p>
+								</blockquote>
 								<h3 class="article__title-heading">Маршрут на карте:</h3>
 							</div>
 							<!--Карта для статьи (планшеты и десктопы)-->
@@ -461,6 +464,7 @@
 								<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae67d32e40efdc4fdb1d2a38d042b64ec4fbd9878edd52399a0d327c724dda49a&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
 							</div>
 							<!--/Карта для статьи (мобилки)-->
+							<div id="call-anchor"class="anchor-margin"></div>
 							<div class="article__title-row">
 								<h3 class="article__title-heading">Интересный вариант? Закажи!</h3>
 							</div>
@@ -610,7 +614,21 @@
 		});
 	</script>
 	<script defer src="https://yastatic.net/share2/share.js"></script>
-	<script async src="//code-ya.jivosite.com/widget/e7j9mg570e"></script>
+	<!-- <script async src="//code-ya.jivosite.com/widget/e7j9mg570e"></script> -->
+	<!-- Begin Talk-Me {literal} -->
+	<script>
+		(function(){(function c(d,w,m,i) {
+				window.supportAPIMethod = m;
+				var s = d.createElement('script');
+				s.id = 'supportScript'; 
+				var id = '7106b1202eeebae665290997ee9bb9f8';
+				s.src = (!i ? 'https://lcab.talk-me.ru/support/support.js' : 'https://static.site-chat.me/support/support.int.js') + '?h=' + id;
+				s.onerror = i ? undefined : function(){c(d,w,m,true)};
+				w[m] = w[m] || function(){(w[m].q = w[m].q || []).push(arguments);};
+				(d.head || d.body).appendChild(s);
+		})(document,window,'TalkMe')})();
+	</script>
+	<!-- {/literal} End Talk-Me -->
 	<script defer src="../js/main.min.js"></script>
 	<script defer src="../js/call-inner.min.js"></script>
 	<script defer src="../js/fixed-menu.min.js"></script>

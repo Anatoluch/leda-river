@@ -254,6 +254,7 @@
 		}
 	}
 }
+/*----- Водянной знак для недоступной программы -----*/
 .program-unavailable {
 	position: relative;
 	&::before {
@@ -264,48 +265,55 @@
 		top: 0;
 		left: 0;
 		z-index: 1;
-		backdrop-filter: saturate(0.3);
+		backdrop-filter: saturate(0.35);
 		pointer-events: none;
 	}
 	&::after {
-		content: "Временно недоступно";
+		// content: "ВРЕМЕННО НЕДОСТУПНО!\0a(ориентировочно до 18.06)\0aно это не точно:(";
+		content: "ВРЕМЕННО НЕДОСТУПНО:(";
+		white-space: pre;
 		position: absolute;
 		width: max-content;
 		top: 50%;
 		left: 50%;
-		font-size: 32px;
+		font-size: 20px;
 		line-height: 1;
 		font-weight: 700;
 		text-align: center;
-		opacity: 0.8;
+		opacity: 0.85;
 		color: #b30000;
-		text-shadow: 0 0 3px #fff;
-		transform: translate(-50%, -50%) rotate(-25deg);
+		text-shadow: 0 0 5px #fff, 0 0 3px #fff, 0 0 2px #fff;
+		transform: translate(-50%, -50%) rotate(-20deg);
 		z-index: 2;
 		user-select: none;
 		pointer-events: none;
 		//Для большого смартфона
 		@media (min-width: 360px) {
-			font-size: 34px;
+			font-size: 22px;
 		}
 		//Для большого смартфона
 		@media (min-width: 400px) {
-			font-size: 36px;
+			font-size: 24px;
 		}
 		//Для большого смартфона
 		@media (min-width: 420px) {
-			font-size: 40px;
+			font-size: 26px;
 		}
 		//Для планшета
 		@media (min-width: 768px) {
-			font-size: 50px;
+			font-size: 44px;
 		}
 		//Для большого планшета
 		@media (min-width: 1024px) {
-			font-size: 54px;
+			font-size: 46px;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			font-size: 48px;
 		}
 	}
 }
+/*----- /Водянной знак для недоступной программы -----*/
 .programs__program-card-content-text {
 	padding: 0 5px;
 	//Для большого смартфона
@@ -597,6 +605,12 @@
 		content: url("../img/programs/injir/injir-jopa-02.jpg");
 	}
 }
+.program-img-2-3 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/injir/injir-02.jpg");
+	}
+}
 //Программа 3 "Мыс Айя"
 .program-img-3 {
 	//Для планшета
@@ -610,10 +624,22 @@
 		content: url("../img/articles/mus-aya/gallery/mus-aya-04.jpg");
 	}
 }
+.program-img-3-1-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/mus-aya/pervuy_parus_mus_aya.jpg");
+	}
+}
 .program-img-3-2 {
 	//Для планшета
 	@media (min-width: 429px) {
 		content: url("../img/articles/mus-aya/gallery/ushakovskaya-stena.jpg");
+	}
+}
+.program-img-3-3 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/mus-aya/ushakovskaya-stena-07.jpg");
 	}
 }
 //Программа 4 "Грот Дианы"
@@ -680,20 +706,45 @@
 		content: url("../img/programs/mus-fiolent/Svyato-Georgievskiy-monastyr-fiolent.jpg");
 	}
 }
-//Программа 8 "Весь Фиолент"
+//Программа 8 "Бухта Ласпи"
 .program-img-8 {
 	//Для планшета
 	@media (min-width: 429px) {
-		content: url("../img/programs/ves-fiolent/fiolent.jpg");
+		content: url("../img/programs/laspi/buhta_laspi.jpg");
 	}
 }
 .program-img-8-1 {
 	//Для планшета
 	@media (min-width: 429px) {
-		content: url("../img/programs/mus-fiolent/mus_fiolent.jpg");
+		content: url("../img/programs/laspi/buhta_laspi-4.jpg");
 	}
 }
 .program-img-8-2 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/laspi/buhta_laspi-1.jpg");
+	}
+}
+.program-img-8-3 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/laspi/batiliman.jpg");
+	}
+}
+//Программа 9 "Весь Фиолент"
+.program-img-9 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/ves-fiolent/fiolent.jpg");
+	}
+}
+.program-img-9-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/mus-fiolent/mus_fiolent.jpg");
+	}
+}
+.program-img-9-2 {
 	//Для планшета
 	@media (min-width: 429px) {
 		content: url("../img/programs/mus-fiolent/mus_fiolent-2.jpg");

@@ -1740,11 +1740,26 @@ svg.social-icons__vib {
 #popup p {
   text-align: center;
   color: #fff;
-  font-size: 20px;
+  font-size: 17px;
 }
 @media (min-width: 360px) {
   #popup p {
+    font-size: 18px;
+  }
+}
+@media (min-width: 375px) {
+  #popup p {
+    font-size: 20px;
+  }
+}
+@media (min-width: 400px) {
+  #popup p {
     font-size: 22px;
+  }
+}
+@media (min-width: 768px) {
+  #popup p {
+    font-size: 26px;
   }
 }
 @-webkit-keyframes animaciya {
@@ -1785,6 +1800,9 @@ svg.social-icons__vib {
   position: relative;
   top: 50vh;
   left: 50vw;
+  min-width: 320px;
+  width: 100vw;
+  max-width: 550px;
   -webkit-transform: translate(-50%, -50%);
      -moz-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
@@ -1824,7 +1842,7 @@ svg.social-icons__vib {
 #popup figcaption {
   position: relative;
   border-width: 0 4px 0 4px;
-  font-size: 99%;
+  font-size: 97%;
   font-family: verdana;
   font-weight: bold;
   text-align: center;
@@ -1835,27 +1853,22 @@ svg.social-icons__vib {
 }
 @media (min-width: 330px) {
   #popup figcaption {
-    font-size: 102%;
-  }
-}
-@media (min-width: 340px) {
-  #popup figcaption {
-    font-size: 105%;
+    font-size: 100%;
   }
 }
 @media (min-width: 360px) {
   #popup figcaption {
-    font-size: 110%;
+    font-size: 108%;
   }
 }
 @media (min-width: 375px) {
   #popup figcaption {
-    font-size: 115%;
+    font-size: 112%;
   }
 }
 @media (min-width: 400px) {
   #popup figcaption {
-    font-size: 125%;
+    font-size: 120%;
   }
 }
 @media (min-width: 768px) {
@@ -2027,6 +2040,73 @@ svg.social-icons__vib {
             transform: translateY(0px);
   }
 }
+.footer-down {
+  min-height: -webkit-calc(100vh - 311px);
+  min-height: -moz-calc(100vh - 311px);
+  min-height: calc(100vh - 311px);
+}
+@media (min-width: 360px) {
+  .footer-down {
+    min-height: -webkit-calc(100vh - 307px);
+    min-height: -moz-calc(100vh - 307px);
+    min-height: calc(100vh - 307px);
+  }
+}
+@media (min-width: 400px) {
+  .footer-down {
+    min-height: -webkit-calc(100vh - 311px);
+    min-height: -moz-calc(100vh - 311px);
+    min-height: calc(100vh - 311px);
+  }
+}
+@media (min-width: 768px) {
+  .footer-down {
+    min-height: -webkit-calc(100vh - 257px);
+    min-height: -moz-calc(100vh - 257px);
+    min-height: calc(100vh - 257px);
+  }
+}
+@media (min-width: 960px) {
+  .footer-down {
+    min-height: -webkit-calc(100vh - 247px);
+    min-height: -moz-calc(100vh - 247px);
+    min-height: calc(100vh - 247px);
+  }
+}
+@media (min-width: 1024px) {
+  .footer-down {
+    min-height: -webkit-calc(100vh - 264px);
+    min-height: -moz-calc(100vh - 264px);
+    min-height: calc(100vh - 264px);
+  }
+}
+@media (min-width: 1200px) {
+  .footer-down {
+    min-height: -webkit-calc(100vh - 252px);
+    min-height: -moz-calc(100vh - 252px);
+    min-height: calc(100vh - 252px);
+  }
+}
+@media (min-width: 1280px) {
+  .footer-down {
+    min-height: -webkit-calc(100vh - 257px);
+    min-height: -moz-calc(100vh - 257px);
+    min-height: calc(100vh - 257px);
+  }
+}
+@media (min-width: 1366px) {
+  .footer-down {
+    min-height: -webkit-calc(100vh - 261px);
+    min-height: -moz-calc(100vh - 261px);
+    min-height: calc(100vh - 261px);
+  }
+}
+/*----- Тень для кнопки чата-----*/
+#supportTrigger {
+  -webkit-filter: drop-shadow(0 2px 3px rgba(1, 13, 27, 0.6));
+          filter: drop-shadow(0 2px 3px rgba(1, 13, 27, 0.6));
+}
+/*----- /Тень для кнопки чата-----*/
 .header {
   margin: 0 auto;
   max-width: 100%;
@@ -5213,6 +5293,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     height: 320px;
   }
 }
+/*----- Водянной знак для недоступной программы -----*/
 .program-unavailable {
   position: relative;
 }
@@ -5224,30 +5305,31 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   top: 0;
   left: 0;
   z-index: 1;
-  -webkit-backdrop-filter: saturate(0.3);
-          backdrop-filter: saturate(0.3);
+  -webkit-backdrop-filter: saturate(0.35);
+          backdrop-filter: saturate(0.35);
   pointer-events: none;
 }
 .program-unavailable::after {
-  content: "Временно недоступно";
+  content: "ВРЕМЕННО НЕДОСТУПНО:(";
+  white-space: pre;
   position: absolute;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   top: 50%;
   left: 50%;
-  font-size: 32px;
+  font-size: 20px;
   line-height: 1;
   font-weight: 700;
   text-align: center;
-  opacity: 0.8;
+  opacity: 0.85;
   color: #b30000;
-  text-shadow: 0 0 3px #fff;
-  -webkit-transform: translate(-50%, -50%) rotate(-25deg);
-     -moz-transform: translate(-50%, -50%) rotate(-25deg);
-      -ms-transform: translate(-50%, -50%) rotate(-25deg);
-       -o-transform: translate(-50%, -50%) rotate(-25deg);
-          transform: translate(-50%, -50%) rotate(-25deg);
+  text-shadow: 0 0 5px #fff, 0 0 3px #fff, 0 0 2px #fff;
+  -webkit-transform: translate(-50%, -50%) rotate(-20deg);
+     -moz-transform: translate(-50%, -50%) rotate(-20deg);
+      -ms-transform: translate(-50%, -50%) rotate(-20deg);
+       -o-transform: translate(-50%, -50%) rotate(-20deg);
+          transform: translate(-50%, -50%) rotate(-20deg);
   z-index: 2;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -5257,29 +5339,35 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 @media (min-width: 360px) {
   .program-unavailable::after {
-    font-size: 34px;
+    font-size: 22px;
   }
 }
 @media (min-width: 400px) {
   .program-unavailable::after {
-    font-size: 36px;
+    font-size: 24px;
   }
 }
 @media (min-width: 420px) {
   .program-unavailable::after {
-    font-size: 40px;
+    font-size: 26px;
   }
 }
 @media (min-width: 768px) {
   .program-unavailable::after {
-    font-size: 50px;
+    font-size: 44px;
   }
 }
 @media (min-width: 1024px) {
   .program-unavailable::after {
-    font-size: 54px;
+    font-size: 46px;
   }
 }
+@media (min-width: 1200px) {
+  .program-unavailable::after {
+    font-size: 48px;
+  }
+}
+/*----- /Водянной знак для недоступной программы -----*/
 .programs__program-card-content-text {
   padding: 0 5px;
 }
@@ -5684,6 +5772,11 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   }
 }
 @media (min-width: 429px) {
+  .program-img-2-3 {
+    content: url("../img/programs/injir/injir-02.jpg");
+  }
+}
+@media (min-width: 429px) {
   .program-img-3 {
     content: url("../img/articles/top-clear-water/big/mus-aya-big.jpg");
   }
@@ -5694,8 +5787,18 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   }
 }
 @media (min-width: 429px) {
+  .program-img-3-1-1 {
+    content: url("../img/articles/mus-aya/pervuy_parus_mus_aya.jpg");
+  }
+}
+@media (min-width: 429px) {
   .program-img-3-2 {
     content: url("../img/articles/mus-aya/gallery/ushakovskaya-stena.jpg");
+  }
+}
+@media (min-width: 429px) {
+  .program-img-3-3 {
+    content: url("../img/articles/mus-aya/ushakovskaya-stena-07.jpg");
   }
 }
 @media (min-width: 429px) {
@@ -5750,16 +5853,36 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 @media (min-width: 429px) {
   .program-img-8 {
-    content: url("../img/programs/ves-fiolent/fiolent.jpg");
+    content: url("../img/programs/laspi/buhta_laspi.jpg");
   }
 }
 @media (min-width: 429px) {
   .program-img-8-1 {
-    content: url("../img/programs/mus-fiolent/mus_fiolent.jpg");
+    content: url("../img/programs/laspi/buhta_laspi-4.jpg");
   }
 }
 @media (min-width: 429px) {
   .program-img-8-2 {
+    content: url("../img/programs/laspi/buhta_laspi-1.jpg");
+  }
+}
+@media (min-width: 429px) {
+  .program-img-8-3 {
+    content: url("../img/programs/laspi/batiliman.jpg");
+  }
+}
+@media (min-width: 429px) {
+  .program-img-9 {
+    content: url("../img/programs/ves-fiolent/fiolent.jpg");
+  }
+}
+@media (min-width: 429px) {
+  .program-img-9-1 {
+    content: url("../img/programs/mus-fiolent/mus_fiolent.jpg");
+  }
+}
+@media (min-width: 429px) {
+  .program-img-9-2 {
     content: url("../img/programs/mus-fiolent/mus_fiolent-2.jpg");
   }
 }
@@ -6043,7 +6166,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   }
 }
 .yacht-title {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -6056,6 +6179,59 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 @media (min-width: 1200px) {
   .yacht-title {
     z-index: 4;
+  }
+}
+@media (min-width: 1600px) {
+  .yacht-title {
+    margin-bottom: 25px;
+  }
+}
+.yacht__intro {
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #fff;
+  opacity: 0.8;
+}
+@media (min-width: 360px) {
+  .yacht__intro {
+    font-size: 20px;
+  }
+}
+@media (min-width: 400px) {
+  .yacht__intro {
+    font-size: 21px;
+  }
+}
+@media (min-width: 420px) {
+  .yacht__intro {
+    font-size: 22px;
+  }
+}
+@media (min-width: 768px) {
+  .yacht__intro {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .yacht__intro {
+    margin-bottom: 30px;
+    font-size: 26px;
+  }
+}
+@media (min-width: 1200px) {
+  .yacht__intro {
+    font-size: 25px;
+    position: relative;
+    z-index: 4;
+  }
+}
+@media (min-width: 1600px) {
+  .yacht__intro {
+    margin-bottom: 45px;
+    opacity: 0.9;
   }
 }
 .yacht__content {
@@ -6342,6 +6518,9 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
       -ms-transform: translate(-50%, -50%);
        -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+.window-bg-img.window-bg-img--2 {
+  background-image: url("../img/body-bg-img-02.jpg");
 }
 @media (min-width: 768px) {
   .window-bg-img.window-bg-img--low {
@@ -6684,6 +6863,24 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   color: var(--brand-blue);
   text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
 }
+/*----- Видео для Fancybox (из папки video)-----*/
+.video.video--fhd {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .video.video--fhd {
+    display: inline-block;
+  }
+}
+.video.video--hd {
+  display: inline-block;
+}
+@media (min-width: 1200px) {
+  .video.video--hd {
+    display: none;
+  }
+}
+/*----- /Видео для Fancybox (из папки video)-----*/
 .reviews {
   margin: 0 auto;
   padding: 20px 0;
@@ -7257,9 +7454,6 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   margin: 0 auto;
   position: relative;
   padding: 15px 0 60px;
-  min-height: -webkit-calc(100vh - 257px);
-  min-height: -moz-calc(100vh - 257px);
-  min-height: calc(100vh - 257px);
   background-color: #f4f8f9;
 }
 @media (min-width: 768px) {
@@ -8637,18 +8831,18 @@ details[open] summary:before {
 @media (min-width: 768px) {
   .stock-price {
     margin: 0 auto 15px;
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 @media (min-width: 1024px) {
   .stock-price {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 @media (min-width: 1200px) {
   .stock-price {
     max-width: 90%;
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 .stock-price.stock-price--blue {
@@ -8790,6 +8984,14 @@ details[open] summary:before {
      -moz-animation: stock 6s linear infinite;
        -o-animation: stock 6s linear infinite;
           animation: stock 6s linear infinite;
+}
+.stock-price.stock-price--invert p {
+  line-height: 1.2;
+}
+@media (min-width: 1200px) {
+  .stock-price.stock-price--invert p {
+    line-height: unset;
+  }
 }
 @-webkit-keyframes stock {
   0% {
@@ -10594,9 +10796,6 @@ label.error {
   margin: 0 auto;
   position: relative;
   padding: 15px 0 60px;
-  min-height: -webkit-calc(100vh - 257px);
-  min-height: -moz-calc(100vh - 257px);
-  min-height: calc(100vh - 257px);
   background-color: #f4f8f9;
 }
 @media (min-width: 768px) {
@@ -11128,9 +11327,6 @@ footer .insta-h-a svg {
 .blog {
   margin: 0 auto;
   padding: 30px 0 30px;
-  min-height: -webkit-calc(100vh - 257px);
-  min-height: -moz-calc(100vh - 257px);
-  min-height: calc(100vh - 257px);
   background-color: #f4f8f9;
 }
 @media (min-width: 768px) {
@@ -11830,9 +12026,6 @@ footer .insta-h-a svg {
   padding: 15px 0 60px;
   position: relative;
   z-index: 1;
-  min-height: -webkit-calc(100vh - 257px);
-  min-height: -moz-calc(100vh - 257px);
-  min-height: calc(100vh - 257px);
 }
 @media (min-width: 768px) {
   .media-page {
@@ -11951,9 +12144,6 @@ footer .insta-h-a svg {
 .article-section {
   margin: 0 auto;
   padding: 20px 0;
-  min-height: -webkit-calc(100vh - 257px);
-  min-height: -moz-calc(100vh - 257px);
-  min-height: calc(100vh - 257px);
   background-color: #f4f8f9;
 }
 @media (min-width: 768px) {
