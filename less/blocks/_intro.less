@@ -1,0 +1,153 @@
+.intro {
+	padding: 30px 0 30px;
+	//Для планшета
+	@media (min-width: 768px) {
+		padding: 30px 0 45px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		padding: 30px 0 60px;
+	}
+	p {
+		margin-bottom: 15px;
+		font-family: sans-serif;
+		font-size: 16px;
+		letter-spacing: -0.3px;
+		font-weight: 400;
+		line-height: 1.5;
+		color: #070707;
+		text-indent: 10px;
+		//Для большого смартфона
+		@media (min-width: 360px) {
+			letter-spacing: unset;
+		}
+		//Для большого смартфона
+		@media (min-width: 337px) {
+			font-size: 17px;
+		}
+		//Для планшета
+		@media (min-width: 768px) {
+			font-size: 16px;
+			letter-spacing: unset;
+			text-indent: 15px;
+		}
+		//Для планшета
+		@media (min-width: 890px) {
+			font-size: 17px;
+		}
+		//Для большого планшета
+		@media (min-width: 1024px) {
+			font-size: 18px;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			margin-bottom: 20px;
+			font-size: 20px;
+		}
+		//Для десктопа
+		@media (min-width: 1600px) {
+			font-size: 22px;
+		}
+		//Для десктопа FHD
+		@media (min-width: 1920px) {
+			font-size: 24px;
+		}
+		&:last-child {
+			margin-top: 15px;
+			margin-bottom: 0;
+			font-weight: 700;
+			text-align: center;
+			color: var(--brand-blue);
+			//Для большого смартфона
+			@media (min-width: 360px) {
+				font-size: 1.1em;
+			}
+			//Для планшета
+			@media (min-width: 768px) {
+				margin-top: 30px;
+				font-size: 1.1em;
+			}
+			//Для большого планшета
+			@media (min-width: 1024px) {
+				margin-top: 30px;
+				font-size: 1.3em;
+			}
+			//Для десктопа
+			@media (min-width: 1600px) {
+				font-size: 1.5em;
+			}
+		}
+	}
+	span {
+		font-weight: 700;
+		color: var(--brand-blue);
+	}
+}
+.poster {
+	margin: 75px auto;
+	display: block;
+	height: 280px;
+	background-image: url("../video/cover.jpg");
+	background-position: 75%, center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transform: scale(1.5);
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		margin: 80px auto;
+		height: 300px;
+	}
+	//Для смартфона (горизонтально)
+	@media (min-width: 565px) and (max-height: 360px) {
+		margin: 75px auto;
+		height: 170px;
+		transform: scale(1.75);
+	}
+	//Для большого смартфона (горизонтально)
+	@media (min-width: 640px) and (max-height: 430px) {
+		margin: 70px auto;
+		height: 200px;
+		transform: scale(1.6);
+	}
+	//Для планшета
+	@media (min-width: 768px) and (min-height: 480px) {
+		margin: 30px auto;
+		height: 470px;
+		transform: scale(1.1);
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		margin: 40px auto;
+		height: 610px;
+		transform: scale(1.1);
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		display: none;
+	}
+}
+.video-bg {
+	display: none;
+	position: relative;
+	content: "";
+	//Для десктопа
+	@media (min-width: 1200px) {
+		content: unset;
+		display: block;
+		margin: 15px auto;
+		transform: none;
+		height: 520px;
+	}
+	//Для десктопа
+	@media (min-width: 1366px) {
+		height: 600px;
+	}
+	//Для десктопа
+	@media (min-width: 1566px) {
+		height: 680px;
+	}
+	//Для десктопа
+	@media (min-width: 1920px) {
+		height: 960px;
+	}
+}

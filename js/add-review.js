@@ -3,18 +3,7 @@ $(document).ready(function(){
 	if(!window.FormData) {
 		alert(`Браузер не поддерживает загрузку файлов на этом сайте!\nВы не сможете прикрепить аватарку к отзыву!`);
 	}
-  //Логика кнопки "добавить аватар"
-  $('.review-avatar').change(function() {
-    if ($(this).val() != '') {
-			$(this).closest('.file-row').children('.upload-label').text('Файл выбран!');
-			$('.upload-label').blur();
-			$('.upload-label').addClass("chosen");
-		} else {
-			$(this).closest('.file-row').children('.upload-label').text('Выбрать файл');
-			$('.upload-label').blur();
-			$('.upload-label').removeClass("chosen");
-		}
-	});
+
 	//Ограничение длины отзыва
 	let maxCount = 480; //Счетчик оставшихся для вода символов (отзыв)
 	let revCounterSpan = document.querySelector('#counter');
@@ -45,6 +34,19 @@ $(document).ready(function(){
         if(cnt <= 0){$("#counter").html('0');}
         else {$("#counter").html(cnt);}
     }); 
+
+		  //Логика кнопки "добавить аватар"
+			$('.review-avatar').change(function() {
+				if ($(this).val() != '') {
+					$(this).closest('.file-row').children('.upload-label').text('Файл выбран!');
+					$('.upload-label').blur();
+					$('.upload-label').addClass("chosen");
+				} else {
+					$(this).closest('.file-row').children('.upload-label').text('Выбрать файл');
+					$('.upload-label').blur();
+					$('.upload-label').removeClass("chosen");
+				}
+			});
 
    	//Проверка на роботов
       let revFormBlock = document.querySelector('.reviews-page__form'); // форма обратной связи

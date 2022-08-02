@@ -1,7 +1,6 @@
 .yacht {
 	margin: 0 auto;
-	// margin-top: -18px;
-	padding: 43px 0 25px;
+	padding: 45px 0 30px;
 	position: relative;
 	background-color: var(--main-blue);
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) inset,
@@ -42,33 +41,25 @@
 	}
 	//Для планшета
 	@media (min-width: 768px) {
+		padding: 45px 0 60px;
 		box-shadow: none;
 	}
 	//Для десктопа
 	@media (min-width: 1200px) {
-		padding: 20px 0 65px;
-	}
-	//Для десктопа
-	@media (min-width: 3840px) {
-		padding: 30px 0 125px;
+		padding: 45px 0 75px;
 	}
 }
 .yacht-title {
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 	text-align: center;
 	position: relative;
 	z-index: 1;
 	//Для планшета
 	@media (min-width: 768px) {
-		margin-bottom: 15px;
 	}
 	//Для десктопа
 	@media (min-width: 1200px) {
 		z-index: 4;
-	}
-	//Для десктопа
-	@media (min-width: 1600px) {
-		margin-bottom: 25px;
 	}
 }
 .yacht__intro {
@@ -77,32 +68,33 @@
 	font-family: serif;
 	font-style: italic;
 	font-size: 18px;
+	line-height: 1.2;
 	color: #fff;
 	opacity: 0.8;
+	letter-spacing: 0.5px;
 	//Для большого смартфона
 	@media (min-width: 360px) {
-		font-size: 20px;
+		font-size: 19px;
 	}
 	//Для большого смартфона
 	@media (min-width: 400px) {
-		font-size: 21px;
-	}
-	//Для большого смартфона
-	@media (min-width: 420px) {
-		font-size: 22px;
+		font-size: 19px;
+		letter-spacing: unset;
 	}
 	//Для планшета
 	@media (min-width: 768px) {
-		font-size: 24px;
+		font-size: 21px;
 	}
 	//Для большого планшета
 	@media (min-width: 1024px) {
 		margin-bottom: 30px;
-		font-size: 26px;
+		font-size: 24px;
 	}
 	//Для десктопа
 	@media (min-width: 1200px) {
-		font-size: 25px;
+		margin-bottom: 45px;
+		font-size: 26px;
+		letter-spacing: unset;
 		position: relative;
 		z-index: 4;
 	}
@@ -111,13 +103,22 @@
 		margin-bottom: 45px;
 		opacity: 0.9;
 	}
+	span {
+		font-size: 110%;
+		font-weight: 700;
+		//Для планшета
+		@media (min-width: 768px) {
+			font-size: 105%;
+		}
+	}
 }
 .yacht__content {
-	margin: 0 auto;
+	margin: 0 auto 10px;
 	display: flex;
 	position: relative;
 	//Для планшета
 	@media (min-width: 768px) {
+		margin: 0 auto;
 		justify-content: space-between;
 	}
 }
@@ -266,12 +267,143 @@
 .leda {
 	position: relative;
 	z-index: 3;
+	img {
+		//Для планшета
+		@media (min-width: 768px) {
+			content: url("../img/Leda-layer.png");
+		}
+	}
 }
 .sea {
 	position: relative;
 	z-index: 2;
+	img {
+		//Для планшета
+		@media (min-width: 768px) {
+			content: url("../img/sea-layer.png");
+		}
+	}
 }
 .sky {
 	position: relative;
 	z-index: 1;
+	img {
+		//Для планшета
+		@media (min-width: 768px) {
+			content: url("../img/sky-layer.png");
+		}
+	}
+}
+/*----- Плашка с контактами раздела "О катере" -----*/
+.yacht__contacts {
+	margin-bottom: 30px;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 45px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		margin-bottom: 60px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		margin-bottom: 75px;
+	}
+}
+
+.yacht__contacts-overlay {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 460px;
+	//Для планшета
+	@media (min-width: 768px) {
+		width: unset;
+		max-width: unset;
+	}
+	p {
+		margin-bottom: 15px;
+		color: #fff;
+		font-weight: 400;
+		font-family: "M PLUS 1p", sans-serif;
+		font-size: 32px;
+		letter-spacing: 1.5px;
+	}
+}
+/*----- /Плашка с контактами раздела "О катере" -----*/
+.btn.btn-fire {
+	border: 4px solid #970000;
+	background: #ff7728;
+	background: linear-gradient(150deg, #ed3f3f 0%, #ff7728 50%, #970000 100%);
+}
+/*----- Модификатор социальных иконок раздела "О катере" -----*/
+.social-icons__row.social-icons__row--yacht {
+	margin-bottom: 30px;
+	width: 100%;
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 60px;
+		width: unset;
+	}
+	li {
+		margin-right: 30px;
+		//Для планшета
+		@media (min-width: 768px) {
+			margin-right: 60px;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+/*----- /Модификатор социальных иконок раздела "О катере" -----*/
+.yacht__outro {
+	text-align: center;
+	font-family: serif;
+	font-style: italic;
+	font-size: 18px;
+	letter-spacing: 0.5px;
+	color: #fff;
+	opacity: 0.8;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 19px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		font-size: 20px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		font-size: 21px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		font-size: 25px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		font-size: 26px;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		font-size: 30px;
+	}
+	//Для десктопа
+	@media (min-width: 1600px) {
+		opacity: 0.9;
+	}
+	span {
+		font-size: 110%;
+		font-weight: 700;
+		//Для планшета
+		@media (min-width: 768px) {
+			font-size: 105%;
+		}
+	}
 }

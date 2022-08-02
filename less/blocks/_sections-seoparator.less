@@ -13,3 +13,14 @@
 	margin: 0 auto;
 	max-width: 1600px;
 }
+.sections-separator__img {
+	content: url("../img/body-img-leda-mob.png");
+	//Для планшета
+	@media (min-width: 480px) {
+		content: url("../img/body-img-leda-tab.png");
+	}
+	//Для планшета
+	@media (min-width: 1024px) {
+		content: url("../img/body-img-leda.png");
+	}
+}

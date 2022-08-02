@@ -10,7 +10,12 @@
 	<link rel="stylesheet" href="./fonts/mplus1p/mplus1p.css">
 	<link rel="stylesheet" href="./fonts/ltr46/ltr46.css">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="./favicon-120.ico" type="image/x-icon"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
 	<link rel="stylesheet" href="./css/main.css">
 	<!--[if lt IE 9]> <script src="//html5shiv.
 	googlecode.com/ svn/trunk/html5.js"></script><![endif]-->
@@ -29,7 +34,7 @@
 			<a href="index.html">Leda~River</a>
 		</div>
 		<div class="phone-top-mob">
-			<img class="top-phone-img" src="./img/top-phone.png" title = "Наш телефон - кликните 2 раза, чтобы позвонить или скопировать" alt="Наш телефон - кликните, чтобы позвонить или скопировать">
+			<img class="phone-img" src="./img/top-phone.png" title = "Наш телефон - кликните 2 раза, чтобы позвонить или скопировать" alt="Наш телефон - кликните, чтобы позвонить или скопировать">
 		</div>
 		<ul class="mob-nav">
 			<li class="mob-nav-item">
@@ -163,7 +168,7 @@
 						</li>
 					</ul>
 					<div class="phone-top">
-						<img class="top-phone-img" src="./img/top-phone.png" title = "Наш телефон - кликните 2 раза, чтобы позвонить или скопировать" alt="Наш телефон - кликните, чтобы позвонить или скопировать">
+						<img class="phone-img" src="./img/top-phone.png" title = "Наш телефон - кликните 2 раза, чтобы позвонить или скопировать" alt="Наш телефон - кликните, чтобы позвонить или скопировать">
 					</div>
 				</div>
 				<!--/Иконки соцсетей для хедера десктопной версии-->
@@ -244,7 +249,7 @@
 						<!--/Иконки соцсетей для хедера десктопной версии-->  
 					</div>
 					<div class="phone-top phone-top--scroll">
-						<img class="top-phone-img" src="./img/top-phone.png" title = "Наш телефон - кликните 2 раза, чтобы позвонить или скопировать" alt="Наш телефон - кликните, чтобы позвонить или скопировать">
+						<img class="phone-img" src="./img/top-phone.png" title = "Наш телефон - кликните 2 раза, чтобы позвонить или скопировать" alt="Наш телефон - кликните, чтобы позвонить или скопировать">
 					</div>               
 				</div>
 			</div>
@@ -276,6 +281,37 @@
 			</div>
 			<div class="blog-container">
 				<div class="blog-section__content">
+					<!--Статья №7-->
+					<div class="article-prev">
+						<div class="article__title-row-mob">
+							<a href="/blog/laspi-trip.html">
+								<h3 class="article__title-heading-prev">Морская прогулка в бухту Ласпи!</h3>
+							</a>
+						</div>
+						<div class="article__img-row-prev">
+							<a href="/blog/laspi-trip.html">
+								<img class="blog-prev-img-7" src="./img/programs/laspi/small/buhta_laspi-2-small.jpg" alt="Бухта Ласпи, Батилиман, Севастополь" title="Бухта Ласпи, Батилиман, Севастополь">
+							</a>
+						</div>
+						<div class="article__content-row">
+							<div class="article__title-row-prev">
+								<a href="/blog/laspi-trip.html">
+									<h3 class="article__title-heading-prev">Морская прогулка в бухту Ласпи!</h3>
+								</a>
+							</div>
+							<div class="publish-info-prev">
+								<p>Дата публикации: 09.07.2022</p>
+							</div>
+							<div class="article__text-prev">
+								<p>Сейчас морские прогулки к гроту Дианы и пляжу &quot;Баунти&quot; под запретом. И мы, к сожалению, вынуждены отказывать нашим гостям желающим там побывать. Катерам и яхтам вообще было запрещено ходить в сторону фиолента. Сегодня, фиолент приоткрыт, но выше названные места, ещё недосягаемы...</p>
+							</div>
+							<div class="article__btn-row-prev">
+								<a class="article__btn-readmore" href="/blog/laspi-trip.html">Подробнее</a>
+								<div class="ya-share2 share-mob" data-curtain data-shape="round" data-services="vkontakte,odnoklassniki,telegram,whatsapp,twitter,moimir,lj" data-url="https://leda-river.ru/blog/laspi-trip.html" data-title="Морская прогулка в бухту Ласпи!"></div>
+							</div>
+						</div>
+					</div>
+					<!--/Статья №7-->
 					<!--Статья №6-->
 					<div class="article-prev">
 						<div class="article__title-row-mob">
@@ -585,24 +621,22 @@
 			once: true,
 		});
 	</script>
-	<script defer src="https://yastatic.net/share2/share.js"></script>
-	<!-- <script async src="//code-ya.jivosite.com/widget/e7j9mg570e"></script> -->
 		<!-- Begin Talk-Me {literal} -->
 		<script>
 			(function(){(function c(d,w,m,i) {
-					window.supportAPIMethod = m;
-					var s = d.createElement('script');
-					s.id = 'supportScript'; 
-					var id = '7106b1202eeebae665290997ee9bb9f8';
-					s.src = (!i ? 'https://lcab.talk-me.ru/support/support.js' : 'https://static.site-chat.me/support/support.int.js') + '?h=' + id;
-					s.onerror = i ? undefined : function(){c(d,w,m,true)};
-					w[m] = w[m] || function(){(w[m].q = w[m].q || []).push(arguments);};
-					(d.head || d.body).appendChild(s);
+				window.supportAPIMethod = m;
+				var s = d.createElement('script');
+				s.id = 'supportScript'; 
+				var id = '7106b1202eeebae665290997ee9bb9f8';
+				s.src = (!i ? 'https://lcab.talk-me.ru/support/support.js' : 'https://static.site-chat.me/support/support.int.js') + '?h=' + id;
+				s.onerror = i ? undefined : function(){c(d,w,m,true)};
+				w[m] = w[m] || function(){(w[m].q = w[m].q || []).push(arguments);};
+				(d.head || d.body).appendChild(s);
 			})(document,window,'TalkMe')})();
-		</script>
+			</script>
 		<!-- {/literal} End Talk-Me -->
-	<script defer src="js/main.min.js"></script>
-	<script defer src="js/fixed-menu.min.js"></script>
-	<script defer src="js/cookies.min.js"></script>
+		<script defer src="js/main.min.js"></script>
+		<script src="https://yastatic.net/share2/share.js"></script>
+		<script defer src="js/cookies.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 .toggle-menu {
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	display: flex;
 	align-items: center;
 	z-index: 9;
@@ -19,23 +19,23 @@
 		position: relative;
 		display: inline-block;
 		width: 100%;
-		height: 5px;
+		height: 4px;
 		background-color: var(--brand-blue);
 		transition: 0.3s ease-in-out 0.4s;
 		&::before,
 		&:after {
 			content: "";
 			width: 100%;
-			height: 5px;
+			height: 4px;
 			background-color: var(--brand-blue);
 			position: absolute;
 			transition: 0.3s ease-in-out 0.4s;
 		}
 		&::before {
-			top: -10px;
+			top: -7px;
 		}
 		&::after {
-			bottom: -10px;
+			bottom: -7px;
 		}
 	}
 	//Для десктопа
@@ -97,12 +97,12 @@
 		background-color: transparent;
 		&::before {
 			transform: rotate(45deg);
-			box-shadow: 1px 4px 3px rgba(21, 33, 58, 0.6);
+			// box-shadow: 1px 4px 3px rgba(21, 33, 58, 0.6);
 			top: 0;
 		}
 		&::after {
 			bottom: 0;
-			box-shadow: -1px 4px 3px rgba(21, 33, 58, 0.6);
+			// box-shadow: -1px 4px 3px rgba(21, 33, 58, 0.6);
 			transform: rotate(-45deg);
 		}
 	}

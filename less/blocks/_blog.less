@@ -47,6 +47,10 @@
 .blog-section__title {
 	text-align: center;
 	margin-bottom: 15px;
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 30px;
+	}
 	h3 {
 		margin-bottom: 0;
 		font-size: 26px;
@@ -82,6 +86,7 @@
 	filter: drop-shadow(0 3px 5px rgba(24, 55, 83, 0.45));
 	//Для планшета
 	@media (min-width: 768px) {
+		margin: 0 auto 45px;
 		padding: 0 20px;
 		background: linear-gradient(
 			90deg,
@@ -94,10 +99,12 @@
 	}
 	//Для большого планшета
 	@media (min-width: 1024px) {
+		margin: 0 auto 60px;
 		padding: 0 30px;
 	}
 	//Для десктопа
 	@media (min-width: 1200px) {
+		margin: 0 auto 75px;
 		max-width: 1600px;
 		padding: 0 15px;
 	}
@@ -130,7 +137,7 @@
 	}
 }
 .article-prev {
-	margin-bottom: 30px;
+	margin-bottom: 45px;
 	padding-top: 15px;
 	background-color: #fff;
 	box-shadow: 0 10px 30px 3px rgba(119, 162, 219, 0.6);
@@ -143,6 +150,10 @@
 		flex-direction: row;
 		border-radius: 25px;
 		overflow: hidden;
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		margin-bottom: 75px;
 	}
 }
 .article__title-row-mob {
@@ -202,7 +213,7 @@
 	font-weight: 700;
 	font-family: "M PLUS 1p", sans-serif;
 	color: var(--brand-blue);
-	line-height: 1.2;
+	line-height: 1.5;
 	transition: 0.3s;
 	//Для большого смартфона
 	@media (min-width: 340px) {
@@ -234,7 +245,7 @@
 	// text-align: center;
 	font-family: "M PLUS 1p", sans-serif;
 	font-size: 15px;
-	font-weight: 300;
+	font-weight: 400;
 	color: #656569;
 	line-height: 1.5;
 	text-align: center;
@@ -329,7 +340,7 @@
 		font-family: "M PLUS 1p", sans-serif;
 		font-weight: 500;
 		font-size: 16px;
-		line-height: 1.2;
+		line-height: 1.5;
 		margin-bottom: 15px;
 		//Для планшета
 		@media (min-width: 768px) {

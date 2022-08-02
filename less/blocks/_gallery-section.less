@@ -1,20 +1,20 @@
 .gallery-section {
 	margin: 0 auto;
-	padding: 45px 0 30px;
+	padding: 45px 0 10px;
 	position: relative;
 	max-width: 100%;
 	z-index: 1;
 	//Для планшета
 	@media (min-width: 768px) {
-		padding: 72px 0 30px;
+		padding: 72px 0 5px;
 	}
 	//Для десктопа
 	@media (min-width: 1200px) {
-		padding: 75px 0 75px;
-		background: url("../img/water-bg.webp");
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
+		padding: 75px 0 10px;
+		// background: url("../img/water-bg.webp");
+		// background-repeat: no-repeat;
+		// background-position: center;
+		// background-size: cover;
 	}
 	//Для десктопа
 	@media (min-width: 2560px) {
@@ -25,31 +25,31 @@
 		padding: 150px 0 200px;
 		min-height: 105vh;
 	}
-	&::before {
-		content: "";
-		position: absolute;
-		background: #fff;
-		background: linear-gradient(
-			335deg,
-			rgba(255, 255, 255, 1) 0%,
-			rgba(181, 205, 235, 1) 50%,
-			rgba(255, 255, 255, 1) 100%
-		);
-		width: 100%;
-		height: 100%;
-		top: 0;
-		z-index: 0;
-		//Для десктопа
-		@media (min-width: 1200px) {
-			background: linear-gradient(
-				345deg,
-				rgba(255, 255, 255, 1) 0%,
-				rgba(255, 255, 255, 0.6) 50%,
-				rgba(255, 255, 255, 1) 100%
-			);
-			backdrop-filter: blur(3px);
-		}
-	}
+	// &::before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	background: #fff;
+	// 	background: linear-gradient(
+	// 		335deg,
+	// 		rgba(255, 255, 255, 1) 0%,
+	// 		rgba(211, 231, 255, 1) 50%,
+	// 		rgba(255, 255, 255, 1) 100%
+	// 	);
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	top: 0;
+	// 	z-index: 0;
+	// 	//Для десктопа
+	// 	@media (min-width: 1200px) {
+	// 		background: linear-gradient(
+	// 			345deg,
+	// 			rgba(255, 255, 255, 1) 0%,
+	// 			rgba(255, 255, 255, 0.7) 50%,
+	// 			rgba(255, 255, 255, 1) 100%
+	// 		);
+	// 		backdrop-filter: blur(4px);
+	// 	}
+	// }
 }
 .gallery-section__title {
 	text-align: center;
@@ -246,3 +246,209 @@
 	}
 }
 /*----- /Видео для Fancybox (из папки video)-----*/
+/*----- Окно превью блога-----*/
+.blog-section__row {
+	margin: 0 auto;
+	display: none;
+	//Для планшета
+	@media (min-width: 768px) {
+		display: block;
+	}
+}
+.blog-section__carousel {
+	.article-prev {
+		margin: 15px 15px 25px;
+		height: 540px;
+		box-shadow: 0 15px 15px 5px rgba(119, 162, 219, 0.6);
+		//Для большого смартфона
+		@media (min-width: 360px) {
+			height: unset;
+		}
+		//Для планшета
+		@media (min-width: 768px) {
+			margin: 30px;
+		}
+		//Для ПК
+		@media (min-width: 1200px) {
+			margin: 30px auto;
+			max-width: 1024px;
+		}
+	}
+	.article__img-row-prev {
+		height: 185px;
+		margin-bottom: 5px;
+		overflow: hidden;
+		//Для большого смартфона
+		@media (min-width: 400px) {
+			height: unset;
+			margin-bottom: 15px;
+		}
+		//Для планшета
+		@media (min-width: 768px) {
+			margin-bottom: unset;
+		}
+	}
+	.article__text-prev {
+		position: relative;
+		max-height: 140px;
+		overflow: hidden;
+		//Для большого смартфона
+		@media (min-width: 360px) {
+			max-height: unset;
+		}
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgb(255, 255, 255);
+			background: linear-gradient(
+				180deg,
+				rgba(255, 255, 255, 0) 0%,
+				rgba(255, 255, 255, 0) 60%,
+				rgba(255, 255, 255, 1) 100%
+			);
+			//Для большого смартфона
+			@media (min-width: 360px) {
+				display: none;
+			}
+		}
+	}
+	.ya-share2__container_mobile.ya-share2__container_size_m .ya-share2__icon {
+		height: 24px;
+		width: 24px;
+	}
+}
+.blog-section__carousel.owl-carousel .owl-nav button.owl-prev {
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	content: "";
+	position: absolute;
+	left: 5%;
+	top: 85.9%;
+	transition: all 0.1s ease;
+	display: none;
+	//Для планшета
+	@media (min-width: 768px) {
+		display: block;
+		top: 95%;
+		left: 10%;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		top: 100%;
+		left: 10%;
+		transform: translate(-100%, -50%);
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		top: 50%;
+		left: 6%;
+		transform: translate(-100%, -50%);
+	}
+	//Для десктопа
+	@media (min-width: 1366px) {
+		left: 10%;
+	}
+	//Для десктопа FHD
+	@media (min-width: 1920px) {
+		left: 15%;
+	}
+	&:hover {
+		filter: drop-shadow(0 0 5px rgba(39, 38, 100, 0.5));
+	}
+	&:focus {
+		outline: none;
+	}
+	span {
+		display: none;
+	}
+	&::before {
+		content: "\00AB";
+		font-size: 90px;
+		color: var(--underline);
+		filter: opacity(0.7);
+		font-weight: 700;
+		position: absolute;
+		top: -50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: 0.3s;
+		//Для планшета
+		@media (min-width: 768px) {
+			top: 50%;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			filter: opacity(0.5);
+		}
+	}
+}
+.blog-section__carousel.owl-carousel .owl-nav button.owl-next {
+	width: 48px;
+	height: 48px;
+	content: "";
+	position: absolute;
+	right: 5%;
+	top: 85.9%;
+	transition: all 0.1s ease;
+	display: none;
+	//Для планшета
+	@media (min-width: 768px) {
+		display: block;
+		top: 95%;
+		right: 10%;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		top: 100%;
+		right: 10%;
+		transform: translate(100%, -50%);
+	}
+	//Для десктопа
+	@media (min-width: 1200px) {
+		top: 50%;
+		right: 6%;
+		transform: translate(100%, -50%);
+	}
+	//Для десктопа
+	@media (min-width: 1366px) {
+		right: 10%;
+	}
+	//Для десктопа FHD
+	@media (min-width: 1920px) {
+		right: 15%;
+	}
+	&:hover {
+		filter: drop-shadow(0 0 5px rgba(39, 38, 100, 0.5));
+	}
+	&:focus {
+		outline: none;
+	}
+	span {
+		display: none;
+	}
+	&::before {
+		content: "\00BB";
+		font-size: 90px;
+		color: var(--underline);
+		filter: opacity(0.7);
+		font-weight: 700;
+		position: absolute;
+		top: -50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		//Для планшета
+		@media (min-width: 768px) {
+			top: 50%;
+		}
+		//Для десктопа
+		@media (min-width: 1200px) {
+			filter: opacity(0.5);
+		}
+	}
+}

@@ -39,25 +39,21 @@
 		display: none;
 	}
 	.logo-mob {
-		margin-bottom: 5px;
+		margin-bottom: 10px;
 		position: relative;
 		display: inline-block;
-		font-size: 45px;
+		font-size: 34px;
 		font-family: serif;
 		font-style: italic;
 		color: var(--brand-blue);
 		font-weight: 700;
 		line-height: 1;
-		letter-spacing: -4px;
+		letter-spacing: -0.5px;
 		transition: transform 0.3s;
 		z-index: 9;
-		//Для большого смартфона
-		@media (min-width: 400px) {
-			font-size: 46px;
-		}
 		//Для планшета
 		@media (min-width: 768px) {
-			font-size: 48px;
+			font-size: 36px;
 		}
 		a {
 			color: var(--brand-blue);
@@ -68,20 +64,24 @@
 	}
 }
 .phone-top-mob {
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 	z-index: 9;
 	cursor: pointer;
 	display: block;
 	a {
 		font-size: 20px;
-		font-weight: 500;
-		font-family: "M PLUS 1p", sans-serif;
+		font-weight: 400;
+		font-family: sans-serif;
 		color: var(--main-blue);
 		line-height: 1;
 		transition: 0.5s;
 		&:hover {
 			color: red;
 		}
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 45px;
 	}
 	//Для десктопа
 	@media (min-width: 1200px) {
@@ -104,29 +104,44 @@
 	margin-bottom: 20px;
 	position: relative;
 	z-index: 9;
-}
-.mob-nav-item {
-	margin-bottom: 20px;
-	font-size: 20px;
-	font-weight: 700;
-	text-decoration: underline;
-	line-height: 1.1;
-	position: relative;
-	z-index: 9;
 	//Для большого смартфона
 	@media (min-width: 360px) {
-		margin-bottom: 25px;
+		margin-bottom: 30px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		margin-bottom: 45px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 60px;
+	}
+}
+.mob-nav-item {
+	margin-bottom: 25px;
+	line-height: 1;
+	position: relative;
+	z-index: 9;
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		margin-bottom: 30px;
 	}
 }
 .mob-nav-link {
 	color: rgb(7, 7, 7);
 	border-bottom: 3px solid var(--underline);
 	font-family: sans-serif;
-	font-size: 26px;
-	font-weight: 500;
-	line-height: 0.8;
+	font-size: 20px;
+	font-weight: 400;
 	position: relative;
 	z-index: 9;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		font-size: 22px;
+	}
 	&:active {
 		color: var(--red);
 		border-color: rgba(0, 0, 0, 0);
@@ -176,6 +191,7 @@
 	border-color: var(--blue);
 }
 .social-icons__row.social-icons__row--left {
+	margin-bottom: 10px;
 	display: flex;
 	justify-content: flex-start;
 	position: relative;
@@ -183,6 +199,10 @@
 	//Для большого смартфона
 	@media (min-width: 360px) {
 		margin-bottom: 15px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		margin-bottom: 30px;
 	}
 	@media (min-width: 960px) {
 		justify-content: center;

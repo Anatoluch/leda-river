@@ -33,20 +33,33 @@ $(document).ready(function () {
 		}, 1600);
 	}
 
+	// Фиксирование меню при скролле
+	$(window).scroll(function () {
+		if ($(window).scrollTop() > 360 && $(window).scrollTop() < 770) {
+			$("#nav-wrapper").fadeIn(900); //Появление прилипающего мобильного меню сверху страницы
+		} else if ($(window).scrollTop() >= 770) {
+			$("#nav-wrapper-pc").fadeIn(900); //Появление прилипающего меню сверху страницы (ПК)
+			$("#nav-wrapper").fadeIn(900); //Появление прилипающего мобильного меню сверху страницы
+		} else {
+			$("#nav-wrapper").fadeOut(150); //Исчезание прилипающего мобильного меню сверху страницы
+			$("#nav-wrapper-pc").fadeOut(150); //Исчезание прилипающего меню сверху страницы (ПК)
+		}
+	});
+
 	// Событие "контектсное меню" запрет вызова контекстного меню
 	// document.addEventListener("contextmenu", function (e) {
 	// 	e.preventDefault();
 	// });
 	//Запрет открытия исходного кода страницы горячими клавишами
-	document.addEventListener("keydown", function (e) {
-		if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 117)) {
-			// ctrl-u ctrl-f6
-			e.preventDefault();
-			alert("Доступ к исходному коду запрещён!");
-		} else {
-			return true;
-		}
-	});
+	// document.addEventListener("keydown", function (e) {
+	// 	if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 117)) {
+	// 		// ctrl-u ctrl-f6
+	// 		e.preventDefault();
+	// 		alert("Доступ к исходному коду запрещён!");
+	// 	} else {
+	// 		return true;
+	// 	}
+	// });
 	//Запрет вставки через ctrl-v
 	// document.addEventListener('keydown', function(e){
 	// 	if (e.ctrlKey && (e.keyCode === 86)) { // ctrl-v
@@ -68,13 +81,6 @@ $(document).ready(function () {
 		scrollChange: function ($currentListItem) {},
 	});
 
-	//Видеофон
-	// $(window).on("load", function () {
-	// 	$(".video-bg").vide("./video/leda-river-cover", {
-	// 		bgColor: "#5F9EA0",
-	// 	});
-	// });
-
 	//"Гамбургер-меню"
 	const toggleMenu = document.querySelector(".toggle-menu"); //Иконка меню "Гамбургер"
 	const toggleMenuFixed = document.querySelector(".toggle-menu-fixed"); //Иконка меню "Гамбургер"(фиксированное меню)
@@ -83,26 +89,30 @@ $(document).ready(function () {
 	const phoneMob = document.querySelector(".phone-top-mob");
 	const bodyEl = document.body.closest("html");
 
+	function toggleMIt() {
+		mobMenu.classList.toggle("active");
+		overlay.classList.toggle("active");
+		bodyEl.classList.toggle("noscroll");
+	}
+	function removeIt() {
+		toggleMenu.classList.remove("active");
+		bodyEl.classList.remove("noscroll");
+	}
 	//Сценарий события клик по "гамбургеру" (появление/исчезание моб. меню, оверлея)
 	toggleMenu.addEventListener("click", function () {
 		this.classList.toggle("active");
-		mobMenu.classList.toggle("active");
-		overlay.classList.toggle("active");
-		bodyEl.classList.toggle("noscroll");
+		toggleMIt();
 	});
 	toggleMenuFixed.addEventListener("click", function () {
 		this.classList.toggle("active");
-		toggleMenu.classList.toggle("active");
-		mobMenu.classList.toggle("active");
-		overlay.classList.toggle("active");
-		bodyEl.classList.toggle("noscroll");
+		toggleMenu.classList.toggle("active"); +
+		toggleMIt();
 	});
 	//Сценарий события клик по любому элементу (ссылке, иконке и т.д) моб. меню (но не по "гамбургеру")
 	mobMenu.addEventListener("click", function () {
 		this.classList.remove("active");
-		toggleMenu.classList.remove("active");
+		removeIt();
 		overlay.classList.remove("active");
-		bodyEl.classList.remove("noscroll");
 	});
 	//Блок с телефоном - отмена всплытия
 	phoneMob.addEventListener("click", (e) => {
@@ -112,21 +122,20 @@ $(document).ready(function () {
 	//Сценарий события клик по оверлею
 	overlay.addEventListener("click", function () {
 		this.classList.remove("active");
-		toggleMenu.classList.remove("active");
+		removeIt();
 		mobMenu.classList.remove("active");
-		bodyEl.classList.remove("noscroll");
 	});
 	// Скрыть часть фото на мобильных устройствах \
-	const galleryLink = document.querySelector(".gallery-link"); //Ссылка показать/скрыть
-	const photo = document.querySelectorAll(".hide-photo"); //фотокарточка
-	const link1 = document.querySelector(".link-1"); // ссылка "показать все"
-	const link2 = document.querySelector(".link-2"); // ссылка "скрыть"
+	if (document.querySelector(".gallery-link")) {
+		const galleryLink = document.querySelector(".gallery-link"); //Блок ссылок показать все/скрыть
+		const photo = document.querySelectorAll(".hide-photo"); //фотокарточка
+		const link1 = document.querySelector(".link-1"); // ссылка "показать все"
+		const link2 = document.querySelector(".link-2"); // ссылка "скрыть"
 
-	if (galleryLink) {
 		galleryLink.addEventListener("click", function () {
-			for (var i = 0; i < photo.length; i++) {
-				photo[i].classList.toggle("photo");
-			}
+			photo.forEach(function(item){
+				item.classList.toggle("photo");
+			});
 			link1.classList.toggle("link-1-hide");
 			link2.classList.toggle("link-2-show");
 		});
@@ -188,16 +197,16 @@ $(document).ready(function () {
 	// });
 
 	// Скрыть часть фото для мобильных устройств (Галерея в статье)
-	const artGalleryLink = document.querySelector(".article-gallery-link"); //Ссылка показать/скрыть
-	const artPhoto = document.querySelectorAll(".hide-article-photo"); //фотокарточка
-	const showLink = document.querySelector(".show-link"); // ссылка "показать все"
-	const hideLink = document.querySelector(".hide-link"); // ссылка "скрыть"
+	if (document.querySelector(".article-gallery-link")) {
+		const artGalleryLink = document.querySelector(".article-gallery-link"); //Ссылка показать/скрыть
+		const artPhoto = document.querySelectorAll(".hide-article-photo"); //фотокарточка
+		const showLink = document.querySelector(".show-link"); // ссылка "показать все"
+		const hideLink = document.querySelector(".hide-link"); // ссылка "скрыть"
 
-	if (artGalleryLink) {
 		artGalleryLink.addEventListener("click", function () {
-			for (var i = 0; i < artPhoto.length; i++) {
-				artPhoto[i].classList.toggle("article__photo");
-			}
+			artPhoto.forEach(function(item){
+				item.classList.toggle("article__photo");
+			});
 			showLink.classList.toggle("show-link-hide");
 			hideLink.classList.toggle("hide-link-show");
 		});
@@ -212,12 +221,127 @@ $(document).ready(function () {
 			}
 		}
 	});
+	//Кнопка "Наверх"
+	$("#back2Top").click(function (event) {
+		event.preventDefault();
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+		return false;
+	});
+
+	//Защита номера телефона от спама
+	const Tel = document.querySelectorAll(".phone-img");
+
+	Tel.forEach(function(item){
+		item.addEventListener("click", function(){
+			this.style = "display: none";
+			this.insertAdjacentHTML("afterend", '<a href="tel:+79181639644"> +7(918) 163 96 44</a>');
+		});
+	});
+
+	//Замена картинки карты на интерактивную версию (для мобильных и ПК)
+	//Сценарий события клик по оболочке (замена изображения на интерактив)
+	if (document.querySelector(".map-overlay")) {
+		const mapChange = document.querySelector(".map-overlay"); // Оболочка
+		const fakeMap = document.querySelector(".fake-map"); // Изображение с картой
+		const mapHolderMob = document.querySelector(".map-holder-mob"); // Блок со встроенной картой для мобил
+		const mapHolderPc = document.querySelector(".map-holder-pc"); // Блок со встроенной картой для ПК
+
+		mapChange.addEventListener("click", function () {
+			fakeMap.classList.add("hide");
+			if (mapHolderMob) {
+				mapHolderMob.classList.add("show-mob");
+			}
+			if (mapHolderPc) {
+				mapHolderPc.classList.add("show-pc");
+			}
+		});
+	}
+	//Замена картинки карты на интерактивную версию (для планшета)
+	//Сценарий события клик по оболочке (замена изображения на интерактив)
+	if (document.querySelector(".map-overlay-tab")) {
+		const mapChangeTab = document.querySelector(".map-overlay-tab"); // Оболочка
+		const fakeMapTab = document.querySelector(".fake-map-tab"); // Изображение с картой
+		const mapHolderTab = document.querySelector(".map-holder-tab"); // Блок со встроенной картой
+
+		mapChangeTab.addEventListener("click", function () {
+			fakeMapTab.classList.add("hide");
+			mapHolderTab.classList.add("show-tab");
+		});
+	}
+	// Параллакс картинки и подложки
+	if (document.querySelector(".yacht__content")) {
+		let prxScene = document.querySelector(".yacht__content"); // сцена
+		let prxItem = document.querySelectorAll(".leda"); // блок с картинкой
+		let prxItemBg = document.querySelectorAll(".sea"); // море
+		let prxItemSky = document.querySelectorAll(".sky"); // небо
+
+		prxScene.addEventListener("mousemove", function (e) {
+			let x = e.clientX / window.innerWidth;
+			let y = e.clientY / window.innerHeight;
+			for (let item of prxItem) {
+				item.style.transform = "translate(-" + x * 25 + "px, -" + y * 18 + "px)";
+			}
+			for (let item of prxItemBg) {
+				item.style.transform = "translate(-" + x * 28 + "px, -" + y * 23 + "px)";
+			}
+			for (let item of prxItemSky) {
+				item.style.transform = "translate(-" + x * 0 + "px, -" + y * 23 + "px)";
+			}
+		});
+	}
+
+	// Отключение зума иконки jivo
+	// if (document.documentElement.clientWidth < 1200){ // Срабатывает только для устройст с экраном менее 1200px
+	// 	function removeZoomOnLoad(){ // Функция, отвечающая за проверку и удаления атрибута 'style' при загрузке страницы
+	// 		let jivoIco = document.querySelector('.__jivoMobileButton'); // Элемент, ответственный за zoom иконки jivo
+	// 		if (jivoIco){
+	// 			jivoIco.style.zoom = "0.8";
+	// 			jivoIco.style.opacity = "0.7";
+	// 		}
+	// 	}
+
+	// 	setTimeout(removeZoomOnLoad, 900); // Вызов ф-ии с отсрокой 0,9 сек
+
+	// 	window.addEventListener('resize', function(){ // прослушка события по изменению размера экрана (на автоповорт экрана устройства)
+	// 		let jivoIco = document.querySelector('.__jivoMobileButton'); // Элемент, ответственный за zoom иконки jivo
+	// 		function removeZoomOnResize(){
+	// 			if (jivoIco){
+	// 				jivoIco.style.zoom = "0.8";
+	// 				jivoIco.style.opacity = "0.7";
+	// 			}
+	// 		}
+	// 		setTimeout(removeZoomOnResize, 200); // Вызов ф-ии с отсрокой 0,2 сек
+	// 		setTimeout(removeZoomOnResize, 400); // Вызов ф-ии с отсрокой 0,4 сек (Страховка)
+	// 		setTimeout(removeZoomOnResize, 1000); // Вызов ф-ии с отсрокой 1 сек (Страховка)
+	// 	});
+	// 	setTimeout(removeZoomOnLoad, 1000); // Вызов ф-ии с отсрокой 1 сек (Страховка)
+	// 	setTimeout(removeZoomOnLoad, 1500); // Вызов ф-ии с отсрокой 1,5 сек (Страховка)
+	// 	setTimeout(removeZoomOnLoad, 4000); // Вызов ф-ии с отсрокой 4 сек (Страховка)
+	// 	setTimeout(removeZoomOnLoad, 7000); // Вызов ф-ии с отсрокой 7 сек (Страховка)
+	// }
+
+		//Модалка с акцией
+		// window.onkeyup = modal; // нажатие Esc, см. условие "e.keyCode==27"
+		// if(document.getElementById("popup")){
+		// 	document.getElementById("popup").onclick = modal;
+		
+		// 	function modal(e) {
+		// 		if (e.target.nodeName != "DIV" || e.keyCode == 27) {
+		// 			// через && перечисляются теги, клинкув на которые окно не будет закрыто; сюда же можно включить тег A или IFRAME
+		// 			document.getElementById("popup").style.display = "none";
+		// 			localStorage.setItem("popup1", "none");
+		// 		}
+		// 	}
+		// }
 	// --------------- Логика работы формы обратной связи -----------------//
+	if (document.querySelector(".contact-form") || document.querySelector(".reviews-page__form")){
 	//Скрипт для fake-placeholder'а формы обратной связи
 	const formItems = document.querySelectorAll(".form-input");
+
 	for (let item of formItems) {
 		const thisParent = item.closest(".form-item-row");
 		const thisPlaceholder = thisParent.querySelector(".fake-placeholder");
+		
 		//Текстовое поле (input) в фокусе
 		item.addEventListener("focus", function () {
 			thisPlaceholder.classList.add("active-field");
@@ -235,14 +359,19 @@ $(document).ready(function () {
 	let textField = document.querySelector("#form-comment");
 	let counterRow = document.querySelector(".contacts-form__char-counter");
 
+	function counterRowToggle(){
+		counterRow.classList.toggle("transp-count");
+	}
 	// Текстовое поле в фокусе
 	if (textField) {
 		textField.addEventListener("focus", function () {
-			counterRow.classList.remove("transp-count");
+			counterRowToggle();
+			// counterRow.classList.remove("transp-count");
 		});
 		// Потеря фокуса
 		textField.addEventListener("blur", function () {
-			counterRow.classList.add("transp-count");
+			counterRowToggle();
+			// counterRow.classList.add("transp-count");
 		});
 	}
 
@@ -253,12 +382,16 @@ $(document).ready(function () {
 		if (this.value.length > maxCount) {
 			this.value = this.value.substr(0, maxCount);
 			counterRow.style = "color:red; font-weight:700; font-size:16px";
-		} else if (this.value.length < maxCount && this.value.length > 420){
+		} else if (this.value.length < 450 && this.value.length > 400){
 			counterRow.style = "color:orange; font-weight:700; font-size:14px";
+		} else if (this.value.length < maxCount && this.value.length >= 450){
+			counterRow.style = "color:red; font-weight:700; font-size:14px"; 
 		} else if (this.value.length == maxCount) {
 			counterRow.style = "color:red; font-weight:700; font-size:16px";
 		} else if (this.value.length < maxCount) {
-			counterRow.removeAttribute("style");
+			if (counterRow.hasAttribute("style")) {
+				counterRow.removeAttribute("style");
+			}
 		}
 	});
 	//Счетчик оставшихся для вода символов (Сообщение)
@@ -280,18 +413,20 @@ $(document).ready(function () {
 	let formBlock = document.querySelector(".contact-form"); // форма обратной связи
 	let formAllFakePlaceholders = document.querySelectorAll(".contact-form .fake-placeholder"); // все фейковые placeholders
 	let callFormPolicy = document.querySelector(".form-checkbox"); // чекбокс политики конфиденциальности
+
 	let botTestRow = document.querySelector("#form-bot-row"); // ячейка с вопросами проверки на ботов
+	let fakeBotPlaceholder1 = document.querySelector("#form-bot-placeholder-1"); // Фейковый placeholder контрольного вопроса №1
 	let botQuestion1Row = document.querySelector("#question-1-row"); // ячейка 1-го вопроса
+	let controlQuestion1 = document.querySelector("#form-bot-question-1"); // input контрольного вопроса №1
+	let questionInp1 = document.querySelector("#question-inp-1"); // span в который будет вставлен вопрос №1
+	let fakeBotPlaceholder2 = document.querySelector("#form-bot-placeholder-2"); // Фейковый placeholder контрольного вопроса №2
 	let botQuestion2Row = document.querySelector("#question-2-row"); // ячейка 2-го вопроса
+	let controlQuestion2 = document.querySelector("#form-bot-question-2"); // input контрольного вопроса №2
+	let questionInp2 = document.querySelector("#question-inp-2"); // span в который будет вставлен вопрос №2
+	let questionToInp2 = `России?`;
+
 	let submitBtn = document.querySelector("#submit-btn"); // кнопка отправки заявки
 	let resetBtn = document.querySelector("#reset-btn"); // кнопка очистки формы
-	let fakeBotPlaceholder1 = document.querySelector("#form-bot-placeholder-1"); // Фейковый placeholder контрольного вопроса №1
-	let fakeBotPlaceholder2 = document.querySelector("#form-bot-placeholder-2"); // Фейковый placeholder контрольного вопроса №2
-	let questionInp1 = document.querySelector("#question-inp-1"); // span в который будет вставлен вопрос №1
-	let questionInp2 = document.querySelector("#question-inp-2"); // span в который будет вставлен вопрос №2
-	let controlQuestion1 = document.querySelector("#form-bot-question-1"); // input контрольного вопроса №1
-	let controlQuestion2 = document.querySelector("#form-bot-question-2"); // input контрольного вопроса №2
-	let questionToInp2 = `России?`;
 	//Для контрольного вопроса №1 (математика)
 	let x, y, res;
 
@@ -302,6 +437,23 @@ $(document).ready(function () {
 		res = x + y;
 		return res;
 	}
+
+	// Спрятать блок с контрольными вопросами
+	function botTestHide() {
+		botTestRow.classList.add("hidden");
+		botQuestion1Row.classList.add("hidden");
+		botQuestion2Row.classList.add("hidden");
+	}
+
+	//Деактивация кнопки отправки формы
+	function submitBtnDis(){
+		submitBtn.disabled = true;
+	}
+
+	//Активация кнопки отправки формы
+	function submitBtnEnab(){
+		submitBtn.disabled = false;
+	}
 	// При принятии политики отображается контрольный вопрос №1
 	if (callFormPolicy) {
 		callFormPolicy.addEventListener("change", function (e) {
@@ -309,29 +461,27 @@ $(document).ready(function () {
 				randomInt();
 				//вставка контрольного вопроса №1 внутрь фейкового placeholder №1
 				questionInp1.innerText = `${x} + ${y}?`;
-				botTestRow.classList.remove("hidden");
-				botQuestion1Row.classList.remove("hidden");
+				botTestRow.classList.remove("hidden"); //toggle
+				botQuestion1Row.classList.remove("hidden"); //toggle 1
 				this.disabled = true;
 				// Проверка ответа на конрольный вопрос №1
 				controlQuestion1.addEventListener("input", function (e) {
 					let inputValue1 = parseInt(e.target.value); // запись в переменную введенного ответа на вопрос с приведением типа к числу
 					if (inputValue1 === res) {
-						submitBtn.disabled = true;
-						botQuestion1Row.classList.add("hidden");
-						botQuestion2Row.classList.remove("hidden");
+						submitBtnDis();
+						botQuestion1Row.classList.add("hidden"); //toggle 1
+						botQuestion2Row.classList.remove("hidden"); //toggle 2
 						fakeBotPlaceholder1.classList.remove("active-field");
 						controlQuestion1.blur();
 						controlQuestion2.focus();
 						callFormPolicy.disabled = true;
 					} else {
-						submitBtn.disabled = true;
+						submitBtnDis();
 						return;
 					}
 				});
 			} else {
-				botTestRow.classList.add("hidden");
-				botQuestion1Row.classList.add("hidden");
-				botQuestion2Row.classList.add("hidden");
+				botTestHide();
 			}
 		});
 	}
@@ -346,15 +496,15 @@ $(document).ready(function () {
 		controlQuestion2.addEventListener("input", function (e) {
 			let inputValue2 = e.target.value.toLowerCase();
 			if (inputValue2 === "москва") {
-				submitBtn.disabled = false;
-				botTestRow.classList.add("hidden");
+				submitBtnEnab();
+				botTestRow.classList.add("hidden"); // toggle
 				formBlock.setAttribute("method", "POST"); // Добавление метода отправки данных формы
 				formBlock.setAttribute("action", "./php/mail.php"); // Добавление обработчика формы
-				botQuestion2Row.classList.add("hidden");
+				botQuestion2Row.classList.add("hidden"); //toggle2
 				fakeBotPlaceholder2.classList.remove("active-field");
 				controlQuestion2.blur();
 			} else {
-				submitBtn.disabled = true;
+				submitBtnDis();
 			}
 		});
 	}
@@ -389,13 +539,11 @@ $(document).ready(function () {
 	if (resetBtn) {
 		resetBtn.addEventListener("click", function () {
 			callFormPolicy.disabled = false;
-			submitBtn.disabled = false;
+			submitBtnEnab();
 			formAllFakePlaceholders.forEach(function (item) {
 				item.classList.remove("active-field");
 			});
-			botTestRow.classList.add("hidden");
-			botQuestion1Row.classList.add("hidden");
-			botQuestion2Row.classList.add("hidden");
+			botTestHide();
 			counterRow.removeAttribute("style");
 			counterSpan.innerText = maxCount;
 			formBlock.removeAttribute("method", "POST"); // Удаление метода отправки данных формы
@@ -474,140 +622,34 @@ $(document).ready(function () {
 	//Отправка данных формы обратной связи
 	// Функция AJAX запрса на сервер
 
-	function ajaxFormSubmit() {
-		let string = $(".contact-form").serialize(); // Сохраняем данные введенные в форму в строку.
+		function ajaxFormSubmit() {
+			let string = $(".contact-form").serialize(); // Сохраняем данные введенные в форму в строку.
 
-		//Формируем ajax запрос
-		$.ajax({
-			type: "POST", // Тип запроса - POST
-			url: "php/mail.php", // Куда отправляем запрос
-			data: string, // Какие даные отправляем, в данном случае отправляем переменную string
+			//Формируем ajax запрос
+			$.ajax({
+				type: "POST", // Тип запроса - POST
+				url: "php/mail.php", // Куда отправляем запрос
+				data: string, // Какие даные отправляем, в данном случае отправляем переменную string
 
-			// Функция если все прошло успешно
-			success: function (html) {
-				$(".contact-form").slideUp(800);
-				$("#answer").html(html);
-			},
-		});
-		// Чтобы по Submit больше ничего не выполнялось - делаем возврат false чтобы прервать цепочку срабатывания остальных функций
-		return false;
+				// Функция если все прошло успешно
+				success: function (html) {
+					$(".contact-form").slideUp(800);
+					$("#answer").html(html);
+				},
+			});
+			// Чтобы по Submit больше ничего не выполнялось - делаем возврат false чтобы прервать цепочку срабатывания остальных функций
+			return false;
+		}
 	}
 	// --------------- /Логика работы формы обратной связи -----------------//
-	//Кнопка "Наверх"
-	$("#back2Top").click(function (event) {
-		event.preventDefault();
-		$("html, body").animate({ scrollTop: 0 }, "slow");
-		return false;
-	});
-	//Защита номера телефона от спама
-	// Телефон из шапки
-	const topTel = document.querySelectorAll(".top-phone-img");
-
-	for (let i = 0; i < topTel.length; i++) {
-		topTel[i].addEventListener("click", function () {
-			this.style = "display: none";
-			this.insertAdjacentHTML(
-				"afterend",
-				'<a href="tel:+79181639644"> +7(918) 163 96 44</a>'
-			);
-		});
-	}
-
-	$("#phone").click(function () {
-		$("#phone").html('<a href="tel:+79181639644">+7(918) 163 96 44</a>');
-	});
-
-	//Замена картинки карты на интерактивную версию (для мобильных и ПК)
-	const mapChange = document.querySelector(".map-overlay"); // Оболочка
-	const fakeMap = document.querySelector(".fake-map"); // Изображение с картой
-	const mapHolderMob = document.querySelector(".map-holder-mob"); // Блок со встроенной картой для мобил
-	const mapHolderPc = document.querySelector(".map-holder-pc"); // Блок со встроенной картой для ПК
-
-	//Сценарий события клик по оболочке (замена изображения на интерактив)
-	if (mapChange) {
-		mapChange.addEventListener("click", function () {
-			fakeMap.classList.add("hide");
-			mapHolderMob.classList.add("show-mob");
-			mapHolderPc.classList.add("show-pc");
-		});
-	}
-	//Замена картинки карты на интерактивную версию (для планшета)
-	const mapChangeTab = document.querySelector(".map-overlay-tab"); // Оболочка
-	const fakeMapTab = document.querySelector(".fake-map-tab"); // Изображение с картой
-	const mapHolderTab = document.querySelector(".map-holder-tab"); // Блок со встроенной картой
-
-	//Сценарий события клик по оболочке (замена изображения на интерактив)
-	if (mapChangeTab) {
-		mapChangeTab.addEventListener("click", function () {
-			fakeMapTab.classList.add("hide");
-			mapHolderTab.classList.add("show-tab");
-		});
-	}
-	// Параллакс картинки и подложки
-	let prxScene = document.querySelector(".yacht__content"); // сцена
-	let prxItem = document.querySelectorAll(".leda"); // блок с картинкой
-	let prxItemBg = document.querySelectorAll(".sea"); // море
-	let prxItemSky = document.querySelectorAll(".sky"); // небо
-	if (prxScene) {
-		prxScene.addEventListener("mousemove", function (e) {
-			let x = e.clientX / window.innerWidth;
-			let y = e.clientY / window.innerHeight;
-			for (let item of prxItem) {
-				item.style.transform =
-					"translate(-" + x * 25 + "px, -" + y * 18 + "px)";
-			}
-			for (let item of prxItemBg) {
-				item.style.transform =
-					"translate(-" + x * 28 + "px, -" + y * 23 + "px)";
-			}
-			for (let item of prxItemSky) {
-				item.style.transform =
-					"translate(-" + x * 0 + "px, -" + y * 23 + "px)";
-			}
-		});
-	}
-
-	// Отключение зума иконки jivo
-	if (document.documentElement.clientWidth < 1200){ // Срабатывает только для устройст с экраном менее 1200px
-		function removeZoomOnLoad(){ // Функция, отвечающая за проверку и удаления атрибута 'style' при загрузке страницы
-			let jivoIco = document.querySelector('.__jivoMobileButton'); // Элемент, ответственный за zoom иконки jivo
-			if (jivoIco){
-				jivoIco.style.zoom = "0.8";
-				jivoIco.style.opacity = "0.7";
-			}
-		}
-
-		setTimeout(removeZoomOnLoad, 900); // Вызов ф-ии с отсрокой 0,9 сек
-
-		window.addEventListener('resize', function(){ // прослушка события по изменению размера экрана (на автоповорт экрана устройства)
-			let jivoIco = document.querySelector('.__jivoMobileButton'); // Элемент, ответственный за zoom иконки jivo
-			function removeZoomOnResize(){
-				if (jivoIco){
-					jivoIco.style.zoom = "0.8";
-					jivoIco.style.opacity = "0.7";
-				}
-			}
-			setTimeout(removeZoomOnResize, 200); // Вызов ф-ии с отсрокой 0,2 сек
-			setTimeout(removeZoomOnResize, 400); // Вызов ф-ии с отсрокой 0,4 сек (Страховка)
-			setTimeout(removeZoomOnResize, 1000); // Вызов ф-ии с отсрокой 1 сек (Страховка)
-		});
-		setTimeout(removeZoomOnLoad, 1000); // Вызов ф-ии с отсрокой 1 сек (Страховка)
-		setTimeout(removeZoomOnLoad, 1500); // Вызов ф-ии с отсрокой 1,5 сек (Страховка)
-		setTimeout(removeZoomOnLoad, 4000); // Вызов ф-ии с отсрокой 4 сек (Страховка)
-		setTimeout(removeZoomOnLoad, 7000); // Вызов ф-ии с отсрокой 7 сек (Страховка)
-	}
-
-		//Модалка с акцией
-		// window.onkeyup = modal; // нажатие Esc, см. условие "e.keyCode==27"
-		// if(document.getElementById("popup")){
-		// 	document.getElementById("popup").onclick = modal;
-		
-		// 	function modal(e) {
-		// 		if (e.target.nodeName != "DIV" || e.keyCode == 27) {
-		// 			// через && перечисляются теги, клинкув на которые окно не будет закрыто; сюда же можно включить тег A или IFRAME
-		// 			document.getElementById("popup").style.display = "none";
-		// 			localStorage.setItem("popup1", "none");
-		// 		}
-		// 	}
-		// }
 });
+	// Видеофон
+	if (document.querySelector(".video-bg")) {
+		if (document.documentElement.clientWidth >= 1183){
+			$(window).on("load", function () {
+				$(".video-bg").vide("./video/cover", {
+					bgColor: "#5F9EA0",
+				});
+			});
+		}
+	}

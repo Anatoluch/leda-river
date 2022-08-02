@@ -326,19 +326,60 @@
 	color: red;
 	text-transform: uppercase;
 }
+/*----- Youtube-----*/
+.youtube-article {
+	width: 100%;
+	height: 162px;
+	//Для большого смартфона
+	@media (min-width: 360px) {
+		height: 186px;
+	}
+	//Для большого смартфона
+	@media (min-width: 375px) {
+		height: 194px;
+	}
+	//Для большого смартфона
+	@media (min-width: 400px) {
+		height: 210px;
+	}
+	//Для большого смартфона
+	@media (min-width: 420px) {
+		height: 215px;
+	}
+	//Для мобильных (горизонтально)
+	@media (min-width: 480px) {
+		height: 280px;
+	}
+	//Для мобильных (горизонтально)
+	@media (min-width: 640px) {
+		height: 320px;
+	}
+	//Для планшета
+	@media (min-width: 768px) {
+		height: 398px;
+	}
+	//Для большого планшета
+	@media (min-width: 1024px) {
+		height: 532px;
+	}
+	//Для десктопа
+	@media (min-width: 1280px) {
+		height: 576px;
+	}
+}
 .article__img {
-	margin-bottom: 15px;
+	margin: 15px 0;
 	text-align: center;
 	img {
 		display: inline-block;
 	}
 	//Для планшета
 	@media (min-width: 768px) {
-		margin-bottom: 25px;
+		margin: 25px 0;
 	}
 }
 .article__img-bid {
-	margin-bottom: 15px;
+	margin: 15px 0;
 	text-align: center;
 	position: relative;
 	overflow: hidden;
@@ -353,7 +394,7 @@
 	}
 	//Для планшета
 	@media (min-width: 768px) {
-		margin-bottom: 25px;
+		margin: 25px 0;
 	}
 	//Для десктопа
 	@media (min-width: 1200px) {
@@ -486,6 +527,13 @@
 		content: url("../img/articles/bounty-leda/big/leda_bounty.jpg");
 	}
 }
+//Статья 7 "Незабываемая морская прогулка в бухту Ласпи!"
+.art-prev-img-7 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/laspi/buhta_laspi-2.jpg");
+	}
+}
 //--/Замена изображений по медиазапросам (Превью статей)--
 .publish-info {
 	margin-bottom: 15px;
@@ -521,15 +569,15 @@
 		font-family: "M PLUS 1p", sans-serif;
 		font-weight: 500;
 		font-size: 16px;
-		line-height: 1.2;
+		line-height: 1.5;
 		margin-bottom: 15px;
-		text-indent: 10px;
+		// text-indent: 10px;
 		//Для планшета
 		@media (min-width: 768px) {
 			padding: 0 15px;
 			font-size: 18px;
 			font-weight: 400;
-			text-indent: 12px;
+			// text-indent: 12px;
 		}
 		//Для десктопа
 		@media (min-width: 1200px) {
@@ -565,7 +613,7 @@
 		font-family: "M PLUS 1p", sans-serif;
 		font-weight: 500;
 		font-size: 16px;
-		line-height: 1.2;
+		line-height: 1.5;
 		margin-bottom: 15px;
 		color: var(--brand-blue);
 		//Для планшета
@@ -781,6 +829,91 @@
 	//Для планшета
 	@media (min-width: 429px) {
 		content: url("../img/articles/bounty-leda/big/leda_bounty-02.jpg");
+	}
+}
+// Статья 7 "Незабываемая морская прогулка в бухту Ласпи!"
+.art-img-7-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/bounty-beach/bounty-beach.jpg");
+	}
+}
+.art-img-7-2 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/top-clear-water/big/grot-dianu-big.jpg");
+	}
+}
+.art-img-7-3 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/laspi-trip/buhta_laspi-3.jpg");
+	}
+}
+.art-img-7-3-1 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/laspi-trip/balaklava.jpg");
+	}
+}
+.art-img-7-4 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/laspi-trip/laspi-trip-1.jpg");
+	}
+}
+.art-img-7-5 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/injir/injir-02.jpg");
+	}
+}
+.art-img-7-6 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/laspi-trip/pervuy_parus_mus_aya.jpg");
+	}
+}
+.art-img-7-7 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/laspi-trip/vtoroy_parus_mus_aya.jpg");
+	}
+}
+.art-img-7-8 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/mus-aya/nosorog_mus_aya.jpg");
+	}
+}
+.art-img-7-9 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/laspi-trip/ushakovskaya-stena-01.jpg");
+	}
+}
+.art-img-7-10 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/articles/mus-aya/zateryanuy_mir-11.jpg");
+	}
+}
+.art-img-7-11 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/laspi/buhta_laspi.jpg");
+	}
+}
+.art-img-7-12 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/laspi/batiliman.jpg");
+	}
+}
+.art-img-7-13 {
+	//Для планшета
+	@media (min-width: 429px) {
+		content: url("../img/programs/laspi/buhta_laspi-4.jpg");
 	}
 }
 //--/Замена изображений в статьях по медиазапросам--
@@ -1061,7 +1194,7 @@
 	font-family: "M PLUS 1p", sans-serif;
 	font-weight: 700;
 	font-size: 16px;
-	line-height: 1.2;
+	line-height: 1.5;
 	color: var(--brand-blue);
 	//Для большого смартфона
 	@media (min-width: 360px) {
